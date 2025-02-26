@@ -1,15 +1,13 @@
 @charset "utf-8";
 
-/* 共通設定 */
+/* 全体共通設定 */
 html {
     font-size: 10px;
-    letter-spacing: 0.3rem;
-    line-height: 2rem;
-    font-family: "Noto Sans JP", serif;
 }
 
-p {
-    font-size: 1.6rem;
+body {
+    letter-spacing: 0.3rem;
+    line-height: 2rem;
 }
 
 h2 {
@@ -20,186 +18,30 @@ h3 {
     font-size: 3.2rem;
 }
 
-img {
-    max-width: 100%;
-}
-
-.main {
-    width: calc(100% - 320px);
-    background-image: url(/assets/方眼紙.png);
-    /* font-family: "Noto Sans JP", serif; */
-}
-
-.inner {
-    margin: 0 60px;
-}
-
-.flex {
-    display: flex;
-}
-
-/* テキストサイズ */
-body {
+p {
     font-size: 1.6rem;
-    letter-spacing: 0.3rem;
-    line-height: 2rem;
 }
 
 img {
     max-width: 100%;
 }
 
-h2 {
-    text-align: center;
-    background: #F4CF15;
+/* 余白設定 */
+/* SP */
+.inner {
+    margin: 0 24px;
 }
 
-/* ロゴ */
-
-
-
-/* PC版ヘッダーナビゲーション */
-@media screen and (min-width:768px) {
-    .menu {
-        width: 320px;
-        /* background-color: #cbcbcb; */
-        position: fixed;
-        top: 0;
-        right: 0;
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .inner {
+        margin: 0 64px;
     }
+}
 
-    .menu li {
-        width: 320px;
-        border: solid 1px;
-        border-color: #333;
-        border-radius: 32px;
-        background-color: #fff;
-        text-align: center;
+/* PC */
+@media screen and (min-width:1280px) {
+    .inner {
+        margin: 0 60px;
     }
-
-}
-
-/* ハンバーガーメニュー */
-
-.header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-}
-
-.menu li {
-    width: 100%;
-    height: auto;
-    padding: 5%;
-    text-align: center;
-    color: #fff;
-    animation: fadeIn 0.5s;
-    z-index: 10000;
-}
-
-/* アニメーション前のメニューの状態 */
-.menu {
-    transform: translateX(100vw);
-    transition: all 0.5s ease-in-out;
-}
-
-/* アニメーション後のメニューの状態 */
-.menu.is-active {
-    transform: translateX(0);
-}
-
-/* ハンバーガーボタン */
-.hamburger_btn {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 10000;
-    cursor: pointer;
-}
-
-.hamburger_btn span {
-    display: block;
-    background-color: #333;
-    width: 40px;
-    height: 3px;
-    transition: all 0.3s;
-}
-
-.hamburger_btn span+span {
-    margin-top: 8px;
-}
-
-/* ハンバーガーメニューのアニメーション */
-.hamburger_btn.is-active span:nth-of-type(1) {
-    transform: translateY(20px) rotate(-45deg);
-}
-
-.hamburger_btn.is-active span:nth-of-type(2) {
-    opacity: 0;
-}
-
-.hamburger_btn.is-active span:nth-of-type(3) {
-    transform: translateY(-20px) rotate(45deg);
-}
-
-
-
-/* トップへ戻るボタン */
-.top-btn {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #F4CF15;
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
-    cursor: pointer;
-}
-
-/* フッター */
-footer {
-    background-color: #76653C;
-}
-
-footer ul {
-    justify-content: space-around;
-}
-
-/* カード型 */
-.event-archive {
-    display: block;
-    border: 3px solid #333333;
-    border-radius: 32px;
-    padding: 20px;
-    margin-bottom: 72px;
-
-}
-
-/* view moreボタン */
-.more-btn {
-    width: 240px;
-    height: 40px;
-    margin: 50px auto 0;
-    text-align: center;
-    line-height: 40px;
-    background-color: #FF7B00;
-    border-radius: 32px;
-    box-shadow: 0 0 10px rgba(73, 73, 73, 0.3);
-    position: relative;
 }
