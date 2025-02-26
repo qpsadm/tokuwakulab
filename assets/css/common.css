@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* 全体共通設定 */
+html {
+    font-size: 10px;
+}
+
+body {
+    letter-spacing: 0.3rem;
+    line-height: 2rem;
+}
+
+h2 {
+    font-size: 4.0rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 余白設定 */
+/* SP */
+.inner {
+    margin: 0 24px;
+}
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .inner {
+        margin: 0 64px;
+    }
+}
+
+/* PC */
+@media screen and (min-width:1280px) {
+    .inner {
+        margin: 0 60px;
+    }
+}
