@@ -3,12 +3,31 @@
 /* 共通設定 */
 html {
     font-size: 10px;
+    letter-spacing: 0.3rem;
+    line-height: 2rem;
+    font-family: "Noto Sans JP", serif;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 4.0rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+img {
+    max-width: 100%;
 }
 
 .main {
     width: calc(100% - 320px);
     background-image: url(/assets/方眼紙.png);
-    font-family: "Noto Sans JP", serif;
+    /* font-family: "Noto Sans JP", serif; */
 }
 
 .inner {
