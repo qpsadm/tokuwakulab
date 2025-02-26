@@ -78,8 +78,8 @@ function my_add_scripts()
 
     // ３、共通CSS
     wp_enqueue_style(
-        'my_foodscience',
-        get_template_directory_uri() . '/assets/css/foodscience.css'
+        'my_app',
+        get_template_directory_uri() . '/assets/css/.css'
     );
     wp_enqueue_style(
         'my_common',
