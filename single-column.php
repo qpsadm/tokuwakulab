@@ -1,7 +1,9 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-
+<main>
+    
+</main>
 
 
 
