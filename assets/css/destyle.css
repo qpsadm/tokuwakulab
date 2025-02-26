@@ -1,6 +1,4 @@
-@charset 'utf-8';
-
-/*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -8,9 +6,10 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+  min-width: 0;
 }
 
 /* Document */
@@ -23,9 +22,9 @@
  */
 
 html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -webkit-tap-highlight-color: transparent; /* 3*/
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-tap-highlight-color: transparent; /* 3*/
 }
 
 /* Sections */
@@ -36,7 +35,7 @@ html {
  */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /**
@@ -44,7 +43,7 @@ body {
  */
 
 main {
-    display: block;
+  display: block;
 }
 
 /* Vertical rhythm */
@@ -59,7 +58,7 @@ iframe,
 form,
 figure,
 dl {
-    margin: 0;
+  margin: 0;
 }
 
 /* Headings */
@@ -71,9 +70,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
 }
 
 /* Lists (enumeration) */
@@ -81,20 +80,20 @@ h6 {
 
 ul,
 ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* Lists (definition) */
 /* ============================================ */
 
 dt {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* Grouping content */
@@ -106,13 +105,13 @@ dd {
  */
 
 hr {
-    box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
-    overflow: visible; /* 2 */
-    border-top-width: 1px;
-    margin: 0;
-    clear: both;
-    color: inherit;
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+  border-top-width: 1px;
+  margin: 0;
+  clear: both;
+  color: inherit;
 }
 
 /**
@@ -121,12 +120,12 @@ hr {
  */
 
 pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: inherit; /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
 }
 
 address {
-    font-style: inherit;
+  font-style: inherit;
 }
 
 /* Text-level semantics */
@@ -137,9 +136,9 @@ address {
  */
 
 a {
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
 }
 
 /**
@@ -148,7 +147,7 @@ a {
  */
 
 abbr[title] {
-    text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -157,7 +156,7 @@ abbr[title] {
 
 b,
 strong {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 /**
@@ -168,8 +167,8 @@ strong {
 code,
 kbd,
 samp {
-    font-family: monospace, monospace; /* 1 */
-    font-size: inherit; /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
 }
 
 /**
@@ -177,7 +176,7 @@ samp {
  */
 
 small {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /**
@@ -187,18 +186,18 @@ small {
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 sup {
-    top: -0.5em;
+  top: -0.5em;
 }
 
 /* Replaced content */
@@ -213,7 +212,7 @@ img,
 embed,
 object,
 iframe {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 /* Forms */
@@ -230,31 +229,17 @@ input,
 optgroup,
 select,
 textarea {
-    -webkit-appearance: none; /* 1 */
-    appearance: none;
-    vertical-align: middle;
-    color: inherit;
-    font: inherit;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    text-align: inherit;
-    text-transform: inherit; /* 2 */
-}
-
-/**
- * Reset radio and checkbox appearance to preserve their look in iOS.
- */
-
-[type="checkbox"] {
-    -webkit-appearance: checkbox;
-    appearance: checkbox;
-}
-
-[type="radio"] {
-    -webkit-appearance: radio;
-    appearance: radio;
+  -webkit-appearance: none; /* 1 */
+  appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: inherit;
+  text-transform: inherit; /* 2 */
 }
 
 /**
@@ -265,14 +250,14 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button:disabled,
 [type="button"]:disabled,
 [type="reset"]:disabled,
 [type="submit"]:disabled {
-    cursor: default;
+  cursor: default;
 }
 
 /**
@@ -280,11 +265,11 @@ button:disabled,
  */
 
 :-moz-focusring {
-    outline: auto;
+  outline: auto;
 }
 
 select:disabled {
-    opacity: inherit;
+  opacity: inherit;
 }
 
 /**
@@ -292,7 +277,7 @@ select:disabled {
  */
 
 option {
-    padding: 0;
+  padding: 0;
 }
 
 /**
@@ -300,13 +285,13 @@ option {
  */
 
 fieldset {
-    margin: 0;
-    padding: 0;
-    min-width: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
 legend {
-    padding: 0;
+  padding: 0;
 }
 
 /**
@@ -314,7 +299,7 @@ legend {
  */
 
 progress {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 /**
@@ -322,7 +307,7 @@ progress {
  */
 
 textarea {
-    overflow: auto;
+  overflow: auto;
 }
 
 /**
@@ -331,15 +316,15 @@ textarea {
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-    height: auto;
+  height: auto;
 }
 
 /**
- * 1. Correct the outline style in Safari.
+ * Correct the outline style in Safari.
  */
 
 [type="search"] {
-    outline-offset: -2px; /* 1 */
+  outline-offset: -2px; /* 1 */
 }
 
 /**
@@ -347,7 +332,7 @@ textarea {
  */
 
 [type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
@@ -356,8 +341,15 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button; /* 1 */
-    font: inherit; /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Fix appearance for Firefox
+ */
+[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /**
@@ -365,7 +357,7 @@ textarea {
  */
 
 label[for] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Interactive */
@@ -376,7 +368,7 @@ label[for] {
  */
 
 details {
-    display: block;
+  display: block;
 }
 
 /*
@@ -384,7 +376,7 @@ details {
  */
 
 summary {
-    display: list-item;
+  display: list-item;
 }
 
 /*
@@ -392,7 +384,7 @@ summary {
  */
 
 [contenteditable]:focus {
-    outline: auto;
+  outline: auto;
 }
 
 /* Tables */
@@ -403,21 +395,21 @@ summary {
 */
 
 table {
-    border-color: inherit; /* 1 */
-    border-collapse: collapse;
+  border-color: inherit; /* 1 */
+  border-collapse: collapse;
 }
 
 caption {
-    text-align: left;
+  text-align: left;
 }
 
 td,
 th {
-    vertical-align: top;
-    padding: 0;
+  vertical-align: top;
+  padding: 0;
 }
 
 th {
-    text-align: left;
-    font-weight: bold;
+  text-align: left;
+  font-weight: bold;
 }
