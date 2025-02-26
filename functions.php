@@ -124,17 +124,19 @@ function my_add_scripts()
         true
     );
 
+    //                                                                            ★★★必要なら表示して修正（2/26石田）
     //  hamburger.js
-    wp_enqueue_script(
-        'my_hamburger_js',
-        get_template_directory_uri() . '/assets/js/hamburger.js',
-        array('jquery'),
-        null,
-        true
-    );
+    // wp_enqueue_script(
+    //     'my_hamburger_js',
+    //     get_template_directory_uri() . '/assets/js/hamburger.js',
+    //     array('jquery'),
+    //     null,
+    //     true
+    // );
 
     /**
      * 個々のページ
+     *     //*                                                             ★★★トップページ作成時に確認。（2/26石田）
      */
     if (is_home()) {
         // wp_enqueue_style(
@@ -174,12 +176,13 @@ function my_add_scripts()
         //     null,
         //     true
         // );
-
-    } elseif (is_404()) {
+        //*                                                                       ★★★404ページ作成時に確認。いったん非表示に。（2/26石田）
+        // } elseif (is_404()) {
         // wp_enqueue_style(
         //     'my_error404',
         //     get_template_directory_uri() . '/assets/css/404.css'
         // );
+        //*                                                                       ★★★検索ページ作成時に確認。（2/26石田）
     } elseif (is_search() || is_post_type_archive('dataset')) {
         //条件検索CSS
         // wp_enqueue_style('my_search', get_template_directory_uri() . '/assets/css/results.css');
@@ -192,6 +195,7 @@ function my_add_scripts()
         //     '',
         //     true
         // );
+        //*                                                                       ★★★イベント作成時に確認。（2/26石田）
     } elseif (is_singular('event')) {
         // wp_enqueue_style(
         //     'my_dataset_style',
@@ -227,37 +231,42 @@ function my_add_scripts()
         //     '', // バージョン指定なし
         //     true // フッターに出力
         // );
-    } elseif (is_page('contact') || is_page('confirm') || is_page('thanks')) {
-        wp_enqueue_style(
-            'my_input',
-            get_template_directory_uri() . '/assets/css/input.css',
-        );
-        wp_enqueue_script(
-            'my_mail_js',
-            get_template_directory_uri() . '/assets/js/mail_form.js',
-            ['jquery'], // jQuery に依存
-            '', // バージョン指定なし
-            true // フッターに出力
-        );
-    } elseif (is_page('mypage')) {
-        // お気に入りリスト
-        wp_enqueue_style(
-            'my_favorite',
-            get_template_directory_uri() . '/assets/css/favorite.css'
-        );
-    } elseif (is_category(['news', 'info'])) {
-        // ニュース一覧
-        wp_enqueue_style(
-            'my_news_list',
-            get_template_directory_uri() . '/assets/css/news_list.css'
-        );
-    } elseif (is_single()) {
-        // ニュース詳細
-        wp_enqueue_style(
-            'my_news',
-            get_template_directory_uri() . '/assets/css/news.css'
-        );
-    } elseif (is_page('praivacy')) {
+
+        //お問い合わせページ関連。                                                      ★★★必要なら表示して修正（2/26石田）
+        // } elseif (is_page('contact') || is_page('confirm') || is_page('thanks')) {
+        //     wp_enqueue_style(
+        //         'my_input',
+        //         get_template_directory_uri() . '/assets/css/input.css',
+        //     );
+        //     wp_enqueue_script(
+        //         'my_mail_js',
+        //         get_template_directory_uri() . '/assets/js/mail_form.js',
+        //         ['jquery'], // jQuery に依存
+        //         '', // バージョン指定なし
+        //         true // フッターに出力
+        //     );
+
+        // お気に入りリスト                                                            ★★★必要なら表示して修正（2/26石田）
+        // } elseif (is_page('mypage')) {
+        //     wp_enqueue_style(
+        //         'my_favorite',
+        //         get_template_directory_uri() . '/assets/css/favorite.css'
+        //     );
+        // ニュース一覧                                                        ★★★必要なら表示して修正（2/26石田）
+        // } elseif (is_category(['news', 'info'])) {
+        //     wp_enqueue_style(
+        //         'my_news_list',
+        //         get_template_directory_uri() . '/assets/css/news_list.css'
+        //     );
+        // ニュース詳細                                                        ★★★必要なら表示して修正（2/26石田）
+        // } elseif (is_single()) {
+        //     wp_enqueue_style(
+        //         'my_news',
+        //         get_template_directory_uri() . '/assets/css/news.css'
+        //     );
+
+        // プライバシーポリシー                                                     ★★★必要なら表示して修正（2/26石田）
+        // } elseif (is_page('praivacy')) {
         // プライバシーポリシー
         // wp_enqueue_style(
         //     'my_praivacy',
@@ -291,20 +300,24 @@ add_filter('document_title_parts', 'my_custom_title');
  */
 function my_pre_get_posts($query)
 {
+    //*                                       非表示にしました（2/26石田）
     //管理画面、メインクエリ以外には設定しない
-    if (is_admin() || !$query->is_main_query()) {
-        return;
-    }
+    // if (is_admin() || !$query->is_main_query()) {
+    //     return;
+    // }
+
     //トップページの場合
     if ($query->is_home()) {
         $query->set('posts_per_page', 3);
         return;
     }
+
+    //*                                       非表示にしました（2/26石田）
     // 投稿list画面
-    if ($query->is_category()) {
-        $query->set('posts_per_page', 5);
-        return;
-    }
+    // if ($query->is_category()) {
+    //     $query->set('posts_per_page', 5);
+    //     return;
+    // }
 
     //search画面
     if ($query->is_search() || is_post_type_archive('dataset')) {
@@ -346,38 +359,40 @@ add_action('pre_get_posts', 'my_pre_get_posts');
 // add_action('restrict_manage_posts', 'my_taxonomy_filter');
 
 
+// /**
+//*                                       非表示にしました（2/26石田）
+//
+//  * 検索結果を公開して施設のみ対象にする
+//  */
+// function my_search_exclude($query)
+// {
+//     // 管理画面とメインクエリの場合は、対象外とする
+//     if ($query->is_main_query() && is_admin()) {
+//         return;
+//     }
+
+//     if ($query->is_search()) {
+//         // 検索するカスタム投稿タイプと投稿状態
+//         $query->set('post_type', 'dataset');
+//         $query->set('post_status', 'publish');
+
+//         // 文字列で検索で、検索文字列が空の場合
+//         if (!isset($_GET['s']) || trim($_GET['s']) === '') {
+//             // postのIDを0で指定して、検索結果を０件にする
+//             $query->set('post__in', array(0));
+//         }
+//     }
+
+//     return $query;
+// }
+// add_filter(
+//     'pre_get_posts',
+//     'my_search_exclude'
+// );
+
+
 /**
- * 検索結果を公開して施設のみ対象にする
- */
-function my_search_exclude($query)
-{
-    // 管理画面とメインクエリの場合は、対象外とする
-    if ($query->is_main_query() && is_admin()) {
-        return;
-    }
-
-    if ($query->is_search()) {
-        // 検索するカスタム投稿タイプと投稿状態
-        $query->set('post_type', 'dataset');
-        $query->set('post_status', 'publish');
-
-        // 文字列で検索で、検索文字列が空の場合
-        if (!isset($_GET['s']) || trim($_GET['s']) === '') {
-            // postのIDを0で指定して、検索結果を０件にする
-            $query->set('post__in', array(0));
-        }
-    }
-
-    return $query;
-}
-add_filter(
-    'pre_get_posts',
-    'my_search_exclude'
-);
-
-
-/**
- * コメント入力欄の表示順を変更する
+ * コメント入力欄の表示順を変更する                                           ★★★一応このままにします（2/26石田）
  *
  * @param array $fields array
  * @retuen array $fields array
@@ -395,59 +410,62 @@ add_filter(
     'my_move_comment_field_to_bottom'
 );
 
-/**
- * 「メールアドレスが公開されることはありません。 * が付いている欄は必須項目です」の文言を削除
- *
- * @param array $defaults array
- * @retuen array $defaults array
- */
-function my_comment_notes_before($defaults)
-{
-    $defaults['comment_notes_before'] = '';
-    return $defaults;
-}
-add_filter("comment_form_defaults", "my_comment_notes_before");
+// /**
+//*                                                                        ★★★非表示にしました（2/26石田）
+//
+//  * 「メールアドレスが公開されることはありません。 * が付いている欄は必須項目です」の文言を削除
+//  *
+//  * @param array $defaults array
+//  * @retuen array $defaults array
+//  */
+// function my_comment_notes_before($defaults)
+// {
+//     $defaults['comment_notes_before'] = '';
+//     return $defaults;
+// }
+// add_filter("comment_form_defaults", "my_comment_notes_before");
+
+// /**
+//  * 「コメントを残す」を削除
+//  *
+//  * @param array $defaults arg
+//  * @return array $defaults arg
+//  */
+// function my_title_reply($defaults)
+// {
+//     $defaults['title_reply'] = '';
+//     return $defaults;
+// }
+// add_filter('comment_form_defaults', 'my_title_reply');
+
+// /**
+//  * contact Formのときには整形機能をOFFにする
+//  */
+// add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
+// function my_wpcf7_autop()
+// {
+//     return false;
+// }
+
 
 /**
- * 「コメントを残す」を削除
- *
- * @param array $defaults arg
- * @return array $defaults arg
- */
-function my_title_reply($defaults)
-{
-    $defaults['title_reply'] = '';
-    return $defaults;
-}
-add_filter('comment_form_defaults', 'my_title_reply');
-
-/**
- * contact Formのときには整形機能をOFFにする
- */
-add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
-function my_wpcf7_autop()
-{
-    return false;
-}
-
-
-/**
+ *                                                                         ★★★ 非表示にしました（2/26石田）
  * ランキング用
  * ページ表示の連続更新による閲覧回数カウント制限、transient、1時間
  */
 // 分類の表示回数を増やす関数
-function increment_term_view_count($term_id)
-{
-    $user_ip = $_SERVER['REMOTE_ADDR']; //get user IP
-    $transient_key = 'view_count_' . $term_id . '_' . md5($user_ip);
+// function increment_term_view_count($term_id)
+// {
+//     $user_ip = $_SERVER['REMOTE_ADDR']; //get user IP
+//     $transient_key = 'view_count_' . $term_id . '_' . md5($user_ip);
 
-    if (false === get_transient($transient_key)) {
+//     if (false === get_transient($transient_key)) {
 
-        $view_count = get_term_meta($term_id, 'view_count', true);
-        $view_count = $view_count ? intval($view_count) : 0;
+//         $view_count = get_term_meta($term_id, 'view_count', true);
+//         $view_count = $view_count ? intval($view_count) : 0;
 
-        update_term_meta($term_id, 'view_count', $view_count + 1);
+//         update_term_meta($term_id, 'view_count', $view_count + 1);
 
-        set_transient($transient_key, 'viewed', 1); // transientを設定します。有効期限は1時間（3600秒）です。
-    }
-}
+//         set_transient($transient_key, 'viewed', 1); // transientを設定します。有効期限は1時間（3600秒）です。
+//     }
+// }
