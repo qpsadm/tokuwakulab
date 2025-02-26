@@ -2,13 +2,15 @@
 
 /* 全体共通設定 */
 html {
-    font-size: 10px;
-}
-
-body {
+    font-size: 62.5%;
     letter-spacing: 0.3rem;
     line-height: 2rem;
+    color: #111111;
 }
+
+/* body {
+
+} */
 
 h2 {
     font-size: 4.0rem;
@@ -24,6 +26,7 @@ p {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 /* 余白設定 */
