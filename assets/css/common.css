@@ -6,6 +6,7 @@ html {
     letter-spacing: 0.3rem;
     line-height: 2rem;
     color: #111111;
+    font-family: "Noto Sans JP", serif;
 }
 
 /* body {
@@ -17,7 +18,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
 }
 
 p {
@@ -47,4 +48,36 @@ img {
     .inner {
         margin: 0 60px;
     }
+}
+
+/* 縦型カード */
+.card_wrap{
+    display: block;
+    margin: 24px;
+    width: 268px;
+    height: auto;
+    border: solid 8px #58BE15;
+    border-radius: 12px;
+}
+
+.card_wrap img{
+    border-radius: 12px;
+}
+
+.card_wrap h3{
+font-size: 2.4rem;
+margin: 1.6rem;
+line-height: 2.4rem;
+}
+
+.card_wrap span{
+    font-size: 1.6rem;
+}
+
+.card_wrap_inner{
+    padding: 1.2rem;
+}
+
+.card_wrap_linefeed{
+    margin: 0.8rem;
 }
