@@ -14,47 +14,41 @@
         <div>
             <form action="<?php echo home_url('/'); ?>" method="GET">
                 <!-- タクソノミー検索 -->
+
                 <?php
-                // $args = [
-                //     'area',
-                //     'event_type',
-                //     'experience',
-                //     'other',
-                //     'loc_type',
-                //     'age',
-                //     'time',
-                //     'vacation',
-                //     'frequency',
-                // ];
-                // $terms = get_terms('area');
-                // $taxonomy = get_taxonomy('area');
-
-                // print('<pre>');
-                // print_r($taxonomy);
-                // print('</pre>');
+                $taxonomies = [
+                    'area',
+                    'event_type',
+                    'experience',
+                    'other',
+                    'loc_type',
+                    'age',
+                    'time',
+                    'vacation',
+                    'frequency',
+                ];
                 ?>
-                <?php
-                $taxonomies = get_taxonomies();
-                print('<pre>');
-                print_r($taxonomies);
-                print('</pre>');
-                ?>
-<!--
-                <?php foreach ($taxonomies as $taxonomy): ?>
-                    <?php if (!$taxonomy->org_tax && !$taxonomy->faq_tax && !$taxonomy->column_type): ?>
 
+                <?php foreach ($taxonomies as $taxonomy) : ?>
+                    <?php $taxonomy_obj = get_taxonomy($taxonomy); ?><!-- タクソノミーのオブジェクトを取得 -->
+                    <?php if($taxonomy=== 'event_type'): ?>
+                        <?php $terms = get_terms(['taxonomy' => $taxonomy]); ?>
+                    <?php $terms = get_terms(['taxonomy' => $taxonomy]); ?> <!-- タームの取得 -->
 
-                        <?php
-                        echo $taxonomy->label;
-
-                        ?>
+                    <?php if (!empty($terms)) : ?>
+                        <p><?php echo $taxonomy_obj->label; ?></p> <!-- タクソノミー名を表示 -->
+                        <ul>
+                            <?php foreach ($terms as $term) : ?>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="cate[]" value="<?php echo $term->slug; ?>">
+                                        <?php echo $term->name; ?> <!-- タームを表示 -->
+                                    </label>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
                     <?php endif; ?>
-                <?php endforeach; ?> -->
-
-
-
-
-
+                <?php endforeach; ?>
 
 
                 <!-- フリーワード検索 -->
