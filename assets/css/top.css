@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* .top_kv {} */
+
+.top_kv_post {
+    width: 85%;
+    max-width: 800px;
+    border: solid 4px #FFCC00;
+    border-radius: 12px;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+/* .top_event_list {
+    width: ;
+
+} */
