@@ -16,7 +16,7 @@
                     <?php
                     $all_link = home_url('/column');
                     echo '<li><a href="' . $all_link . '">All</a></li>';
-                    
+
                     $terms = get_terms(array(
                         'taxonomy' => 'column_type',
                         'hide_empty' => false,
@@ -34,7 +34,7 @@
                         <ul class="foodList">
 
 
-                            <!-- ループ -->
+                            <!-- コラムループ -->
                             <?php if (have_posts()): ?>
                                 <?php while (have_posts()): ?>
                                     <?php the_post(); ?>

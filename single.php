@@ -67,8 +67,8 @@
             <?php
             //おすすめイベントを表示する2.26作成中
             $args = [
-                "post_type" => "post", //投稿記事だけを指定
-                "posts_per_page" => 1, //最新記事を３件表示
+                "post_type" => "event", //投稿記事だけを指定
+                "posts_per_page" => 3, //最新記事を３件表示
                 "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
 
             ];

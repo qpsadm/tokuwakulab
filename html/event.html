@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>徳島わくわくラボ</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ファビコンの設定 -->
+    <!-- フォントの読み込み -->
+    <!-- noto sans jp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- あかり -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xdy5khp',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
 </head>
+
 <body>
-    <!-- ヘッダー -->
     <header>
         <div>
             <!-- ロゴ -->
             <h1>
-                    <a href="#">
-                        <div><img src="" alt=""></div>
-                    </a>
-                </h1>
+                <a href="#">
+                    <div><img src="" alt=""></div>
+                </a>
+            </h1>
             <!-- ハンバーガーボタン -->
             <div>
                 <span></span>
@@ -24,203 +51,297 @@
         </div>
         <nav>
             <ul>
-                <li><a href="">イベント検索</a></li>
-                <li><a href="">イベント一覧</a></li>
-                <li><a href="">コラム一覧</a></li>
-                <li><a href="">お気に入り</a></li>
-                <li><a href="">よくある質問</a></li>
-                <li><a href="">当サイトについて</a></li>
+                <li><a href="#">イベント検索</a></li>
+                <li><a href="#">イベント一覧</a></li>
+                <li><a href="#">コラム一覧</a></li>
+                <li><a href="#">お知らせ一覧</a></li>
+                <li><a href="#">お気に入り</a></li>
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>イベント詳細</h2>
-        <!-- パンくずリスト -->
-        <div></div>
-
         <section>
-            <h2>イベントタイトル</h2>
-            <p>主催団体名</p>
-            <div>
-                <!-- いいねボタン -->
-                <a href="#"></a>
-                <!-- お気に入りボタン -->
-                <a href="#"></a>
+            <h2 class="page_title">イベント詳細</h2>
+        </section>
+
+        <div class="inner">
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <a href="#">TOP</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span>
+                <span>パンくずリスト</span>
             </div>
-            <!-- イベント画像 -->
-            <div></div>
-            <!-- ページネーション -->
-            <div></div>
-            <p>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</p>
-        </section>
 
-        <section>
-            <h3>基本情報</h3>
-            <table>
-                <tr>
-                    <th><img src="" alt="">開催日時</th>
-                    <td>ここに詳細が入りますここに詳細が入ります</td>
-                </tr>
-                <tr>
-                    <th><img src="" alt="">開催場所</th>
-                    <td>ここに詳細が入りますここに詳細が入ります</td>
-                </tr>
-                <tr>
-                    <th><img src="" alt="">対象者</th>
-                    <td>ここに詳細が入りますここに詳細が入ります</td>
-                </tr>
-                <tr>
-                    <th><img src="" alt="">参加費</th>
-                    <td>ここに詳細が入りますここに詳細が入ります</td>
-                </tr>
-                <tr>
-                    <th><img src="" alt="">その他</th>
-                    <td>ここに詳細が入りますここに詳細が入ります</td>
-                </tr>
-            </table>
-            <!-- アイコン群 -->
-            <ul>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </ul>
-
-            <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
-            <div>
-                <p>イベントタイトルのチラシ</p>
-                <a href="#">ダウンロード</a>
-            </div>
-        </section>
-
-        <section>
-            <h3>会場マップ</h3>
-            <!-- Google Mapの埋め込み -->
-            <div></div>
-        </section>
-
-        <section>
-            <h3>参加者様からの感想</h3>
-            <div>
-                <!-- 感想1つ目 -->
+            <section>
+                <h2>イベントタイトル</h2>
+                <p>主催団体名</p>
                 <div>
-                    <p>徳島最高！さん</p>
-                    <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
+                    <!-- いいねボタン -->
+                    <a href="#"></a>
+                    <!-- お気に入りボタン -->
+                    <a href="#"></a>
                 </div>
-                <!-- 感想2つ目 -->
-                <div>
-                    <p>徳島最高！さん</p>
-                    <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
-                </div>
-            </div>
+                <!-- イベント画像 -->
+                <div></div>
+                <!-- ドットナビ -->
+                <div></div>
+                <p>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</p>
+            </section>
 
-            <!-- クチコミ投稿フォーム -->
-            <h3>クチコミを投稿する</h3>
-            <form action="#" method="">
+            <section>
+                <h3>基本情報</h3>
                 <table>
-                    <th>お名前</th>
-                    <td><input type="text" name="name"></td>
-                    <th>メールアドレス</th>
-                    <td><input type="text" name="email"></td>
-                    <th>感想</th>
-                    <td><textarea name="comment" rows="4" cols="40"></textarea></td>
+                    <tr>
+                        <th><img src="" alt="">開催日時</th>
+                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt="">開催場所</th>
+                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt="">対象者</th>
+                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt="">参加費</th>
+                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt="">その他</th>
+                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                    </tr>
                 </table>
-                <!-- 送信ボタン -->
-                <div>
-                    <input type="submit" value="クチコミを送信">
-                </div>
-            </form>
-        </section>
-
-        <!-- イベント申し込みボタン -->
-        <div><a href="#">お申し込みはこちら</a></div>
-
-        <!-- 区切り線 -->
-        <span></span>
-
-        <section>
-            <h3>開催予定のイベント</h3>
-            <div>
-                <!-- カード型 -->
+                <!-- アイコン群 存在するもののみ表示 -->
                 <ul>
-                    <li>
-                        <a class="card_wrap" href="#">
-                            <div class="card_wrap_inner">
-                                <div>
-                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                </div>
-                                <div>
-                                    <h3>カードタイトルが入ります</h3>
-                                    <div class="card_wrap_linefeed">
-                                        <span>開催日</span>
-                                        <span>2025/12/12(土)</span>
-                                    </div>
-                                    <div class="card_wrap_linefeed">
-                                        <span>申込締切</span>
-                                        <span>2025/12/12(土)</span><span>から</span>
-                                        <span>2025/12/12(土)</span><span>まで</span>
-                                    </div>
-                                    <div class="card_wrap_linefeed">
-                                        <span>開催場所</span>
-                                        <span>徳島市寺島本町東3丁目12-8</span>
-                                    </div>
-                                    <div class="card_wrap_linefeed">
-                                        <span>対象学年</span>
-                                        <span>小学5年生</span>
-                                    </div>
-                                    <span>#地域</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
                 </ul>
-            </div>
-            <!-- ボタン -->
-            <a href="#">イベント一覧へ</a>
-        </section>
 
-        <!-- 区切り線 -->
-        <span></span>
+                <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
+                <div>
+                    <span>イベントタイトルのチラシ</span>
+                    <a href="#">ダウンロード</a>
+                </div>
+            </section>
 
-        <section>
-            <h3>関連コラム記事</h3>
+            <!-- 会場マップ -->
+            <section>
+                <h3>会場マップ</h3>
+                <!-- Google Mapの埋め込み -->
+                <div></div>
+            </section>
+
+            <!-- 参加者様からの感想 -->
+            <section>
+                <h3>参加者様からの感想</h3>
+                <div>
+                    <!-- 感想1つ目 -->
+                    <div>
+                        <p>徳島最高！さん</p>
+                        <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
+                    </div>
+                    <!-- 感想2つ目 -->
+                    <div>
+                        <p>徳島最高！さん</p>
+                        <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
+                    </div>
+                </div>
+
+                <!-- クチコミ投稿フォーム -->
+                <h3>クチコミを投稿する</h3>
+                <form action="#" method="">
+                    <table>
+                        <tr>
+                            <th>お名前*</th>
+                            <td><input type="text" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <th>メールアドレス*</th>
+                            <td><input type="text" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <th>感想*</th>
+                        </tr>
+                        <tr>
+                            <td><textarea name="comment" rows="4" cols="40" required></textarea></td>
+                        </tr>
+                    </table>
+                    <!-- 送信ボタン -->
+                    <div>
+                        <input type="submit" value="クチコミを送信">
+                    </div>
+                </form>
+            </section>
+
+            <!-- イベント申し込みボタン -->
             <div>
-                <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
-                <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
-                <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
+                <a href="#">お申し込みはこちら＞</a>
             </div>
-            <!-- ボタン -->
-            <a href="#">コラム一覧へ</a>
-        </section>
 
-        <!-- 区切り線 -->
-        <span></span>
+            <!-- 区切り線 -->
+            <span></span>
 
-        <!-- イベント申し込みボタン -->
-        <div><a href="#">お申し込みはこちら</a></div>
+            <section>
+                <h3>開催予定のイベント</h3>
+                <div>
+                    <!-- イベントカード型（縦） -->
+                    <ul>
+                        <li>
+                            <a class="card_wrap" href="#">
 
+                                <div class="card_countdown">
+                                    <span>残り</span>
+                                    <span class="card_countdownno">1</span>
+                                    <span>日</span>
+                                </div>
 
-        <!-- 豆知識 -->
-        <div>
-            <img src="" alt="">
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                        </div>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- イベントカード型（縦） -->
+                    <ul>
+                        <li>
+                            <a class="card_wrap" href="#">
+
+                                <div class="card_countdown">
+                                    <span>残り</span>
+                                    <span class="card_countdownno">1</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                        </div>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ボタン -->
+                <div>
+                    <a href="#">イベント一覧へ＞</a>
+                </div>
+            </section>
+
+            <!-- 区切り線 -->
+            <span></span>
+
+            <section>
+                <h3>関連コラム記事</h3>
+                <div>
+                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
+                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
+                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
+                </div>
+            </section>
+
+            <!-- 区切り線 -->
+            <span></span>
+
+            <!-- イベント申し込みボタン -->
+            <div>
+                <a href="#">お申し込みはこちら＞</a>
+            </div>
+
         </div>
-        <!-- トップへ戻る -->
-        <div>
-            <a href="#">
-                <img src="" alt="">
-            </a>
-        </div>
-        <!-- フッター -->
-        <footer>
-            <ul>
-                <li><a href="">利用規約</a></li>
-                <li><a href="">主催団体様お問い合わせ</a></li>
-            </ul>
-            <small>copyright</small>
-        </footer>
     </main>
+
+    <!-- 豆知識 -->
+    <div>
+        <img src="" alt="">
+    </div>
+    <!-- トップへ戻る -->
+    <div>
+        <a href="#">
+            <img src="" alt="">
+        </a>
+    </div>
+    <!-- フッター -->
+    <footer>
+        <ul>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">主催団体様お問い合わせ</a></li>
+        </ul>
+        <small>copyright</small>
+    </footer>
 </body>
+
 </html>
