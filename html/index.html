@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/top.css">
+
+
+    <!-- slickの読み込み -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -52,11 +60,12 @@
     <main>
         <div class="top_kv_wrap">
             <!-- キービジュアル -->
-            <div class="top_kv">
-                <img src="../assets/img/AdobeStock_537320558.jpeg" alt="キービジュアル">
-                <img src="../assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル">
-                <img src="../assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル">
-            </div>
+            <ul class="slider">
+                <li><img src="../assets/img/AdobeStock_537320558.jpeg" alt="キービジュアル"></li>
+                <li><img src="../assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
+                <li><img src="../assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
+            </ul>
+
             <!-- お知らせ欄 -->
             <div class="top_kv_post">
                 <span>2025/2/18</span>
@@ -65,7 +74,9 @@
         </div>
 
         <section>
-            <h2>イベント新着</h2>
+            <div class="top_ttl_event">
+                <h2>イベント新着</h2>
+            </div>
             <div class="top_event_list">
                 <!-- カード型 -->
                 <ul>
@@ -168,7 +179,9 @@
         </section>
 
         <section>
-            <h2>コラム新着</h2>
+            <div class="top_ttl_column">
+                <h2>コラム新着</h2>
+            </div>
             <div class="top_column_list">
                 <ul>
                     <li>
@@ -270,8 +283,10 @@
         </section>
 
         <section>
-            <h2>おすすめコラム記事</h2>
-            <div class="top_column_recomend">
+            <div class="top_ttl_recomend">
+                <h2>おすすめコラム記事</h2>
+            </div>
+            <div class="top_recomend">
                 <ul>
                     <li>
                         <a class="card_wrap" href="#">
@@ -342,7 +357,9 @@
         </section>
 
         <section>
-            <h2>主催団体様</h2>
+            <div class="top_ttl_org">
+                <h2>主催団体様</h2>
+            </div>
             <p>イベントを主催している団体様を紹介します！</p>
             <ul>
                 <li>
@@ -423,29 +440,36 @@
                     </a>
                     <a href="#">
                         <ul>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_200086909.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <a href="#">
+                                    <img src="../assets/img/AdobeStock_200086909.jpeg" alt="インスタグラム写真">
+                                </a>
                             </li>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_204053911.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <a href="#">
+                                    <img src="../assets/img/AdobeStock_204053911.jpeg" alt="インスタグラム写真">
+                                </a>
                             </li>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_227271396.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <a href="#">
+                                    <img src="../assets/img/AdobeStock_227271396.jpeg" alt="インスタグラム写真">
+                                </a>
                             </li>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_233644358.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <a href="#">
+                                    <img src="../assets/img/AdobeStock_233644358.jpeg" alt="インスタグラム写真">
+                                </a>
                             </li>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_248694432.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <div>
+                                    <a href="#">
+                                        <img src="../assets/img/AdobeStock_248694432.jpeg" alt="インスタグラム写真">
+                                    </a>
                             </li>
-                            <li>
-                                <div><a href="#"><img src="../assets/img/AdobeStock_276825083.jpeg" alt="インスタグラム写真"></a>
-                                </div>
+                            <li class="top_instagram_img">
+                                <a href="#">
+                                    <img src="../assets/img/AdobeStock_276825083.jpeg" alt="インスタグラム写真">
+                                </a>
                             </li>
                         </ul>
                     </a>
@@ -472,6 +496,12 @@
         </ul>
         <small>copyright</small>
     </footer>
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slickの読み込み -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 自作JSの読み込み -->
+    <script src="../assets/js/animation.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,61 @@
 @charset "utf-8";
 
-/* .top_kv {
+/* キービジュアル */
+.top_kv_wrap {
+    position: relative;
+}
 
-} */
+.slider {
+    margin: 0 auto;
+    /* max-width: 500px; */
+    /* width: 80%; */
+}
+
+.slider img {
+    width: 100%;
+}
+
+/* お知らせ欄 */
+.top_kv_post {
+    padding: 1.6rem;
+    position: absolute;
+    bottom: 0.1%;
+    left: 8%;
+}
+
+/* タイトルの設定 */
+
+.top_ttl_event,
+.top_ttl_column,
+.top_ttl_recomend,
+.top_ttl_org {
+    display: flex;
+    justify-content: center;
+}
+
+.top_ttl_event h2,
+.top_ttl_recomend h2 {
+    display: inline-block;
+    background-color: #58BE15;
+    border-radius: 12px 12px 0 0;
+    padding: 1.6rem;
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.top_ttl_column h2,
+.top_ttl_org h2 {
+    display: inline-block;
+    background-color: #FF7B00;
+    border-radius: 12px 12px 0 0;
+    padding: 1.6rem;
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.top_instagram_wrap h2 {
+    text-align: center;
+}
 
 .top_kv_post {
     width: 85%;
@@ -14,27 +67,38 @@
 }
 
 /* イベント新着 */
-.top_event_list {
-    border: solid 16px #FF7B00;
+.top_event_list,
+.top_recomend {
+    border: solid 16px #58BE15;
     border-radius: 12px;
 }
 
 /* コラム新着 */
 .top_column_list {
-    border: solid 16px #58BE15;
+    border: solid 16px #FF7B00;
     border-radius: 12px;
 }
 
+
+
 /* インスタグラム */
 .top_instagram_wrap {
-    /* border: solid 4px;
-    border-image: linear-gradient(to bottom, #A635CC, #FF6A6A) 1; */
     background: linear-gradient(to bottom, #A635CC, #FF6A6A);
     border-radius: 12px;
+    padding: 0.4rem;
 }
 
 .top_instagram_inner {
     background: #ffffff;
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: 8px;
 }
+
+.top_instagram_img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* .top_instagram_img img {
+    width: 300px;
+    height: 300px;
+} */
