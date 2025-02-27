@@ -8,65 +8,72 @@ get_header();
 
     <section class="kv">
         <div class="kv_inner">
-            <h1 class="kv_title">FOOD SCIENCE<br>TOKYO</h1>
-            <p class="kv_subtitle">FROM JAPAN</p>
+            <!-- ベタ打ち -->
+            <h1 class="kv_title header">徳島わくわくラボ</h1>
         </div>
 
+        <!-- slickの画像はあるものに差し替え -->
         <div class="kv_slider js-slider">
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/home/kv-01@2x.jpg');"></div>
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/home/kv-02@2x.jpg');"></div>
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/home/kv-03@2x.jpg');"></div>
+            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_461039205.jpeg');"></div>
+            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_357399495.jpeg');"></div>
+            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_570522660.jpeg');"></div>
         </div>
-        <div class="kv_overlay"></div>
 
-        <div class="kv_scroll">
-            <a href="#concept" class="kv_scrollLink">
-                <p>SCROLL DOWN</p>
-                <div class="kv_scrollIcon"><i class="fa-solid fa-chevron-down"></i></div>
-            </a>
+        <!-- NEWS表示用、仮組み -->
+        <div class="kv_news text_border">
+            <p class="kv_news_text">
+                <!--ここにPHPを設定-->
+                <span>2025-03-17</span>
+                <a class="news_link" href="https://tks-navi.com/2025-03-20/2038/">
+                    ここにお知らせがある時にお知らせタイトルが入ります</a>
+            </p>
         </div>
+
     </section>
 
 <?php endif; ?>
 
+<!-- イベント新着セクション。横並びカード3件表示 -->
 <section class="section section-concept" id="concept">
     <div class="section_inner">
-        <div class="section_headerWrapper">
-            <header class="section_header">
-                <h2 class="heading heading-primary"><span>コンセプト</span>CONCEPT</h2>
-            </header>
+        <div class="section header">
+            <h2 class="heading heading-primary">イベント新着</h2>
             <div class="section_pic">
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img01@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img02@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img03@2x.png" alt=""></div>
+                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_570522660.jpeg" alt=""></div>
+                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_570522660.jpeg" alt=""></div>
+                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_570522660.jpeg" alt=""></div>
             </div>
         </div>
-        <div class="section_body">
-            <p>
-                ご提供するメキシコ料理は、当店の店主が修行したローカルフードを中心にした、ご家族でも楽しめる、美味しいメキシカンです。<br>
-                スパイシーでヘルシーな本場の味をお楽しみ下さい。
-            </p>
-            <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">もっと見る</a>
-            </div>
+        <div class="section_btn">
+            <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">イベント一覧へ</a>
         </div>
     </div>
 </section>
 
+<!-- コラム新着セクション。縦並びカード3件表示 -->
 <section class="section">
     <div class="section_inner">
-        <header class="section_header">
-            <h2 class="heading heading-primary"><span>最新情報</span>NEWS</h2>
+        <div class="section header">
+            <h2 class="heading heading-primary">コラム新着</h2>
             <div class="section_headerBtn">
+                <!-- ↓PHPは未修整。2/27石田 -->
                 <?php
                 $news = get_term_by('slug', 'news', 'category');
                 $news_link = get_term_link($news, 'category');
                 ?>
-                <a href="<?php echo $news_link; ?>" class="btn btn-more">もっと見る</a>
+                <a href="<?php echo $news_link; ?>" class="btn btn-more">コラム記事一覧へ</a>
             </div>
-        </header>
-        <div class="section_body">
+        </div>
+</section>
+
+<!-- おすすめコラム記事。2件ランダム表示 -->
+<section class="section">
+    <div class="section_body">
+        <div class="section header">
+            <h2 class="heading heading-primary">おすすめコラム記事</h2>
             <div class="cardList cardList-1row">
+
+                <!-- ↓PHPは未修整。2/27石田 -->
 
                 <!-- WordPress ループの開始 -->
                 <?php if (have_posts()) : ?>
@@ -79,63 +86,30 @@ get_header();
                         <!-- WordPress ループの終了 -->
                     <?php endwhile; ?>
                 <?php endif; ?>
-
             </div>
         </div>
     </div>
 </section>
 
-
+<!-- 主催団体の紹介セクション -->
 <section class="section section-info">
     <div class="section_inner">
-        <div class="section_content">
-            <header>
-                <h2 class="heading heading-primary"><span>インフォメーション</span>INFORMATION</h2>
-            </header>
+        <div class="section header">
+            <div class="section_content">
+                <h2 class="heading heading-primary">主催団体様</h2>
 
-            <ul class="infoList">
-                <li class="infoList_item">
-                    <span class="infoList_prepend">営業時間</span>
-                    <span class="infoList_num">09:00〜21:00</span><span class="infoList_time">(LO 20:00)</span>
-                    <span class="infoList_append">店休日：火曜日</span>
-                </li>
-                <li class="infoList_item">
-                    <span class="infoList_prepend">お電話でのお問い合わせ</span>
-                    <span class="infoList_num">03-0000-0123</span>
-                </li>
-                <li class="infoList_item">
-                    <span class="infoList_prepend">メールでのお問い合わせ</span>
-                    <div class="infoList_btn">
-                        <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">お問い合わせ</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                <!-- ↓PHPは未修整。2/27石田 -->
 
-        <div class="section_pic">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/info_img01@2x.png" alt="">
-        </div>
-    </div>
-</section>
-
-
-<section class="section section-access">
-    <div class="section_inner">
-        <div class="section_content">
-            <header class="section_header">
-                <h2 class="heading heading-secondary">アクセス</h2>
-            </header>
-            <div class="section_body">
-                <p>〒162-0846 東京都新宿区市谷左内町21-13</p>
                 <div class="section_btn">
-                    <a href="<?php echo get_permalink(36); ?>" class="btn btn-primary">アクセスはこちら</a>
+                    <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">主催団体一覧へ</a>
                 </div>
             </div>
         </div>
-        <div class="section_pic">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/access_img01@2x.png" alt="">
-        </div>
-    </div>
+</section>
+
+<!-- インスタグラムセクション -->
+<section class="section">
+    <!-- 後日調べます -->
 </section>
 
 <!-- footer.phpを読み込む -->
