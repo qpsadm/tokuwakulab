@@ -54,20 +54,26 @@ img {
 .card_wrap{
     display: block;
     margin: 24px;
-    width: 268px;
+    width: 300px;
     height: auto;
     border: solid 8px #58BE15;
     border-radius: 12px;
 }
 
 .card_wrap img{
+    width: 240px;
+    height: auto;
     border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    aspect-ratio: 0 3/4;
 }
 
 .card_wrap h3{
 font-size: 2.4rem;
-margin: 1.6rem;
-line-height: 2.4rem;
+margin: 1.6rem 0;
+line-height: 2.8rem;
+font-weight: 900;
 }
 
 .card_wrap span{
@@ -78,6 +84,22 @@ line-height: 2.4rem;
     padding: 1.2rem;
 }
 
-.card_wrap_linefeed{
-    margin: 0.8rem;
+.card_linefeed{
+    margin: 0.8rem 0;
+}
+
+.card_subtitle{
+    font-weight: 600;
+}
+
+.card_tag{
+    background-color: #58BE15;
+    width: auto;
+    height: auto;
+    padding: 0.4rem 2.4rem;
+    border-radius: 32px;
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    margin: 1.6rem 0;
 }
