@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ファビコンの設定 -->
+    <!-- フォントの読み込み -->
+    <!-- noto sans jp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
 </head>
+
 <body>
     <header>
         <div>
             <!-- ロゴ -->
             <h1>
-                        <a href="#">
-                            <div><img src="" alt=""></div>
-                        </a>
-                    </h1>
+                <a href="#">
+                    <div><img src="" alt=""></div>
+                </a>
+            </h1>
             <!-- ハンバーガーボタン -->
             <div>
                 <span></span>
@@ -23,162 +38,270 @@
         </div>
         <nav>
             <ul>
-                <li><a href="">イベント検索</a></li>
-                <li><a href="">イベント一覧</a></li>
-                <li><a href="">コラム一覧</a></li>
-                <li><a href="">お気に入り</a></li>
-                <li><a href="">よくある質問</a></li>
-                <li><a href="">当サイトについて</a></li>
+                <li><a href="#">イベント検索</a></li>
+                <li><a href="#">イベント一覧</a></li>
+                <li><a href="#">コラム一覧</a></li>
+                <li><a href="#">お知らせ一覧</a></li>
+                <li><a href="#">お気に入り</a></li>
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- ページタイトル -->
-        <h2 class="page_title">
+        <div class="inner">
+            <!-- ページタイトル -->
+            <h2 class="page_title">
             月別イベント一覧
         </h2>
-        <!-- ハンバーガーボタン -->
-        <div>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <!-- 開催年月日が表示 -->
-        <ul>
-            <li><a href="#">
-                    2025.02
-                </a></li>
-            <li><a href="#">
-                    2025.03
-                </a></li>
-            <li><a href="#">
-                    2025.04
-                </a></li>
-            <li><a href="#">
-                    2025.05
-                </a></li>
-            <li><a href="#">
-                    2025.06
-                </a></li>
-            <li><a href="#">
-                    2025.07
-                </a></li>
-            <li><a href="#">
-                    2025.08
-                </a></li>
-            <li><a href="#">
-                    2025.09
-                </a></li>
-            <li><a href="#">
-                    2025.10
-                </a></li>
-            <li><a href="#">
-                    2025.11
-                </a></li>
-            <li><a href="#">
-                    2025.12
-                </a></li>
-            <li><a href="#">
-                    2026.01
-                </a></li>
-        </ul>
-        <!-- ここから検索結果 -->
-        <div>
-            <div>
-                <p>検索結果〇〇件</p>
-                <p>1-6件を表示</p>
+
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <a href="#">TOP</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span>
+                <span>パンくずリスト</span>
             </div>
+
+            <!-- 開催年月日が表示 -->
             <ul>
-                <!-- 共通カード型 -->
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.02
                     </a></li>
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.03
                     </a></li>
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.04
                     </a></li>
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.05
                     </a></li>
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.06
                     </a></li>
-                <li><a class="card_wrap" href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
+                <li><a href="#">
+                        2025.07
+                    </a></li>
+                <li><a href="#">
+                        2025.08
+                    </a></li>
+                <li><a href="#">
+                        2025.09
+                    </a></li>
+                <li><a href="#">
+                        2025.10
+                    </a></li>
+                <li><a href="#">
+                        2025.11
+                    </a></li>
+                <li><a href="#">
+                        2025.12
+                    </a></li>
+                <li><a href="#">
+                        2026.01
                     </a></li>
             </ul>
-            <!-- ページネーション -->
+            <!-- ここから検索結果 -->
             <div>
-                <span>◁</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>▷</span>
+                <div>
+                    <p>検索結果〇〇件</p>
+                    <p>1-6件を表示</p>
+                </div>
+                <ul>
+                    <!-- 共通カード型 -->
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div class="card_wrap_inner">
+                                <div>
+                                    <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <h3>カードタイトルが入ります</h3>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催日</span>
+                                        <span>2025/12/12(土)</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>申込締切</span>
+                                        <span>2025/12/12(土)</span><span>から</span>
+                                        <span>2025/12/12(土)</span><span>まで</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>開催場所</span>
+                                        <span>徳島市寺島本町東3丁目12-8</span>
+                                    </div>
+                                    <div class="card_wrap_linefeed">
+                                        <span>対象学年</span>
+                                        <span>小学5年生</span>
+                                    </div>
+                                    <span>#地域</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- ページネーション -->
+                <div>
+                    <span>◁</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>▷</span>
+                </div>
             </div>
-        </div>
     </main>
     <!-- 豆知識 -->
     <div>

@@ -18,9 +18,29 @@
 
             <br>
             <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y年m月d日'); ?></time>
+
+
+
+
+
         </div>
 
-
-
     </a>
+
+    <!-- タクソノミーを取得して表示 -->
+    <br>
+
+    <?php
+    $terms = get_the_terms(get_the_ID(), 'column_type');
+    if (!empty($terms) && !is_wp_error($terms)) {
+        echo '<p class="column-taxonomy">';
+        foreach ($terms as $term) {
+
+            //タクソノミー一覧ページに飛ぶリンクを付ける
+            echo '<a href="' . esc_url(get_term_link($term)) . '" class="taxonomy-badge">' . esc_html($term->name) . '</a> ';
+        }
+        echo '</p>';
+    }
+    ?>
+
 </div>
