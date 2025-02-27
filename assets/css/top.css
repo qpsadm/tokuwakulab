@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/* .top_kv {
+
+} */
+
+.top_kv_post {
+    width: 85%;
+    max-width: 800px;
+    border: solid 4px #FFCC00;
+    border-radius: 12px;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+/* イベント新着 */
+.top_event_list {
+    border: solid 16px #FF7B00;
+    border-radius: 12px;
+}
+
+/* コラム新着 */
+.top_column_list {
+    border: solid 16px #58BE15;
+    border-radius: 12px;
+}
+
+/* インスタグラム */
+.top_instagram_wrap {
+    /* border: solid 4px;
+    border-image: linear-gradient(to bottom, #A635CC, #FF6A6A) 1; */
+    background: linear-gradient(to bottom, #A635CC, #FF6A6A);
+    border-radius: 12px;
+}
+
+.top_instagram_inner {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+}
