@@ -1,37 +1,4 @@
 @charset "utf-8";
-/*
-:root {
-    --main-color: #203C65;
-    --main-secondary-color: #2366C7;
-    --accent-color: #E8C351;
-    --base-primary-color: #FFFFFF;
-    --base-secondary-color: #F5F6FC;
-    --text-color: #333333;
-    --shadow-color: #D9D9D9;
-    --main-color-75p: rgba(93, 126, 153, 0.75);
-    --main-color-50p: #203c6580;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-/* 標準的なフォント（本文などに使用） */
-/* html {
-    font-size: 62.5%; フォントサイズを10pxに揃える (本文サイズは1.6rem) */
-    /* font-family: Roboto, Arial, "Noto Sans JP", sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--text-color);
-} */
-/* 全体の背景色 */
-/* body {
-    background-color: var(--base-primary-color);
-} */
-/* 画像が荒くならないように対策 */
-/* img {
-    max-width: 100%;
-    height: auto;
-} */
-
-
 
 /* 全体共通設定 */
 html {
@@ -39,6 +6,7 @@ html {
     letter-spacing: 0.3rem;
     line-height: 2rem;
     color: #111111;
+    font-family: "Noto Sans JP", serif;
 }
 
 /* body {
@@ -50,7 +18,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
 }
 
 p {
@@ -87,7 +55,29 @@ img {
     display: block;
     margin: 24px;
     width: 268px;
-    height: 350px;
+    height: auto;
     border: solid 8px #58BE15;
     border-radius: 12px;
+}
+
+.card_wrap img{
+    border-radius: 12px;
+}
+
+.card_wrap h3{
+font-size: 2.4rem;
+margin: 1.6rem;
+line-height: 2.4rem;
+}
+
+.card_wrap span{
+    font-size: 1.6rem;
+}
+
+.card_wrap_inner{
+    padding: 1.2rem;
+}
+
+.card_wrap_linefeed{
+    margin: 0.8rem;
 }

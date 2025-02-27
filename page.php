@@ -13,7 +13,7 @@ get_header();
                 <div class="section_inner">
                     <div class="section_header">
                         <h2 class="heading heading-primary">
-                            <span><?php the_title(); ?></span><?php echo strtoupper($post->post_name); ?>
+                            <?php the_title(); ?>
                         </h2>
                     </div>
 

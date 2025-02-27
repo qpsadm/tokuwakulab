@@ -469,3 +469,25 @@ add_filter(
 //         set_transient($transient_key, 'viewed', 1); // transientを設定します。有効期限は1時間（3600秒）です。
 //     }
 // }
+
+//豆知識投稿をランダム表示にする関数（0227石田作成）
+function get_random_message()
+{
+    $args = array(
+        'post_type'      => 'short', // 修正: カスタム投稿タイプを 'short' に変更
+        'posts_per_page' => 1,
+        'orderby'        => 'rand'
+    );
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
+            wp_reset_postdata(); // クエリをリセット（重要）
+            return !empty($message) ? $message : 'メッセージが登録されていません。';
+        }
+    }
+
+    return 'メッセージがありません。';
+}
