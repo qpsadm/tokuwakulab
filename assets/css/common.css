@@ -81,3 +81,13 @@ img {
         margin: 0 60px;
     }
 }
+
+/* 縦型カード */
+.card_wrap{
+    display: block;
+    margin: 24px;
+    width: 268px;
+    height: 350px;
+    border: solid 8px #58BE15;
+    border-radius: 12px;
+}

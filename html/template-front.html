@@ -11,8 +11,10 @@
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
-    <!-- CSSの読み込み -->
 
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
 </head>
 
 <body>
@@ -45,41 +47,43 @@
     </header>
 
     <main>
-        <!-- パンくずリスト -->
-        <div class="breadcrumb">
-            <a href="#">TOP</a>
-            <span>></span><a href="#">パンくずリスト</a>
-            <span>></span><a href="#">パンくずリスト</a>
-            <span>></span>
-            <span>パンくずリスト</span>
-        </div>
-
-        <section>
-            <h2 class="page_title"></h2>
-            <!-- カード型 -->
-            <ul>
-                <li>
-                    <a href="#">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h3>カードタイトルが入ります</h3>
-                            <p>開催日　ここに開催日が入ります</p>
-                            <p>申込締切　ここに申込締切が入ります</p>
-                            <p>開催場所　ここに開催場所が入ります</p>
-                            <p>対象学年　ここに対象年齢が入ります</p>
-                            <div>#地域</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- もっと見るボタン -->
-            <div class="">
-                <a href="#">イベント一覧へ＞</a>
+        <div class="inner">
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <a href="#">TOP</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span>
+                <span>パンくずリスト</span>
             </div>
-        </section>
+
+            <section>
+                <h2 class="page_title"></h2>
+                <!-- カード型 -->
+                <ul>
+                    <li>
+                        <a class="card_wrap" href="#">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <h3>カードタイトルが入ります</h3>
+                                <p>開催日　ここに開催日が入ります</p>
+                                <p>申込締切　ここに申込締切が入ります</p>
+                                <p>開催場所　ここに開催場所が入ります</p>
+                                <p>対象学年　ここに対象年齢が入ります</p>
+                                <div>#地域</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- もっと見るボタン -->
+                <div class="">
+                    <a href="#">イベント一覧へ＞</a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- 豆知識 -->
