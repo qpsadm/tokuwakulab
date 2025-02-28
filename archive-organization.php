@@ -28,6 +28,8 @@ get_header();
                         }
                     }
                     ?> -->
+
+                    <!-- 主催団体別で絞り込み -->
                     <p>主催団体</p>
                     <?php
                     $all_link = home_url('/organization');
@@ -47,26 +49,28 @@ get_header();
 
             <div class="section_body">
                 <div class="cardList">
-
-                    <!-- WordPress ループの開始 -->
-                    <?php if (have_posts()) : ?>
+                    <ul class="foodList">
+                        <!-- WordPress ループの開始 -->
+                        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : ?>
-                            <?php the_post(); ?>
+                        <?php the_post(); ?>
 
+                        <li class="foodList_item">
                             <!-- テンプレートパーツloop-news.phpを読み込む -->
                             <?php get_template_part('template-parts/loop', 'organization') ?>
+                        </li>
 
-                            <!-- WordPress ループの終了 -->
+                        <!-- WordPress ループの終了 -->
                         <?php endwhile; ?>
-                    <?php endif; ?>
-
+                        <?php endif; ?>
+                    </ul>
                 </div>
 
                 <!-- ページナビゲーション -->
                 <?php if (function_exists('wp_pagenavi')) : ?>
-                    <div class="pagenation">
-                        <?php wp_pagenavi(); ?>
-                    </div>
+                <div class="pagenation">
+                    <?php wp_pagenavi(); ?>
+                </div>
                 <?php endif; ?>
             </div>
 
