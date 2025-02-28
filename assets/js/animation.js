@@ -23,6 +23,6 @@ $(function () {
         // ドットインジケーターの表示
         dots: true,
         // 矢印の表示
-        arrows: true
+        // arrows: true
     });
 })
