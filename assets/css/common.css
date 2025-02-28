@@ -66,34 +66,30 @@ a{
     height: auto;
     border: solid 8px #58BE15;
     border-radius: 12px;
+    background-color: #fff;
 }
 
 .card_shape img{
-    width: 240px;
-    height: auto;
+    width: 200px;
+    height: 150px;
     border-radius: 12px;
     display: block;
     margin: 0 auto;
-    aspect-ratio: 0 3/4;
 }
 
 .card_shape h3{
-font-size: 2.4rem;
-margin: 0.8rem 0 1.6rem 0;
+font-size: 1.6rem;
+margin: 0.8rem 0 0.8rem 0;
 line-height: 2.8rem;
 font-weight: 900;
 }
 
 .card_shape span{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .card_inner{
     padding: 1.2rem;
-}
-
-.card_linefeed{
-    margin: 0.8rem 0;
 }
 
 .card_subtitle{
@@ -104,13 +100,18 @@ font-weight: 900;
     background-color: #58BE15;
     width: auto;
     height: auto;
-    padding: 0.4rem 2.4rem;
+    padding: 0.2rem 2rem;
     border-radius: 32px;
     color: #fff;
     font-weight: 600;
     display: inline-block;
-    margin: 1.6rem 0;
-    font-size: 1.2rem;
+    margin: 0.8rem 0;
+    font-size: 1rem;
+}
+
+.card_line{
+border-bottom: 2px dashed #58BE15;
+margin: 0.8rem 0;
 }
 
 .card_text{
@@ -164,6 +165,7 @@ font-size: 1.6rem;
     border-radius: 12px;
     display: block;
     margin:0.8rem 0;
+    background-color: #fff;
 }
 
 .cardlist_wrap img{
@@ -177,44 +179,50 @@ font-size: 1.6rem;
 }
 
 .cardlist_toptext{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     display: flex;
 }
 
 .cardlist_date{
     margin: auto;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .cardlist_wrap h3{
-font-size: 2rem;
+font-size: 1.6rem;
 margin:0.8rem 0;
 line-height: 2.8rem;
 font-weight: 600;
+}
+
+.cardlist_line{
+    border-bottom: 2px dashed #FF7800;
+margin: 0.8rem 0;
 }
 
 .cardlist_tag{
     background-color: #FF7800;
     width: auto;
     height: auto;
-    padding: 0.4rem 2.4rem;
+    padding: 0.2rem 2rem;
     border-radius: 32px;
     color: #fff;
     font-weight: 600;
     display: inline-block;
     margin: 0.4rem 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 /* PCコラムカード（横） */
 .cardlistpc_wrap{
-    width: 480px;
+    width: 560px;
     height: auto;
     border: solid 8px #FF7800;
     border-radius: 12px;
     display: block;
     margin:0.8rem 0;
     transition: 0.3s;
+    background-color: #fff;
 }
 
 .cardlistpc_wrap:hover{
@@ -223,8 +231,8 @@ transition: 0.3s;
 }
 
 .cardlistpc_flex img{
-    width: 150px;
-    height: 113px;
+    width: 240px;
+    height: 180px;
     border-radius: 12px;
     margin-right: 1.6rem;
 }
@@ -260,11 +268,46 @@ flex: none;
     font-weight: 600;
     display: inline-block;
     margin: 1.2rem 0 0 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2rem;
 }
 
 .cardlistpc_toptext h3{
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
+}
+
+/* 主催団体カード型 */
+.orgcard_shape{
+    display: block;
+    margin: 2.4rem 2.4rem 1.6rem 0.8rem;
+    width: 240px;
+    height: auto;
+    border: solid 8px #FFCC00;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.orgcard_shape img{
+    width: 200px;
+    height: 150px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.orgcard_shape h3{
+font-size: 1.6rem;
+margin: 0.8rem 0;
+line-height: 2rem;
+font-weight: 600;
+}
+
+.orgcard_shape span{
+    font-size: 1.2rem;
+}
+
+.orgcard_line{
+border-bottom: 2px dashed #FFCC00;
+margin: 0.8rem 0;
 }
