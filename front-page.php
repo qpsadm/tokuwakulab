@@ -160,13 +160,14 @@ get_header();
             </header>
             <div class="section_pic">
 
-                <class="foodList">
+                <ul class="foodList">
                     <?php
                     // ランダムに2件のコラムを取得
                     $random_columns = new WP_Query(array(
                         'post_type'      => 'column', // カスタム投稿タイプが「column」
                         'posts_per_page' => 2,       // 2件取得
                         'orderby'        => 'rand',  // ランダム表示
+                        'post_status' => 'publish'
                     ));
 
                     if ($random_columns->have_posts()) :
@@ -180,7 +181,7 @@ get_header();
                         wp_reset_postdata(); // クエリのリセット
                     endif;
                     ?>
-                    </ul>
+                </ul>
             </div>
         </div>
     </div>
