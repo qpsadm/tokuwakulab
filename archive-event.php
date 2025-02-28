@@ -59,7 +59,8 @@ $the_query = new WP_Query($args);
                 $one_week_later = date('Y年n月', strtotime($date1));
                 ?>
                 <h2 class="heading heading-primary">
-                    <span>イベント</span><?php ?><?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
+                    <span>イベント</span>
+                    <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
                 </h2>
             </div>
 

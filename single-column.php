@@ -166,9 +166,8 @@
                 <ul class="">
                     <?php
                     $args = [
-                        "post_type" => "column",
-                        "posts_per_page" => 3, //3つ表示
-
+                        "post_type" => "column", //コラム記事
+                        'posts_per_archive_page' => 3, //3件表示
                     ];
                     // $taxquerysp = ["relation" => "AND"];
                     // $taxquerysp[] = [
