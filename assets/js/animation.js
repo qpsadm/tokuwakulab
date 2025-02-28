@@ -7,7 +7,7 @@ $(function () {
         //     // ドロワーメニュー部分のアニメーション
         $(".menu").toggleClass("is-active");
         //     // ボタン部分のアニメーション
-        $(".hamberger").toggleClass("is-active");
+        $(".hamburger").toggleClass("is-active");
     });
     $(".menu li").click(function () {
         $(".menu").removeClass("is-active");
