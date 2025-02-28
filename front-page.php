@@ -12,7 +12,7 @@ get_header();
             <h1 class="kv_title header">徳島わくわくラボ</h1>
         </div>
 
-        <!-- slickの画像はあるものに差し替え -->
+        <!-- slickは非表示にしています -->
         <!-- <div class="kv_slider js-slider">
             <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_461039205.jpeg');"></div>
             <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_357399495.jpeg');"></div>
@@ -44,18 +44,29 @@ get_header();
             <div class="section_pic">
 
                 <?php
+                $date1 = isset($_GET['date']) ? $_GET['date'] : 'ALL';
+                $date2 = '2025-03-31';
+                echo $date1, '-', $date2;
+                ?>
+
+                <?php
+                $date1 = isset($_GET['date']) ? $_GET['date'] : null;
+                $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null; // 月末日を取得
+
                 $args = [
                     'post_type' => 'event',
                     'posts_per_page' => 3,
                 ];
                 $meta_query = ['relation' => 'AND'];
-                $meta_query[] = [
-                    'key' => 'date_start',
-                    'type' => 'DATETIME',
-                    'compare' => 'BETWEEN',
-                    // ↓ここがこれから。
-                    'value' => [$date1, $date2],
-                ];
+
+                if ($date1) {
+                    $meta_query[] = [
+                        'key' => 'date_start',
+                        'type' => 'DATE',
+                        'compare' => 'BETWEEN',
+                        'value' => [$date1, $date2],
+                    ];
+                }
 
 
                 $args['meta_query'] = $meta_query;
