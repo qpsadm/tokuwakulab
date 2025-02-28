@@ -40,18 +40,19 @@ get_header();
                             </a>
                         </div>
                     </li> -->
-                    <!-- WordPress ループの開始 -->
-                    <?php if (have_posts()) : ?>
+                    <li class="foodList_item">
+                        <!-- WordPress ループの開始 -->
+                        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : ?>
-                            <?php the_post(); ?>
+                        <?php the_post(); ?>
+                    </li>
+                    <li class="foodList_item">
+                        <!-- テンプレートパーツloop-organization.phpを読み込む -->
+                        <?php get_template_part('template-parts/loop', 'organization') ?>
+                    </li>
 
-                            <li class="foodList_item">
-                                <!-- テンプレートパーツloop-food.phpを読み込む -->
-                                <?php get_template_part('template-parts/loop', 'organization') ?>
-                            </li>
-
-                            <!-- WordPress ループの終了 -->
-                        <?php endwhile; ?>
+                    <!-- WordPress ループの終了 -->
+                    <?php endwhile; ?>
                     <?php endif; ?>
                 </ul>
             </section>
