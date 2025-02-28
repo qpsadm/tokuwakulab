@@ -3,7 +3,7 @@
 /* 全体共通設定 */
 html {
     font-size: 62.5%;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
     line-height: 2rem;
     color: #111111;
     font-family: "Noto Sans JP", serif;
@@ -102,7 +102,7 @@ font-weight: 900;
     font-weight: 600;
     display: inline-block;
     margin: 1.6rem 0;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .card_text{
@@ -117,20 +117,20 @@ font-weight: 900;
 /* カウントダウン */
 .card_countdown{
     position: absolute;
-left: 240px;
-top: -20px;
+    left: 220px;
+    top: -24px;
     background-color: #FF7800;
     border-radius: 50px;
-    width: 88px;
-    height: 88px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
-    line-height: 88px;
+    line-height: 100px;
     text-align: center;
     color: #fff;
     /* あかり */
     font-family: "ads-akari", sans-serif;
-font-weight: 400;
-font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .card_countdown span :nth-child(1),
@@ -205,5 +205,14 @@ font-weight: 600;
 .cardlistpc_img{
     width: 160px;
     aspect-ratio: 0 3/4;
-    border-radius: 12px;
+}
+
+.cardlistpc_inner{
+    padding: 1.2rem;
+    display: flex;
+
+}
+
+.cardlistpc_toptext{
+
 }
