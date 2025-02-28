@@ -312,12 +312,11 @@ function my_pre_get_posts($query)
         return;
     }
 
-    //*                                       非表示にしました（2/26石田）
-    // 投稿list画面
-    // if ($query->is_category()) {
-    //     $query->set('posts_per_page', 5);
-    //     return;
-    // }
+    //投稿list画面
+    if ($query->is_category()) {
+        $query->set('posts_per_page', 5);
+        return;
+    }
 
     //search画面
     if ($query->is_search() || is_post_type_archive('dataset')) {
@@ -325,10 +324,10 @@ function my_pre_get_posts($query)
         $query->set('posts_per_page', 6);
         return;
     }
-    // if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
-    //     $query->set('post_type', 'column');
-    //     $query->set('posts_per_page', 6);
-    // }
+    if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
+        $query->set('post_type', 'column');
+        $query->set('posts_per_page', 6);
+    }
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
@@ -496,8 +495,8 @@ function get_random_message()
             echo $message;
 
         }
+        wp_reset_postdata(); // クエリをリセット（重要）
     }
-    wp_reset_postdata(); // クエリをリセット（重要）
 
 }
 
