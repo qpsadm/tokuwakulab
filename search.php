@@ -378,26 +378,6 @@ foreach ($data as $terms) {
 
 
 
-        <!-- 検索結果表示場所 -->
-        <div>
-            <!-- WordPress ループの開始 -->
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : ?>
-                    <?php the_post(); ?>
-
-                    <!-- テンプレートパーツを読み込む -->
-                    <?php get_template_part('template-parts/loop', 'event') ?>
-                    <!-- WordPress ループの終了 -->
-                <?php endwhile; ?>
-            <?php else : ?>
-                <div class="section_desc">
-                    <!-- <p>検索結果はありませんでした。</p> -->
-                </div>
-            <?php endif; ?>
-        </div>
-
-
-
         <!-- 検索結果一覧カード -->
         <!-- フリーワード検索の結果 -->
         <?php if (!empty(get_search_query())): ?>
