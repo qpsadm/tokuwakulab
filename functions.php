@@ -329,6 +329,9 @@ function my_pre_get_posts($query)
         $query->set('post_type', 'column');
         $query->set('posts_per_page', 6);
     }
+
+    if ($query->is_tax('org_tax')) {
+        $query->set('post_type', 'organization');
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
