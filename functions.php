@@ -332,6 +332,7 @@ function my_pre_get_posts($query)
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
+    }
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
