@@ -2,16 +2,25 @@
 
 footer {
     width: 100%;
-    height: 10rem;
+    height: auto;
     background: linear-gradient(to bottom,
-            #6d4c41 0px,
-            #a27d71 20px,
-            #7f4d3e 30px,
-            #8d6e63 40px,
-            #a1887f 50px,
-            #55433c 60px,
-            #bcaaa4 70px,
-            #907c87 80px);
+            #6d4c41 0rem,
+            #6d4c41 1rem,
+            #a27d71 2rem,
+            #a27d71 3rem,
+            #7f4d3e 4rem,
+            #7f4d3e 5rem,
+            #8d6e63 6rem,
+            #8d6e63 7rem,
+            #a1887f 8rem,
+            #a1887f 9rem,
+            #55433c 10rem,
+            #55433c 11rem,
+            #bcaaa4 12rem,
+            #bcaaa4 13rem,
+            #907c87 14rem,
+            #907c87 15rem);
+
     display: flex;
     flex-direction: column;
     align-items: center;
