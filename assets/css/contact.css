@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.contact_title{
+    margin: 2.4rem ;
+}
+
+.contact_warning_wrap{
+    border: 3px solid #58BE15;
+    border-radius: 16px;
+}

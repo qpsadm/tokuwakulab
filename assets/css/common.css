@@ -142,7 +142,7 @@ font-size: 1.6rem;
     font-size: 2.4rem;
 }
 
-/* 横型カード */
+/* SPコラムカード（横） */
 .cardlist_wrap{
     width: 300px;
     height: auto;
@@ -190,4 +190,20 @@ font-weight: 600;
     display: inline-block;
     margin: 0.4rem 0;
     font-size: 1.6rem;
+}
+
+/* PCコラムカード（横） */
+.cardlistpc_wrap{
+    width: 500px;
+    height: auto;
+    border: solid 8px #FF7800;
+    border-radius: 12px;
+    display: block;
+    margin:0.8rem 0;
+}
+
+.cardlistpc_img{
+    width: 160px;
+    aspect-ratio: 0 3/4;
+    border-radius: 12px;
 }

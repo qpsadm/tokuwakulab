@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>徳島わくわくラボ</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ファビコンの設定 -->
+    <!-- フォントの読み込み -->
+    <!-- noto sans jp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- あかり -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xdy5khp',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
+
 <body>
     <header>
         <div>
             <!-- ロゴ -->
             <h1>
-                        <a href="#">
-                            <div><img src="" alt=""></div>
-                        </a>
-                    </h1>
+                <a href="#">
+                    <div><img src="" alt=""></div>
+                </a>
+            </h1>
             <!-- ハンバーガーボタン -->
             <div>
                 <span></span>
@@ -23,60 +51,81 @@
         </div>
         <nav>
             <ul>
-                <li><a href="">イベント検索</a></li>
-                <li><a href="">イベント一覧</a></li>
-                <li><a href="">コラム一覧</a></li>
-                <li><a href="">お気に入り</a></li>
-                <li><a href="">よくある質問</a></li>
-                <li><a href="">当サイトについて</a></li>
+                <li><a href="#">イベント検索</a></li>
+                <li><a href="#">イベント一覧</a></li>
+                <li><a href="#">コラム一覧</a></li>
+                <li><a href="#">お知らせ一覧</a></li>
+                <li><a href="#">お気に入り</a></li>
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>お問い合わせ</h2>
-        <!-- パンくずリスト -->
-        <div></div>
-        <!-- お問い合わせの注意書き -->
-        <div>
-            <p>ここに注意書きが入ります。</p>
-        </div>
-        <!-- フォーム入力 -->
-        <div>
-            <form action="">
-                <table>
-                    <tr>
-                        <th>ご用件名*</th>
-                        <td><select name="" id="">
-                                <option value="" selected>選択してください</option>
-                                <option value="1">イベント掲載について</option>
-                                <option value="2">主催団体情報変更について</option>
-                                <option value="3">その他</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <th>お名前*</th>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <th>お電話*</th>
-                        <td><input type="tel"></td>
-                    </tr>
-                    <tr>
-                        <th>メール*</th>
-                        <td><input type="email"></td>
-                    </tr>
 
-                    <tr>
-                        <th>お問い合わせ内容</th>
-                        <td><textarea name="" id=""></textarea></td>
-                    </tr>
-                </table>
-                <div>
-                    <input type="reset" value="リセット">
-                    <input type="submit" value="確認画面へ">
-                </div>
-            </form>
-        </div>
+    <main>
+        <div class="inner">
+            <!-- ページタイトル -->
+            <h2 class="contact_title">お問い合わせ</h2>
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <a href="#">TOP</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span><a href="#">パンくずリスト</a>
+                <span>></span>
+                <span>パンくずリスト</span>
+            </div>
+            <!-- お問い合わせの注意書き -->
+            <div class="contact_warning_wrap">
+                <p>ここに注意書きが入ります。</p>
+            </div>
+            <!-- フォーム入力 -->
+            <div>
+                <form action="contact-check.html" method="post">
+                    <table>
+                        <tr>
+                            <th>ご用件名*</th>
+                            <td><select name="requirement" id="">
+                                    <option value="" selected>選択してください</option>
+                                    <option value="1">イベント掲載について</option>
+                                    <option value="2">主催団体情報変更について</option>
+                                    <option value="3">その他</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>お名前*</th>
+                            <td><input name="name" type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>お電話*</th>
+                            <td><input name="tel" type="tel"></td>
+                        </tr>
+                        <tr>
+                            <th>メール*</th>
+                            <td><input name="email" type="email"></td>
+                        </tr>
+                        <tr>
+                            <th>お問い合わせ内容</th>
+                        </tr>
+                        <tr>
+                            <td><textarea name="inquiry_detail"></textarea></td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <span><a href="#">プライバシーポリシー</a>・<a href="#">利用規約</a>をご確認ください。</span>
+                        <div>
+                            <input type="checkbox" id="agree">
+                            <label for="agree">同意する</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="reset" value="リセット">
+                        <input type="submit" value="確認画面へ">
+                    </div>
+                </form>
+            </div>
     </main>
     <!-- 豆知識 -->
     <div>

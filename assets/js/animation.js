@@ -14,3 +14,15 @@ $(function () {
         $(".hamburger_btn").removeClass("is-active");
     });
 });
+
+// slickの読み込み
+$(function () {
+    $(".slider").slick({
+        // 自動再生
+        autoplay: true,
+        // ドットインジケーターの表示
+        dots: true,
+        // 矢印の表示
+        arrows: true
+    });
+})
