@@ -139,13 +139,13 @@ function my_add_scripts()
      *     //*                                                             ★★★トップページ作成時に確認。（2/26石田）
      */
     if (is_home()) {
-        // wp_enqueue_style(
-        //     'my_top',
-        //     get_template_directory_uri() . '/assets/css/top.css'
-        // );
+        wp_enqueue_style(
+            'my_foodscience',
+            get_template_directory_uri() . '/assets/css/foodscience.css'
+        );
 
-        // wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
-        // wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
 
         // wp_enqueue_style(
         //     'my_column_slider',
@@ -160,13 +160,13 @@ function my_add_scripts()
         //     '',
         //     true
         // );
-        // wp_enqueue_script(
-        //     'slick-js',
-        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-        //     array('jquery'),
-        //     null,
-        //     true
-        // );
+        wp_enqueue_script(
+            'slick-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+            array('jquery'),
+            null,
+            true
+        );
 
         //search
         // wp_enqueue_script(
@@ -332,165 +332,166 @@ function my_pre_get_posts($query)
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
-}
-add_action('pre_get_posts', 'my_pre_get_posts');
-
-// /*
-// * 管理画面の投稿一覧に、タクソノミー分類を追加表示
-// */
-// function my_taxonomy_filter()
-// {
-//     global $typenow;
-//     $post_type = 'dataset'; //slug
-//     $taxonomy  = 'classtype'; //  taxonomy
-//     if ($typenow == $post_type) {
-//         $selected      = isset($_GET[$taxonomy]) ? $_GET[$taxonomy] : '';
-//         $info_taxonomy = get_taxonomy($taxonomy);
-//         wp_dropdown_categories(array(
-//             'show_option_all' => sprintf(__('ALL %s', 'textdomain'), $info_taxonomy->label),
-//             'taxonomy'        => $taxonomy,
-//             'name'            => $taxonomy,
-//             'orderby'         => 'name',
-//             'selected'        => $selected,
-//             'hierarchical'    => true,
-//             'show_count'      => true,
-//             'hide_empty'      => true,
-//             'value_field'     => 'slug'
-//         ));
-//     };
-// }
-// add_action('restrict_manage_posts', 'my_taxonomy_filter');
-
-
-// /**
-//*                                       非表示にしました（2/26石田）
-//
-//  * 検索結果を公開して施設のみ対象にする
-//  */
-// function my_search_exclude($query)
-// {
-//     // 管理画面とメインクエリの場合は、対象外とする
-//     if ($query->is_main_query() && is_admin()) {
-//         return;
-//     }
-
-//     if ($query->is_search()) {
-//         // 検索するカスタム投稿タイプと投稿状態
-//         $query->set('post_type', 'dataset');
-//         $query->set('post_status', 'publish');
-
-//         // 文字列で検索で、検索文字列が空の場合
-//         if (!isset($_GET['s']) || trim($_GET['s']) === '') {
-//             // postのIDを0で指定して、検索結果を０件にする
-//             $query->set('post__in', array(0));
-//         }
-//     }
-
-//     return $query;
-// }
-// add_filter(
-//     'pre_get_posts',
-//     'my_search_exclude'
-// );
-
-
-/**
- * コメント入力欄の表示順を変更する                                           ★★★一応このままにします（2/26石田）
- *
- * @param array $fields array
- * @retuen array $fields array
- */
-function my_move_comment_field_to_bottom($fields)
-{
-    $comment_field = $fields['comment'];
-    unset($fields['comment']);
-    $fields['comment'] = $comment_field;
-
-    return $fields;
-}
-add_filter(
-    'comment_form_fields',
-    'my_move_comment_field_to_bottom'
-);
-
-// /**
-//*                                                                        ★★★非表示にしました（2/26石田）
-//
-//  * 「メールアドレスが公開されることはありません。 * が付いている欄は必須項目です」の文言を削除
-//  *
-//  * @param array $defaults array
-//  * @retuen array $defaults array
-//  */
-// function my_comment_notes_before($defaults)
-// {
-//     $defaults['comment_notes_before'] = '';
-//     return $defaults;
-// }
-// add_filter("comment_form_defaults", "my_comment_notes_before");
-
-// /**
-//  * 「コメントを残す」を削除
-//  *
-//  * @param array $defaults arg
-//  * @return array $defaults arg
-//  */
-// function my_title_reply($defaults)
-// {
-//     $defaults['title_reply'] = '';
-//     return $defaults;
-// }
-// add_filter('comment_form_defaults', 'my_title_reply');
-
-// /**
-//  * contact Formのときには整形機能をOFFにする
-//  */
-// add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
-// function my_wpcf7_autop()
-// {
-//     return false;
-// }
-
-
-/**
- *                                                                         ★★★ 非表示にしました（2/26石田）
- * ランキング用
- * ページ表示の連続更新による閲覧回数カウント制限、transient、1時間
- */
-// 分類の表示回数を増やす関数
-// function increment_term_view_count($term_id)
-// {
-//     $user_ip = $_SERVER['REMOTE_ADDR']; //get user IP
-//     $transient_key = 'view_count_' . $term_id . '_' . md5($user_ip);
-
-//     if (false === get_transient($transient_key)) {
-
-//         $view_count = get_term_meta($term_id, 'view_count', true);
-//         $view_count = $view_count ? intval($view_count) : 0;
-
-//         update_term_meta($term_id, 'view_count', $view_count + 1);
-
-//         set_transient($transient_key, 'viewed', 1); // transientを設定します。有効期限は1時間（3600秒）です。
-//     }
-// }
-
-//豆知識投稿をランダム表示にする関数（0227石田作成）
-function get_random_message()
-{
-    $args = array(
-        'post_type'      => 'short', // 修正: カスタム投稿タイプを 'short' に変更
-        'posts_per_page' => 1,
-        'orderby'        => 'rand'
-    );
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
-            wp_reset_postdata(); // クエリをリセット（重要）
-            return !empty($message) ? $message : 'メッセージが登録されていません。';
-        }
     }
+    add_action('pre_get_posts', 'my_pre_get_posts');
 
-    return 'メッセージがありません。';
+    // /*
+    // * 管理画面の投稿一覧に、タクソノミー分類を追加表示
+    // */
+    // function my_taxonomy_filter()
+    // {
+    //     global $typenow;
+    //     $post_type = 'dataset'; //slug
+    //     $taxonomy  = 'classtype'; //  taxonomy
+    //     if ($typenow == $post_type) {
+    //         $selected      = isset($_GET[$taxonomy]) ? $_GET[$taxonomy] : '';
+    //         $info_taxonomy = get_taxonomy($taxonomy);
+    //         wp_dropdown_categories(array(
+    //             'show_option_all' => sprintf(__('ALL %s', 'textdomain'), $info_taxonomy->label),
+    //             'taxonomy'        => $taxonomy,
+    //             'name'            => $taxonomy,
+    //             'orderby'         => 'name',
+    //             'selected'        => $selected,
+    //             'hierarchical'    => true,
+    //             'show_count'      => true,
+    //             'hide_empty'      => true,
+    //             'value_field'     => 'slug'
+    //         ));
+    //     };
+    // }
+    // add_action('restrict_manage_posts', 'my_taxonomy_filter');
+
+
+    // /**
+    //*                                       非表示にしました（2/26石田）
+    //
+    //  * 検索結果を公開して施設のみ対象にする
+    //  */
+    // function my_search_exclude($query)
+    // {
+    //     // 管理画面とメインクエリの場合は、対象外とする
+    //     if ($query->is_main_query() && is_admin()) {
+    //         return;
+    //     }
+
+    //     if ($query->is_search()) {
+    //         // 検索するカスタム投稿タイプと投稿状態
+    //         $query->set('post_type', 'dataset');
+    //         $query->set('post_status', 'publish');
+
+    //         // 文字列で検索で、検索文字列が空の場合
+    //         if (!isset($_GET['s']) || trim($_GET['s']) === '') {
+    //             // postのIDを0で指定して、検索結果を０件にする
+    //             $query->set('post__in', array(0));
+    //         }
+    //     }
+
+    //     return $query;
+    // }
+    // add_filter(
+    //     'pre_get_posts',
+    //     'my_search_exclude'
+    // );
+
+
+    /**
+     * コメント入力欄の表示順を変更する                                           ★★★一応このままにします（2/26石田）
+     *
+     * @param array $fields array
+     * @retuen array $fields array
+     */
+    function my_move_comment_field_to_bottom($fields)
+    {
+        $comment_field = $fields['comment'];
+        unset($fields['comment']);
+        $fields['comment'] = $comment_field;
+
+        return $fields;
+    }
+    add_filter(
+        'comment_form_fields',
+        'my_move_comment_field_to_bottom'
+    );
+
+    // /**
+    //*                                                                        ★★★非表示にしました（2/26石田）
+    //
+    //  * 「メールアドレスが公開されることはありません。 * が付いている欄は必須項目です」の文言を削除
+    //  *
+    //  * @param array $defaults array
+    //  * @retuen array $defaults array
+    //  */
+    // function my_comment_notes_before($defaults)
+    // {
+    //     $defaults['comment_notes_before'] = '';
+    //     return $defaults;
+    // }
+    // add_filter("comment_form_defaults", "my_comment_notes_before");
+
+    // /**
+    //  * 「コメントを残す」を削除
+    //  *
+    //  * @param array $defaults arg
+    //  * @return array $defaults arg
+    //  */
+    // function my_title_reply($defaults)
+    // {
+    //     $defaults['title_reply'] = '';
+    //     return $defaults;
+    // }
+    // add_filter('comment_form_defaults', 'my_title_reply');
+
+    // /**
+    //  * contact Formのときには整形機能をOFFにする
+    //  */
+    // add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
+    // function my_wpcf7_autop()
+    // {
+    //     return false;
+    // }
+
+
+    /**
+     *                                                                         ★★★ 非表示にしました（2/26石田）
+     * ランキング用
+     * ページ表示の連続更新による閲覧回数カウント制限、transient、1時間
+     */
+    // 分類の表示回数を増やす関数
+    // function increment_term_view_count($term_id)
+    // {
+    //     $user_ip = $_SERVER['REMOTE_ADDR']; //get user IP
+    //     $transient_key = 'view_count_' . $term_id . '_' . md5($user_ip);
+
+    //     if (false === get_transient($transient_key)) {
+
+    //         $view_count = get_term_meta($term_id, 'view_count', true);
+    //         $view_count = $view_count ? intval($view_count) : 0;
+
+    //         update_term_meta($term_id, 'view_count', $view_count + 1);
+
+    //         set_transient($transient_key, 'viewed', 1); // transientを設定します。有効期限は1時間（3600秒）です。
+    //     }
+    // }
+
+    //豆知識投稿をランダム表示にする関数（0227石田作成）
+    function get_random_message()
+    {
+        $args = array(
+            'post_type'      => 'short', // 修正: カスタム投稿タイプを 'short' に変更
+            'posts_per_page' => 1,
+            'orderby'        => 'rand'
+        );
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
+                wp_reset_postdata(); // クエリをリセット（重要）
+                return !empty($message) ? $message : 'メッセージが登録されていません。';
+            }
+        }
+
+        return 'メッセージがありません。';
+    }
 }
