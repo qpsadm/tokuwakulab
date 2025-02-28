@@ -27,6 +27,7 @@ footer {
     /* 中央揃え */
     justify-content: center;
     /* 縦方向の中央揃え */
+
 }
 
 footer ul {
@@ -49,6 +50,20 @@ footer small {
     color: white;
     font-size: 1rem;
 }
+
+
+/* imgを均等に横並びにする場合  imgを<div>で囲ってclassを付与*/
+/* .f-img {
+    display: flex;
+    justify-content: space-around; /* 画像を主軸方向に均等にに配置 */
+/* width: 100%;  フッター全体に広げる */
+/* padding: 0 20px;  左右の余白 */
+/*}*/
+
+/*.f-img img {
+     width: 50px;
+     height: auto;
+ } */
 
 
 @media screen and (min-width:1280px) {

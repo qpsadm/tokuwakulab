@@ -32,6 +32,7 @@
     <!-- タクソノミーを取得して表示 -->
     <br>
 
+    <?php if(!is_search()): ?> <!-- サーチ画面では除外 -->
     <?php
     $terms = get_the_terms(get_the_ID(), 'area');
     if (!empty($terms) && !is_wp_error($terms)) {
@@ -43,6 +44,7 @@
         echo '</p>';
     }
     ?>
+    <?php endif; ?>
 
 
 
