@@ -30,6 +30,10 @@ img {
     height: auto;
 }
 
+a{
+    display: block;
+}
+
 /* 余白設定 */
 /* SP */
 .inner {
@@ -112,19 +116,19 @@ font-weight: 900;
 
 .card_wrap{
     position: relative;
+    display: inline-block;
 }
 
 /* カウントダウン */
 .card_countdown{
     position: absolute;
-    left: 220px;
-    top: -24px;
+    left: 240px;
     background-color: #FF7800;
     border-radius: 50px;
-    width: 100px;
-    height: 100px;
+    width: 88px;
+    height: 88px;
     display: inline-block;
-    line-height: 100px;
+    line-height: 88px;
     text-align: center;
     color: #fff;
     /* あかり */
