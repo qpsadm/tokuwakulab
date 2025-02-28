@@ -332,6 +332,7 @@ function my_pre_get_posts($query)
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
+    }
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
@@ -493,4 +494,64 @@ function get_random_message()
     }
 
     return 'メッセージがありません。';
+}
+
+/**
+ * 未来のイベントの開催月の初日を取得する
+ *
+ */
+function get_upcoming_event_months()
+{
+    global $wpdb;
+
+    // 今日の日付を取得（フォーマット: YYYY-MM-DD）
+    $today = date('Y-m-d');
+
+    // データベースから開催日を取得（未来のものだけ）
+    $results = $wpdb->get_col(
+        $wpdb->prepare(
+            "SELECT DISTINCT meta_value
+             FROM {$wpdb->postmeta}
+             WHERE meta_key = %s
+             AND meta_value >= %s
+             ORDER BY meta_value ASC",
+            'date_start', // カスタムフィールド名
+            $today
+        )
+    );
+
+    $months = [];
+
+    // 月のリストを抽出（YYYY-MM 形式）
+    if (!empty($results)) {
+        foreach ($results as $event_date) {
+            $month = date('Y-m', strtotime($event_date)) . '-01';
+            $months[$month] = true; // 重複排除
+        }
+    }
+
+    return array_keys($months); // ユニークな月のリストを取得
+}
+
+/**
+ * 指定した月の初日 (YYYY-MM-01 形式) から、
+ * その月の最終日 (YYYY-MM-DD 形式) を取得する
+ *
+ */
+function get_last_day_of_month($first_day)
+{
+    return date('Y-m-t', strtotime($first_day));
+}
+
+/**
+ * urlからパラメータの値を取得する
+ *
+ */
+function get_param_value($key)
+{
+    $value =  null;
+    if (isset($_GET[$key])) {
+        $value = $_GET[$key];
+    };
+    return $value;
 }
