@@ -3,6 +3,7 @@
 get_header();
 ?>
 
+<!-- この条件に当てはまらない場合全てを選択する -->
 <?php
 $date1 = isset($_GET['date']) ? $_GET['date'] : 'ALL';
 $date2 = '2025-03-31';
@@ -22,63 +23,51 @@ echo $date1, '-', $date2;
 
             <div class="archive_yealy">
                 <ul class="archive_list">
-                    <!-- これからのイベントを呼んでくる -->
                     <?php
-                    $args = [
-                        'post_type' => 'event',
-                        'posts_per_page' => -1,
-                    ];
-                    $meta_query = ['relation' => 'AND'];
-                    $meta_query[] = [
-                        'key' => 'date_start',
-                        'type' => 'DATETIME',
-                        'compare' => '>=',
-                        'value' => date('Y-m-d'),
-                    ];
+                    // 開催開始日（date_start）から年月を取得し、重複を削除
+                    global $wpdb;
+                    $dates = $wpdb->get_col("
+            SELECT DISTINCT DATE_FORMAT(meta_value, '%Y-%m-01')
+            FROM $wpdb->postmeta
+            WHERE meta_key = 'date_start'
+            ORDER BY meta_value ASC
+        ");
 
-
-                    $args['meta_query'] = $meta_query;
-
-                    $the_query = new WP_Query($args);
+                    // 取得した日付をボタン（リンク）として表示
+                    foreach ($dates as $date) {
+                        $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
+                        echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '</a></li>';
+                    }
                     ?>
-
-                    <a href="<?php echo home_url('/event/') . '?date=2025-03-01'; ?>">
-                        <li>2025.03</li>
-                    </a>
-                    <a href="<?php echo home_url('/event/') . '?date=2025-04-01'; ?>">
-                        <li>2025.04</li>
-                    </a>
-                    <a href="<?php echo home_url('/event/') . '?date=2025-05-01'; ?>">
-                        <li>2025.05</li>
-                    </a>
-                    <a href="<?php echo home_url('/event/') . '?date=2025-06-01'; ?>">
-                        <li>2025.06</li>
-                    </a>
                 </ul>
             </div>
 
-
             <?php
-            // サブクエリ
+            // フィルタリング
+            $date1 = isset($_GET['date']) ? $_GET['date'] : null;
+            $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null; // 月末日を取得
 
             $args = [
                 'post_type' => 'event',
                 'posts_per_page' => -1,
             ];
-            $meta_query = ['relation' => 'AND'];
-            $meta_query[] = [
-                'key' => 'date_start',
-                'type' => 'DATETIME',
-                'compare' => 'BETWEEN',
-                'value' => [$date1, $date2],
-            ];
 
+            $meta_query = ['relation' => 'AND'];
+
+            // 日付フィルターを適用
+            if ($date1) {
+                $meta_query[] = [
+                    'key' => 'date_start',
+                    'type' => 'DATE',
+                    'compare' => 'BETWEEN',
+                    'value' => [$date1, $date2],
+                ];
+            }
 
             $args['meta_query'] = $meta_query;
-
             $the_query = new WP_Query($args);
-
             ?>
+
 
 
 
