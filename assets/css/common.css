@@ -9,6 +9,10 @@ html {
     font-family: "Noto Sans JP", serif;
 }
 
+.pc_space{
+    width: calc(100% - 320px);
+}
+
 /* body {
 
 } */
@@ -310,4 +314,15 @@ font-weight: 600;
 .orgcard_line{
 border-bottom: 2px dashed #FFCC00;
 margin: 0.8rem 0;
+}
+
+/* 一覧へ飛ぶボタン */
+.btn_wrap{
+    padding: 2rem 3.2rem;
+    background-color: #58BE15;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 2.4rem;
+    width: auto;
+    display: inline;
 }
