@@ -1558,20 +1558,20 @@ a.label:hover {
 .kv {
     position: relative;
     width: 100%;
-    height: 80vh
+    height: 80vh;
 }
 
 .kv .kv_slider {
     position: absolute;
     width: 100%;
-    z-index: 998
+    z-index: 998;
 }
 
 .kv .kv_slider .kv_sliderItem {
     width: 100%;
     height: 80vh;
     background-repeat: no-repeat;
-    background-size: cover
+    background-size: cover;
 }
 
 .kv .kv_inner {
@@ -1591,7 +1591,8 @@ a.label:hover {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
+    background-color: #2D953C;
 }
 
 .kv .kv_title {
@@ -1599,14 +1600,14 @@ a.label:hover {
     line-height: 1;
     font-weight: bold;
     color: #fff;
-    text-align: center
+    text-align: center;
 }
 
 .kv .kv_subtitle {
     font-size: 27px;
     font-weight: bold;
     position: relative;
-    color: #fff
+    color: #fff;
 }
 
 .kv .kv_subtitle:after, .kv .kv_subtitle:before {
@@ -1615,7 +1616,7 @@ a.label:hover {
     background: #fff;
     width: 70px;
     height: 1px;
-    top: calc(50% - 1px)
+    top: calc(50% - 1px);
 }
 
 .kv .kv_subtitle:before {

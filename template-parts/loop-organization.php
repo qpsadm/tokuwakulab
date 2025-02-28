@@ -15,10 +15,12 @@
 
         <div class="foodCard_body">
             <h4 class="foodCard_title"><?php the_title(); ?></h4>
-            <p class="foodCard_price">所在地</p>
-            <p>電話番号</p>
-            <p>営業時間</p>
-            <p>休業日</p>
+            <span>所在地</span><?php the_field('address'); ?>
+            <br>
+            <span>電話番号</span><?php the_field('tel'); ?>
+            <br>
+            <span>営業時間</span><?php the_field('hour') ?>
+            <br>
         </div>
     </a>
 </div>
