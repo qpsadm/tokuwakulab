@@ -94,17 +94,19 @@
                         <ul class="food_list">
                             <li class="food_item">
                                 <span class="food_itemLabel">開催日時</span>
-                                <span class="food_itemData"><?php the_field('date_start'); ?>～<?php the_field('date_end'); ?></span>
+                                <span class="food_itemData"><?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>【<?php the_field('days'); ?>間】</span>
                             </li>
 
                             <li class="food_item">
                                 <span class="food_itemLabel">会場名</span>
                                 <span class="food_itemData"><?php the_field('address'); ?></span>
+                                <span class="food_itemData">【最寄り駅：<?php the_field('nearest_station'); ?>】</span>
                             </li>
 
                             <li class="food_item">
                                 <span class="food_itemLabel">対象年齢</span>
                                 <span class="food_itemData"><?php the_field('age_text'); ?></span>
+                                <span class="food_itemData">【人数制限：<?php the_field('nearest_station'); ?>】</span>
                             </li>
 
                             <li class="food_item">
@@ -114,8 +116,25 @@
 
                             <li class="food_item">
                                 <span class="food_itemLabel">その他</span>
-                                <span class="food_itemData"></span>
+                                <br>
+                                <span class="food_itemData">トイレ：<?php the_field('toilet'); ?></span>
+                                <br>
+                                <span class="food_itemData">着替え：<?php the_field('clothes'); ?></span>
+                                <br>
+                                <span class="food_itemData">お弁当の用意：<?php the_field('bento'); ?></span>
+                                <br>
+                                <span class="food_itemData">イベント担当：<?php the_field('eve_contactor'); ?></span>
+                                <br>
+                                <span class="food_itemData">イベント担当連絡先：<?php the_field('eve_contact'); ?></span>
+                                <span class="food_itemData">イベント専用電話番号：<?php the_field('tel'); ?></span>
+                                <br>
+                                <span class="food_itemData">イベント専用FAX：<?php the_field('fax'); ?></span>
+                                <br>
+                                <span class="food_itemData">イベント専用Eメール：<?php the_field('email'); ?></span>
+                                <br>
+                                <span class="food_itemData">備考：<?php the_field('remarks'); ?></span>
                             </li>
+
 
                         </ul>
 
@@ -134,15 +153,29 @@
                         }
                         ?>
 
+
                         <br>
                         <span class="food_itemLabel"><?php the_title(); ?>のチラシ</span>
-                        <a href="<?php the_field('pdf'); ?>"><span class="food_itemData">【 ダウンロード 】</span></a>
+                        <a href="<?php the_field('flier01'); ?>"><span class="food_itemData">【 ダウンロード 】</span></a>
                         <br>
 
                         <h3>会場マップ</h3>
 
-                        <?php the_field('map'); ?>
+                        <br>
+                        <div>
+                            <?php echo get_field('map'); ?></div>
+                        <br>
 
+                        <h3>参加者の声</h3>
+                        <br>
+                        <h3>クチコミを投稿する</h3>
+
+                        <br>
+
+                        <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+                        <br>
+                        <span class="food_itemLabel">※イベントページに飛びます。</span>
+                        <br>
 
                     </div>
 
@@ -233,6 +266,12 @@
             ?>
             <?php //endif;
             ?>
+
+            <br>
+            <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+            <br>
+            <span class="food_itemLabel">※イベントページに飛びます。</span>
+            <br>
 
 
 </main>
