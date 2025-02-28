@@ -75,8 +75,6 @@ get_header();
                         'value' => [$date1, $date2],
                     ];
                 }
-
-
                 $args['meta_query'] = $meta_query;
 
                 $the_query = new WP_Query($args);
@@ -121,7 +119,6 @@ get_header();
                 <h2 class="heading heading-primary">コラム新着</h2>
             </header>
             <div class="section_pic">
-
                 <ul class="foodList">
                     <?php
                     // 最新3件のコラムを取得
@@ -159,17 +156,31 @@ get_header();
     <div class="section_inner">
         <div class="section_headerWrapper">
             <header class="section_header">
-                <h2 class="heading heading-primary"><span>コンセプト</span>CONCEPT</h2>
+                <h2 class="heading heading-primary">おすすめコラム記事</h2>
             </header>
             <div class="section_pic">
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img01@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img02@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img03@2x.png" alt=""></div>
-            </div>
-        </div>
-        <div class="section_body">
-            <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">もっと見る</a>
+
+                <class="foodList">
+                    <?php
+                    // ランダムに2件のコラムを取得
+                    $random_columns = new WP_Query(array(
+                        'post_type'      => 'column', // カスタム投稿タイプが「column」
+                        'posts_per_page' => 2,       // 2件取得
+                        'orderby'        => 'rand',  // ランダム表示
+                    ));
+
+                    if ($random_columns->have_posts()) :
+                        while ($random_columns->have_posts()) : $random_columns->the_post();
+                    ?>
+                            <li class="foodList_item">
+                                <?php get_template_part('template-parts/loop', 'column'); ?>
+                            </li>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata(); // クエリのリセット
+                    endif;
+                    ?>
+                    </ul>
             </div>
         </div>
     </div>
@@ -180,7 +191,7 @@ get_header();
     <div class="section_inner">
         <div class="section_headerWrapper">
             <header class="section_header">
-                <h2 class="heading heading-primary"><span>コンセプト</span>CONCEPT</h2>
+                <h2 class="heading heading-primary">主催団体様</h2>
             </header>
             <div class="section_pic">
                 <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img01@2x.png" alt=""></div>
@@ -190,7 +201,7 @@ get_header();
         </div>
         <div class="section_body">
             <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">もっと見る</a>
+                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">主催団体一覧へ</a>
             </div>
         </div>
     </div>
@@ -198,6 +209,9 @@ get_header();
 
 <!-- インスタグラムセクション -->
 <section class="section">
+    <div>
+        <p>インスタグラムのエリア</p>
+    </div>
     <!-- 後日調べます -->
 </section>
 
