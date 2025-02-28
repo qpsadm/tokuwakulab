@@ -202,7 +202,7 @@ font-weight: 600;
 
 .cardlist_line{
     border-bottom: 2px dashed #FF7800;
-margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 
 .cardlist_tag{
@@ -252,7 +252,7 @@ transition: 0.3s;
 }
 
 .cardlistpc_flex img{
-flex: none;
+    flex: none;
 }
 
 .cardlistpc_toptext{
@@ -302,10 +302,10 @@ flex: none;
 }
 
 .orgcard_shape h3{
-font-size: 1.6rem;
-margin: 0.8rem 0;
-line-height: 2rem;
-font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0.8rem 0;
+    line-height: 2rem;
+    font-weight: 600;
 }
 
 .orgcard_shape span{
@@ -313,17 +313,41 @@ font-weight: 600;
 }
 
 .orgcard_line{
-border-bottom: 2px dashed #FFCC00;
-margin: 0.8rem 0;
+    border-bottom: 2px dashed #FFCC00;
+    margin: 0.8rem 0;
 }
 
 /* 一覧へ飛ぶボタン */
 .btn_wrap{
-    padding: 2rem 3.2rem;
+    width: 260px;
+    padding: 2rem 6.4rem 2rem 3.2rem;
     background-color: #58BE15;
     border-radius: 50px;
     color: #fff;
-    font-size: 2.4rem;
-    /* width: auto; */
-    /* display: inline; */
+    font-size: 2rem;
+        /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    transition: 0.3s;
+    display: inline-block;
+    margin: 2.4rem 0;
+}
+
+.btn_wrap:hover{
+    transition: 0.3s;
+    transform: translateY(4px);
+}
+
+.btn_wrap:after{
+    content: ">";
+    position: absolute;
+    right: 48px;
+    transition: 0.3s;
+}
+
+.btn_wrap:hover::after{
+    right: 40px;
+    transition: 0.3s;
 }
