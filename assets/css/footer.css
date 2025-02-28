@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+footer {
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(to bottom,
+            #6d4c41 0px,
+            #a27d71 20px,
+            #7f4d3e 30px,
+            #8d6e63 40px,
+            #a1887f 50px,
+            #55433c 60px,
+            #bcaaa4 70px,
+            #907c87 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 中央揃え */
+    justify-content: center;
+    /* 縦方向の中央揃え */
+}
+
+footer ul {
+    display: flex;
+    gap: 2rem;
+    /* リストアイテムの間隔 */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    /* 下に余白をつけて small との間隔を調整 */
+}
+
+footer li {
+    color: white;
+    font-size: 1.4rem;
+
+}
+
+footer small {
+    color: white;
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width:1280px) {
+    footer {
+        width: calc(100% - 320px);
+        height: 10rem;
+    }
+}
