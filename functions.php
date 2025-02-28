@@ -478,22 +478,27 @@ add_filter(
 function get_random_message()
 {
     $args = array(
-        'post_type'      => 'short', // 修正: カスタム投稿タイプを 'short' に変更
-        'posts_per_page' => 1,
-        'orderby'        => 'rand'
+        'post_type'      => 'short', //  投稿タイプ'short'を対象に
+        'posts_per_page' => 1,       //  一件にする
+        'orderby'        => 'rand',  //  ランダムで取得
     );
-    $query = new WP_Query($args);
+    $query = new WP_Query($args);    // サブクエリを作成
 
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+
+            //タイトルを出す場合は以下を出力
+            // $title = get_the_title(get_the_ID()); ////タイトルを取得
+            // echo $title;
+
             $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
-            wp_reset_postdata(); // クエリをリセット（重要）
-            return !empty($message) ? $message : 'メッセージが登録されていません。';
+            echo $message;
+
         }
     }
+    wp_reset_postdata(); // クエリをリセット（重要）
 
-    return 'メッセージがありません。';
 }
 
 /**

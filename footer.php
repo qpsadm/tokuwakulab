@@ -1,4 +1,10 @@
 <footer class="footer">
+    <?php
+    // functions.php で定義した関数を呼び出す
+    if (function_exists('get_random_message')) {
+        get_random_message();
+    }
+    ?>
 
     <div class="footer_inner">
         <div class="footer_info">
