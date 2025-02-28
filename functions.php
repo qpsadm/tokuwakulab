@@ -300,11 +300,11 @@ add_filter('document_title_parts', 'my_custom_title');
  */
 function my_pre_get_posts($query)
 {
-    //*                                       非表示にしました（2/26石田）
+
     //管理画面、メインクエリ以外には設定しない
-    // if (is_admin() || !$query->is_main_query()) {
-    //     return;
-    // }
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
 
     //トップページの場合
     if ($query->is_home()) {
@@ -325,10 +325,10 @@ function my_pre_get_posts($query)
         $query->set('posts_per_page', 6);
         return;
     }
-    if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
-        $query->set('post_type', 'column');
-        $query->set('posts_per_page', 6);
-    }
+    // if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
+    //     $query->set('post_type', 'column');
+    //     $query->set('posts_per_page', 6);
+    // }
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
