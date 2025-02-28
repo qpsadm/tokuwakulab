@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="../assets/css/common.css">
     <!-- 個別CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/header.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
@@ -45,15 +50,26 @@
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div class="hamburger pc-none">
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav class="header_nav sp-none">
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
+                <li class="menu_item"><a href="#">イベントをさがす</a></li>
+                <li class="menu_item"><a href="#">イベント一覧</a></li>
+                <li class="menu_item"><a href="#">コラム一覧</a></li>
+                <li class="menu_item"><a href="#">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="#">お気に入り</a></li>
+                <li class="menu_item"><a href="#">よくある質問</a></li>
+                <li class="menu_item"><a href="#">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="header_nav sp_none">
+            <ul>
+                <li><a href="#">イベントをさがす</a></li>
                 <li><a href="#">イベント一覧</a></li>
                 <li><a href="#">コラム一覧</a></li>
                 <li><a href="#">お知らせ一覧</a></li>
@@ -62,6 +78,7 @@
                 <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main class="pc_space">
