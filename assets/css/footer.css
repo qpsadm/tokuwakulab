@@ -1,34 +1,59 @@
 @charset "utf-8";
 
 footer {
-    width: calc(100% - 320px);
-    background: linear-gradient(rgb(89, 4, 4), rgb(213, 182, 139), rgb(133, 125, 9), rgba(149, 132, 101, 0.635));
-    /* background:
-        repeating-linear-gradient(190deg,
-            rgb(255 0 0 / 50%) 40px,
-            rgb(255 153 0 / 50%) 80px,
-            rgb(255 255 0 / 50%) 120px,
-            rgb(0 255 0 / 50%) 160px,
-            rgb(0 0 255 / 50%) 200px,
-            rgb(75 0 130 / 50%) 240px,
-            rgb(238 130 238 / 50%) 280px,
-            rgb(255 0 0 / 50%) 300px),
-        repeating-linear-gradient(-190deg,
-            rgb(255 0 0 / 50%) 30px,
-            rgb(255 153 0 / 50%) 60px,
-            rgb(255 255 0 / 50%) 90px,
-            rgb(0 255 0 / 50%) 120px,
-            rgb(0 0 255 / 50%) 150px,
-            rgb(75 0 130 / 50%) 180px,
-            rgb(238 130 238 / 50%) 210px,
-            rgb(255 0 0 / 50%) 230px),
-        repeating-linear-gradient(23deg,
-            red 50px,
-            orange 100px,
-            yellow 150px,
-            green 200px,
-            blue 250px,
-            indigo 300px,
-            violet 350px,
-            red 370px); */
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom,
+            #6d4c41 0rem,
+            #6d4c41 1rem,
+            #a27d71 2rem,
+            #a27d71 3rem,
+            #7f4d3e 4rem,
+            #7f4d3e 5rem,
+            #8d6e63 6rem,
+            #8d6e63 7rem,
+            #a1887f 8rem,
+            #a1887f 9rem,
+            #55433c 10rem,
+            #55433c 11rem,
+            #bcaaa4 12rem,
+            #bcaaa4 13rem,
+            #907c87 14rem,
+            #907c87 15rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 中央揃え */
+    justify-content: center;
+    /* 縦方向の中央揃え */
+}
+
+footer ul {
+    display: flex;
+    gap: 2rem;
+    /* リストアイテムの間隔 */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    /* 下に余白をつけて small との間隔を調整 */
+}
+
+footer li {
+    color: white;
+    font-size: 1.4rem;
+
+}
+
+footer small {
+    color: white;
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width:1280px) {
+    footer {
+        width: calc(100% - 320px);
+        height: 10rem;
+    }
 }
