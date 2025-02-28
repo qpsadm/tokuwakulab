@@ -63,14 +63,6 @@
 
                         </div>
 
-                        <ul class="food_list">
-                            <li class="food_item">
-                                <span class="food_itemLabel">関連リンク</span>
-                                <a href="<?php the_field('url'); ?>"><span class="food_itemData"><?php the_field('url'); ?></span></a>
-                            </li>
-
-                        </ul>
-
 
 
 
@@ -82,6 +74,49 @@
 
         <?php endwhile; ?>
     <?php endif; ?>
+
+
+    <div class="post_footer">
+        <?php $categories = get_the_category();
+        if ($categories):
+        ?>
+            <div class="category">
+                <div class="category_list">
+                    <?php foreach ($categories as $category): ?>
+                        <div class="category_item"><a href="" class="btn btn-sm is-active"><?php echo $category->name; ?></a></div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="prevNext">
+            <?php
+            $previous_post = get_previous_post();
+            if ($previous_post): ?>
+                <div class="prevNext_item prevNext_item-prev">
+                    <a href="<?php the_permalink($previous_post); ?>">
+                        <svg width="20" height="38" viewBox="0 0 20 38">
+                            <path d="M0,0,19,19,0,38" transform="translate(20 38) rotate(180)" fill="none" stroke="#224163" stroke-width="1" />
+                        </svg>
+                        <span>前の記事へ</span>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php
+            $next_post = get_next_post();
+            if ($next_post): ?>
+                <div class="prevNext_item prevNext_item-next">
+                    <a href="<?php the_permalink($next_post); ?>">
+                        <span>次の記事へ</span>
+                        <svg width="20" height="38" viewBox="0 0 20 38">
+                            <path d="M1832,1515l19,19L1832,1553" transform="translate(-1832 -1514)" fill="none" stroke="#224163" stroke-width="1" />
+                        </svg>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+        </div><a href="<?php echo home_url("column"); ?>">一覧へ</a>
+    </div>
 
 
 
@@ -148,7 +183,9 @@
                             <?php $the_query->the_post(); ?>
                             <li class="">
                                 <div class="">
-                                    <h4 class="foodCard_title"><?php the_title(); ?></h4>
+                                    <h4 class="foodCard_title">
+                                        <a href="<?php the_permalink(); ?>"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?>-</time><?php the_title(); ?></a>
+                                    </h4>
                                     <p><?php //the_field("question");
                                         ?></p>
                                     <p><?php //the_field("answer");

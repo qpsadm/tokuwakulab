@@ -17,20 +17,12 @@
                                 <h2 class="heading heading-primary"><?php the_title(); ?></h2>
 
 
-                                <!-- 主催団体タクソノミーを取得して表示 -->
-                                <br>
 
-                                <?php
-                                $terms = get_the_terms(get_the_ID(), 'org_tax');
-                                if (!empty($terms) && !is_wp_error($terms)) {
-                                    echo '<p class="event-taxonomy">';
-                                    foreach ($terms as $term) {
+                                <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
 
-                                        echo '<span class="taxonomy-badge">' . esc_html($term->name) . '</span> ';
-                                    }
-                                    echo '</p>';
-                                }
-                                ?>
+                                <h3>
+                                    <?php $id = get_field('org_id') ?>
+                                    <?php echo get_the_title($id) ?></h3>
 
                                 <br>
 
@@ -172,9 +164,10 @@
 
                         <br>
 
-                        <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
-                        <br>
-                        <span class="food_itemLabel">※イベントページに飛びます。</span>
+                        <?php if (get_field('links')) : ?>
+                            <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+                            <span class="food_itemLabel">※イベントページに飛びます。</span>
+                        <?php endif; ?>
                         <br>
 
                     </div>
@@ -184,6 +177,50 @@
 
         <?php endwhile; ?>
     <?php endif; ?>
+
+
+
+    <div class="post_footer">
+        <?php $categories = get_the_category();
+        if ($categories):
+        ?>
+            <div class="category">
+                <div class="category_list">
+                    <?php foreach ($categories as $category): ?>
+                        <div class="category_item"><a href="" class="btn btn-sm is-active"><?php echo $category->name; ?></a></div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="prevNext">
+            <?php
+            $previous_post = get_previous_post();
+            if ($previous_post): ?>
+                <div class="prevNext_item prevNext_item-prev">
+                    <a href="<?php the_permalink($previous_post); ?>">
+                        <svg width="20" height="38" viewBox="0 0 20 38">
+                            <path d="M0,0,19,19,0,38" transform="translate(20 38) rotate(180)" fill="none" stroke="#224163" stroke-width="1" />
+                        </svg>
+                        <span>前の記事へ</span>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php
+            $next_post = get_next_post();
+            if ($next_post): ?>
+                <div class="prevNext_item prevNext_item-next">
+                    <a href="<?php the_permalink($next_post); ?>">
+                        <span>次の記事へ</span>
+                        <svg width="20" height="38" viewBox="0 0 20 38">
+                            <path d="M1832,1515l19,19L1832,1553" transform="translate(-1832 -1514)" fill="none" stroke="#224163" stroke-width="1" />
+                        </svg>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+        </div><a href="<?php echo home_url("event"); ?>">一覧へ</a>
+    </div>
 
 
 
@@ -237,25 +274,18 @@
                         "posts_per_page" => 3, //3つ表示
 
                     ];
-                    // $taxquerysp = ["relation" => "AND"];
-                    // $taxquerysp[] = [
-                    //     "taxonomy" => "faq_tax",
-                    //     "terms" => "$faq->slug",
-                    //     "field" => "slug",
-                    // ];
-                    // $args["tax_query"] = $taxquerysp;
+
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()): ?>
                         <?php while ($the_query->have_posts()): ?>
                             <?php $the_query->the_post(); ?>
                             <li class="">
-                                <div class="">
-                                    <h4 class="foodCard_title"><?php the_title(); ?></h4>
-                                    <p><?php //the_field("question");
-                                        ?></p>
-                                    <p><?php //the_field("answer");
-                                        ?></p>
-                                </div>
+
+                                <h4 class="foodCard_title">
+                                    <a href="<?php the_permalink(); ?>"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?>-</time><?php the_title(); ?></a>
+                                </h4>
+
+
                             </li>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
@@ -268,9 +298,10 @@
             ?>
 
             <br>
-            <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
-            <br>
-            <span class="food_itemLabel">※イベントページに飛びます。</span>
+            <?php if (get_field('links')) : ?>
+                <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+                <span class="food_itemLabel">※イベントページに飛びます。</span>
+            <?php endif; ?>
             <br>
 
 
