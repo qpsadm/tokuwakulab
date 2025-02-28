@@ -510,13 +510,17 @@ function get_upcoming_event_months()
     // データベースから開催日を取得（未来のものだけ）
     $results = $wpdb->get_col(
         $wpdb->prepare(
-            "SELECT DISTINCT meta_value
-             FROM {$wpdb->postmeta}
-             WHERE meta_key = %s
-             AND meta_value >= %s
-             ORDER BY meta_value ASC",
+            "SELECT DISTINCT pm.meta_value
+             FROM {$wpdb->postmeta} pm
+             INNER JOIN {$wpdb->posts} p ON pm.post_id = p.ID
+             WHERE pm.meta_key = %s
+             AND pm.meta_value >= %s
+             AND p.post_type = %s
+             AND p.post_status = 'publish'
+             ORDER BY pm.meta_value ASC",
             'date_start', // カスタムフィールド名
-            $today
+            $today,   // 今日以降
+            'event' // 指定された投稿タイプ
         )
     );
 
