@@ -57,7 +57,7 @@ footer small {
     display: flex;
     justify-content: space-around; /* 画像を主軸方向に均等にに配置 */
 /* width: 100%;  フッター全体に広げる */
-/* padding: 0 20px;  左右の余白 */
+/* padding: 0 20px;  左右の余白 （もしかしたらいらないかも）*/
 /*}*/
 
 /*.f-img img {

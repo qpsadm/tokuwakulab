@@ -56,7 +56,7 @@ $the_query = new WP_Query($args);
             <div class="section_header">
                 <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
                 <?php
-                $one_week_later = date('Y年n月', strtotime($date1 . ' +1 week'));
+                $one_week_later = date('Y年n月', strtotime($date1));
                 ?>
                 <h2 class="heading heading-primary">
                     <span>イベント</span><?php ?><?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
@@ -105,7 +105,6 @@ $the_query = new WP_Query($args);
     </section>
 
 
-
     <!-- ページナビゲーション -->
     <?php if (function_exists('wp_pagenavi')): ?>
         <div class="pagination">
@@ -113,12 +112,8 @@ $the_query = new WP_Query($args);
         </div>
     <?php endif; ?>
 
-
     </div>
     </section>
-
-
-
 
 
 </main>

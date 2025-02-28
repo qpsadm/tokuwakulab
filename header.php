@@ -53,7 +53,7 @@ if (is_home()) {
             <div class="gnav js-menu">
                 <!-- スラッグはとりあえずのネーミングです -->
                 <ul class="">
-                    <li><a href="<?php echo home_url('/event/'); ?>">イベントをさがすをさがす</a></li>
+                    <li><a href="<?php echo home_url('/event/'); ?>">イベントをさがす</a></li>
                     <li><a href="<?php echo home_url('/archive-event/'); ?>">イベント一覧</a></li>
                     <li><a href="<?php echo home_url('/archive-column/'); ?>">コラム一覧</a></li>
                     <li><a href="<?php echo home_url('/index/'); ?>">お知らせ一覧</a></li>
