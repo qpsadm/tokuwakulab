@@ -46,12 +46,13 @@ foreach ($data as $terms) {
             }
         }
     }
+
     if (!empty($term_name_array[$taxonomy_name[$count]])) {
         $term_name[$taxonomy_name[$count]] = implode(",", $term_name_array[$taxonomy_name[$count]]);
     }
 
     if (!empty($select)) {
-        if ($count == 3) {
+        if ($count == 1) {
             foreach ($select as $value) {
                 //各子ターム（ジャンル）に親ターム（ジャンルの系統）を追加
                 $term = get_term_by('slug', $value, 'event_type');
@@ -83,6 +84,9 @@ foreach ($data as $terms) {
         <!-- タクソノミー検索のフォーム -->
         <form action="<?php echo esc_url(home_url('/')); ?>" method="GET">
 
+            <!-- urlにname属性、sを付けるため。これにより適切なURLが発行される -->
+            <input type="hidden" name="s" value="">
+
             <!-- エリア　タクソノミー -->
             <div>
                 <?php
@@ -101,7 +105,7 @@ foreach ($data as $terms) {
                     <div class="area_list">
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="area[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="area[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['area']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -151,7 +155,7 @@ foreach ($data as $terms) {
                                 <?php if (!empty($child_terms) && !is_wp_error($child_terms)): ?>
                                     <?php foreach ($child_terms as $child_term): ?>
                                         <label>
-                                            <input type="checkbox" name="event_type[]" value="<?php echo esc_attr($child_term->slug); ?>">
+                                            <input type="checkbox" name="event_type[]" value="<?php echo esc_attr($child_term->slug); ?>" <?= $checked['event_type'][$child_term->slug] ?? ''; ?>>
                                             <?php echo esc_html($child_term->name); ?>
                                         </label>
                                     <?php endforeach; ?>
@@ -178,7 +182,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="experience[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="experience[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['experience']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -203,7 +207,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="other[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="other[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['other']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -227,7 +231,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="loc_type[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="loc_type[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['loc_type']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -251,7 +255,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="age[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="age[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['age']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -301,7 +305,7 @@ foreach ($data as $terms) {
                                 <?php if (!empty($child_terms) && !is_wp_error($child_terms)): ?>
                                     <?php foreach ($child_terms as $child_term): ?>
                                         <label>
-                                            <input type="checkbox" name="time[]" value="<?php echo esc_attr($child_term->slug); ?>">
+                                            <input type="checkbox" name="time[]" value="<?php echo esc_attr($child_term->slug); ?>" <?= $checked['event_type'][$child_term->slug] ?? ''; ?>>
                                             <?php echo esc_html($child_term->name); ?>
                                         </label>
                                     <?php endforeach; ?>
@@ -328,7 +332,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="vacation[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="vacation[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['vacation']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -352,7 +356,7 @@ foreach ($data as $terms) {
                     <div>
                         <?php foreach ($terms as $term): ?>
                             <label>
-                                <input type="checkbox" name="frequency[]" value="<?= esc_attr($term->slug); ?>">
+                                <input type="checkbox" name="frequency[]" value="<?= esc_attr($term->slug); ?>" <?= $checked['frequency']["$term->slug"] ?>>
                                 <?php echo esc_html($term->name); ?>
                             </label>
                         <?php endforeach; ?>
@@ -382,7 +386,7 @@ foreach ($data as $terms) {
                     <?php the_post(); ?>
 
                     <!-- テンプレートパーツを読み込む -->
-                    <?php get_template_part('template-parts/loop', 'news') ?>
+                    <?php get_template_part('template-parts/loop', 'event') ?>
                     <!-- WordPress ループの終了 -->
                 <?php endwhile; ?>
             <?php else : ?>
@@ -393,34 +397,20 @@ foreach ($data as $terms) {
         </div>
 
 
-        <?php
-        // $taxonomies = [
-        //     'area',
-        //     'event_type',
-        //     'experience',
-        //     'other',
-        //     'loc_type',
-        //     'age',
-        //     'time',
-        //     'vacation',
-        //     'frequency',
-        // ];
-        ?>
-
 
         <!-- 検索結果一覧カード -->
         <!-- フリーワード検索の結果 -->
         <?php if (!empty(get_search_query())): ?>
             <h1 class="results_count">検索結果：<?php echo $wp_query->found_posts; ?>件</h1>
-            <!-- （1-6件表示）　仮でコメントアウト -->
+
             <?php if (have_posts()) : ?>
                 <div class="results_card">
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php get_template_part('template-parts/loop', 'classroom'); ?>
+                        <?php get_template_part('template-parts/loop', 'event'); ?>
                     <?php endwhile; ?>
                 </div>
             <?php else: ?>
-                <h2 class="not__found">条件に合う習いごとは見つかりませんでした。</h2>
+                <h2 class="not__found">条件に合うイベントは見つかりませんでした。</h2>
             <?php endif; ?>
         <?php else: ?>
             <!--条件検索のサブクエリ-->
