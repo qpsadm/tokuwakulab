@@ -1,8 +1,17 @@
 @charset "utf-8";
 
+/* 背景 */
+main {
+    background-image: url(../img/bgi.png);
+    width: 100%;
+    height: 100%;
+}
+
 /* キービジュアル */
 .top_kv_wrap {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .slider {
@@ -15,90 +24,232 @@
     width: 100%;
 }
 
+section {
+    margin-bottom: 8rem;
+}
+
 /* お知らせ欄 */
-.top_kv_post {
-    padding: 1.6rem;
-    position: absolute;
-    bottom: 0.1%;
-    left: 8%;
-}
-
-/* タイトルの設定 */
-
-.top_ttl_event,
-.top_ttl_column,
-.top_ttl_recomend,
-.top_ttl_org {
-    display: flex;
-    justify-content: center;
-}
-
-.top_ttl_event h2,
-.top_ttl_recomend h2 {
-    display: inline-block;
-    background-color: #58BE15;
-    border-radius: 12px 12px 0 0;
-    padding: 1.6rem;
-    font-size: 2.4rem;
-    color: #fff;
-}
-
-.top_ttl_column h2,
-.top_ttl_org h2 {
-    display: inline-block;
-    background-color: #FF7B00;
-    border-radius: 12px 12px 0 0;
-    padding: 1.6rem;
-    font-size: 2.4rem;
-    color: #fff;
-}
-
-.top_instagram_wrap h2 {
-    text-align: center;
-}
-
-.top_kv_post {
-    width: 85%;
-    max-width: 800px;
+/* .top_kv_post {
+    width: 80%;
+    padding: 1.6rem 0.8rem;
     border: solid 4px #FFCC00;
     border-radius: 12px;
     background-color: #fff;
     opacity: 0.8;
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    justify-content: flex-start;
+} */
+
+/* .top_kv_post span {
+    padding-left: 1.6rem;
+} */
+
+/* pc */
+@media screen and (min-width:1080px) {
+    .top_kv_post {
+        max-width: 840px;
+        padding: 3.4rem 0.8rem;
+    }
+
+    .top_kv_post span {
+        font-size: 1.6rem;
+        padding-left: 2.4rem;
+    }
+}
+
+/* タイトルの設定 */
+.top_event_ttl,
+.top_column_ttl,
+.top_news_ttl,
+.top_org_ttl,
+.top_instagram_ttl {
+    display: flex;
+    justify-content: center;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* イベント新着 */
+.top_event_ttl h2 {
+    display: inline-block;
+    background-color: #58BE15;
+    border-radius: 8px;
+    margin: 1.6rem;
+    padding: 1.6rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* おすすめコラム、 */
+.top_column_ttl h2,
+.top_news_ttl h2,
+.top_org_ttl h2 {
+    display: inline-block;
+    background-color: #FF7B00;
+    border-radius: 8px;
+    margin: 1.6rem;
+    padding: 1.6rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* おすすめコラムと主催団体様*/
+.top_news_ttl h2,
+.top_org_ttl h2 {
+    border-radius: 8px 8px;
+}
+
+/* テキストの設定 */
+.top_org_txt {
+    margin: 2.4rem;
+    text-align: center;
+}
+
+.top_instagram_ttl h2 {
+    font-size: 2.4rem;
+}
+
+/* コンテンツ共通設定 */
 .top_event_list,
-.top_recomend {
-    border: solid 16px #58BE15;
-    border-radius: 12px;
+.top_column_list,
+.top_org_list,
+.top_instagram_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* コラム新着 */
-.top_column_list {
-    border: solid 16px #FF7B00;
-    border-radius: 12px;
+/* お知らせ新着の設定 */
+.top_news_list {
+    background-color: #FFFDE7;
+    border-radius: 32px;
+    padding: 3.2rem 2.4rem;
 }
 
+.top_news_item_wrap {
+    margin: 1rem 0;
+}
+
+.top_news_list span {
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+}
+
+.top_news_item {
+    border-bottom: 2px dashed #FFCC00;
+    margin: 0.8rem 0;
+    font-weight: 600;
+}
+
+
+/* TB and pc*/
+@media screen and (min-width:768px) {
+
+    .top_event_ttl h2 {
+        display: inline-block;
+        background-color: #58BE15;
+        border-radius: 8px 8px 0 0;
+        margin: 0;
+        padding: 1.6rem;
+        font-size: 2.4rem;
+        color: #fff;
+    }
+
+    .top_column_ttl h2 {
+        margin: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    /* カード型を２カラムにする */
+    .top_event_list,
+    .top_column_list,
+    .top_org_list {
+        margin: auto;
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    /* イベント新着 */
+    .top_event_list {
+        /* max-width: 60%; */
+        background-color: #fff;
+        border: solid 12px #58BE15;
+        border-radius: 32px;
+    }
+
+    /* コラム新着 */
+    .top_column_list {
+        /* max-width: 60%; */
+        background-color: #fff;
+        border: solid 12px #FF7B00;
+        border-radius: 32px;
+    }
+
+    /* おすすめコラム */
+    .top_news_list {
+        /* max-width: 60%; */
+        background-color: #FFFDE7;
+        border-radius: 32px;
+        padding: 3.2rem 6.4rem;
+    }
+}
 
 
 /* インスタグラム */
 .top_instagram_wrap {
+    margin: 0 auto;
+    max-width: 90%;
     background: linear-gradient(to bottom, #A635CC, #FF6A6A);
-    border-radius: 12px;
+    border-radius: 32px;
     padding: 0.4rem;
 }
 
-.top_instagram_inner {
+.top_instagram_bg {
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 26px;
+    padding: 10% 8%;
 }
 
+.top_instagram_acount {
+    display: flex;
+    margin: 3.6rem 0 1.6rem 0;
+}
+
+.top_instagram_icon {
+    width: 60px;
+    height: 60px;
+}
+
+.top_instagram_icon,
+.top_instagram_name {
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 1.6rem;
+}
+
+.top_instagram_name {
+    padding-top: 1.4rem;
+}
+
+/* .top_instagram_list {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
 .top_instagram_img {
-    width: 80%;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
 }
 
-/* .top_instagram_img img {
-    width: 300px;
-    height: 300px;
-} */
+.top_instagram_img img {
+    border-radius: 12px;
+}

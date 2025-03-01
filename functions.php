@@ -312,12 +312,11 @@ function my_pre_get_posts($query)
         return;
     }
 
-    //*                                       非表示にしました（2/26石田）
-    // 投稿list画面
-    // if ($query->is_category()) {
-    //     $query->set('posts_per_page', 5);
-    //     return;
-    // }
+    //投稿list画面
+    if ($query->is_category()) {
+        $query->set('posts_per_page', 5);
+        return;
+    }
 
     //search画面
     if ($query->is_search() || is_post_type_archive('dataset')) {
@@ -325,10 +324,10 @@ function my_pre_get_posts($query)
         $query->set('posts_per_page', 6);
         return;
     }
-    // if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
-    //     $query->set('post_type', 'column');
-    //     $query->set('posts_per_page', 6);
-    // }
+    if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
+        $query->set('post_type', 'column');
+        $query->set('posts_per_page', 6);
+    }
 
     if ($query->is_tax('org_tax')) {
         $query->set('post_type', 'organization');
@@ -478,22 +477,27 @@ add_filter(
 function get_random_message()
 {
     $args = array(
-        'post_type'      => 'short', // 修正: カスタム投稿タイプを 'short' に変更
-        'posts_per_page' => 1,
-        'orderby'        => 'rand'
+        'post_type'      => 'short', //  投稿タイプ'short'を対象に
+        'posts_per_page' => 1,       //  一件にする
+        'orderby'        => 'rand',  //  ランダムで取得
     );
-    $query = new WP_Query($args);
+    $query = new WP_Query($args);    // サブクエリを作成
 
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+
+            //タイトルを出す場合は以下を出力
+            // $title = get_the_title(get_the_ID()); ////タイトルを取得
+            // echo $title;
+
             $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
-            wp_reset_postdata(); // クエリをリセット（重要）
-            return !empty($message) ? $message : 'メッセージが登録されていません。';
+            echo $message;
+
         }
+        wp_reset_postdata(); // クエリをリセット（重要）
     }
 
-    return 'メッセージがありません。';
 }
 
 /**
