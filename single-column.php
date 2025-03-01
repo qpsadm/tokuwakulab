@@ -115,7 +115,8 @@
                 </div>
             <?php endif; ?>
 
-        </div><a href="<?php echo home_url("column"); ?>">一覧へ</a>
+        </div>
+        <a href="<?php echo home_url("column"); ?>">一覧へ</a>
     </div>
 
 
@@ -132,9 +133,9 @@
     if ($latest_query->have_posts()):
     ?>
         <section class="latest">
-            <header class="latest_header">
-                <h2 class="heading-secondary">おすすめイベント</h2>
-            </header>
+
+            <h2 class="heading heading-secondary">おすすめイベント</h2>
+
             <div class="latest_body">
                 <div class="cardList">
                     <?php while ($latest_query->have_posts()): ?>
@@ -145,6 +146,7 @@
                     <?php wp_reset_postdata(); ?>
 
                 </div>
+                <a href="<?php echo home_url("column"); ?>">イベント一覧へ > </a>
             </div>
         </section>
     <?php endif; ?>

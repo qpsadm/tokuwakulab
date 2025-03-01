@@ -193,9 +193,9 @@
     if ($latest_query->have_posts()):
     ?>
         <section class="latest">
-            <header class="latest_header">
-                <h2 class="heading-secondary">おすすめイベント</h2>
-            </header>
+
+            <h2 class="heading heading-secondary">開催予定のイベント</h2>
+
             <div class="latest_body">
                 <div class="cardList">
                     <?php while ($latest_query->have_posts()): ?>
@@ -206,13 +206,14 @@
                     <?php wp_reset_postdata(); ?>
 
                 </div>
+                <a href="<?php echo home_url("column"); ?>">イベント一覧へ > </a>
             </div>
         </section>
     <?php endif; ?>
     <section>
         <div class="section_inner">
             <div class="section_header">
-                <h2 class="heading heading-primary">関連記事</h2>
+                <h2 class="heading heading-primary">関連コラム記事</h2>
             </div>
             <?php
             //関連記事作成中2.26(コラムに変更済2.27)
