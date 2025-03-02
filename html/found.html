@@ -50,7 +50,7 @@
     </header>
 
     <main>
-        <h2 class="page_title"></h2>
+        <h2 class="page_title">イベントをさがす</h2>
 
         <div class="inner">
             <!-- パンくずリスト -->
@@ -62,10 +62,142 @@
                 <span>パンくずリスト</span>
             </div>
 
-            <section>
-                <!-- 検索ボックス -->
-                <div>
-                    <!-- ここに検索ボックスが入ります -->
+            <!-- 検索ボックス -->
+            <section class="form">
+                <div class="form_wrap">
+                    <form action="" method="post" class="form_content">
+                        <!-- エリア -->
+                        <h3 class="form_heading">エリア</h3>
+                        <details open class="form_accordion">
+                            <summary class="form_item_title">エリアを選択する</summary>
+                            <label for="tokushima"><input type="checkbox" name="area[]" id="tokushima" value="徳島市">徳島市</label>
+                            <label for="east"><input type="checkbox" name="area[]" id="east" value="東部">東部</label>
+                            <label for="west"><input type="checkbox" name="area[]" id="west" value="西部">西部</label>
+                            <label for="south"><input type="checkbox" name="area[]" id="south" value="南部">南部</label>
+                        </details>
+                        <!-- 年齢 -->
+                        <h3 class="form_heading">年齢</h3>
+                        <details open class="form_accordion">
+                            <summary class="form_item_title">年齢を選択する</summary>
+                            <label for="child"><input type="checkbox" name="age[]" id="child" value="未就学児">未就学児</label>
+                            <label for="ele_1st"><input type="checkbox" name="age[]" id="ele_1st" value="小学1年生">小学1年生</label>
+                            <label for="ele_2nd"><input type="checkbox" name="age[]" id="ele_2nd" value="小学2年生">小学2年生</label>
+                            <label for="ele_3rd"><input type="checkbox" name="age[]" id="ele_3rd" value="小学3年生">小学3年生</label>
+                            <label for="ele_4th"><input type="checkbox" name="age[]" id="ele_4th" value="小学4年生">小学4年生</label>
+                            <label for="ele_5th"><input type="checkbox" name="age[]" id="ele_5th" value="小学5年生">小学5年生</label>
+                            <label for="ele_6th"><input type="checkbox" name="age[]" id="ele_6th" value="小学6年生">小学6年生</label>
+                            <label for="junior_high_school"><input type="checkbox" name="age[]" id="junior_high_school" value="中学生">中学生</label>
+                            <label for="high_school"><input type="checkbox" name="age[]" id="high_school" value="高校生">高校生</label>
+                            <label for="over_university"><input type="checkbox" name="age[]" id="over_university" value="大人">大人</label>
+                        </details>
+                        <!-- ジャンル -->
+                        <h3 class="form_heading">ジャンル</h3>
+                        <!-- サイエンス・体験 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">サイエンス・体験</summary>
+                            <label for="science01"><input type="checkbox" name="science[]" id="science01" value="サイエンスショー">サイエンスショー</label>
+                            <label for="science02"><input type="checkbox" name="science[]" id="science02" value="科学マジック">科学マジック</label>
+                            <label for="science03"><input type="checkbox" name="science[]" id="science03" value="実験教室">実験教室</label>
+                            <label for="science04"><input type="checkbox" name="science[]" id="science04" value="科学館ツアー">科学館ツアー</label>
+                        </details>
+                        <!-- 技術・工学 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">技術・工学</summary>
+                            <label for="tech01"><input type="checkbox" name="tech[]" id="tech01" value="ロボット">ロボット</label>
+                            <label for="tech02"><input type="checkbox" name="tech[]" id="tech02" value="電子工作">電子工作</label>
+                            <label for="tech03"><input type="checkbox" name="tech[]" id="tech03" value="プログラミング">プログラミング</label>
+                            <label for="tech04"><input type="checkbox" name="tech[]" id="tech04" value="AI">AI</label>
+                            <label for="tech05"><input type="checkbox" name="tech[]" id="tech05" value="ドローン・VR">ドローン・VR</label>
+                        </details>
+                        <!-- ものづくり -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">ものづくり</summary>
+                            <label for="craft01"><input type="checkbox" name="craft[]" id="craft01" value="自然クラフト">自然クラフト</label>
+                            <label for="craft02"><input type="checkbox" name="craft[]" id="craft02" value="アート体験">アート体験</label>
+                            <label for="craft03"><input type="checkbox" name="craft[]" id="craft03" value="伝統工芸">伝統工芸</label>
+                        </details>
+                        <!-- 宇宙・天文学 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">宇宙・天文学</summary>
+                            <label for="astro01"><input type="checkbox" name="astro[]" id="astro01" value="天体観測">天体観測</label>
+                            <label for="astro02"><input type="checkbox" name="astro[]" id="astro02" value="宇宙飛行士体験">宇宙飛行士体験</label>
+                        </details>
+                        <!-- 環境・エネルギー -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">環境・エネルギー</summary>
+                            <label for="env01"><input type="checkbox" name="env[]" id="env01" value="資源やリサイクル">資源やリサイクル</label>
+                            <label for="env02"><input type="checkbox" name="env[]" id="env02" value="発電">発電</label>
+                            <label for="env03"><input type="checkbox" name="env[]" id="env03" value="アウトドア科学">アウトドア科学</label>
+                        </details>
+                        <!-- 自然・生物 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">自然・生物</summary>
+                            <label for="nature01"><input type="checkbox" name="nature[]" id="nature01" value="動物">動物</label>
+                            <label for="nature02"><input type="checkbox" name="nature[]" id="nature02" value="植物">植物</label>
+                            <label for="nature03"><input type="checkbox" name="nature[]" id="nature03" value="化石">化石</label>
+                        </details>
+                        <!-- 人体・医学 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">人体・医学</summary>
+                            <label for="medical01"><input type="checkbox" name="medical[]" id="medical01" value="人体の仕組み">人体の仕組み</label>
+                            <label for="medical02"><input type="checkbox" name="medical[]" id="medical02" value="医学技術">医学技術</label>
+                        </details>
+                        <!-- その他 -->
+                        <details class="form_accordion">
+                            <summary class="form_item_title">その他</summary>
+                            <label for="other_eve01"><input type="checkbox" name="other_eve[]" id="other_eve01" value="パズルやゲーム">パズルやゲーム</label>
+                            <label for="other_eve02"><input type="checkbox" name="other_eve[]" id="other_eve02" value="歴史と科学">歴史と科学</label>
+                            <label for="other_eve03"><input type="checkbox" name="other_eve[]" id="other_eve03" value="防災体験">防災体験</label>
+                            <label for="other_eve04"><input type="checkbox" name="other_eve[]" id="other_eve04" value="スポーツ科学">スポーツ科学</label>
+                        </details>
+                        <!-- 体験方法 -->
+                        <h3 class="form_heading">体験方法</h3>
+                        <details open class="form_accordion">
+                            <summary class="form_item_title">体験方法を選択する</summary>
+                            <label for="watch"><input type="checkbox" name="experience[]" id="watch" value="みたい">みたい</label>
+                            <label for="listen"><input type="checkbox" name="experience[]" id="listen" value="ききたい">ききたい</label>
+                            <label for="do"><input type="checkbox" name="experience[]" id="do" value="やってみたい">やってみたい</label>
+                            <label for="make"><input type="checkbox" name="experience[]" id="make" value="作りたい">作りたい</label>
+                            <label for="eat"><input type="checkbox" name="experience[]" id="eat" value="食べたい">食べたい</label>
+                            <label for="learn"><input type="checkbox" name="experience[]" id="learn" value="学びたい">学びたい</label>
+                        </details>
+                        <!-- 時間帯 -->
+                        <h3 class="form_heading">時間帯</h3>
+                        <details class="form_accordion">
+                            <summary class="form_item_title">平日</summary>
+                            <label for="morning"><input type="checkbox" name="wtime[]" id="morning" value="朝(午前)">朝(午前)</label>
+                            <label for="noon"><input type="checkbox" name="wtime[]" id="noon" value="昼(12:00~16:00)">昼(12:00~16:00)</label>
+                            <label for="evening"><input type="checkbox" name="wtime[]" id="evening" value="夕方(16:00~19:00)">夕方(16:00~19:00)</label>
+                            <label for="night"><input type="checkbox" name="wtime[]" id="night" value="夜(19:00以降)">夜(19:00以降)</label>
+                        </details>
+                        <details class="form_accordion">
+                            <summary class="form_item_title">土日祝</summary>
+                            <label for="morning_holiday"><input type="checkbox" name="htime[]" id="morning_holiday" value="朝(午前)">朝(午前)</label>
+                            <label for="noon_holiday"><input type="checkbox" name="htime[]" id="noon_holiday" value="昼(12:00~16:00)">昼(12:00~16:00)</label>
+                            <label for="evening_holiday"><input type="checkbox" name="htime[]" id="evening_holiday" value="夕方(16:00~19:00)">夕方(16:00~19:00)</label>
+                            <label for="night_holiday"><input type="checkbox" name="htime[]" id="night_holiday" value="夜(19:00以降)">夜(19:00以降)</label>
+                        </details>
+                        <!-- 開催時期 -->
+                        <h3 class="form_heading">開催時期</h3>
+                        <details open class="form_accordion">
+                            <summary class="form_item_title">開催時期を選択する</summary>
+                            <label for="spring"><input type="checkbox" name="vacation[]" id="spring" value="春休み">春休み</label>
+                            <label for="summer"><input type="checkbox" name="vacation[]" id="summer" value="夏休み">夏休み</label>
+                            <label for="winter"><input type="checkbox" name="vacation[]" id="winter" value="冬休み">冬休み</label>
+                            <label for="gw"><input type="checkbox" name="vacation[]" id="gw" value="GW">GW</label>
+                        </details>
+                        <!-- こだわり -->
+                        <h3 class="form_heading">こだわり</h3>
+                        <details open class="form_accordion">
+                            <summary class="form_item_title">こだわり条件を選択する</summary>
+                            <label for="takeout"><input type="checkbox" name="other[]" id="takeout" value="持ち帰りあり">持ち帰りあり</label>
+                            <label for="free"><input type="checkbox" name="other[]" id="free" value="参加費無料">参加費無料</label>
+                            <label for="parking"><input type="checkbox" name="other[]" id="parking" value="駐車場あり">駐車場あり</label>
+                            <label for="wheelchair"><input type="checkbox" name="other[]" id="wheelchair" value="車いすでの参加OK">車いすでの参加OK</label>
+                            <label for="family"><input type="checkbox" name="other[]" id="family" value="親子で参加">親子で参加</label>
+                            <label for="alone"><input type="checkbox" name="other[]" id="alone" value="一人でできる">一人でできる</label>
+                        </details>
+                    </form>
                 </div>
 
                 <!-- イベントをさがすボタン -->
@@ -84,180 +216,288 @@
                         <!-- 共通カード型 -->
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="card_wrap" href="#">
-                                <div class="card_wrap_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div>
-                                        <h3>カードタイトルが入ります</h3>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催日</span>
-                                            <span>2025/12/12(土)</span>
+
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
+
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>申込締切</span>
-                                            <span>2025/12/12(土)</span><span>から</span>
-                                            <span>2025/12/12(土)</span><span>まで</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>開催場所</span>
-                                            <span>徳島市寺島本町東3丁目12-8</span>
-                                        </div>
-                                        <div class="card_wrap_linefeed">
-                                            <span>対象学年</span>
-                                            <span>小学5年生</span>
-                                        </div>
-                                        <span>#地域</span>
                                     </div>
                                 </div>
                             </a>

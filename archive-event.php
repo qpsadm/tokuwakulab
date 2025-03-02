@@ -50,19 +50,14 @@ $the_query = new WP_Query($args);
 
 <p>ここにKVとタイトルが入る</p>
 
+
+
+
+
 <main>
     <section class="section section-foodList">
         <div class="section_inner">
-            <div class="section_header">
-                <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
-                <?php
-                $one_week_later = date('Y年n月', strtotime($date1));
-                ?>
-                <h2 class="heading heading-primary">
-                    <span>イベント</span>
-                    <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
-                </h2>
-            </div>
+
 
             <div class="archive_yealy">
                 <ul class="archive_list">
@@ -84,6 +79,52 @@ $the_query = new WP_Query($args);
                     ?>
                 </ul>
             </div>
+
+
+            <br>
+
+
+            <div class="section_header">
+                <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
+                <?php
+                $one_week_later = date('Y年n月', strtotime($date1));
+                ?>
+                <h2 class="heading heading-primary">
+
+                    <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
+                </h2>
+
+                <br>
+
+
+                <?php
+                // グローバル変数を取得
+                global $wp_query;
+
+                // 1ページに表示する記事数
+                $posts_per_page = get_query_var('posts_per_page');
+
+                // 現在のページ番号（1から始まる）
+                $current_page = max(1, get_query_var('paged'));
+
+                // 表示中の記事の開始番号
+                $start = ($current_page - 1) * $posts_per_page + 1;
+
+                // 表示中の記事の終了番号
+                $end = min($current_page * $posts_per_page, $wp_query->found_posts);
+
+                // 「何件から何件を表示しているか」を表示
+                echo '<div class="post-range">';
+                echo $start . ' - ' . $end . ' 件を表示';
+                echo '</div>';
+                ?>
+
+
+            </div>
+
+
+
+
 
             <ul class="foodList">
 

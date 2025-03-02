@@ -6,12 +6,10 @@
 <main>
     <section class="section section-foodList">
         <div class="section_inner">
-            <div class="section_header">
-                <h2 class="heading heading-primary"><span>特集記事投稿</span>コラム</h2>
-            </div>
 
 
-            <div >
+
+            <div>
                 <ul>
                     <?php
                     $all_link = home_url('/column');
@@ -31,30 +29,41 @@
             </div>
 
 
-                        <ul class="foodList">
 
 
-                            <!-- コラムループ -->
-                            <?php if (have_posts()): ?>
-                                <?php while (have_posts()): ?>
-                                    <?php the_post(); ?>
 
-                                    <li class="foodList_item">
+            <div class="section_header">
+                <h2 class="heading heading-primary">コラム一覧</h2>
+            </div>
 
-                                        <!-- columnのカード型を読み込む -->
-                                        <?php get_template_part('template-parts/loop', 'column') ?>
 
-                                    </li>
 
-                                <?php endwhile; ?>
-                                <!-- リセット -->
-                                <?php wp_reset_postdata(); ?>
-                            <?php endif; ?>
 
-                        </ul>
-                    </section>
 
-        </div>
+            <ul class="foodList">
+
+
+                <!-- コラムループ -->
+                <?php if (have_posts()): ?>
+                    <?php while (have_posts()): ?>
+                        <?php the_post(); ?>
+
+                        <li class="foodList_item">
+
+                            <!-- columnのカード型を読み込む -->
+                            <?php get_template_part('template-parts/loop', 'column') ?>
+
+                        </li>
+
+                    <?php endwhile; ?>
+                    <!-- リセット -->
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+
+            </ul>
+    </section>
+
+    </div>
     </section>
 </main>
 

@@ -1,10 +1,100 @@
 @charset "utf-8";
 
+/* ページタイトル */
 .contact_title{
-    margin: 2.4rem ;
+    margin: 2.4rem;
+    text-align: center;
+    line-height: 4rem;
 }
 
+/* フォームの装飾 */
 .contact_warning_wrap{
     border: 3px solid #58BE15;
     border-radius: 16px;
+    margin: 2.4rem 0;
+    padding: 1.6rem;
+}
+
+.contact_form_wrap{
+    margin: 2.4rem 0;
+}
+
+.contact_form_wrap label{
+    text-align: center;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+}
+
+.contact_form_wrap label span{
+    color: #FF7B00;
+}
+
+.contact_item input ,
+.contact_item select,
+.contact_item textarea{
+    margin: 0.8rem 0 1.6rem;
+    border: 3px solid #58BE15;
+    border-radius: 16px;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.contact_item input:focus ,
+.contact_item select:focus,
+.contact_item textarea:focus{
+    border: 3px solid #FF7B00;
+    outline: none;
+}
+
+.contact_form_wrap span{
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+}
+
+.contact_item{
+    margin-top: 3.2rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #FFCC00;
+}
+
+.contact_form_wrap a{
+    display: inline;
+}
+
+.contact_input_flex{
+    display: flex;
+    flex-direction:column;
+}
+
+
+/* pcのフォーム大きさ変更 */
+@media screen and (min-width:1280px){
+    .contact_warning_wrap,
+    .contact_form_wrap{
+        margin: 0 12rem;
+    }
+
+
+    .contact_item{
+
+        display: flex;
+        align-items: center;
+    }
+
+    .contact_item label{
+        width: 200px;
+        text-align: left;
+        /* width: 32%; */
+        padding-left: 0.8rem;
+    }
+
+    .contact_item input ,
+    .contact_item select,textarea{
+        margin: auto;
+        text-align: left;
+        width: 80%;
+    }
+
 }
