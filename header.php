@@ -53,13 +53,13 @@ if (is_home()) {
             <div class="gnav js-menu">
                 <!-- スラッグはとりあえずのネーミングです -->
                 <ul class="">
-                    <li><a href="<?php echo home_url('/event/'); ?>">イベントをさがす</a></li>
-                    <li><a href="<?php echo home_url('/archive-event/'); ?>">イベント一覧</a></li>
-                    <li><a href="<?php echo home_url('/archive-column/'); ?>">コラム一覧</a></li>
-                    <li><a href="<?php echo home_url('/index/'); ?>">お知らせ一覧</a></li>
+                    <li><a href="<?php echo home_url('/?s=/'); ?>">イベントをさがす</a></li>
+                    <li><a href="<?php echo home_url('/event/'); ?>">イベント一覧</a></li>
+                    <li><a href="<?php echo home_url('/column/'); ?>">コラム一覧</a></li>
+                    <li><a href="<?php echo home_url('/category/news/'); ?>">お知らせ一覧</a></li>
                     <li><a href="<?php echo home_url('/mypage/'); ?>">お気に入り</a></li>
                     <li><a href="<?php echo home_url('/faq/'); ?>">よくある質問</a></li>
-                    <li><a href="<?php echo home_url('/archive-org/'); ?>">主催団体一覧</a></li>
+                    <li><a href="<?php echo home_url('/organization/'); ?>">主催団体一覧</a></li>
                     <li><a href="<?php echo home_url('/about/'); ?>">当サイトについて</a></li>
                 </ul>
 
@@ -104,5 +104,5 @@ if (is_home()) {
 
     <!-- パンくずリスト -->
     <?php if (!is_home()) : ?>
-        <?php get_template_part('template-parts/breadcrumb'); ?>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
     <?php endif; ?>
