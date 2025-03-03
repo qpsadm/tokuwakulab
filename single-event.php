@@ -148,7 +148,7 @@
 
                         <br>
                         <span class="food_itemLabel"><?php the_title(); ?>のチラシ</span>
-                        <a href="<?php the_field('flier01'); ?>"><span class="food_itemData">【 ダウンロード 】</span></a>
+                        <a target="_blank" href="<?php the_field('flier01'); ?>"><span class="food_itemData">【 ダウンロード 】</span></a>
                         <br>
 
                         <h3>会場マップ</h3>
@@ -165,7 +165,7 @@
                         <br>
 
                         <?php if (get_field('links')) : ?>
-                            <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+                            <a target="_blank" href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
                             <span class="food_itemLabel">※イベントページに飛びます。</span>
                         <?php endif; ?>
                         <br>
@@ -257,7 +257,7 @@
 
             <br>
             <?php if (get_field('links')) : ?>
-                <a href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
+                <a target="_blank" href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
                 <span class="food_itemLabel">※イベントページに飛びます。</span>
             <?php endif; ?>
             <br>
