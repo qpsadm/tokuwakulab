@@ -113,7 +113,7 @@ $the_query = new WP_Query($args);
                 $start = ($current_page - 1) * $posts_per_page + 1;
 
                 // 表示中の記事の終了番号
-                $end = min($current_page * $posts_per_page, $wp_query->found_posts);
+                $end = min($current_page * $posts_per_page, $the_query->found_posts);
 
                 // 「何件から何件を表示しているか」を表示
                 echo '<div class="post-range">';
@@ -130,14 +130,14 @@ $the_query = new WP_Query($args);
 
 
 
-            <ul class="foodList">
+            <ul>
 
                 <!-- イベントループの開始 -->
                 <?php if ($the_query->have_posts()) : ?>
                     <?php while ($the_query->have_posts()) : ?>
                         <?php $the_query->the_post(); ?>
 
-                        <li class="foodList_item">
+                        <li>
                             <!-- テンプレートパーツloop-food.phpを読み込む -->
                             <?php get_template_part('template-parts/loop', 'event') ?>
                         </li>
