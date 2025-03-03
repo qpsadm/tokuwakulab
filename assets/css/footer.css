@@ -64,9 +64,19 @@ footer small {
 /*}*/
 
 /*.f-img img {
-     width: 5rem;
+     width: 3rem;
      height: auto;
  } */
+
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+    /* TB版で写真のサイズを変更 */
+    /*.f-img img {
+     width: 4rem;
+     height: auto;
+ } */
+}
 
 
 @media screen and (min-width:1280px) {
@@ -91,4 +101,10 @@ footer small {
         gap: 3rem;
         /* 均等な間隔を開ける */
     }
+
+    /* PC版で写真のサイズを変更 */
+    /*.f-img img {
+     width: 5rem;
+     height: auto;
+ } */
 }
