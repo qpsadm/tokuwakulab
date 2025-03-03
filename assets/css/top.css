@@ -37,6 +37,12 @@ main {
 
 .slider_org {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.slider_org li {
+    box-sizing: border-box;
 }
 
 /* .slick-prev {
