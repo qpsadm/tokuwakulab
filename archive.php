@@ -21,8 +21,8 @@ get_header();
                         $args = [
                             'title_li' => '',     //見出しを削除
                             'show_count' => false,
-                            'orderby' => 'slug',
-                            'order' => 'asc',
+                            'orderby' => 'date',
+                            'order' => 'DESC',
                             'hide_empty' => true, //空のカテゴリーを非表示
                         ];
                         // カテゴリー別リンク一覧を作成・出力
@@ -46,27 +46,34 @@ get_header();
             </div>
 
             <div class="section_body">
-                <div class="cardList">
+                <div class="">
+                    <?php
+                    global $wp_query;
+                    $post_id = $wp_query->get_queried_object_id();
+                    //echo get_favorites_button($post_id);
+                    ?>
 
                     <!-- WordPress ループの開始 -->
                     <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : ?>
-                            <?php the_post(); ?>
+                    <?php while (have_posts()) : ?>
+                    <?php the_post(); ?>
 
-                            <!-- テンプレートパーツloop-news.phpを読み込む -->
-                            <?php get_template_part('template-parts/loop', 'news') ?>
+                    <!-- テンプレートパーツloop-news.phpを読み込む -->
+                    <?php echo get_favorites_button(get_the_ID());
+                            ?>
+                    <?php get_template_part('template-parts/loop', 'news') ?>
 
-                            <!-- WordPress ループの終了 -->
-                        <?php endwhile; ?>
+                    <!-- WordPress ループの終了 -->
+                    <?php endwhile; ?>
                     <?php endif; ?>
 
                 </div>
 
                 <!-- ページナビゲーション -->
                 <?php if (function_exists('wp_pagenavi')) : ?>
-                    <div class="pagenation">
-                        <?php wp_pagenavi(); ?>
-                    </div>
+                <div class="pagenation">
+                    <?php wp_pagenavi(); ?>
+                </div>
                 <?php endif; ?>
             </div>
 
@@ -75,6 +82,4 @@ get_header();
 </main>
 
 <!-- footer.phpを読み込む -->
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
