@@ -40,24 +40,24 @@
 
 
 
-            <ul class="foodList">
+            <ul class="">
 
 
                 <!-- コラムループ -->
                 <?php if (have_posts()): ?>
-                    <?php while (have_posts()): ?>
-                        <?php the_post(); ?>
+                <?php while (have_posts()): ?>
+                <?php the_post(); ?>
 
-                        <li class="foodList_item">
+                <li class="">
 
-                            <!-- columnのカード型を読み込む -->
-                            <?php get_template_part('template-parts/loop', 'column') ?>
+                    <!-- columnのカード型を読み込む -->
+                    <?php get_template_part('template-parts/loop', 'column') ?>
 
-                        </li>
+                </li>
 
-                    <?php endwhile; ?>
-                    <!-- リセット -->
-                    <?php wp_reset_postdata(); ?>
+                <?php endwhile; ?>
+                <!-- リセット -->
+                <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
 
             </ul>
