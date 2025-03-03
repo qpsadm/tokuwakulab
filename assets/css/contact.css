@@ -7,11 +7,35 @@
     line-height: 4rem;
 }
 
-/* フォームの装飾 */
+/* パンくずリスト */
+.breadcrumb a{
+    display: inline;
+}
+
+.breadcrumb{
+    padding: 0.8rem 0;
+    background-color: #fff ;
+    border-bottom: 1px solid #FFCC00;
+}
+
+.breadcrumb span{
+    font-family: "Noto Sans JP", serif;
+    padding: 0.8rem 1.6rem;
+}
+
+/* pcのパンくずリストフォントサイズ */
+@media screen and (min-width:1280px){
+    .breadcrumb span{
+        font-size: 1.4rem;
+    }
+}
+
+
+/* お問い合わせ例の装飾 */
 .contact_samplewrap{
     border: 3px solid #58BE15;
     border-radius: 16px;
-    margin: 2.4rem 0;
+    margin: 4.8rem 0 4.8rem;
     padding: 1.6rem;
 }
 
@@ -21,6 +45,7 @@
     line-height: 2.4rem;
 }
 
+/* フォームの装飾 */
 .contact_font{
     font-weight: 900;
     margin: 2.4rem 0;
@@ -90,7 +115,7 @@
 @media screen and (min-width:1280px){
     .contact_samplewrap,
     .contact_form_wrap{
-        margin: 0 12rem;
+        margin: 4.8rem 12rem 0;
     }
 
 
