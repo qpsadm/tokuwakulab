@@ -31,27 +31,46 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- ヘッダー用CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/header.css">
+
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
                 <a href="#">
-                    <div><img src="" alt=""></div>
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
+                <li class="menu_item"><a href="#">イベントをさがす</a></li>
+                <li class="menu_item"><a href="#">イベント一覧</a></li>
+                <li class="menu_item"><a href="#">コラム一覧</a></li>
+                <li class="menu_item"><a href="#">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="#">お気に入り</a></li>
+                <li class="menu_item"><a href="#">よくある質問</a></li>
+                <li class="menu_item"><a href="#">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="header_nav sp_none">
+            <ul>
+                <li><a href="#">イベントをさがす</a></li>
                 <li><a href="#">イベント一覧</a></li>
                 <li><a href="#">コラム一覧</a></li>
                 <li><a href="#">お知らせ一覧</a></li>
@@ -60,6 +79,7 @@
                 <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
