@@ -23,5 +23,11 @@ html {
 
 /* PC */
 @media screen and (min-width:1280px) {
-    width: calc(100% - 320px);
+    .breadcrumb {
+        width: calc(100% - 320px);
+        display: flex;
+
+    }
+
+
 }
