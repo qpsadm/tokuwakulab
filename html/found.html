@@ -94,17 +94,14 @@
         <div class="inner">
             <!-- パンくずリスト -->
             <div class="breadcrumb">
-                <a href="#">TOP</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span>
-                <span>パンくずリスト</span>
+                <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
             </div>
 
             <!-- 検索ボックス -->
             <section class="search">
                 <div class="search_wrap">
                     <form action="" method="post" class="search_content">
+                        <input type="hidden" name="s">
                         <!-- エリア -->
                         <h3 class="sub_title">エリア</h3>
                         <details open class="search_accordion">
@@ -236,20 +233,26 @@
                             <label for="family"><input type="checkbox" name="other[]" id="family" value="親子で参加">親子で参加</label>
                             <label for="alone"><input type="checkbox" name="other[]" id="alone" value="一人でできる">一人でできる</label>
                         </details>
-                        <!-- 日付選択 -->
-                        <input type="date" name="date" id="date">
-                        <!-- フリーワード -->
-                        <div class="search_box_wrap">
-                            <div class="search_box_inner">
-                                <input type="search" name="s" placeholder="フリーワードで検索する" class="search_box_content">
-                            </div>
+                        <div class="">
+                            <!-- イベントをさがすボタン -->
+                            <a href="#">イベントをさがす</a>
+                            <!-- リセットボタン -->
+                            <a href="#">リセット</a>
                         </div>
                     </form>
                 </div>
+            </section>
 
-                <!-- イベントをさがすボタン -->
-                <a href="#">イベントをさがす</a>
-
+            <section>
+                <form action="" method="post">
+                    <!-- フリーワード -->
+                    <h3 class="sub_title">フリーワード検索</h3>
+                    <div class="search_box_wrap">
+                        <div class="search_box_inner">
+                            <input type="search" name="s" placeholder="フリーワードで検索する" class="search_box_content">
+                        </div>
+                    </div>
+                </form>
             </section>
 
             <section>

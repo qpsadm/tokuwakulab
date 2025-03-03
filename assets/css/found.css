@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-/* @media screen and (min-width:1280px) {
-.search_wrap {
-    width: 800px ;
-    }
-} */
-/* 後で共通パーツに変換 */
 .sub_title {
     display: block;
     background-color: #58BE15;
@@ -32,6 +26,7 @@
     border-bottom: 1px solid #b6b6b6;
     font-size: 1.6rem;
     font-weight: 500;
+    padding: 1.2rem 0;
 }
 
 .search_item_title::after {
@@ -39,7 +34,7 @@
     content: "+";
     right: 16px;
     transition: transform 0.3s ease;
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-align: center;
 }
 
@@ -47,7 +42,7 @@
     position: absolute;
     content: "-";
     transform: rotate(180deg);
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-align: center;
 }
 
@@ -65,10 +60,11 @@ summary::-webkit-details-marker {
 input[type="checkbox"] {
     width: 16px;
     height: 16px;
+    margin-right: 0.5rem;
 }
 
 label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 /* フリーワード */
