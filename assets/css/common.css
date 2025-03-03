@@ -383,6 +383,7 @@ main {
 
 .breadcrumb{
     padding: 0.8rem 0;
+    margin-bottom: 4.8rem;
     background-color: #fff ;
     border-bottom: 1px solid #FFCC00;
 }
