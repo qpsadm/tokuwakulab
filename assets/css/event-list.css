@@ -6,8 +6,15 @@ html {
 
 .page_title {
     width: 100%;
+    height: ;
     background-image: url();
     text-align: center;
+}
+
+
+.breadcrumb {
+    display: flex;
+
 }
 
 /* TB */
@@ -15,4 +22,6 @@ html {
 
 
 /* PC */
-@media screen and (min-width:1280px) {}
+@media screen and (min-width:1280px) {
+    width: calc(100% - 320px);
+}
