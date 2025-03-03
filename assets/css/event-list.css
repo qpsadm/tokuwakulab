@@ -1,11 +1,13 @@
 @charset "utf-8";
 
+.breadcrumb {
+    display: flex;
+}
 
-
-.event_list {
+.event_list ul {
     list-style: none;
     padding: 0.5em 0.7em;
-    border: solid 0.2rem #FF7800;
+    border: solid 2px #FF7B00;
     border-radius: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +25,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 20rem;
+    max-width: 200px;
     /* ボタンの最大幅 */
     padding: 1em 2em;
     transition: 0.3s ease-in-out;
@@ -32,12 +34,12 @@
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    margin-bottom: 0.5rem;
-    padding-left: 3rem;
-    line-height: 3rem;
-    font-size: 1.5rem;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    line-height: 30px;
+    font-size: 15px;
     font-weight: bold;
-    border: 0.1rem solid #f4cf15;
+    border: 1px solid #f4cf15;
     border-radius: 3rem;
 
 }
@@ -64,8 +66,17 @@
     /*   color: #f4cf15; */
 }
 
+.event_search_result ul {
+    flex-direction: column;
+    /* 縦並びにする */
+    align-items: center;
+    /* アイテムを中央揃えに */
+}
 
-
+.event_search_result li {
+    width: 100%;
+    /* 各カードの幅を100%に設定 */
+}
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {}
@@ -73,14 +84,8 @@
 
 /* PC */
 @media screen and (min-width:1280px) {
-
-    main {
-        width: calc(100% - 320px);
-
+    .event_search_result li {
+        width: 30%;
+        /* 各カードの幅を30%に設定して3列にする */
     }
-
-    .page_title {
-        margin-top: 2rem;
-    }
-
 }
