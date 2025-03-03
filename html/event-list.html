@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
@@ -15,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- あかり -->
     <script>
         (function (d) {
@@ -26,50 +29,78 @@
                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
+
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- ヘッダー用CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/header.css">
+    <!-- フッター用のcss読み込み -->
     <link rel="stylesheet" href="../assets/css/footer.css">
+    <!-- 個別CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/event-list.css">
+
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
-                <a href="#">
-                    <div><img src="" alt=""></div>
+                <a href="../html/index.html">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
-                <li><a href="#">イベント一覧</a></li>
-                <li><a href="#">コラム一覧</a></li>
-                <li><a href="#">お知らせ一覧</a></li>
-                <li><a href="#">お気に入り</a></li>
-                <li><a href="#">よくある質問</a></li>
-                <li><a href="#">当サイトについて</a></li>
+                <a href="#" class="">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                </a>
+                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="sp_none">
+            <ul>
+                <li><a href="found.html">イベントをさがす</a></li>
+                <li><a href="event-list.html">イベント一覧</a></li>
+                <li><a href="column.html">コラム一覧</a></li>
+                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="favorite-list.html">お気に入り</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="about.html">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- ページタイトル -->
-        <h2 class="page_title">
+
+    <main class="pc_space">
+        <!-- クラス入れた -->
+        <section class="page_top">
+            <h2 class="page_title">
                     月別イベント一覧
                 </h2>
+        </section>
 
         <div class="inner">
+
             <!-- パンくずリスト -->
             <div class="breadcrumb">
                 <a href="#">TOP</a>
@@ -78,49 +109,50 @@
                 <span>></span>
                 <span>パンくずリスト</span>
             </div>
-
-            <!-- 開催年月日が表示 -->
-            <ul>
-                <li><a href="#">
-                        2025.02(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.03(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.04(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.05(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.06(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.07(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.08(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.09(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.10(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.11(99)
-                    </a></li>
-                <li><a href="#">
-                        2025.12(99)
-                    </a></li>
-                <li><a href="#">
-                        2026.01(99)
-                    </a></li>
-            </ul>
+            <div class="event_list">
+                <!-- 開催年月日が表示 -->
+                <ul>
+                    <li><a href="#">
+                            2025.02(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.03(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.04(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.05(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.06(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.07(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.08(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.09(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.10(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.11(99)
+                        </a></li>
+                    <li><a href="#">
+                            2025.12(99)
+                        </a></li>
+                    <li><a href="#">
+                            2026.01(99)
+                        </a></li>
+                </ul>
+            </div>
             <!-- ここから検索結果 -->
-            <div>
-                <div>
+
+                <div class="event_search_result">
                     <h3>2025年12月イベント一覧（99）件</h3>
                     <span>1-6件を表示</span>
                 </div>

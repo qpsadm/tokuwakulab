@@ -7,12 +7,30 @@
     line-height: 4rem;
 }
 
-/* フォームの装飾 */
-.contact_warning_wrap{
+
+
+/* お問い合わせ例の装飾 */
+.contact_samplewrap{
     border: 3px solid #58BE15;
     border-radius: 16px;
-    margin: 2.4rem 0;
+    margin: 4.8rem 0 4.8rem;
     padding: 1.6rem;
+}
+
+.contact_samplewrap div{
+    font-size: 1.6rem;
+    font-family: "Noto Sans JP", serif;
+    line-height: 2.4rem;
+}
+
+/* フォームの装飾 */
+.contact_font{
+    font-weight: 900;
+    margin: 2.4rem 0;
+}
+
+.contact_samplelist div::before{
+    content: "・";
 }
 
 .contact_form_wrap{
@@ -66,15 +84,16 @@
 .contact_input_flex{
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction:column;
 }
 
 
 /* pcのフォーム大きさ変更 */
 @media screen and (min-width:1280px){
-    .contact_warning_wrap,
+    .contact_samplewrap,
     .contact_form_wrap{
-        margin: 0 12rem;
+        margin: 4.8rem 12rem 0;
     }
 
 
@@ -98,12 +117,70 @@
         max-width: 750rem;
         flex-grow: 1;
         box-sizing: border-box;
+        margin-right: 2.4rem;
     }
 
 
 
     .contact_item textarea{
-        height: 6rem;
+        height: 8rem;
     }
 
+}
+
+.contact_agreement{
+    text-align: center;
+    margin: 2.4rem 0;
+}
+
+.contact_agreement a{
+    border-bottom: 2px dotted #FFCC00;
+}
+
+.contact_agreement a:hover{
+    color: #FF7B00;
+}
+
+.contact_boxagree{
+    margin: 2.4rem 0;
+}
+
+
+.contact_btn{
+    margin-top: 4rem;
+    margin-bottom: 6.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_prv_btn,.contact_nxt_btn{
+    display: inline-block;
+    color: #fff;
+    padding: 1rem 3.2rem;
+    border-radius: 50px;
+    position: relative;
+    font-size: 1.6rem;
+    font-family: "ads-akari", sans-serif;
+}
+
+.contact_prv_btn:hover,.contact_nxt_btn:hover{
+    background-color: #fff;
+}
+
+.contact_prv_btn{
+    background-color: #58BE15;
+    border: 2px solid #58BE15;
+}
+
+.contact_nxt_btn{
+    background-color: #FF7B00;
+    border: 2px solid #FF7B00;
+}
+
+.contact_prv_btn:hover{
+    color: #58BE15;
+}
+
+.contact_nxt_btn:hover{
+    color: #FF7B00;
 }

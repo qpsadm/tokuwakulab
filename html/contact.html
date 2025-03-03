@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
@@ -30,8 +33,16 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- ヘッダー用CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
+
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
@@ -39,52 +50,72 @@
         <div class="inner">
             <!-- ロゴ -->
             <h1>
-                <a href="#">
-                    <div><img src="../assets/img/AdobeStock_204053911.jpeg" alt=""></div>
+                <a href="../html/index.html">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div class="hamburger pc-none">
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav class="header_nav sp-none">
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
-                <li><a href="#">イベント一覧</a></li>
-                <li><a href="#">コラム一覧</a></li>
-                <li><a href="#">お知らせ一覧</a></li>
-                <li><a href="#">お気に入り</a></li>
-                <li><a href="#">よくある質問</a></li>
-                <li><a href="#">当サイトについて</a></li>
+                <a href="#" class="">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                </a>
+                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="sp_none">
+            <ul>
+                <li><a href="found.html">イベントをさがす</a></li>
+                <li><a href="event-list.html">イベント一覧</a></li>
+                <li><a href="column.html">コラム一覧</a></li>
+                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="favorite-list.html">お気に入り</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="about.html">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="pc_space">
         <div class="inner">
-            <!-- ページタイトル -->
-            <h2 class="contact_title">主催団体様<br class="brpc_none">お問い合わせ</h2>
+            <section class="page_top">
+                <h2 class="page_title">主催団体様<br class="brpc_none">お問い合わせ</h2>
+            </section>
+
+
             <!-- パンくずリスト -->
             <div class="breadcrumb">
-                <a href="#">TOP</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span>
-                <span>パンくずリスト</span>
+                <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
             </div>
-            <!-- お問い合わせの注意書き -->
-            <div class="contact_warning_wrap">
-                <p>ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。ここに注意書きが入ります。</p>
+            <!-- お問い合わせの例 -->
+            <div class="contact_samplewrap">
+                <div class="contact_font">お問い合わせ例</div>
+                <div class="contact_samplelist">
+                    <div>主催団体の情報を新たに掲載してほしいです。</div>
+                    <div>主催団体の情報を更新または変更してほしいです。</div>
+                    <div>イベントの掲載をしてほしいです。</div>
+                    <div>主催団体やイベントの情報を削除してほしいです。</div>
+                </div>
+                <div class="contact_font">※返信にはお時間をいただく場合がございます。あらかじめご了承ください。</div>
             </div>
             <!-- フォーム入力 -->
             <div class="contact_form_wrap">
                 <form action="contact-check.html" method="post">
                     <div class="contact_item">
                         <label for="">ご用件<span>*</span></label>
-                        <div>
+                        <div class="contact_input_flex">
                             <select name="requirement" id="">
                                 <option value="" selected>選択してください</option>
                                 <option value="1">イベント掲載について</option>
@@ -94,49 +125,49 @@
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="">お名前<span>*</span></label>
+                        <label for="name">お名前<span>*</span></label>
                         <div class="contact_input_flex">
                             <input name="name" type="text" required placeholder="例：徳島　太郎">
                             <span>※ご担当者様のお名前を入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="">お電話<span>*</span></label>
+                        <label for="tel">お電話<span>*</span></label>
                         <div class="contact_input_flex">
                             <input name="tel" type="tel" required placeholder="888-8888-8888">
                             <span>※ハイフンありで電話番号を入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="">メール<span>*</span></label>
+                        <label for="email">メール<span>*</span></label>
                         <div class="contact_input_flex">
                             <input name="email" type="email" required placeholder="sample@gmail.com">
                             <span>※メールアドレスを入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="">所属名</label>
+                        <label for="affiliation">所属名</label>
                         <div class="contact_input_flex">
                             <input name="affiliation" type="text">
                             <span>※所属名がありましたら入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="">お問い合わせ内容<span>*</span></label>
+                        <label for="inquiry_detail">お問い合わせ内容<span>*</span></label>
                         <textarea name="inquiry_detail" maxlength="2000" required></textarea>
                     </div>
 
-                    <div>
-                        <span><a href="#">プライバシーポリシー</a>・<a href="#">利用規約</a>をご確認ください。</span>
-                        <div>
+                    <div class="contact_agreement">
+                        <span><a href="privacy-policy.html">プライバシーポリシー・免責事項</a>をご確認ください。</span>
+                        <div class="contact_boxagree">
                             <input type="checkbox" id="agree">
                             <label for="agree">同意する</label>
                         </div>
                     </div>
 
-                    <div>
-                        <input type="reset" value="リセット">
-                        <input type="submit" value="確認画面へ">
+                    <div class="contact_btn">
+                        <input class="contact_prv_btn" type="reset" value="リセット">
+                        <input class="contact_nxt_btn" type="submit" value="確認画面へ">
                     </div>
                 </form>
             </div>
@@ -155,9 +186,19 @@
     <footer>
         <ul>
             <li><a href="">利用規約</a></li>
-            <li><a href="">主催団体様お問い合わせ</a></li>
+            <li><a href="">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
+        <div class="f_img">
+            <img src="../assets/img/f_img.png" alt="化石の画像">
+        </div>
     </footer>
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slickの読み込み -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 自作JSの読み込み -->
+    <script src="../assets/js/animation.js"></script>
 </body>
 </html>

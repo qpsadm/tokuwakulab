@@ -23,28 +23,85 @@ $(function () {
         // ドットインジケーターの表示
         dots: true,
         // 矢印の表示
-        arrows: true
+        arrows: true,
+        appendArrow: $('.arrow_box'),
+        prevArrow: '<div class="prev_arrow"></div>',
+        nextArrow: '<div class="next_arrow"></div>'
     });
 })
 
+// $(function () {
+//     $(".slider_org").slick({
+//         // 自動再生
+//         autoplay: true,
+//         // ドットインジケーターの表示
+//         dots: false,
+//         // 矢印の表示
+//         arrows: false,
+//         //表示するスライドの数
+//         slidesToShow: 3,
+//         respondTo: 'slider',
+//         centerMode: true,
+//         responsive: [{
+//             breakpoint: 767,
+//             settings: {
+//                 slidesToShow: 1
+//             }
+//         }]
+//     });
+// })
+
 $(function () {
-    $('.slider_org').slick({
-        autoplay: true, //自動でスクロール
-        autoplaySpeed: 0, //自動再生のスライド切り替えまでの時間を設定
-        speed: 10000, //スライドが流れる速度を設定
-        cssEase: "linear", //スライドの流れ方を等速に設定
-        slidesToShow: 2, //表示するスライドの数
-        // swipe: false, // 操作による切り替えはさせない
-        arrows: false, //矢印非表示
-        pauseOnFocus: false, //スライダーをフォーカスした時にスライドを停止させるか
-        pauseOnHover: false, //スライダーにマウスホバーした時にスライドを停止させるか
+    // メイン画像のオプション
+    $(".slider_org").slick({
+        slidesToShow: 1,    // 表示するスライド数
+        slidesToScroll: 1,  // スクロールするスライド数
+        centerMode: true,   // 中央揃え
+        variableWidth: true, // 幅の自動調整
+        autoplay: true, // 自動再生ON/OFF
+        autoplaySpeed: 3000, // 自動再生スピード[msec]
+        infinite: true, // ループ再生ON/OFF
+        cssEase: 'linear', // イージングモード
+        pauseOnFocus: true,    // フォーカスで停止ON/OFF
+        pauseOnHover: true,    // ホバーで停止ON/OFF
+        arrows: false, // スライド切り替え矢印 非表示
+        swipeToSlide: true, // スワイプ切り替えON/OFF
         responsive: [
             {
-                breakpoint: 767,
+                breakpoint: 768,    // 横幅がこのpx未満に適用
                 settings: {
-                    slidesToShow: 1, //画面幅767px以下でスライド3枚表示
+                    slidesToShow: 2,    // スライド数
                 }
-            }
+            },
+            {
+                breakpoint: 1280,   // 横幅がこのpx未満に適用
+                settings: {
+                    slidesToShow: 3,    // スライド数
+                    centerMode: false,   // 中央揃え
+                }
+            },
         ]
     });
 });
+
+// $(function () {
+//     $('.slider_org').slick({
+//         autoplay: true, //自動でスクロール
+//         autoplaySpeed: 0, //自動再生のスライド切り替えまでの時間を設定
+//         speed: 10000, //スライドが流れる速度を設定
+//         cssEase: "linear", //スライドの流れ方を等速に設定
+//         slidesToShow: 2, //表示するスライドの数
+//         // swipe: false, // 操作による切り替えはさせない
+//         arrows: false, //矢印非表示
+//         pauseOnFocus: false, //スライダーをフォーカスした時にスライドを停止させるか
+//         pauseOnHover: false, //スライダーにマウスホバーした時にスライドを停止させるか
+//         responsive: [
+//             {
+//                 breakpoint: 767,
+//                 settings: {
+//                     slidesToShow: 1, //画面幅767px以下でスライド3枚表示
+//                 }
+//             }
+//         ]
+//     });
+// });
