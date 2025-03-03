@@ -365,11 +365,36 @@ main {
     color: #fff;
     font-weight: 600;
     width: 100%;
+    line-height: 5.6rem;
 }
 
 /* ページタイトル-PC */
 @media screen and (min-width:1280px) {
     main {
     padding-top: 0px;
+    }
+}
+
+
+/* パンくずリスト */
+.breadcrumb a{
+    display: inline;
+}
+
+.breadcrumb{
+    padding: 0.8rem 0;
+    background-color: #fff ;
+    border-bottom: 1px solid #FFCC00;
+}
+
+.breadcrumb span{
+    font-family: "Noto Sans JP", serif;
+    padding: 0.8rem 1.6rem;
+}
+
+/* pcのパンくずリストフォントサイズ */
+@media screen and (min-width:1280px){
+    .breadcrumb span{
+        font-size: 1.4rem;
     }
 }

@@ -7,28 +7,6 @@
     line-height: 4rem;
 }
 
-/* パンくずリスト */
-.breadcrumb a{
-    display: inline;
-}
-
-.breadcrumb{
-    padding: 0.8rem 0;
-    background-color: #fff ;
-    border-bottom: 1px solid #FFCC00;
-}
-
-.breadcrumb span{
-    font-family: "Noto Sans JP", serif;
-    padding: 0.8rem 1.6rem;
-}
-
-/* pcのパンくずリストフォントサイズ */
-@media screen and (min-width:1280px){
-    .breadcrumb span{
-        font-size: 1.4rem;
-    }
-}
 
 
 /* お問い合わせ例の装飾 */
