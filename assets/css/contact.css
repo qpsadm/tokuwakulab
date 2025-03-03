@@ -13,8 +13,9 @@
 .contact_samplewrap{
     border: 3px solid #58BE15;
     border-radius: 16px;
-    margin: 4.8rem 0 4.8rem;
+    margin-bottom: 4.8rem;
     padding: 1.6rem;
+    background-color: #fff;
 }
 
 .contact_samplewrap div{
@@ -57,6 +58,7 @@
     font-size: 1.6rem;
     padding: 0.8rem;
     width: 100%;
+    background-color: #fff;
 }
 
 .contact_item input:focus ,
@@ -74,7 +76,7 @@
 .contact_item{
     margin-top: 3.2rem;
     padding-bottom: 1.6rem;
-    border-bottom: 1px solid #FFCC00;
+    border-bottom: 2px solid #FFCC00;
 }
 
 .contact_form_wrap a{
