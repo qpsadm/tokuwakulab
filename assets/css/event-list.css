@@ -4,18 +4,104 @@ html {
     background-image: url();
 }
 
+
 .page_title {
     width: 100%;
-    text-align: center;
-    background-image: url();
+    height: 20rem;
+    margin-top: calc(6rem + 2rem);
+    /* ヘッダーの高さ + 余白 */
+    color: #fff;
+    /* 文字色 */
+    background-image: url(../img/AdobeStock_537320558.jpeg);
+    background-size: cover;
+    /* 画像を要素のサイズに合わせる */
+    background-position: center;
+    /* 画像を中央に配置 */
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央寄せ */
+    align-items: center;
+    /* 縦方向の中央寄せ */
 
 }
+
+.page_title h2 {
+
+    text-align: center;
+}
+
 
 
 .breadcrumb {
+    margin-top: 2rem;
     display: flex;
 
 }
+
+.event_list {
+    list-style: none;
+    padding: 0.5em 0.7em;
+    border: solid 0.2rem #FF7800;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* アイテムが折り返されるように */
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    /* アイテム間の間隔 */
+}
+
+.event_list li {
+    width: 100%;
+    font-size: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 20rem;
+    /* ボタンの最大幅 */
+    padding: 1em 2em;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #56C909;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-bottom: 0.5rem;
+    padding-left: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 0.1rem solid #f4cf15;
+    border-radius: 3rem;
+
+}
+
+
+.event_list li:before {
+    font-family: FontAwesome;
+    content: "★";
+    position: absolute;
+    left: 2rem;
+    font-size: 1.2em;
+    transition: transform 0.8s ease-in-out;
+    /* 回転のアニメーション */
+}
+
+.event_list li:hover {
+    background-color: #FF7B00;
+    /* ホバー時に背景色をオレンジに変更 */
+}
+
+.event_list li:hover:before {
+    transform: rotate(360deg);
+    /* アイコンが360度回転 */
+    /*   color: #f4cf15; */
+}
+
+
+
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {}
@@ -23,11 +109,14 @@ html {
 
 /* PC */
 @media screen and (min-width:1280px) {
-    .breadcrumb {
+
+    main {
         width: calc(100% - 320px);
-        display: flex;
 
     }
 
+    .page_title {
+        margin-top: 2rem;
+    }
 
 }
