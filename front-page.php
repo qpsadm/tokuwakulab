@@ -111,6 +111,7 @@ get_header();
 </section>
 
 
+
 <!-- コラム新着セクション。縦並びカード3件表示 -->
 <section class="section section-concept" id="concept">
     <div class="section_inner">
@@ -145,7 +146,7 @@ get_header();
         </div>
         <div class="section_body">
             <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">コラム記事一覧へ</a>
+                <a href="<?php echo home_url('/column/'); ?>" class="btn btn-more">コラム記事一覧へ</a>
             </div>
         </div>
     </div>
@@ -192,17 +193,37 @@ get_header();
     <div class="section_inner">
         <div class="section_headerWrapper">
             <header class="section_header">
-                <h2 class="heading heading-primary">主催団体様</h2>
+                <h2 class="heading heading-primary">主催団体紹介</h2>
             </header>
             <div class="section_pic">
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img01@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img02@2x.png" alt=""></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/concept_img03@2x.png" alt=""></div>
+
+                <ul class="foodList">
+                    <?php
+                    // ランダムに2件のコラムを取得
+                    $organization = new WP_Query(array(
+                        'post_type'      => 'organization', // カスタム投稿タイプが「column」
+                        'posts_per_page' => 2,       // 2件取得
+                        'orderby'        => 'desc',
+                        'post_status' => 'publish'
+                    ));
+
+                    if ($organization->have_posts()) :
+                        while ($organization->have_posts()) : $organization->the_post();
+                    ?>
+                            <li class="foodList_item">
+                                <?php get_template_part('template-parts/loop', 'organization'); ?>
+                            </li>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata(); // クエリのリセット
+                    endif;
+                    ?>
+                </ul>
             </div>
         </div>
         <div class="section_body">
             <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">主催団体一覧へ</a>
+                <a href="<?php echo home_url('/organization/'); ?>" class="btn btn-more">主催団体一覧へ</a>
             </div>
         </div>
     </div>
@@ -212,6 +233,9 @@ get_header();
 <section class="section">
     <div>
         <p>インスタグラムのエリア</p>
+    </div>
+    <div>
+        <?php echo do_shortcode('[instagram-feed=1]'); ?>
     </div>
     <!-- 後日調べます -->
 </section>
