@@ -24,9 +24,9 @@ $(function () {
         dots: true,
         // 矢印の表示
         arrows: true,
-        appendArrow: $('.arrow_box'),
-        prevArrow: '<div class="prev_arrow"></div>',
-        nextArrow: '<div class="next_arrow"></div>'
+        // appendArrow: $('.arrow_box'),
+        // prevArrow: '<div class="prev_arrow"></div>',
+        // nextArrow: '<div class="next_arrow"></div>'
     });
 })
 
@@ -68,7 +68,7 @@ $(function () {
         swipeToSlide: true, // スワイプ切り替えON/OFF
         responsive: [
             {
-                breakpoint: 768,    // 横幅がこのpx未満に適用
+                breakpoint: 780,    // 横幅がこのpx未満に適用
                 settings: {
                     slidesToShow: 2,    // スライド数
                 }
