@@ -9,21 +9,52 @@ main {
 
 /* キービジュアル */
 .top_kv_wrap {
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
+
 /* スリックの設定 */
-.slider {
-    margin: 0 auto;
+.slider_kv {
+    /* margin: 0 auto; */
+    position: relative;
     /* max-width: 500px; */
-    /* width: 80%; */
+    width: 90%;
 }
 
 .slider img {
     width: 100%;
+}
+
+.slick-prev {
+    left: 10px !important;
+    /* 左側の矢印を内側に寄せる */
+    z-index: 1000;
+}
+
+.slick-next {
+    right: 10px !important;
+    /* 右側の矢印を内側に寄せる */
+    z-index: 1000;
+}
+
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明の背景 */
+    border-radius: 50%;
+    /* 丸いボタンに */
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-size: 20px;
+    color: white;
+    /* 矢印の色 */
 }
 
 /* セクション間の余白 */
@@ -155,17 +186,21 @@ section {
     padding-left: 1.6rem;
 }
 
+.top_instagram_list {
+    padding: 4rem 2rem;
+}
+
 .top_instagram_item {
     background: gray;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 32px;
-    margin: 2rem auto;
+    /* margin: 0 auto; */
 }
 
 .top_instagram_item img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 32px;
     object-fit: cover;
 }
@@ -227,4 +262,15 @@ section {
         margin-left: 6.4rem;
     }
 
+    /* インスタグラム写真サイズ */
+    .top_instagram_item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .top_instagram_item img {
+        width: 150px;
+        height: 150px;
+        border-radius: 32px;
+    }
 }

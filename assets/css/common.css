@@ -63,7 +63,7 @@ a{
 }
 }
 
-/* 縦型カード */
+/* イベントカード型テンプレ */
 .card_shape{
     display: block;
     margin: 2.4rem 2.4rem 1.6rem 0.8rem;
@@ -162,108 +162,75 @@ font-size: 1.6rem;
     font-size: 2.4rem;
 }
 
-/* SPコラムカード（横） */
+
+
+/* PCコラムカード（横） */
 .cardlist_wrap{
-    width: 240px;
+    width: 560px;
     height: auto;
     border: solid 8px #FF7800;
     border-radius: 12px;
     display: block;
-    margin:0.8rem 0;
+    margin:0.8rem;
+    transition: 0.3s;
     background-color: #fff;
 }
 
-.cardlist_wrap img{
-    width:80px;
-    height: 60px;
+@media screen and (max-width:768px) {
+.cardlist_wrap{width: 240px;}
+}
+
+.cardlist_wrap:hover{
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
+.cardlist_flex img{
+    width: 240px;
+    height: 180px;
     border-radius: 12px;
+    margin-right: 1.6rem;
+}
+@media screen and (max-width:768px) {
+    .cardlist_flex img{
+    width: 200px;
+    height: 150px;
+    border-radius: 12px;
+    margin-right: 1.6rem;
+}
 }
 
 .cardlist_inner{
     padding: 1.2rem;
 }
 
-.cardlist_toptext{
-    font-size: 1.2rem;
-    display: flex;
-}
-
-.cardlist_date{
-    margin: auto;
-    font-size: 1.2rem;
-}
-
-.cardlist_wrap h3{
-font-size: 1.6rem;
-margin:0.8rem 0;
-line-height: 2.8rem;
-font-weight: 600;
-}
-
-.cardlist_line{
-    border-bottom: 2px dashed #FF7800;
-    margin: 0.8rem 0;
-}
-
-.cardlist_tag{
-    background-color: #FF7800;
-    width: auto;
-    height: auto;
-    padding: 0.2rem 2rem;
-    border-radius: 32px;
-    color: #fff;
-    font-weight: 600;
-    display: inline-block;
-    margin: 0.4rem 0;
-    font-size: 1rem;
-}
-
-/* PCコラムカード（横） */
-.cardlistpc_wrap{
-    width: 560px;
-    height: auto;
-    border: solid 8px #FF7800;
-    border-radius: 12px;
-    display: block;
-    margin:0.8rem 0;
-    transition: 0.3s;
-    background-color: #fff;
-}
-
-.cardlistpc_wrap:hover{
-    transform: scale(0.95);
-transition: 0.3s;
-}
-
-.cardlistpc_flex img{
-    width: 240px;
-    height: 180px;
-    border-radius: 12px;
-    margin-right: 1.6rem;
-}
-
-.cardlistpc_inner{
-    padding: 1.2rem;
-}
-
-.cardlistpc_flex{
+/* flex設定 */
+.cardlist_flex{
     display: flex;
     line-height: 3.2rem;
 }
+@media screen and (max-width:768px) {
+    /* SP版の時flexを解除 */
+.cardlist_flex{
+    display: block;
+    line-height: 3.2rem;
+}
+}
 
-.cardlistpc_flex img{
+/* flexが効いている状態（PC版）でのimg処理 */
+.cardlist_flex img{
     flex: none;
 }
 
-.cardlistpc_toptext{
+.cardlist_toptext{
     font-size: 1.6rem;
 }
 
-.cardlistpc_data{
+.cardlist_data{
     font-size: 1.6rem;
 }
 
-.cardlistpc_tag{
+.cardlist_tag{
     background-color: #FF7800;
     width: auto;
     height: auto;
@@ -277,15 +244,16 @@ transition: 0.3s;
     line-height: 2rem;
 }
 
-.cardlistpc_toptext h3{
+.cardlist_toptext h3{
     font-size: 1.6rem;
     font-weight: 600;
 }
 
+
 /* 主催団体カード型 */
 .orgcard_shape{
     display: block;
-    margin: 2.4rem 2.4rem 1.6rem 0.8rem;
+    margin: 0.8rem;
     width: 240px;
     height: auto;
     border: solid 8px #FFCC00;
