@@ -4,7 +4,7 @@
 html {
     font-size: 62.5%;
     letter-spacing: 0.1rem;
-    line-height: 2rem;
+    line-height: 2.0rem;
     color: #111111;
     font-family: "Noto Sans JP", serif;
 }
@@ -268,7 +268,7 @@ font-size: 1.6rem;
 
 .cardlist_line{
     border-bottom: 2px dashed #FF7800;
-margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 
 
@@ -368,6 +368,8 @@ main {
     transform: translate(-50% , -50%);
     position: absolute;
     color: #fff;
+    font-weight: 600;
+    width: 100%;
 }
 
 /* ページタイトル-PC */

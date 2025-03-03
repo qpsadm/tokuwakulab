@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/top.css">
+    <!-- ヘッダー用CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/header.css">
 
 
     <!-- slickの読み込み -->
@@ -39,43 +41,51 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-
-
-    <!-- Add the slick-theme.css if you want default styling -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <!-- <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
 </head>
 
 <body>
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
-                <a href="#">
-                    <div><img src="" alt=""></div>
+                <a href="../html/index.html">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
-                <li><a href="#">イベント一覧</a></li>
-                <li><a href="#">コラム一覧</a></li>
-                <li><a href="#">お知らせ一覧</a></li>
-                <li><a href="#">お気に入り</a></li>
-                <li><a href="#">よくある質問</a></li>
-                <li><a href="#">当サイトについて</a></li>
+                <a href="#" class="">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                </a>
+                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="sp_none">
+            <ul>
+                <li><a href="found.html">イベントをさがす</a></li>
+                <li><a href="event-list.html">イベント一覧</a></li>
+                <li><a href="column.html">コラム一覧</a></li>
+                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="favorite-list.html">お気に入り</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="about.html">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
+
     <main class="pc_space">
         <div class="top_kv_wrap">
             <!-- キービジュアル -->
@@ -84,7 +94,7 @@
                 <li><img src="../assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
                 <li><img src="../assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
             </ul>
-
+            <!-- <div class="arrow_box"></div> -->
 
         </div>
         <div class="inner">
@@ -242,7 +252,12 @@
                         </li>
                     </ul>
                 </div>
+                <!-- もっと見るボタン -->
+                <a class="btn_wrap top_btn" href="#">
+                    イベント一覧へ
+                </a>
             </section>
+
 
             <section>
                 <!-- 見出し -->
@@ -370,7 +385,11 @@
                         </li>
                     </ul>
                 </div>
+                <a class="btn_wrap  top_btn" href="#">
+                    コラム一覧へ
+                </a>
             </section>
+
 
             <section>
                 <!-- 見出し -->
@@ -532,8 +551,55 @@
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+
+                            <div class="orgcard_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3>主催団体名</h3>
+                                        <div class="orgcard_line"></div>
+                                        <div>
+                                            <span class="card_subtitle">所在地</span>
+                                            <div>
+                                                <span>徳島県徳島市寺島本町東3丁目12-8
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">電話番号</span>
+                                            <div>
+                                                <span>080-XXXX-XXXX</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">営業時間</span>
+                                            <div>
+                                                <span>10:00-17:00</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">休業日</span>
+                                            <div>
+                                                <span>土・日・祝</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
+                <a class="btn_wrap  top_btn" href="#">
+                    主催団体一覧へ
+                </a>
             </section>
+
 
             <section>
                 <div class="top_instagram_wrap">
@@ -607,11 +673,16 @@
     <!-- フッター -->
     <footer>
         <ul>
-            <li><a href="#">利用規約</a></li>
-            <li><a href="#">主催団体様お問い合わせ</a></li>
+            <li><a href="">利用規約</a></li>
+            <li><a href="">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
+        <div class="f_img">
+            <img src="../assets/img/f_img.png" alt="化石の画像">
+        </div>
     </footer>
+
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- slickの読み込み -->

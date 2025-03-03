@@ -1,14 +1,23 @@
 @charset "utf-8";
 
+/* @media screen and (min-width:1280px) {
+.search_wrap {
+    width: 800px ;
+    }
+} */
 /* 後で共通パーツに変換 */
-.form_heading {
+.sub_title {
+    display: block;
     background-color: #58BE15;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
 }
 
 /* フォーム全体の設定 */
-.form_accordion {
+.search_accordion {
     background-color: #f7f7f7;
     padding: 1.2rem;
     cursor: pointer;
@@ -18,26 +27,59 @@
 }
 
 /* アコーディオンタイトルの設定 */
-.form_item_title {
+.search_item_title {
+    position: relative;
     border-bottom: 1px solid #b6b6b6;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
+
+.search_item_title::after {
+    position: absolute;
+    content: "+";
+    right: 16px;
+    transition: transform 0.3s ease;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.search_accordion[open] .search_item_title::after{
+    position: absolute;
+    content: "-";
+    transform: rotate(180deg);
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* デフォルトの三角形アイコンを消す */
+summary {
+	display: block;
+}
+
+/* WebKitブラウザのデフォルトの三角形アイコンを消す */
+summary::-webkit-details-marker {
+	display: none;
+}
+
 
 input[type="checkbox"] {
     width: 16px;
     height: 16px;
 }
 
+label {
+    font-size: 1.4rem;
+}
+
 /* フリーワード */
-.form_box_wrap {
+.search_box_wrap {
     font-size: 1.4rem;
     background-color: #fff;
     border: solid 1px #111;
     border-radius: 5px;
 }
 
-input[type="search"] {
+.search_box_content {
     width: 100%;
     padding: 16px;
 }
