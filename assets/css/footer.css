@@ -61,26 +61,30 @@ footer small {
 
 
 /* imgを均等に横並びにする場合  imgを<div>で囲ってclassを付与*/
-/* .f_img {
+.f_img {
     display: flex;
-    justify-content: space-around; /* 画像を主軸方向に均等にに配置 */
-/* width: 100%;  フッター全体に広げる */
-/* padding: 0 2rem;  左右の余白 （もしかしたらいらないかも）*/
-/*}*/
+    justify-content: space-around;
+    /* 画像を主軸方向に均等にに配置 */
+    width: 100%;
+    /*フッター全体に広げる */
+    padding: 0 2rem;
+    /*左右の余白 （もしかしたらいらないかも）*/
+}
 
-/*.f_img img {
-     width: 3rem;
-     height: auto;
- } */
+.f_img img {
+    width: 8rem;
+    height: auto;
+}
 
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {
+
     /* TB版で写真のサイズを変更 */
-    /*.f_img img {
-     width: 4rem;
-     height: auto;
- } */
+    .f_img img {
+        width: 16rem;
+        height: auto;
+    }
 }
 
 
@@ -108,8 +112,8 @@ footer small {
     }
 
     /* PC版で写真のサイズを変更 */
-    /*.f_img img {
-     width: 5rem;
-     height: auto;
- } */
+    .f_img img {
+        width: 24rem;
+        height: auto;
+    }
 }
