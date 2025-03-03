@@ -26,8 +26,10 @@ $date2 = get_last_day_of_month($date1);
 
 // サブクエリ
 $args = [
+    // 1ページに表示する記事数
+    'paged' => $paged,
     'post_type' => 'event',
-    'posts_per_page' => -1,
+    'posts_per_page' => 6,
 ];
 
 $meta_query = ['relation' => 'AND'];
@@ -118,6 +120,8 @@ $the_query = new WP_Query($args);
                 echo $start . ' - ' . $end . ' 件を表示';
                 echo '</div>';
                 ?>
+
+
 
 
             </div>
