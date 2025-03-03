@@ -35,11 +35,17 @@
 
 
     <!-- slickの読み込み -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <!-- <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
 </head>
 
 <body>
@@ -73,7 +79,7 @@
     <main class="pc_space">
         <div class="top_kv_wrap">
             <!-- キービジュアル -->
-            <ul class="slider">
+            <ul class="slider_kv">
                 <li><img src="../assets/img/AdobeStock_537320558.jpeg" alt="キービジュアル"></li>
                 <li><img src="../assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
                 <li><img src="../assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
@@ -94,8 +100,8 @@
                             <a class="card_wrap" href="#">
 
                                 <div class="card_countdown">
-                                    <span>残り</span>
-                                    <span class="card_countdownno">1</span>
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
                                     <span>日</span>
                                 </div>
 
@@ -107,6 +113,7 @@
 
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
                                             <div class="card_linefeed">
                                                 <span class="card_subtitle">開催日</span>
                                                 <div>
@@ -141,8 +148,8 @@
                             <a class="card_wrap" href="#">
 
                                 <div class="card_countdown">
-                                    <span>残り</span>
-                                    <span class="card_countdownno">1</span>
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
                                     <span>日</span>
                                 </div>
 
@@ -154,6 +161,7 @@
 
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
                                             <div class="card_linefeed">
                                                 <span class="card_subtitle">開催日</span>
                                                 <div>
@@ -188,8 +196,8 @@
                             <a class="card_wrap" href="#">
 
                                 <div class="card_countdown">
-                                    <span>残り</span>
-                                    <span class="card_countdownno">1</span>
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
                                     <span>日</span>
                                 </div>
 
@@ -201,6 +209,7 @@
 
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
                                             <div class="card_linefeed">
                                                 <span class="card_subtitle">開催日</span>
                                                 <div>
@@ -255,8 +264,8 @@
                                         </div>
                                         <div class="cardlist_date">2025/12/12</div>
                                     </div>
-                                    <h3>コラムタイトルが入ります</h3>
-
+                                    <h3>コラムタイトルが入り…</h3>
+                                    <div class="cardlist_line"></div>
                                     <div class="cardlist_tag">#科学の魅力</div>
                                     <div class="cardlist_tag">#インタビュー</div>
                                 </div>
@@ -273,8 +282,8 @@
                                         </div>
                                         <div class="cardlist_date">2025/12/12</div>
                                     </div>
-                                    <h3>コラムタイトルが入ります</h3>
-
+                                    <h3>コラムタイトルが入り…</h3>
+                                    <div class="cardlist_line"></div>
                                     <div class="cardlist_tag">#科学の魅力</div>
                                     <div class="cardlist_tag">#インタビュー</div>
                                 </div>
@@ -291,14 +300,13 @@
                                         </div>
                                         <div class="cardlist_date">2025/12/12</div>
                                     </div>
-                                    <h3>コラムタイトルが入ります</h3>
-
+                                    <h3>コラムタイトルが入り…</h3>
+                                    <div class="cardlist_line"></div>
                                     <div class="cardlist_tag">#科学の魅力</div>
                                     <div class="cardlist_tag">#インタビュー</div>
                                 </div>
                             </a>
                         </li>
-
                         <!-- PCコラムカード型（横） -->
                         <li class="card_sp_none">
                             <a class="cardlistpc_wrap" href="#">
@@ -393,8 +401,51 @@
                 <div class="top_org_txt">
                     <p>イベントを主催している団体様を紹介します！</p>
                 </div>
-                <ul class="top_org_list">
+                <ul class="top_org_list slider_org">
                     <!-- 主催団体カード型（縦） -->
+                    <li>
+                        <a class="card_wrap" href="#">
+
+                            <div class="orgcard_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3>主催団体名</h3>
+                                        <div class="orgcard_line"></div>
+                                        <div>
+                                            <span class="card_subtitle">所在地</span>
+                                            <div>
+                                                <span>徳島県徳島市寺島本町東3丁目12-8
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">電話番号</span>
+                                            <div>
+                                                <span>080-XXXX-XXXX</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">営業時間</span>
+                                            <div>
+                                                <span>10:00-17:00</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">休業日</span>
+                                            <div>
+                                                <span>土・日・祝</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                     <li>
                         <a class="card_wrap" href="#">
 

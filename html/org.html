@@ -4,8 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>徳島わくわくラボ</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ファビコンの設定 -->
+    <!-- フォントの読み込み -->
+    <!-- noto sans jp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- あかり -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xdy5khp',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
+
 
 <body>
     <!-- ヘッダー -->
@@ -127,34 +156,148 @@
             <section>
                 <h3>開催予定のイベント</h3>
                 <ul>
+                    <!-- イベントカード型（縦） -->
                     <li>
-                        <a href="#">
-                            <div>
-                                <img src="#" alt="ここにサムネイルが入ります">
+                        <a class="card_wrap" href="#">
+
+                            <div class="card_countdown">
+                                <span>あと</span>
+                                <span class="card_countdownno">5</span>
+                                <span>日</span>
                             </div>
-                            <div>
-                                <h3>カードタイトルが入ります</h3>
-                                <p>開催日　ここに開催日が入ります</p>
-                                <p>申込締切　ここに申込締切が入ります</p>
-                                <p>開催場所　ここに開催場所が入ります</p>
-                                <p>対象学年　ここに対象年齢が入ります</p>
-                                <div>#地域</div>
+
+                            <div class="card_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3>イベントタイトルが入ります</h3>
+                                        <div class="card_line"></div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">開催日</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">申込締切</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">会場名</span>
+                                            <div>
+                                                <span>徳島大学 常三島キャンパス</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">対象学年</span>
+                                            <div>
+                                                <span>小学5年生から中学2年生</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_tag">#地域</div>
+                                    </div>
+                                </div>
                             </div>
                         </a>
                     </li>
-
                     <li>
-                        <a href="#">
-                            <div>
-                                <img src="#" alt="ここにサムネイルが入ります">
+                        <a class="card_wrap" href="#">
+
+                            <div class="card_countdown">
+                                <span>あと</span>
+                                <span class="card_countdownno">5</span>
+                                <span>日</span>
                             </div>
-                            <div>
-                                <h3>カードタイトルが入ります</h3>
-                                <p>開催日　ここに開催日が入ります</p>
-                                <p>申込締切　ここに申込締切が入ります</p>
-                                <p>開催場所　ここに開催場所が入ります</p>
-                                <p>対象学年　ここに対象年齢が入ります</p>
-                                <div>#地域</div>
+
+                            <div class="card_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3>イベントタイトルが入ります</h3>
+                                        <div class="card_line"></div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">開催日</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">申込締切</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">会場名</span>
+                                            <div>
+                                                <span>徳島大学 常三島キャンパス</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">対象学年</span>
+                                            <div>
+                                                <span>小学5年生から中学2年生</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_tag">#地域</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card_wrap" href="#">
+
+                            <div class="card_countdown">
+                                <span>あと</span>
+                                <span class="card_countdownno">5</span>
+                                <span>日</span>
+                            </div>
+
+                            <div class="card_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3>イベントタイトルが入ります</h3>
+                                        <div class="card_line"></div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">開催日</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">申込締切</span>
+                                            <div>
+                                                <span>2025/12/12(土)</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">会場名</span>
+                                            <div>
+                                                <span>徳島大学 常三島キャンパス</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_linefeed">
+                                            <span class="card_subtitle">対象学年</span>
+                                            <div>
+                                                <span>小学5年生から中学2年生</span>
+                                            </div>
+                                        </div>
+                                        <div class="card_tag">#地域</div>
+                                    </div>
+                                </div>
                             </div>
                         </a>
                     </li>
