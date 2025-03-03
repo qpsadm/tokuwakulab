@@ -101,15 +101,20 @@
                 <ul>
                     <!-- イベントカード型（縦） -->
                     <li>
-                        <a class="card_wrap" href="#">
+                        <div class="card_wrap">
 
+                            <!-- ブックマーク機能 -->
+                            <div class="card_bookmark"></div>
+
+                            <!-- 「あと○日」 -->
                             <div class="card_countdown">
                                 <span>あと</span>
                                 <span class="card_countdownno">5</span>
                                 <span>日</span>
                             </div>
 
-                            <div class="card_shape">
+                            <!-- カード本体（aタグ） -->
+                            <a class="card_shape" href="#">
                                 <div class="card_inner">
                                     <div>
                                         <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -145,8 +150,8 @@
                                         <div class="card_tag">#地域</div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </li>
 
                     <!-- コラムカード型 -->
