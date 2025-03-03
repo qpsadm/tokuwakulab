@@ -1,11 +1,13 @@
 @charset "utf-8";
 
+.breadcrumb {
+    display: flex;
+}
 
-
-.event_list {
+.event_list ul {
     list-style: none;
     padding: 0.5em 0.7em;
-    border: solid 0.2rem #FF7800;
+    border: solid 2px #FF7B00;
     border-radius: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +25,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 20rem;
+    max-width: 200px;
     /* ボタンの最大幅 */
     padding: 1em 2em;
     transition: 0.3s ease-in-out;
@@ -32,12 +34,12 @@
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    margin-bottom: 0.5rem;
-    padding-left: 3rem;
-    line-height: 3rem;
-    font-size: 1.5rem;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    line-height: 30px;
+    font-size: 15px;
     font-weight: bold;
-    border: 0.1rem solid #f4cf15;
+    border: 1px solid #f4cf15;
     border-radius: 3rem;
 
 }
@@ -63,6 +65,7 @@
     /* アイコンが360度回転 */
     /*   color: #f4cf15; */
 }
+
 
 
 
