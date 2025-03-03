@@ -84,21 +84,34 @@
                         <h3>基本情報</h3>
 
                         <ul class="food_list">
+
                             <li class="food_item">
                                 <span class="food_itemLabel">開催日時</span>
-                                <span class="food_itemData"><?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>【<?php the_field('days'); ?>間】</span>
+                                <span class="food_itemData"><?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
+                                    <?php if (get_field('days')): ?>
+                                        【<?php the_field('days'); ?>間】
+                                    <?php endif; ?>
+                                </span>
                             </li>
+
 
                             <li class="food_item">
                                 <span class="food_itemLabel">会場名</span>
                                 <span class="food_itemData"><?php the_field('address'); ?></span>
-                                <span class="food_itemData">【最寄り駅：<?php the_field('nearest_station'); ?>】</span>
+                                <?php if (get_field('nearest_station')): ?>
+                                    <span class="food_itemData">
+                                        【最寄り駅：<?php the_field('nearest_station'); ?>】
+                                    </span>
+                                <?php endif; ?>
                             </li>
 
                             <li class="food_item">
                                 <span class="food_itemLabel">対象年齢</span>
                                 <span class="food_itemData"><?php the_field('age_text'); ?></span>
-                                <span class="food_itemData">【人数制限：<?php the_field('nearest_station'); ?>】</span>
+                                <?php if (get_field('limit')): ?>
+                                    <span class="food_itemData">
+                                        【人数制限：<?php the_field('limit'); ?>】</span>
+                                <?php endif; ?>
                             </li>
 
                             <li class="food_item">
@@ -106,27 +119,55 @@
                                 <span class="food_itemData"><?php the_field('fare'); ?></span>
                             </li>
 
-                            <li class="food_item">
-                                <span class="food_itemLabel">その他</span>
-                                <br>
-                                <span class="food_itemData">トイレ：<?php the_field('toilet'); ?></span>
-                                <br>
-                                <span class="food_itemData">着替え：<?php the_field('clothes'); ?></span>
-                                <br>
-                                <span class="food_itemData">お弁当の用意：<?php the_field('bento'); ?></span>
-                                <br>
-                                <span class="food_itemData">イベント担当：<?php the_field('eve_contactor'); ?></span>
-                                <br>
-                                <span class="food_itemData">イベント担当連絡先：<?php the_field('eve_contact'); ?></span>
-                                <span class="food_itemData">イベント専用電話番号：<?php the_field('tel'); ?></span>
-                                <br>
-                                <span class="food_itemData">イベント専用FAX：<?php the_field('fax'); ?></span>
-                                <br>
-                                <span class="food_itemData">イベント専用Eメール：<?php the_field('email'); ?></span>
-                                <br>
-                                <span class="food_itemData">備考：<?php the_field('remarks'); ?></span>
-                            </li>
+                            <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
+                                <li class="food_item">
+                                    <span class="food_itemLabel">その他</span>
+                                    <br>
 
+                                    <?php if (get_field('toilet')): ?>
+                                        <span class="food_itemData">トイレ：<?php the_field('toilet'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('clothes')): ?>
+                                        <span class="food_itemData">着替え：<?php the_field('clothes'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('bento')): ?>
+                                        <span class="food_itemData">お弁当の用意：<?php the_field('bento'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('eve_contactor')): ?>
+                                        <span class="food_itemData">イベント担当：<?php the_field('eve_contactor'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('eve_contact')): ?>
+                                        <span class="food_itemData">イベント担当連絡先：<?php the_field('eve_contact'); ?></span><br>
+                                    <?php endif; ?>
+
+                                    <?php if (get_field('tel')): ?>
+                                        <span class="food_itemData">イベント専用電話番号：<?php the_field('tel'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('fax')): ?>
+                                        <span class="food_itemData">イベント専用FAX：<?php the_field('fax'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('email')): ?>
+                                        <span class="food_itemData">イベント専用Eメール：<?php the_field('email'); ?></span><br>
+                                    <?php endif; ?>
+
+
+                                    <?php if (get_field('remarks')): ?>
+                                        <span class="food_itemData">備考：<?php the_field('remarks'); ?></span>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endif; ?>
 
                         </ul>
 
