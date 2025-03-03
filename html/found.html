@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
@@ -15,43 +17,79 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- あかり -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xdy5khp',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- ヘッダー用CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/found.css">
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
-                <a href="#">
-                    <div><img src="" alt=""></div>
+                <a href="../html/index.html">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
-                <li><a href="#">イベント一覧</a></li>
-                <li><a href="#">コラム一覧</a></li>
-                <li><a href="#">お知らせ一覧</a></li>
-                <li><a href="#">お気に入り</a></li>
-                <li><a href="#">よくある質問</a></li>
-                <li><a href="#">当サイトについて</a></li>
+                <a href="#" class="">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                </a>
+                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="sp_none">
+            <ul>
+                <li><a href="found.html">イベントをさがす</a></li>
+                <li><a href="event-list.html">イベント一覧</a></li>
+                <li><a href="column.html">コラム一覧</a></li>
+                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="favorite-list.html">お気に入り</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="about.html">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2 class="page_title">イベントをさがす</h2>
+    <main class="pc_space">
+        <section class="page_top">
+            <h2 class="page_title">イベントをさがす</h2>
+        </section>
 
         <div class="inner">
             <!-- パンくずリスト -->
@@ -64,22 +102,22 @@
             </div>
 
             <!-- 検索ボックス -->
-            <section class="form">
-                <div class="form_wrap">
-                    <form action="" method="post" class="form_content">
+            <section class="search">
+                <div class="search_wrap">
+                    <form action="" method="post" class="search_content">
                         <!-- エリア -->
-                        <h3 class="form_heading">エリア</h3>
-                        <details open class="form_accordion">
-                            <summary class="form_item_title">エリアを選択する</summary>
+                        <h3 class="sub_title">エリア</h3>
+                        <details open class="search_accordion">
+                            <summary class="search_item_title"><span></span>エリアを選択する</summary>
                             <label for="tokushima"><input type="checkbox" name="area[]" id="tokushima" value="徳島市">徳島市</label>
                             <label for="east"><input type="checkbox" name="area[]" id="east" value="東部">東部</label>
                             <label for="west"><input type="checkbox" name="area[]" id="west" value="西部">西部</label>
                             <label for="south"><input type="checkbox" name="area[]" id="south" value="南部">南部</label>
                         </details>
                         <!-- 年齢 -->
-                        <h3 class="form_heading">年齢</h3>
-                        <details open class="form_accordion">
-                            <summary class="form_item_title">年齢を選択する</summary>
+                        <h3 class="sub_title">年齢</h3>
+                        <details open class="search_accordion">
+                            <summary class="search_item_title">年齢を選択する</summary>
                             <label for="child"><input type="checkbox" name="age[]" id="child" value="未就学児">未就学児</label>
                             <label for="ele_1st"><input type="checkbox" name="age[]" id="ele_1st" value="小学1年生">小学1年生</label>
                             <label for="ele_2nd"><input type="checkbox" name="age[]" id="ele_2nd" value="小学2年生">小学2年生</label>
@@ -92,18 +130,18 @@
                             <label for="over_university"><input type="checkbox" name="age[]" id="over_university" value="大人">大人</label>
                         </details>
                         <!-- ジャンル -->
-                        <h3 class="form_heading">ジャンル</h3>
+                        <h3 class="sub_title">ジャンル</h3>
                         <!-- サイエンス・体験 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">サイエンス・体験</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">サイエンス・体験</summary>
                             <label for="science01"><input type="checkbox" name="science[]" id="science01" value="サイエンスショー">サイエンスショー</label>
                             <label for="science02"><input type="checkbox" name="science[]" id="science02" value="科学マジック">科学マジック</label>
                             <label for="science03"><input type="checkbox" name="science[]" id="science03" value="実験教室">実験教室</label>
                             <label for="science04"><input type="checkbox" name="science[]" id="science04" value="科学館ツアー">科学館ツアー</label>
                         </details>
                         <!-- 技術・工学 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">技術・工学</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">技術・工学</summary>
                             <label for="tech01"><input type="checkbox" name="tech[]" id="tech01" value="ロボット">ロボット</label>
                             <label for="tech02"><input type="checkbox" name="tech[]" id="tech02" value="電子工作">電子工作</label>
                             <label for="tech03"><input type="checkbox" name="tech[]" id="tech03" value="プログラミング">プログラミング</label>
@@ -111,50 +149,50 @@
                             <label for="tech05"><input type="checkbox" name="tech[]" id="tech05" value="ドローン・VR">ドローン・VR</label>
                         </details>
                         <!-- ものづくり -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">ものづくり</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">ものづくり</summary>
                             <label for="craft01"><input type="checkbox" name="craft[]" id="craft01" value="自然クラフト">自然クラフト</label>
                             <label for="craft02"><input type="checkbox" name="craft[]" id="craft02" value="アート体験">アート体験</label>
                             <label for="craft03"><input type="checkbox" name="craft[]" id="craft03" value="伝統工芸">伝統工芸</label>
                         </details>
                         <!-- 宇宙・天文学 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">宇宙・天文学</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">宇宙・天文学</summary>
                             <label for="astro01"><input type="checkbox" name="astro[]" id="astro01" value="天体観測">天体観測</label>
                             <label for="astro02"><input type="checkbox" name="astro[]" id="astro02" value="宇宙飛行士体験">宇宙飛行士体験</label>
                         </details>
                         <!-- 環境・エネルギー -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">環境・エネルギー</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">環境・エネルギー</summary>
                             <label for="env01"><input type="checkbox" name="env[]" id="env01" value="資源やリサイクル">資源やリサイクル</label>
                             <label for="env02"><input type="checkbox" name="env[]" id="env02" value="発電">発電</label>
                             <label for="env03"><input type="checkbox" name="env[]" id="env03" value="アウトドア科学">アウトドア科学</label>
                         </details>
                         <!-- 自然・生物 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">自然・生物</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">自然・生物</summary>
                             <label for="nature01"><input type="checkbox" name="nature[]" id="nature01" value="動物">動物</label>
                             <label for="nature02"><input type="checkbox" name="nature[]" id="nature02" value="植物">植物</label>
                             <label for="nature03"><input type="checkbox" name="nature[]" id="nature03" value="化石">化石</label>
                         </details>
                         <!-- 人体・医学 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">人体・医学</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">人体・医学</summary>
                             <label for="medical01"><input type="checkbox" name="medical[]" id="medical01" value="人体の仕組み">人体の仕組み</label>
                             <label for="medical02"><input type="checkbox" name="medical[]" id="medical02" value="医学技術">医学技術</label>
                         </details>
                         <!-- その他 -->
-                        <details class="form_accordion">
-                            <summary class="form_item_title">その他</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">その他</summary>
                             <label for="other_eve01"><input type="checkbox" name="other_eve[]" id="other_eve01" value="パズルやゲーム">パズルやゲーム</label>
                             <label for="other_eve02"><input type="checkbox" name="other_eve[]" id="other_eve02" value="歴史と科学">歴史と科学</label>
                             <label for="other_eve03"><input type="checkbox" name="other_eve[]" id="other_eve03" value="防災体験">防災体験</label>
                             <label for="other_eve04"><input type="checkbox" name="other_eve[]" id="other_eve04" value="スポーツ科学">スポーツ科学</label>
                         </details>
                         <!-- 体験方法 -->
-                        <h3 class="form_heading">体験方法</h3>
-                        <details open class="form_accordion">
-                            <summary class="form_item_title">体験方法を選択する</summary>
+                        <h3 class="sub_title">体験方法</h3>
+                        <details open class="search_accordion">
+                            <summary class="search_item_title">体験方法を選択する</summary>
                             <label for="watch"><input type="checkbox" name="experience[]" id="watch" value="みたい">みたい</label>
                             <label for="listen"><input type="checkbox" name="experience[]" id="listen" value="ききたい">ききたい</label>
                             <label for="do"><input type="checkbox" name="experience[]" id="do" value="やってみたい">やってみたい</label>
@@ -163,34 +201,34 @@
                             <label for="learn"><input type="checkbox" name="experience[]" id="learn" value="学びたい">学びたい</label>
                         </details>
                         <!-- 時間帯 -->
-                        <h3 class="form_heading">時間帯</h3>
-                        <details class="form_accordion">
-                            <summary class="form_item_title">平日</summary>
+                        <h3 class="sub_title">時間帯</h3>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">平日</summary>
                             <label for="morning"><input type="checkbox" name="wtime[]" id="morning" value="朝(午前)">朝(午前)</label>
                             <label for="noon"><input type="checkbox" name="wtime[]" id="noon" value="昼(12:00~16:00)">昼(12:00~16:00)</label>
                             <label for="evening"><input type="checkbox" name="wtime[]" id="evening" value="夕方(16:00~19:00)">夕方(16:00~19:00)</label>
                             <label for="night"><input type="checkbox" name="wtime[]" id="night" value="夜(19:00以降)">夜(19:00以降)</label>
                         </details>
-                        <details class="form_accordion">
-                            <summary class="form_item_title">土日祝</summary>
+                        <details class="search_accordion">
+                            <summary class="search_item_title">土日祝</summary>
                             <label for="morning_holiday"><input type="checkbox" name="htime[]" id="morning_holiday" value="朝(午前)">朝(午前)</label>
                             <label for="noon_holiday"><input type="checkbox" name="htime[]" id="noon_holiday" value="昼(12:00~16:00)">昼(12:00~16:00)</label>
                             <label for="evening_holiday"><input type="checkbox" name="htime[]" id="evening_holiday" value="夕方(16:00~19:00)">夕方(16:00~19:00)</label>
                             <label for="night_holiday"><input type="checkbox" name="htime[]" id="night_holiday" value="夜(19:00以降)">夜(19:00以降)</label>
                         </details>
                         <!-- 開催時期 -->
-                        <h3 class="form_heading">開催時期</h3>
-                        <details open class="form_accordion">
-                            <summary class="form_item_title">開催時期を選択する</summary>
+                        <h3 class="sub_title">開催時期</h3>
+                        <details open class="search_accordion">
+                            <summary class="search_item_title">開催時期を選択する</summary>
                             <label for="spring"><input type="checkbox" name="vacation[]" id="spring" value="春休み">春休み</label>
                             <label for="summer"><input type="checkbox" name="vacation[]" id="summer" value="夏休み">夏休み</label>
                             <label for="winter"><input type="checkbox" name="vacation[]" id="winter" value="冬休み">冬休み</label>
                             <label for="gw"><input type="checkbox" name="vacation[]" id="gw" value="GW">GW</label>
                         </details>
                         <!-- こだわり -->
-                        <h3 class="form_heading">こだわり</h3>
-                        <details open class="form_accordion">
-                            <summary class="form_item_title">こだわり条件を選択する</summary>
+                        <h3 class="sub_title">こだわり</h3>
+                        <details open class="search_accordion">
+                            <summary class="search_item_title">こだわり条件を選択する</summary>
                             <label for="takeout"><input type="checkbox" name="other[]" id="takeout" value="持ち帰りあり">持ち帰りあり</label>
                             <label for="free"><input type="checkbox" name="other[]" id="free" value="参加費無料">参加費無料</label>
                             <label for="parking"><input type="checkbox" name="other[]" id="parking" value="駐車場あり">駐車場あり</label>
@@ -199,9 +237,9 @@
                             <label for="alone"><input type="checkbox" name="other[]" id="alone" value="一人でできる">一人でできる</label>
                         </details>
                         <!-- フリーワード -->
-                        <div class="form_box_wrap">
-                            <div class="form_box_inner">
-                                <input type="search" name="s" placeholder="フリーワードで検索する">
+                        <div class="search_box_wrap">
+                            <div class="search_box_inner">
+                                <input type="search" name="s" placeholder="フリーワードで検索する" class="search_box_content">
                             </div>
                         </div>
                     </form>
