@@ -19,21 +19,29 @@ footer {
             #bcaaa4 12rem,
             #bcaaa4 13rem,
             #907c87 14rem,
-            #907c87 15rem);
+            #907c87 15rem,
+            #6d4c41 16rem,
+            #6d4c41 17rem,
+            #a27d71 18rem,
+            #a27d71 19rem,
+            #7f4d3e 20rem);
 
+    text-align: center;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 中央揃え */
-    justify-content: center;
-    /* 縦方向の中央揃え */
 
 }
 
 footer ul {
     display: flex;
-    gap: 2rem;
-    /* リストアイテムの間隔 */
+    flex-direction: column;
+    /* 縦並びに配置 */
+    align-items: center;
+    /* 中央揃え */
+    gap: 1.5rem;
+    /* 均等な間隔を開ける */
     list-style: none;
     padding: 0;
     margin: 0 0 1rem;
@@ -53,22 +61,59 @@ footer small {
 
 
 /* imgを均等に横並びにする場合  imgを<div>で囲ってclassを付与*/
-/* .f-img {
+.f_img {
     display: flex;
-    justify-content: space-around; /* 画像を主軸方向に均等にに配置 */
-/* width: 100%;  フッター全体に広げる */
-/* padding: 0 2rem;  左右の余白 （もしかしたらいらないかも）*/
-/*}*/
+    justify-content: space-around;
+    /* 画像を主軸方向に均等にに配置 */
+    width: 100%;
+    /*フッター全体に広げる */
+    padding: 0 2rem;
+    /*左右の余白 （もしかしたらいらないかも）*/
+}
 
-/*.f-img img {
-     width: 5rem;
-     height: auto;
- } */
+.f_img img {
+    width: 8rem;
+    height: auto;
+}
+
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+
+    /* TB版で写真のサイズを変更 */
+    .f_img img {
+        width: 16rem;
+        height: auto;
+    }
+}
 
 
 @media screen and (min-width:1280px) {
     footer {
         width: calc(100% - 320px);
-        height: 10rem;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 中央揃え */
+        justify-content: center;
+        /* 縦方向の中央揃え */
+    }
+
+    footer ul {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+        justify-content: center;
+        /* 中央配置 */
+        gap: 3rem;
+        /* 均等な間隔を開ける */
+    }
+
+    /* PC版で写真のサイズを変更 */
+    .f_img img {
+        width: 24rem;
+        height: auto;
     }
 }

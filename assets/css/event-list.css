@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+html {
+    background-image: url();
+}
+
+.page_title {
+    width: 100%;
+    background-image: url();
+    text-align: center;
+}
+
+
+.breadcrumb {
+    display: flex;
+
+}
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {}
+
+
+/* PC */
+@media screen and (min-width:1280px) {
+    width: calc(100% - 320px);
+}

@@ -318,9 +318,10 @@ function my_pre_get_posts($query)
         return;
     }
 
-    //search画面
+    //search画面                                       -------投稿タイプをeventに変更済み(3/2 今野)
+    //★is_post_type_archiveが必要ないなら消す★
     if ($query->is_search() || is_post_type_archive('dataset')) {
-        $query->set('post_type', 'dataset');
+        $query->set('post_type', 'event');
         $query->set('posts_per_page', 6);
         return;
     }

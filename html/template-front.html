@@ -31,27 +31,46 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- ヘッダー用CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/header.css">
+
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
                 <a href="#">
-                    <div><img src="" alt=""></div>
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="#">イベント検索</a></li>
+                <li class="menu_item"><a href="#">イベントをさがす</a></li>
+                <li class="menu_item"><a href="#">イベント一覧</a></li>
+                <li class="menu_item"><a href="#">コラム一覧</a></li>
+                <li class="menu_item"><a href="#">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="#">お気に入り</a></li>
+                <li class="menu_item"><a href="#">よくある質問</a></li>
+                <li class="menu_item"><a href="#">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="header_nav sp_none">
+            <ul>
+                <li><a href="#">イベントをさがす</a></li>
                 <li><a href="#">イベント一覧</a></li>
                 <li><a href="#">コラム一覧</a></li>
                 <li><a href="#">お知らせ一覧</a></li>
@@ -60,6 +79,7 @@
                 <li><a href="#">当サイトについて</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
@@ -129,41 +149,21 @@
                         </a>
                     </li>
 
-                    <!-- SPコラムカード型（横） -->
+                    <!-- コラムカード型 -->
                     <li>
                         <a class="cardlist_wrap" href="#">
 
                             <div class="cardlist_inner">
-
-                                <div class="cardlist_toptext">
-                                    <div class="cardlist_img">
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-                                    <div class="cardlist_date">2025/12/12</div>
-                                </div>
-                                <h3>コラムタイトルが入り…</h3>
-                                <div class="cardlist_line"></div>
-                                <div class="cardlist_tag">#科学の魅力</div>
-                                <div class="cardlist_tag">#インタビュー</div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <!-- PCコラムカード型（横） -->
-                    <li>
-                        <a class="cardlistpc_wrap" href="#">
-
-                            <div class="cardlistpc_inner">
-                                <div class="cardlistpc_flex">
+                                <div class="cardlist_flex">
                                     <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    <div class="cardlistpc_toptext">
+                                    <div class="cardlist_toptext">
                                         <span>2025/12/12</span>
                                         <h3>コラムタイトルが入り…</h3>
                                         <div class="cardlist_line"></div>
                                         <div>
-                                            <div class="cardlistpc_tag">#科学の魅力</div>
-                                            <div class="cardlistpc_tag">#インタビュー</div>
-                                            <div class="cardlistpc_tag">#インタビュー</div>
+                                            <div class="cardlist_tag">#科学の魅力</div>
+                                            <div class="cardlist_tag">#インタビュー</div>
+                                            <div class="cardlist_tag">#インタビュー</div>
                                         </div>
                                     </div>
                                 </div>
