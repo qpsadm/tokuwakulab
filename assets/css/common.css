@@ -399,3 +399,38 @@ main {
         font-size: 1.4rem;
     }
 }
+
+
+/* ページネーション */
+.pagenation {
+    margin-top: 4.8rem;
+    display: flex;
+    align-items: center;  /* 上下中央 */
+    justify-content: center; /* 左右中央 */
+}
+
+.pagenation div {
+    margin: 0 1.2rem;
+}
+
+.pagenation_nav {
+    color: #FF7800;
+    font-size: 2.8rem;
+}
+
+.pagenation_number {
+    display: flex;
+    align-items: center;  /* 上下中央 */
+    justify-content: center; /* 左右中央 */
+    color: #fff;
+    width: 4.2rem;
+    height: 4.2rem;
+    text-align: center;
+    background-color: #58BE15;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
