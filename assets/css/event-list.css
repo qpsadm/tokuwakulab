@@ -10,7 +10,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 120px以上で自動調整 */
+    /* スマホ用は２カラム */
     gap: 1rem;
     place-items: center;
     /* アイテムをグリッド内で中央配置 */
@@ -121,8 +121,6 @@
     .event_list li {
         max-width: 20rem;
         font-size: 1.5rem;
-
-
     }
 
     .event_list li:before {
@@ -146,8 +144,6 @@
     .event_list li {
         max-width: 30rem;
         font-size: 1.5rem;
-        /* margin-bottom: 2rem;
-        padding-left: 3rem; */
     }
 
     .event_list li:before {
