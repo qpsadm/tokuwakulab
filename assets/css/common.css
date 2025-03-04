@@ -1,12 +1,15 @@
 @charset "utf-8";
 
-/* 全体共通設定 */
+/* === 全体共通設定 === */
 html {
     font-size: 62.5%;
     letter-spacing: 0.1rem;
     line-height: 2.0rem;
     color: #111111;
     font-family: "Noto Sans JP", serif;
+    background-image: url(../img/main_bg.png);
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 h2 {
@@ -32,7 +35,7 @@ a{
 
 
 
-/* 余白設定 */
+/* === 余白設定 === */
 /* SP */
 .inner {
     margin: 0 24px;
@@ -57,11 +60,199 @@ a{
 
     .pc_space{
     width: calc(100% - 320px);
-    background-image: url(../img/main_bg.png);
-    background-size: auto;
-    background-repeat: repeat;
+
 }
 }
+
+
+/* === header === */
+header {
+    border-bottom: solid 2px #dedede ;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+header .inner {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ロゴ */
+h1 {
+    width: 200px;
+}
+
+/* ハンバーガーボタン */
+.hamburger {
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+}
+
+/* ハンバーガーライン */
+.hamburger span {
+    display: block;
+    position: absolute;
+	background-color: #111;
+	height: 4px;
+	width: 40px;
+    transition: all 0.5s;
+}
+
+/* ドロワーメニュー */
+.menu {
+    position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+}
+
+/* ドロワーメニュー */
+/* アニメーション前 */
+.menu {
+	transform: translateX(100vw);
+	transition: all 0.5s ease-in-out;
+}
+
+/* アニメーション後 */
+.menu.is-active {
+    transform: translateX(0);
+}
+
+/* ドロワーメニュー中身 */
+.menu li {
+    font-size: 2.4rem;
+	width: 100%;
+	height: auto;
+	padding: 2.0rem 2.0rem;
+    margin-bottom: 2.0rem;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+/* ドロワーメニューの装飾 */
+.menu_item {
+    display: flex;
+    align-items: center;  /* 上下中央 */
+    justify-content: center; /* 左右中央 */
+    width: 300px;
+    height: 60px;
+    border-radius: 32px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    background-color: #fff;
+    font-size: 3.2rem;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ハンバーガーライン位置決定 */
+.hamburger span:nth-of-type(1) {
+    top:16px;
+}
+
+.hamburger span:nth-of-type(2) {
+    top:28px;
+}
+
+.hamburger span:nth-of-type(3) {
+    top:40px;
+}
+
+/* ハンバーガーメニューのパーツのアニメーション */
+.hamburger.is-active span:nth-of-type(1) {
+	transform: translateY(12px) rotate(-315deg);
+}
+
+.hamburger.is-active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.hamburger.is-active span:nth-of-type(3) {
+	transform: translateY(-12px) rotate(315deg);
+}
+
+/* ナビゲーション */
+.sp_none {
+    display: none;
+}
+
+/* PC */
+@media screen and (min-width:1280px) {
+    .sp_none {
+        display: block;
+    }
+    .pc_none {
+        display: none;
+    }
+
+    /* ロゴ */
+    h1 {
+    width: 300px;
+    margin: 1.6rem auto;
+    }
+
+    header {
+        border-left: solid 2px #dedede ;
+        width: 320px;
+        height: calc(100vh);
+        position: fixed;
+        top: 0; /* 上端に配置 */
+        right: 0; /* 右端に配置 */
+        display: inline;
+    }
+
+    header .inner {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    header li {
+        margin-top: 1.6rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    header li a {
+        display: flex;
+        align-items: center;  /* 上下中央 */
+        justify-content: center; /* 左右中央 */
+        width: 300px;
+        height: 68px;
+        border-radius: 32px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        background-color: #fff;
+        font-size: 3.2rem;
+        /* あかり */
+        font-family: "ads-akari", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    header li a:hover {
+    transform: scale(0.95);
+    transition: 0.3s;
+    color: #FF7800;
+}
+}
+
+
 
 /* イベントカード型テンプレ */
 .card_shape{
@@ -465,3 +656,124 @@ main {
     font-weight: 400;
     font-style: normal;
 } */
+
+
+
+/* === footer === */
+footer {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom,
+            #6d4c41 0rem,
+            #6d4c41 1rem,
+            #a27d71 2rem,
+            #a27d71 3rem,
+            #7f4d3e 4rem,
+            #7f4d3e 5rem,
+            #8d6e63 6rem,
+            #8d6e63 7rem,
+            #a1887f 8rem,
+            #a1887f 9rem,
+            #55433c 10rem,
+            #55433c 11rem,
+            #bcaaa4 12rem,
+            #bcaaa4 13rem,
+            #907c87 14rem,
+            #907c87 15rem,
+            #6d4c41 16rem,
+            #6d4c41 17rem,
+            #a27d71 18rem,
+            #a27d71 19rem,
+            #7f4d3e 20rem);
+
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    /* 縦並びに配置 */
+    align-items: center;
+    /* 中央揃え */
+    gap: 1.5rem;
+    /* 均等な間隔を開ける */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    /* 下に余白をつけて small との間隔を調整 */
+}
+
+footer li {
+    color: white;
+    font-size: 1.4rem;
+
+}
+
+footer small {
+    color: white;
+    font-size: 1rem;
+}
+
+
+/* imgを均等に横並びにする場合  imgを<div>で囲ってclassを付与*/
+.f_img {
+    display: flex;
+    justify-content: space-around;
+    /* 画像を主軸方向に均等にに配置 */
+    width: 100%;
+    /*フッター全体に広げる */
+    padding: 0 2rem;
+    /*左右の余白 （もしかしたらいらないかも）*/
+}
+
+.f_img img {
+    width: 8rem;
+    height: auto;
+}
+
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+
+    /* TB版で写真のサイズを変更 */
+    .f_img img {
+        width: 16rem;
+        height: auto;
+    }
+}
+
+
+@media screen and (min-width:1280px) {
+    footer {
+        width: calc(100% - 320px);
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 中央揃え */
+        justify-content: center;
+        /* 縦方向の中央揃え */
+    }
+
+    footer ul {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+        justify-content: center;
+        /* 中央配置 */
+        gap: 3rem;
+        /* 均等な間隔を開ける */
+    }
+
+    /* PC版で写真のサイズを変更 */
+    .f_img img {
+        width: 24rem;
+        height: auto;
+    }
+}

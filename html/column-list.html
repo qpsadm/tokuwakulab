@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
@@ -15,15 +17,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- あかり -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xdy5khp',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/column-list.css">
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
 <body>
+
     <header>
         <div class="inner">
             <!-- ロゴ -->
@@ -41,9 +60,11 @@
         </div>
         <nav class="menu pc_none">
             <ul>
-                <a href="#" class="">
-                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
-                </a>
+                <li>
+                    <a href="#">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                </li>
                 <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
                 <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
                 <li class="menu_item"><a href="column.html">コラム一覧</a></li>
@@ -70,9 +91,7 @@
 
         <!-- ページタイトル -->
         <section class="page_top">
-            <h2 class="page_title">
-                    コラム一覧
-                </h2>
+            <h2 class="page_title">コラム一覧</h2>
         </section>
 
         <!-- パンくずリスト -->
@@ -195,45 +214,34 @@
 
                 <!-- ページネーション -->
                 <div class="pagenation">
-                    <div class="pagenation_nav">◀︎</div>
+                    <div class="pagenation_nav left"></div>
                     <div class="pagenation_number">1</div>
                     <div class="pagenation_number">2</div>
                     <div class="pagenation_number">3</div>
-                    <div class="pagenation_nav">▶︎</div>
+                    <div class="pagenation_nav right"></div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- 豆知識 -->
-    <div>
-        <img src="" alt="">
-    </div>
 
-    <!-- トップへ戻る -->
-    <div>
-        <a href="#">
-            <img src="" alt="">
-        </a>
+    <!-- 豆知識 -->
+    <div class="tips_wrap inner">
+        <div class="tips_text"><span>ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！</span></div>
+        <div class="tips_chara"><img src="../assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
     </div>
 
     <footer>
         <ul>
-            <li><a href="">利用規約</a></li>
-            <li><a href="">主催団体様<br class="brpc_none">お問い合わせ</a></li>
-            <li><a href="">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
+            <li><a href=" service.html">利用規約</a></li>
+            <li><a href="contact.html">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
         <div class="f_img">
             <img src="../assets/img/f_img.png" alt="化石の画像">
         </div>
     </footer>
-    <!-- jQueryの読み込み -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- slickの読み込み -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- 自作JSの読み込み -->
-    <script src="../assets/js/animation.js"></script>
 </body>
 </html>
