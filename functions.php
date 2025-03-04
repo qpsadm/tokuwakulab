@@ -85,21 +85,54 @@ function my_add_scripts()
         'my_common',
         get_template_directory_uri() . '/assets/css/common.css'
     );
-
+    wp_enqueue_style(
+        'my_column-list',
+        get_template_directory_uri() . '/assets/css/column-list.css'
+    );
+    wp_enqueue_style(
+        'my_column',
+        get_template_directory_uri() . '/assets/css/column.css'
+    );
+    wp_enqueue_style(
+        'my_contact',
+        get_template_directory_uri() . '/assets/css/contact.css'
+    );
+    wp_enqueue_style(
+        'my_event-list',
+        get_template_directory_uri() . '/assets/css/event-list.css'
+    );
+    wp_enqueue_style(
+        'my_event',
+        get_template_directory_uri() . '/assets/css/event.css'
+    );
+    wp_enqueue_style(
+        'my_faq',
+        get_template_directory_uri() . '/assets/css/faq.css'
+    );
+    wp_enqueue_style(
+        'my_footer',
+        get_template_directory_uri() . '/assets/css/footer.css'
+    );
+    wp_enqueue_style(
+        'my_found',
+        get_template_directory_uri() . '/assets/css/found.css'
+    );
+    wp_enqueue_style(
+        'my_header',
+        get_template_directory_uri() . '/assets/css/header.css'
+    );
+    wp_enqueue_style(
+        'post-list',
+        get_template_directory_uri() . '/assets/css/post-list.css'
+    );
     wp_enqueue_style(
         'my_top',
         get_template_directory_uri() . '/assets/css/top.css'
     );
 
-    wp_enqueue_style(
-        'my_header',
-        get_template_directory_uri() . '/assets/css/header.css'
-    );
 
-    wp_enqueue_style(
-        'my_footer',
-        get_template_directory_uri() . '/assets/css/footer.css'
-    );
+
+
 
 
     // 共通のJSファイルを読み込む
