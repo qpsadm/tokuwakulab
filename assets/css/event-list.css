@@ -7,7 +7,7 @@
 .event_list ul {
     list-style: none;
     padding: 0.5em 0.7em;
-    border: solid 2px #FF7B00;
+    /* border: solid 2px #FF7B00; */
     border-radius: 1rem;
     display: flex;
     flex-wrap: wrap;
