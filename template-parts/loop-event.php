@@ -88,47 +88,55 @@
                     </div>
                 </div>
 
-                <div class="card_tag">
-                    <!-- タクソノミーを取得して表示 -->
-                    <?php if (!is_search()): ?>
-                        <!-- サーチ画面では除外 -->
-                        <?php
-                        // area情報を取得
-                        $terms = get_the_terms(get_the_ID(), 'area');
-                        // area情報があるか確認
-                        if (!empty($terms) && !is_wp_error($terms)) {
-                            // area情報を表示
-                            echo '<p class="event-taxonomy">';
-                            foreach ($terms as $term) {
 
-                                echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                            }
-                            echo '</p>';
+                <!-- 開催地域タクソノミーを取得して表示 -->
+                <?php if (!is_search()): ?>
+                    <!-- サーチ画面では除外 -->
+                    <?php
+
+                    // area情報を取得
+                    $terms = get_the_terms(get_the_ID(), 'area');
+                    // area情報があるか確認
+                    if (!empty($terms) && !is_wp_error($terms)) {
+                        // タクソノミーが無ければ非表示
+                        echo '<div class="card_tag">';
+                        // area情報を表示
+                        echo '<p class="event-taxonomy">';
+                        foreach ($terms as $term) {
+
+                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
                         }
-                        ?>
-                    <?php endif; ?>
-                </div>
+                        echo '</p>';
+                        echo '</div>';
+                    }
+                    ?>
+                <?php endif; ?>
 
-                <div class="card_tag">
-                    <!-- タクソノミーを取得して表示 -->
-                    <?php if (!is_search()): ?>
-                        <!-- サーチ画面では除外 -->
-                        <?php
-                        // area情報を取得
-                        $terms = get_the_terms(get_the_ID(), 'vacation');
-                        // area情報があるか確認
-                        if (!empty($terms) && !is_wp_error($terms)) {
-                            // area情報を表示
-                            echo '<p class="event-taxonomy">';
-                            foreach ($terms as $term) {
 
-                                echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                            }
-                            echo '</p>';
+
+
+                <!-- 開催時期タクソノミーを取得して表示 -->
+                <?php if (!is_search()): ?>
+                    <!-- サーチ画面では除外 -->
+                    <?php
+                    // area情報を取得
+                    $terms = get_the_terms(get_the_ID(), 'vacation');
+                    // area情報があるか確認
+                    if (!empty($terms) && !is_wp_error($terms)) {
+                        // タクソノミーが無ければ非表示
+                        echo '<div class="card_tag">';
+                        // area情報を表示
+                        echo '<p class="event-taxonomy">';
+                        foreach ($terms as $term) {
+
+                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
                         }
-                        ?>
-                    <?php endif; ?>
-                </div>
+                        echo '</p>';
+                        echo '</div>';
+                    }
+                    ?>
+                <?php endif; ?>
+
 
             </div>
         </div>
