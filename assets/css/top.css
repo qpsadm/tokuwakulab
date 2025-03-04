@@ -30,18 +30,98 @@ main {
     height: 70vh;
 } */
 
+/* slickの設定 */
+.slick_prev_kv,
+.slick_next_kv,
+.slick_prev_org,
+.slick_next_org {
+    /* 矢印のサイズ */
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 1000 !important;
+    position: absolute !important;
+    top: 50% !important;
+}
+
+/* 左矢印を移動 */
+.slick_prev_kv,
+.slick_prev_org {
+    left: 1rem !important;
+}
+
+/* 右矢印を移動 */
+.slick_next_kv,
+.slick_next_org {
+    right: 1rem !important;
+}
+
+/* 主催団体のslick矢印設定 */
+/* 左矢印を移動 */
+.slick_prev_org {
+    left: -2rem !important;
+}
+
+/* 右矢印を移動 */
+.slick_next_org {
+    right: -2rem !important;
+}
+
+@media screen and (min-width:768px) {
+
+    /* 左矢印を移動 */
+    .slick_prev_org {
+        left: -4rem !important;
+    }
+
+    /* 右矢印を移動 */
+    .slick_next_org {
+        right: -4rem !important;
+    }
+
+}
+
+/* デフォルト矢印を非表示 */
+.slick-prev::before {
+    content: '' !important;
+}
+
+.slick-next::before {
+    content: '' !important;
+}
+
+/* ドットのデザイン設定 */
+
+/*ドット同士の間の距離を変える*/
+.slick-dots li {
+    width: 10px !important;
+}
+
+/*ドットの色を変える*/
+.slick-dots li button:before {
+    font-size: 1rem !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 0.8 !important;
+    color: #58BE15 !important;
+}
+
 .slider_kv img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* 主催団体のslick幅設定 */
 .slider_org {
     display: flex;
     justify-content: space-around;
-    max-width: 240px;
+    max-width: 300px;
     margin: 0 auto;
 }
+
 
 @media screen and (min-width:768px) {
     .slider_org {
@@ -60,76 +140,6 @@ main {
     box-sizing: border-box;
     margin: 2rem;
 }
-
-/* slickの矢印の設定 */
-/* 矢印のデフォルトのスタイルをリセット */
-
-/* .slick-arrow,
-.slick-prev,
-.slick-next {
-    content: "" !important;
-}
-
-.slick-arrow:before {
-    content: "" !important;
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.slick-next:before {
-    background: url(../img/slick_arrow\(right\).png) !important;
-    background-size: contain !important;
-    width: 80px !important;
-    height: 80px !important;
-    z-index: 1000 !important;
-}
-
-.slick-prev:before {
-    background: url(../img/slick_arrow\(left\).png) !important;
-    background-size: contain !important;
-    width: 80px !important;
-    height: 80px !important;
-    z-index: 1000 !important;
-} */
-
-/* .slick-prev {
-    left: 10px !important; */
-/* 左側の矢印を内側に寄せる */
-/* z-index: 1000;
-} */
-
-/* .slick-next {
-    right: 10px !important;
-    /* 右側の矢印を内側に寄せる */
-/* z-index: 1000;
-} */
-
-/* .arrow_box {
-    position: relative;
-}
-
-.slick-prev,
-.slick-next {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: relative;
-}
-
-.slick-prev::before {
-    width: 0;
-    height: 0;
-    position: absolute;
-    border-style: solid;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-right: 27px solid #4dc4ff;
-    border-left: 0;
-} */
 
 /* セクション間の余白 */
 section {
@@ -193,23 +203,42 @@ section {
 
 /* 各リスト共通設定 */
 
-/* TBPC版のカード型を非表示 */
-@media screen and (max-width:767px) {
-    .card_sp_none {
-        display: none;
-    }
-}
-
 /* 各カード型の１カラム設定 */
 .top_event_list,
 .top_column_list,
-/* .top_org_list, */
+.top_instagram_list {
+    list-style: none;
+    padding: 0px 10px 4.8rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* 120px以上で自動調整 */
+    gap: 10px;
+    place-items: center;
+    /* アイテムをグリッド内で中央配置 */
+    margin: 0 auto;
+    /* コンテナ自体を中央寄せ */
+
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+/* .top_event_list,
+.top_column_list,
 .top_instagram_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-}
+} */
+
+/* .top_event_list li,
+.top_column_list li,
+.top_instagram_list li {
+    margin: 0 auto;
+} */
 
 /* お知らせ新着の設定 */
 .top_news_list {
@@ -268,6 +297,7 @@ section {
 
 .top_instagram_list {
     padding: 4rem 2rem;
+    gap: 2rem;
 }
 
 .top_instagram_item {
@@ -275,7 +305,6 @@ section {
     width: 100px;
     height: 100px;
     border-radius: 32px;
-    /* margin: 0 auto; */
 }
 
 .top_instagram_item:hover {
@@ -293,47 +322,14 @@ section {
 /* TB and pc*/
 @media screen and (min-width:768px) {
 
-    /* タイトルの設定 */
-    .top_event_ttl h2,
-    .top_column_ttl h2 {
-        border-radius: 8px 8px 0 0;
-        /*タイトルと枠線をつなげるために余白を削除 */
-        margin: 0;
-        font-size: 2.4rem;
-    }
-
-    /* SP版のカード型を非表示 */
-    .card_tbpc_none {
-        display: none;
-    }
-
-    /* 各カード型の２カラム設定 */
-    .top_event_list,
-    .top_column_list
-
-    /* .top_org_list*/
-        {
+    /* コラムのカード型のみ調整 */
+    .top_column_list {
         margin: 0 auto;
-        max-width: 800PX;
+        max-width: 1000PX;
         display: flex;
         flex-wrap: wrap;
-    }
-
-    /* 各セクションの枠設定 */
-    /* イベント新着 */
-    .top_event_list {
-        background-color: #fff;
-        border: solid 12px #58BE15;
-        border-radius: 32px;
-    }
-
-    /* おすすめコラム記事 */
-    .top_column_list {
-        background-color: #fff;
-        border: solid 12px #FF7B00;
-        border-radius: 32px;
-        padding: 2rem;
-        gap: 2rem;
+        justify-content: space-around;
+        padding: 0 8rem;
     }
 
     /* お知らせ新着 */
@@ -344,19 +340,24 @@ section {
     }
 
     /* インスタグラム */
+
+    .top_instagram_list {
+        padding: 8rem 4rem;
+        gap: 8rem;
+    }
+
     .top_instagram_acount {
         margin-left: 6.4rem;
     }
 
     /* インスタグラム写真サイズ */
     .top_instagram_item {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .top_instagram_item img {
-        width: 150px;
-        height: 150px;
-        border-radius: 32px;
+        width: 120px;
+        height: 120px;
     }
 }

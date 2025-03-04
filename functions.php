@@ -51,23 +51,27 @@ function my_add_scripts()
     // FontAwesome CDN
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
+    //noto sans jp
+    wp_enqueue_style('noto-sans-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+
     // GoogleFonts: Noto+Sans+JP,Noto+Serif+JP,Roboto+Slab,Roboto:ital
-    wp_enqueue_style(
-        'google-fonts-css1',
-        'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap'
-    );
+    // wp_enqueue_style(
+    //     'google-fonts-css1',
+    //     'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap'
+    // );
 
-    // GoogleFonts: Zen Maru Gothic
-    wp_enqueue_style(
-        'google-web-font2',
-        'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap'
-    );
+    // // GoogleFonts: Zen Maru Gothic
+    // wp_enqueue_style(
+    //     'google-web-font2',
+    //     'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap'
+    // );
 
-    // GoogleFonts: Material+Icons
-    wp_enqueue_style(
-        'google-web-font3',
-        'https://fonts.googleapis.com/icon?family=Material+Icons'
-    );
+    // // GoogleFonts: Material+Icons
+    // wp_enqueue_style(
+    //     'google-web-font3',
+    //     'https://fonts.googleapis.com/icon?family=Material+Icons'
+    // );
 
 
     // ２、リセットCSS
@@ -77,10 +81,10 @@ function my_add_scripts()
     );
 
     // ３、共通CSS
-    wp_enqueue_style(
-        'my_foodscience',
-        get_template_directory_uri() . '/assets/css/foodscience.css'
-    );
+    // wp_enqueue_style(
+    //     'my_foodscience',
+    //     get_template_directory_uri() . '/assets/css/foodscience.css'
+    // );
     wp_enqueue_style(
         'my_common',
         get_template_directory_uri() . '/assets/css/common.css'
@@ -148,10 +152,10 @@ function my_add_scripts()
         false  //true：フッターに読み込むように
     );
 
-    //  main.js
+    //  animation.js
     wp_enqueue_script(
-        'my_main_js',
-        get_template_directory_uri() . '/assets/js/main.js',
+        'my_animation_js',
+        get_template_directory_uri() . '/assets/js/animation.js',
         array('jquery'),
         null,
         true
@@ -166,6 +170,16 @@ function my_add_scripts()
     //     null,
     //     true
     // );
+
+
+    //  adobe-font.jsの読み込み
+    wp_enqueue_script(
+        'adobe_font_js',
+        get_template_directory_uri() . '/assets/js/adobe-font.js',
+        '',
+        null,
+        false
+    );
 
     /**
      * 個々のページ
@@ -305,6 +319,11 @@ function my_add_scripts()
         //     'my_praivacy',
         //     get_template_directory_uri() . '/assets/css/privacy.css'
         // );
+    }elseif(is_post_type_archive('faq')){
+        wp_enqueue_style(
+            'my_faq_style',
+            get_template_directory_uri() . '/assets/css/faq.css',
+        );
     }
 }
 add_action('wp_enqueue_scripts', 'my_add_scripts');

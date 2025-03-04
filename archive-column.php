@@ -10,9 +10,10 @@
 
     <!-- パンくずリスト -->
     <div class="breadcrumb">
-        <?php if (!is_home()) : ?>
-            <?php get_template_part('template-parts/breadcrumb'); ?>
-        <?php endif; ?>
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            <?php endif; ?></a>
+        </span>
     </div>
 
 
@@ -33,46 +34,54 @@
             }
             ?>
         </ul>
+
+
+
+        <!-- ここから検索結果 -->
+        <div class="columnlist_wrap">
+
+
+            <div class="column_result">
+                <div>
+                    <span>1-6</span><span>件を表示</span>
+                </div>
+            </div>
+
+            <!-- コラム検索結果カード -->
+            <ul class="column_list">
+
+                <!-- コラムループ -->
+                <?php if (have_posts()): ?>
+                    <?php while (have_posts()): ?>
+                        <?php the_post(); ?>
+
+                        <li>
+
+                            <!-- columnのカード型を読み込む -->
+                            <?php get_template_part('template-parts/loop', 'column') ?>
+
+                        </li>
+
+                    <?php endwhile; ?>
+                    <!-- リセット -->
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+
+            </ul>
+
+            <!-- ページネーション -->
+
+            <?php if (function_exists('wp_pagenavi')): ?>
+                <div class="pagenation">
+                    <?php wp_pagenavi(); ?>
+                </div>
+            <?php endif; ?>
+
+
+        </div>
     </div>
-
-
-
-
-
-    <div class="section_header">
-        <h2 class="heading heading-primary">コラム一覧</h2>
-    </div>
-
-
-
-
-
-    <ul class="">
-
-
-        <!-- コラムループ -->
-        <?php if (have_posts()): ?>
-            <?php while (have_posts()): ?>
-                <?php the_post(); ?>
-
-                <li class="">
-
-                    <!-- columnのカード型を読み込む -->
-                    <?php get_template_part('template-parts/loop', 'column') ?>
-
-                </li>
-
-            <?php endwhile; ?>
-            <!-- リセット -->
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
-    </ul>
-    </section>
-
-    </div>
-    </section>
 </main>
 
 <!-- フッターを読み込む -->
-<?php//get_footer(); ?>
+<?php get_footer();
+?>

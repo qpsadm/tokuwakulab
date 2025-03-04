@@ -1,13 +1,25 @@
 @charset "utf-8";
 
-section:nth-of-type(1),
-section:nth-of-type(2) {
+.column_content_wrap {
     border-bottom: 2px solid #FFCC00;
+    margin-bottom: 4rem;
+}
+
+/* コラムタイトルの設定 */
+.column_ttl_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.column_date span {
+    display: block;
+    font-size: 1.6rem;
 }
 
 .column_ttl {
-    border-left: 20px solid #FFCC00;
-    padding: 1.6rem;
+    margin-left: 4rem;
+    font-size: 3.2rem;
+    line-height: 4rem;
 }
 
 .column_tag {
@@ -19,17 +31,36 @@ section:nth-of-type(2) {
     color: #fff;
     font-weight: 600;
     display: inline-block;
-    margin: 0.8rem 0;
+    margin: 2rem 0;
     font-size: 1rem;
 }
 
 .column_img {
-    border-radius: 10rem;
+    border-radius: 24px;
+}
+
+/* コラム記事の設定 */
+.column_item_wrap {
+    background-color: #fff;
+    margin: 2.4rem 0;
+    padding: 3.2rem;
 }
 
 .column_item {
-    background-color: #fff;
-    padding: 4rem;
+    margin-bottom: 2.4rem;
+}
+
+.column_item:nth-child(1) {
+    margin-bottom: 4.8rem;
+}
+
+.column_item p {
+    margin-top: 2.4rem;
+}
+
+.column_item_ttl {
+    border-left: 20px solid #FFCC00;
+    /* padding-bottom: 1.6rem; */
 }
 
 .sub_title {
@@ -49,23 +80,17 @@ section:nth-of-type(2) {
     justify-content: space-between;
 }
 
-/* a {
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-decoration: none;
-} */
-
 .prv_btn,
 .nxt_btn {
     display: inline-block;
     color: #fff;
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
-    padding: 1rem 4.8rem;
+    padding: 1rem 2.4rem;
     border-radius: 50px;
     position: relative;
     /* あかり */
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: "ads-akari", sans-serif;
 }
 
@@ -97,6 +122,14 @@ section:nth-of-type(2) {
     right: 1rem;
 }
 
+@media screen and (min-width:768px) {
+
+    .prv_btn,
+    .nxt_btn {
+        padding: 1rem 4rem;
+    }
+}
+
 /* 一覧へ飛ぶボタン */
 .btn_wrap {
     width: 300px;
@@ -112,7 +145,7 @@ section:nth-of-type(2) {
     position: relative;
     transition: 0.3s;
     display: inline-block;
-    margin: 2.4rem 0;
+    margin: 2.4rem 1rem 4.8rem;
 }
 
 .btn_wrap:hover {
@@ -131,4 +164,31 @@ section:nth-of-type(2) {
 .btn_wrap:hover::after {
     right: 40px;
     transition: 0.3s;
+}
+
+/* 関連主催団体 */
+.column_relationorg_card {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4.8rem;
+}
+
+/* おすすめコラム記事 */
+.column_recomend_list {
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 4.8rem;
+}
+
+.column_recomend_list span {
+    font-size: 1.6rem;
+}
+
+.column_recomend_list a {
+    margin-bottom: 2.4rem;
+}
+
+.column_recomend_list a:hover {
+    opacity: 0.8;
 }
