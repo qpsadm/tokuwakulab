@@ -36,21 +36,13 @@
                     <?php if ($the_query->have_posts()) : ?>
                     <?php while ($the_query->have_posts()) :  $the_query->the_post(); ?>
 
+
+
                     <li>
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="favorite_box">
-                                <!-- 3/3カード型完成後に表示方法変更予定 -->
-                                <?php
-                                                $pic = get_field('image01');
-                                                $pic_url = $pic ? $pic['sizes']['medium'] : '';
-                                                ?>
-                                <?php if ($pic_url): ?>
-                                <img src="<?php echo esc_url($pic_url); ?>" alt="<?php the_title_attribute(); ?>" class="img-fluid">
-                                <?php endif; ?>
-                                <p><?php the_title(); ?>
-                                                </p>
-                            </div>
-                        </a>
+
+                        <!-- テンプレートパーツloop-food.phpを読み込む -->
+                        <?php get_template_part('template-parts/loop', 'event') ?>
+
                     </li>
                     <?php endwhile;
                                 wp_reset_postdata(); ?>

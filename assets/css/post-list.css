@@ -1,14 +1,66 @@
 @charset "utf-8";
 
 .post_list {
-    max-width: 800px;
-    margin: 2.4rem auto;
-    }
-
+    background-color: #FFFDE7;
+    border-radius: 32px;
+    padding: 3.2rem 2.4rem;
+}
+.post_list_item_wrap {
+    margin: 1rem 0;
+}
 .post_list span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+}
+.post_list_item {
+    border-bottom: 2px dashed #FFCC00;
+    margin: 0.8rem 0;
+    font-weight: 600;
 }
 
-.post_list_item {
-    margin-bottom: 2.4rem;
+/* TB and pc*/
+@media screen and (min-width:768px) {
+    /* お知らせ新着 */
+    .post_list {
+        margin: 0 auto;
+        max-width: 800PX;
+        padding: 3.2rem 6.4rem;
+    }
+}
+
+/* ページネーション */
+.pagenation {
+    margin-top: 4.8rem;
+    display: flex;
+    align-items: center;  /* 上下中央 */
+    justify-content: center; /* 左右中央 */
+}
+
+.pagenation div {
+    margin: 0 1.2rem;
+}
+
+.pagenation_nav .left {
+    background-image: url("../img/pagenation_left.png");
+    width: 100px;
+    height: 100px;
+    /* color: #FF7800;
+    font-size: 2.8rem; */
+}
+
+.pagenation_number {
+    display: flex;
+    align-items: center;  /* 上下中央 */
+    justify-content: center; /* 左右中央 */
+    color: #fff;
+    width: 4.2rem;
+    height: 4.2rem;
+    text-align: center;
+    background-color: #58BE15;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
