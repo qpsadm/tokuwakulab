@@ -66,17 +66,15 @@
     /*   color: #f4cf15; */
 }
 
-.event_search_result ul {
+.event_result {
+    margin-top: 2rem;
     flex-direction: column;
     /* 縦並びにする */
     align-items: center;
     /* アイテムを中央揃えに */
 }
 
-.event_search_result li {
-    width: 100%;
-    /* 各カードの幅を100%に設定 */
-}
+
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {}
