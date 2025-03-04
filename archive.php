@@ -3,16 +3,14 @@
 get_header();
 ?>
 
-<main>
-    <section class="section">
-        <div class="section_inner">
+<main class="pc_space">
 
-            <!-- ページのタイトル -->
-            <div class="section_header">
-                <h1 class="heading heading-primary"><span>最新情報</span>NEWS - <?php wp_title(''); ?><?php echo is_year() ? '年' : ''; ?></h1>
-            </div>
+    <!-- ページのタイトル -->
+    <section class="page_top">
+        <h2 class="page_title"><?php wp_title(''); ?>一覧</h2>
+    </section>
 
-            <!-- 切り替え、絞り込むボタン -->
+    <!-- 切り替え、絞り込むボタン
             <div class="archive">
                 <div class="archive_category">
                     <h2 class="archive_title">カテゴリー</h2>
@@ -43,43 +41,56 @@ get_header();
                         ?>
                     </ul>
                 </div>
-            </div>
+            </div> -->
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <?php if (!is_home()) : ?>
+        <?php get_template_part('template-parts/breadcrumb'); ?>
+        <?php endif; ?>
+    </div>
+    <div class="inner">
 
-            <div class="section_body">
-                <div class="">
-                    <?php
-                    global $wp_query;
-                    $post_id = $wp_query->get_queried_object_id();
-                    //echo get_favorites_button($post_id);
-                    ?>
+        <!-- お知らせ一覧 -->
+        <div class="post_list">
+            <?php
+            global $wp_query;
+            $post_id = $wp_query->get_queried_object_id();
+            //echo get_favorites_button($post_id);
+            ?>
 
-                    <!-- WordPress ループの開始 -->
-                    <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) : ?>
-                    <?php the_post(); ?>
+            <!-- WordPress ループの開始 -->
+            <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : ?>
+            <?php the_post(); ?>
 
-                    <!-- テンプレートパーツloop-news.phpを読み込む -->
-                    <?php echo get_favorites_button(get_the_ID());
-                            ?>
-                    <?php get_template_part('template-parts/loop', 'news') ?>
+            <!-- テンプレートパーツloop-news.phpを読み込む -->
+            <?php get_template_part('template-parts/loop', 'news') ?>
 
-                    <!-- WordPress ループの終了 -->
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-
-                </div>
-
-                <!-- ページナビゲーション -->
-                <?php if (function_exists('wp_pagenavi')) : ?>
-                <div class="pagenation">
-                    <?php wp_pagenavi(); ?>
-                </div>
-                <?php endif; ?>
-            </div>
+            <!-- WordPress ループの終了 -->
+            <?php endwhile; ?>
+            <?php endif; ?>
 
         </div>
-    </section>
+
+        <!-- ページナビゲーション -->
+        <div class="pagenation">
+            <?php if (function_exists('wp_pagenavi')): ?>
+            <div class="pagination">
+                <?php wp_pagenavi(); ?>
+            </div>
+            <?php endif; ?>
+        </div>
+        <!-- ページネーション -->
+        <div class="pagenation">
+            <div class="pagenation_nav left"></div>
+            <div class="pagenation_number">1</div>
+            <div class="pagenation_number">2</div>
+            <div class="pagenation_number">3</div>
+            <div class="pagenation_nav right"></div>
+        </div>
+
 </main>
 
 <!-- footer.phpを読み込む -->
-<?php get_footer(); ?>
+<?php get_footer();
+?>

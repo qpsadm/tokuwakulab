@@ -33,9 +33,9 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
-    <!-- ヘッダー用CSSの読み込み -->
-    <link rel="stylesheet" href="../assets/css/header.css">
 
+    <!-- 個別CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/event.css">
 
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -88,6 +88,7 @@
         </nav>
     </header>
 
+    <!-- ページタイトル -->
     <main class="pc_space">
         <section class="page_top">
             <h2 class="page_title">イベント詳細</h2>
@@ -100,7 +101,7 @@
 
         <div class="inner">
 
-            <section>
+            <section class="event_top">
                 <h2>イベントタイトル</h2>
                 <p>主催団体名</p>
                 <div>
@@ -117,7 +118,7 @@
             </section>
 
             <section>
-                <h3>基本情報</h3>
+                <h3 class="sub_title">基本情報</h3>
                 <table>
                     <tr>
                         <th><img src="" alt="">開催日時</th>
@@ -159,14 +160,14 @@
 
             <!-- 会場マップ -->
             <section>
-                <h3>会場マップ</h3>
+                <h3 class="sub_title">会場マップ</h3>
                 <!-- Google Mapの埋め込み(仮QLIPのK1ビル) -->
-                <!-- <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8426244891734!2d134.5498708758713!3d34.07354831660479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536d61a9afe8cf%3A0xfa0a82ff41aaaac3!2z44CSNzcwLTA4MzIg5b6z5bO255yM5b6z5bO25biC5a-65bO25pys55S65p2x77yT5LiB55uu77yR77yS4oiS77yYIEsx44OT44Or!5e0!3m2!1sja!2sjp!4v1740967229011!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div> -->
+                <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8426244891734!2d134.5498708758713!3d34.07354831660479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536d61a9afe8cf%3A0xfa0a82ff41aaaac3!2z44CSNzcwLTA4MzIg5b6z5bO255yM5b6z5bO25biC5a-65bO25pys55S65p2x77yT5LiB55uu77yR77yS4oiS77yYIEsx44OT44Or!5e0!3m2!1sja!2sjp!4v1740967229011!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
             </section>
 
             <!-- 参加者様からの感想 -->
             <section>
-                <h3>参加者様からの感想</h3>
+                <h3 class="sub_title">参加者様からの感想</h3>
                 <div>
                     <!-- 感想1つ目 -->
                     <div>
@@ -181,7 +182,7 @@
                 </div>
 
                 <!-- クチコミ投稿フォーム -->
-                <h3>クチコミを投稿する</h3>
+                <h3 class="sub_title">クチコミを投稿する</h3>
                 <form action="#" method="">
                     <table>
                         <tr>
@@ -200,35 +201,37 @@
                         </tr>
                     </table>
                     <!-- 送信ボタン -->
-                    <div>
-                        <input type="submit" value="クチコミを送信">
-                    </div>
+                    <input class="event_review_btn" type="submit" value="クチコミを送信">
                 </form>
             </section>
 
             <!-- イベント申し込みボタン -->
-            <div>
-                <a href="#">お申し込みはこちら＞</a>
-            </div>
+            <a href="#" class="event_entry_btn">お申し込みはこちら</a>
+            <p>※イベントページに飛びます。</p>
 
             <!-- 区切り線 -->
             <span></span>
 
             <section>
-                <h3>開催予定のイベント</h3>
+                <h3 class="sub_title">開催予定のイベント</h3>
                 <div>
-                    <!-- イベントカード型（縦） -->
                     <ul>
+                        <!-- イベントカード型 -->
                         <li>
-                            <a class="card_wrap" href="#">
+                            <div class="card_wrap">
 
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
-                                    <span>残り</span>
-                                    <span class="card_countdownno">1</span>
+                                    <span>あと</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
 
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -236,6 +239,7 @@
 
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
                                             <div class="card_linefeed">
                                                 <span class="card_subtitle">開催日</span>
                                                 <div>
@@ -261,24 +265,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
-                    </ul>
-                    <!-- イベントカード型（縦） -->
-                    <ul>
+                        <!-- イベントカード型 -->
                         <li>
-                            <a class="card_wrap" href="#">
+                            <div class="card_wrap">
 
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
-                                    <span>残り</span>
-                                    <span class="card_countdownno">1</span>
+                                    <span>あと</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
 
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -286,6 +294,7 @@
 
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
                                             <div class="card_linefeed">
                                                 <span class="card_subtitle">開催日</span>
                                                 <div>
@@ -311,24 +320,23 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
                 <!-- ボタン -->
-                <div>
-                    <a href="#">イベント一覧へ＞</a>
-                </div>
+                <a href="#" class="event_btn_wrap">イベント一覧へ</a>
             </section>
 
             <!-- 区切り線 -->
             <span></span>
 
             <section>
-                <h3>関連コラム記事</h3>
+                <h3 class="sub_title">関連コラム記事</h3>
                 <div>
                     <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
                     <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
@@ -340,30 +348,30 @@
             <span></span>
 
             <!-- イベント申し込みボタン -->
-            <div>
-                <a href="#">お申し込みはこちら＞</a>
-            </div>
+            <a href="#" class="event_entry_btn">お申し込みはこちら</a>
+            <p>※イベントページに飛びます。</p>
 
         </div>
     </main>
 
     <!-- 豆知識 -->
-    <div>
-        <img src="" alt="">
+    <div class="pc_space">
+        <div class="tips_wrap inner">
+            <div class="tips_text"><span>ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！</span></div>
+            <div class="tips_chara"><img src="../assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
+        </div>
     </div>
-    <!-- トップへ戻る -->
-    <div>
-        <a href="#">
-            <img src="" alt="">
-        </a>
-    </div>
-    <!-- フッター -->
+
     <footer>
         <ul>
-            <li><a href="#">利用規約</a></li>
-            <li><a href="#">主催団体様お問い合わせ</a></li>
+            <li><a href=" service.html">利用規約</a></li>
+            <li><a href="contact.html">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
+        <div class="f_img">
+            <img src="../assets/img/f_img.png" alt="化石の画像">
+        </div>
     </footer>
 </body>
 

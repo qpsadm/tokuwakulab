@@ -40,6 +40,27 @@
     ?>
 
 
+    <?php
+    // カスタムフィールド 'date_start' からイベント開催日を取得し、「$date_start_box」に格納
+    $date_end_box = get_post_meta(get_the_ID(), 'date_end', true);
+
+    // 開催日が設定されていれば実行
+    if ($date_end_box) {
+        // 今日の日付と開催日を DateTime で比較
+        $today = new DateTime();                        // 今日の日付
+        $date_end = new DateTime($date_end_box);     // 開催日を DateTime オブジェクトに変換
+
+        // 開催日が過ぎた場合は「終了」を表示
+        if ($today > $date_end) {
+            echo '<div class="card_past">';
+            echo '<span class="label-ended">終了</span>';
+            echo '</div>';
+        }
+    }
+    ?>
+
+
+
     <!-- カード本体（aタグ） -->
     <a class="card_shape" href="<?php the_permalink(); ?>">
         <div class="card_inner">
@@ -97,15 +118,10 @@
                     // area情報を取得
                     $terms = get_the_terms(get_the_ID(), 'area');
                     // area情報があるか確認
-                    if (!empty($terms) && !is_wp_error($terms)) {
-                        // タクソノミーが無ければ非表示
+                    foreach ($terms as $term) {
                         echo '<div class="card_tag">';
-                        // area情報を表示
                         echo '<p class="event-taxonomy">';
-                        foreach ($terms as $term) {
-
-                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                        }
+                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
                         echo '</p>';
                         echo '</div>';
                     }
