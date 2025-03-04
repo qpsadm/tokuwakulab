@@ -1,16 +1,10 @@
 <!-- header.phpを読み込む -->
-<?php
-get_header();
-?>
-
+<?php get_header(); ?>
 
 <?php
-
 // 開催開始日（date_start）から年月を取得する
 $dates = get_upcoming_event_months();
-
-// フィルタリング
-// $date1 = isset($_GET['date']) ? $_GET['date'] : null;
+// print_r($dates);
 
 // URLのパラメータから検索する開催月を取得
 $date1 = get_param_value('date');
@@ -21,7 +15,6 @@ if (is_null($date1)) {
 }
 
 // 月末日を取得
-// $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null;
 $date2 = get_last_day_of_month($date1);
 
 // サブクエリ
@@ -53,9 +46,6 @@ $the_query = new WP_Query($args);
 <p>ここにKVとタイトルが入る</p>
 
 
-
-
-
 <main>
     <section class="section section-foodList">
         <div class="section_inner">
@@ -64,15 +54,6 @@ $the_query = new WP_Query($args);
             <div class="archive_yealy">
                 <ul class="archive_list">
                     <?php
-                    // 開催開始日（date_start）から年月を取得し、重複を削除
-                    //             global $wpdb;
-                    //             $dates = $wpdb->get_col("
-                    //     SELECT DISTINCT DATE_FORMAT(meta_value, '%Y-%m-01')
-                    //     FROM $wpdb->postmeta
-                    //     WHERE meta_key = 'date_start'
-                    //     ORDER BY meta_value ASC
-                    // ");
-
                     // 取得した日付をボタン（リンク）として表示
                     foreach ($dates as $date) {
                         $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
@@ -81,10 +62,6 @@ $the_query = new WP_Query($args);
                     ?>
                 </ul>
             </div>
-
-
-            <br>
-
 
             <div class="section_header">
                 <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
@@ -152,19 +129,13 @@ $the_query = new WP_Query($args);
 
 
     <!-- ページナビゲーション -->
+
     <?php if (function_exists('wp_pagenavi')): ?>
         <div class="pagination">
             <?php wp_pagenavi(); ?>
         </div>
     <?php endif; ?>
-
-    </div>
-    </section>
-
-
 </main>
 
 <!-- footer.phpを読み込む -->
-<?php
-//get_footer();
-?>
+<?php get_footer(); ?>
