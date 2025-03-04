@@ -1,7 +1,8 @@
 <div class="card_wrap">
 
     <!-- ブックマーク機能 -->
-    <div class="card_bookmark"></div>
+    <div class="card_bookmark"><?php echo get_favorites_button(get_the_ID());
+                                ?></div>
 
 
     <!-- 「あと○日」 -->
@@ -89,7 +90,8 @@
 
                 <div class="card_tag">
                     <!-- タクソノミーを取得して表示 -->
-                    <?php if (!is_search()): ?> <!-- サーチ画面では除外 -->
+                    <?php if (!is_search()): ?>
+                        <!-- サーチ画面では除外 -->
                         <?php
                         // area情報を取得
                         $terms = get_the_terms(get_the_ID(), 'area');
@@ -109,7 +111,8 @@
 
                 <div class="card_tag">
                     <!-- タクソノミーを取得して表示 -->
-                    <?php if (!is_search()): ?> <!-- サーチ画面では除外 -->
+                    <?php if (!is_search()): ?>
+                        <!-- サーチ画面では除外 -->
                         <?php
                         // area情報を取得
                         $terms = get_the_terms(get_the_ID(), 'vacation');

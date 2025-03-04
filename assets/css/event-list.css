@@ -7,7 +7,7 @@
 .event_list ul {
     list-style: none;
     padding: 0.5em 0.7em;
-    border: solid 2px #FF7B00;
+    /* border: solid 2px #FF7B00; */
     border-radius: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -66,33 +66,68 @@
     /*   color: #f4cf15; */
 }
 
+/* h3にclassを付与したら適応 */
+/* .sub_title {
+    display: block;
+    background-color: #58BE15;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+} */
+
+.eventlist_result {
+    margin-top: 2rem;
+    /* 検索結果の上に余白 */
+}
+
+.eventlist_result h3 {
+    margin-bottom: 1rem;
+    /* h3 の下に余白を追加 */
+}
+
+.eventlist_result span {
+    font-size: 1.6rem;
+    /* 文字サイズを大きく */
+    line-height: 1.6;
+    /* 行間を広げる */
+    display: block;
+    /* ブロック要素にして改行 */
+}
+
+
 .event_result {
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    /*１カラム*/
+    gap: 1rem;
+    /*各アイテムに均等に余白*/
 }
 
-.event_result ul {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    /* 縦並びにする */
-    align-items: center;
-    /* アイテムを中央揃えに */
-}
+
 
 .event_result li {
-    width: fit-content;
-    margin: auto;
+    width: max-content;
+    /* または適切な幅 */
+    margin: 0 auto;
 }
 
 
 /* TB */
-@media screen and (min-width:768px) and (max-width:1279px) {}
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .event_result {
+        grid-template-columns: repeat(2, 1fr);
+        /*2カラム*/
+    }
+}
 
 
 /* PC */
 @media screen and (min-width:1280px) {
-    .event_search_result li {
-        width: 30%;
-        /* 各カードの幅を30%に設定して3列にする */
+    .event_result {
+        grid-template-columns: repeat(3, 1fr);
+        /*3カラム*/
     }
 }
