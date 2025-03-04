@@ -8,6 +8,7 @@
 .faq_qawrap{
     padding-bottom: 4rem;
     border-bottom: 2px solid #FFCC00;
+    background-color: #fff;
 }
 
 
@@ -55,6 +56,7 @@
     line-height: 3.2rem;
     border-left: 8px solid #FFCC00;
     margin-bottom: 2.4rem;
+    font-weight: 600;
 }
 
 .faq_organized{
