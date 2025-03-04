@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
 /* コラム用メニューボタンのul設定 */
-.column_menu{
+/* .column_menu{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items:stretch;
     height: auto;
-}
+} */
 
 /* コラム用メニューボタンの装飾 */
-.column_btn{
+/* .column_btn{
     width: auto;
     display: inline;
     padding: 16px 24px;
@@ -30,7 +30,60 @@
     transition: 0.3s;
     transform: translateY(4px);
 }
+} */
+
+/* 貴島さんボタン */
+.column_menu{
+    list-style: none;
+    padding: 0.5em 0.7em;
+    /* border: solid 2px #5c9ee7; */
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap; /* アイテムが折り返されるように */
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem; /* アイテム間の間隔 */
 }
+.column_btn{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 300px; /* ボタンの最大幅 */
+    padding: 1em 2em;
+    color: red; /* 文字色 */
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    text-decoration: none;
+    color:#fff;
+    background-color: #56C909;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3rem;
+}
+.column_btn:before {
+    font-family: FontAwesome;
+    content: "★";
+    position: absolute;
+    left: 2rem;
+    font-size: 1.2em;
+    transition: transform 0.8s ease-in-out; /* 回転のアニメーション */
+}
+
+.column_btn:hover {
+  background-color: #FF7B00; /* ホバー時に背景色をオレンジに変更 */
+}
+
+.column_btn:hover:before {
+  transform: rotate(360deg); /* アイコンが360度回転 */
+/*   color: #f4cf15; */
+}
+
 
 /* コラム記事の真ん中寄せ */
 .column_list li{

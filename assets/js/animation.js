@@ -23,10 +23,10 @@ $(function () {
         // ドットインジケーターの表示
         dots: true,
         // 矢印の表示
-        arrows: true,
+        // arrows: true,
         // appendArrow: $('.arrow_box'),
-        // prevArrow: '<div class="prev_arrow"></div>',
-        // nextArrow: '<div class="next_arrow"></div>'
+        prevArrow: '<button class="slick-prev"><img src="prev-arrow.png" alt="Previous"></button>',
+        nextArrow: '<button class="slick-next"><img src="next-arrow.png" alt="Next"></button>',
     });
 })
 

@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
+
     <!-- フォントの読み込み -->
     <!-- noto sans jp -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,15 +37,25 @@
 
     <!-- ヘッダー用CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/header.css">
+    <!-- フッター用のcss読み込み -->
+    <link rel="stylesheet" href="../assets/css/footer.css">
 
+    <!-- 個別CSSの読み込み -->
+    <link rel="stylesheet" href="../assets/css/top.css">
 
-    <!-- slickの読み込み -->
+    <!-- slickCSSの読み込み -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
-    <link rel="stylesheet" href="../assets/css/top.css">
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slickの読み込み -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
+
 </head>
 
 <body>
@@ -96,28 +109,32 @@
                 <li><img src="../assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
                 <li><img src="../assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
             </ul>
-            <!-- <div class="arrow_box"></div> -->
 
         </div>
         <div class="inner">
             <section>
                 <!-- 見出し -->
                 <div class="top_event_ttl">
-                    <h2>締切間近のイベント</h2>
+                    <h2>もうすぐ開催のイベント</h2>
                 </div>
                 <div>
                     <ul class="top_event_list">
-                        <!-- イベントカード型（縦） -->
+                        <!-- イベントカード型 -->
                         <li>
-                            <a class="card_wrap" href="#">
+                            <div class="card_wrap">
 
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
 
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -153,19 +170,24 @@
                                             <div class="card_tag">#地域</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
+                            <div class="card_wrap">
 
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
 
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -201,19 +223,24 @@
                                             <div class="card_tag">#地域</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
+                            <div class="card_wrap">
 
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
 
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
@@ -249,8 +276,8 @@
                                             <div class="card_tag">#地域</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -269,122 +296,68 @@
                 <div>
                     <ul class="top_column_list">
 
-                        <!-- SPコラムカード型（横） -->
-                        <li class="card_tbpc_none">
+                        <!-- コラムカード型 -->
+                        <li>
                             <a class="cardlist_wrap" href="#">
 
                                 <div class="cardlist_inner">
-
-                                    <div class="cardlist_toptext">
-                                        <div class="cardlist_img">
-                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        </div>
-                                        <div class="cardlist_date">2025/12/12</div>
-                                    </div>
-                                    <h3>コラムタイトルが入り…</h3>
-                                    <div class="cardlist_line"></div>
-                                    <div class="cardlist_tag">#科学の魅力</div>
-                                    <div class="cardlist_tag">#インタビュー</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="card_tbpc_none">
-                            <a class="cardlist_wrap" href="#">
-
-                                <div class="cardlist_inner">
-
-                                    <div class="cardlist_toptext">
-                                        <div class="cardlist_img">
-                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        </div>
-                                        <div class="cardlist_date">2025/12/12</div>
-                                    </div>
-                                    <h3>コラムタイトルが入り…</h3>
-                                    <div class="cardlist_line"></div>
-                                    <div class="cardlist_tag">#科学の魅力</div>
-                                    <div class="cardlist_tag">#インタビュー</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="card_tbpc_none">
-                            <a class="cardlist_wrap" href="#">
-
-                                <div class="cardlist_inner">
-
-                                    <div class="cardlist_toptext">
-                                        <div class="cardlist_img">
-                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        </div>
-                                        <div class="cardlist_date">2025/12/12</div>
-                                    </div>
-                                    <h3>コラムタイトルが入り…</h3>
-                                    <div class="cardlist_line"></div>
-                                    <div class="cardlist_tag">#科学の魅力</div>
-                                    <div class="cardlist_tag">#インタビュー</div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- PCコラムカード型（横） -->
-                        <li class="card_sp_none">
-                            <a class="cardlistpc_wrap" href="#">
-
-                                <div class="cardlistpc_inner">
-                                    <div class="cardlistpc_flex">
+                                    <div class="cardlist_flex">
                                         <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        <div class="cardlistpc_toptext">
+                                        <div class="cardlist_toptext">
                                             <span>2025/12/12</span>
                                             <h3>コラムタイトルが入り…</h3>
                                             <div class="cardlist_line"></div>
                                             <div>
-                                                <div class="cardlistpc_tag">#科学の魅力</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#科学の魅力</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li class="card_sp_none">
-                            <a class="cardlistpc_wrap" href="#">
+                        <li>
+                            <a class="cardlist_wrap" href="#">
 
-                                <div class="cardlistpc_inner">
-                                    <div class="cardlistpc_flex">
+                                <div class="cardlist_inner">
+                                    <div class="cardlist_flex">
                                         <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        <div class="cardlistpc_toptext">
+                                        <div class="cardlist_toptext">
                                             <span>2025/12/12</span>
                                             <h3>コラムタイトルが入り…</h3>
                                             <div class="cardlist_line"></div>
                                             <div>
-                                                <div class="cardlistpc_tag">#科学の魅力</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#科学の魅力</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li class="card_sp_none">
-                            <a class="cardlistpc_wrap" href="#">
+                        <li>
+                            <a class="cardlist_wrap" href="#">
 
-                                <div class="cardlistpc_inner">
-                                    <div class="cardlistpc_flex">
+                                <div class="cardlist_inner">
+                                    <div class="cardlist_flex">
                                         <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        <div class="cardlistpc_toptext">
+                                        <div class="cardlist_toptext">
                                             <span>2025/12/12</span>
                                             <h3>コラムタイトルが入り…</h3>
                                             <div class="cardlist_line"></div>
                                             <div>
-                                                <div class="cardlistpc_tag">#科学の魅力</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
-                                                <div class="cardlistpc_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#科学の魅力</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
+                                                <div class="cardlist_tag">#インタビュー</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </li>
+
                     </ul>
                 </div>
                 <a class="btn_wrap  top_btn" href="#">
@@ -400,15 +373,15 @@
                 </div>
                 <div class="top_news_list">
                     <div class="top_news_item_wrap">
-                        <span>2025/2/18</span>
+                        <span>2025/2/18(木)</span>
                         <a href="#"><span class="top_news_item">お知らせが入ります。</span></a>
                     </div>
                     <div class="top_news_item_wrap">
-                        <span>2025/2/18</span>
+                        <span>2025/2/18(木)</span>
                         <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。</span></a>
                     </div>
                     <div class="top_news_item_wrap">
-                        <span>2025/2/18</span>
+                        <span>2025/2/18(木)</span>
                         <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。お知らせが入ります。</span></a>
                     </div>
                 </div>
@@ -423,50 +396,7 @@
                     <p>イベントを主催している団体様を紹介します！</p>
                 </div>
                 <ul class="top_org_list slider_org">
-                    <!-- 主催団体カード型（縦） -->
-                    <li>
-                        <a class="card_wrap" href="#">
-
-                            <div class="orgcard_shape">
-                                <div class="card_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-
-                                    <div class="card_text">
-                                        <h3>主催団体名</h3>
-                                        <div class="orgcard_line"></div>
-                                        <div>
-                                            <span class="card_subtitle">所在地</span>
-                                            <div>
-                                                <span>徳島県徳島市寺島本町東3丁目12-8
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="card_subtitle">電話番号</span>
-                                            <div>
-                                                <span>080-XXXX-XXXX</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="card_subtitle">営業時間</span>
-                                            <div>
-                                                <span>10:00-17:00</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="card_subtitle">休業日</span>
-                                            <div>
-                                                <span>土・日・祝</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    <!-- 主催団体カード型 -->
                     <li>
                         <a class="card_wrap" href="#">
 
@@ -597,6 +527,8 @@
                         </a>
                     </li>
                 </ul>
+
+                </ul>
                 <a class="btn_wrap  top_btn" href="#">
                     主催団体一覧へ
                 </a>
@@ -684,13 +616,6 @@
             <img src="../assets/img/f_img.png" alt="化石の画像">
         </div>
     </footer>
-
-    <!-- jQueryの読み込み -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- slickの読み込み -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- 自作JSの読み込み -->
-    <script src="../assets/js/animation.js"></script>
 </body>
 
 </html>
