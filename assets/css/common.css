@@ -637,49 +637,75 @@ main {
 .pagenation {
     margin-top: 4.8rem;
     display: flex;
-    align-items: center;  /* 上下中央 */
-    justify-content: center; /* 左右中央 */
+    align-items: center;
+    /* 上下中央 */
+    justify-content: center;
+    /* 左右中央 */
 }
 
-.pagenation div {
-    margin: 0 1.2rem;
-}
-
-.pagenation_nav.left {
-    width: 30px;
-    height: 30px;
-    background-image: url("../img/pagenation_left.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.pagenation_nav.right {
-    width: 30px;
-    height: 30px;
-    background-image: url("../img/pagenation_right.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-.pagenation_number {
+.wp-pagenavi {
     display: flex;
-    align-items: center;  /* 上下中央 */
-    justify-content: center; /* 左右中央 */
-    color: #fff;
+    align-items: center;
+    gap: 1.2rem;
+    /* ボタンの間隔 */
+}
+
+/* 前へ・次へボタン */
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* テキスト非表示 */
+    overflow: hidden;
+    display: block;
+}
+
+/* 前へボタンの画像設定 */
+.wp-pagenavi .previouspostslink {
+    background-image: url("../img/pagenation_left.png");
+}
+
+/* 次へボタンの画像設定 */
+.wp-pagenavi .nextpostslink {
+    background-image: url("../img/pagenation_right.png");
+}
+
+/* ページ番号のスタイル */
+.wp-pagenavi a.page,
+.wp-pagenavi .current {
+    display: flex;
+    align-items: center;
+    /* 上下中央 */
+    justify-content: center;
+    /* 左右中央 */
     width: 4.2rem;
     height: 4.2rem;
     text-align: center;
-    background-color: #58BE15;
     border-radius: 50%;
     font-size: 2.4rem;
-    /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 0 0.6rem;
+    border: solid 2px #58BE15;
+    background-color: #fff;
+    color: #58BE15;
+    /* 間隔調整 */
 }
+
+/* 現在のページのスタイル */
+.wp-pagenavi .current {
+    background-color: #58BE15;
+    color: #fff;
+    /* 選択中のページの色 */
+}
+
 
 
 
