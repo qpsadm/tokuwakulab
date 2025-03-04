@@ -6,16 +6,16 @@
 
 .event_list ul {
     list-style: none;
-    padding: 0 1rem 4.8rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 120px以上で自動調整 */
-    gap: 1rem;
-    place-items: center;
-    /* アイテムをグリッド内で中央配置 */
-    margin: 0 auto;
-    /* コンテナ自体を中央寄せ */
+    padding: 0.5em 0.7em;
+    /* border: solid 2px #FF7B00; */
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* アイテムが折り返されるように */
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    /* アイテム間の間隔 */
 }
 
 .event_list li {
@@ -25,25 +25,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* max-width: 10rem; */
-    max-width: 15rem;
+    max-width: 10rem;
     /* ボタンの最大幅 */
-    padding: 1rem 2rem;
+    padding: 1em 2em;
     transition: 0.3s ease-in-out;
+
     text-decoration: none;
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-
+    /* margin-bottom: 0.5rem;
+    padding-left: 2rem;
+    line-height: 3rem; */
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid #F4CF15;
+    border: 1px solid #f4cf15;
     border-radius: 3rem;
+
 }
+
 
 .event_list li:before {
     font-family: FontAwesome;
-    content: "★";
+    content: "★\00a0\00a0";
     position: absolute;
     left: 0.5rem;
     font-size: 1.2em;
@@ -113,13 +117,8 @@
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {
-
-    .event_list ul {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .event_list li {
-        max-width: 20rem;
+        max-width: 15rem;
         font-size: 1.5rem;
 
 
@@ -139,12 +138,8 @@
 
 /* PC */
 @media screen and (min-width:1280px) {
-    .event_list ul {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .event_list li {
-        max-width: 30rem;
+        max-width: 20rem;
         font-size: 1.5rem;
         /* margin-bottom: 2rem;
         padding-left: 3rem; */

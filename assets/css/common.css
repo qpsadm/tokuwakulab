@@ -29,7 +29,7 @@ img {
     height: auto;
 }
 
-a{
+a {
     display: block;
 }
 
@@ -54,20 +54,20 @@ a{
         margin: 0 60px;
     }
 
-    .brpc_none{
+    .brpc_none {
         display: none;
     }
 
-    .pc_space{
-    width: calc(100% - 320px);
+    .pc_space {
+        width: calc(100% - 320px);
 
-}
+    }
 }
 
 
 /* === header === */
 header {
-    border-bottom: solid 2px #dedede ;
+    border-bottom: solid 2px #dedede;
     display: flex;
     width: 100%;
     height: 60px;
@@ -101,32 +101,32 @@ h1 {
 .hamburger span {
     display: block;
     position: absolute;
-	background-color: #111;
-	height: 4px;
-	width: 40px;
+    background-color: #111;
+    height: 4px;
+    width: 40px;
     transition: all 0.5s;
 }
 
 /* ドロワーメニュー */
 .menu {
     position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 1;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: #fff;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
 }
 
 /* ドロワーメニュー */
 /* アニメーション前 */
 .menu {
-	transform: translateX(100vw);
-	transition: all 0.5s ease-in-out;
+    transform: translateX(100vw);
+    transition: all 0.5s ease-in-out;
 }
 
 /* アニメーション後 */
@@ -137,23 +137,25 @@ h1 {
 /* ドロワーメニュー中身 */
 .menu li {
     font-size: 2.4rem;
-	width: 100%;
-	height: auto;
-	padding: 2.0rem 2.0rem;
+    width: 100%;
+    height: auto;
+    padding: 2.0rem 2.0rem;
     margin-bottom: 2.0rem;
-	text-align: center;
-	box-sizing: border-box;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* ドロワーメニューの装飾 */
 .menu_item {
     display: flex;
-    align-items: center;  /* 上下中央 */
-    justify-content: center; /* 左右中央 */
+    align-items: center;
+    /* 上下中央 */
+    justify-content: center;
+    /* 左右中央 */
     width: 300px;
     height: 60px;
     border-radius: 32px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     font-size: 3.2rem;
     /* あかり */
@@ -164,28 +166,28 @@ h1 {
 
 /* ハンバーガーライン位置決定 */
 .hamburger span:nth-of-type(1) {
-    top:16px;
+    top: 16px;
 }
 
 .hamburger span:nth-of-type(2) {
-    top:28px;
+    top: 28px;
 }
 
 .hamburger span:nth-of-type(3) {
-    top:40px;
+    top: 40px;
 }
 
 /* ハンバーガーメニューのパーツのアニメーション */
 .hamburger.is-active span:nth-of-type(1) {
-	transform: translateY(12px) rotate(-315deg);
+    transform: translateY(12px) rotate(-315deg);
 }
 
 .hamburger.is-active span:nth-of-type(2) {
-	opacity: 0;
+    opacity: 0;
 }
 
 .hamburger.is-active span:nth-of-type(3) {
-	transform: translateY(-12px) rotate(315deg);
+    transform: translateY(-12px) rotate(315deg);
 }
 
 /* ナビゲーション */
@@ -198,23 +200,26 @@ h1 {
     .sp_none {
         display: block;
     }
+
     .pc_none {
         display: none;
     }
 
     /* ロゴ */
     h1 {
-    width: 300px;
-    margin: 1.6rem auto;
+        width: 300px;
+        margin: 1.6rem auto;
     }
 
     header {
-        border-left: solid 2px #dedede ;
+        border-left: solid 2px #dedede;
         width: 320px;
         height: calc(100vh);
         position: fixed;
-        top: 0; /* 上端に配置 */
-        right: 0; /* 右端に配置 */
+        top: 0;
+        /* 上端に配置 */
+        right: 0;
+        /* 右端に配置 */
         display: inline;
     }
 
@@ -231,12 +236,14 @@ h1 {
 
     header li a {
         display: flex;
-        align-items: center;  /* 上下中央 */
-        justify-content: center; /* 左右中央 */
+        align-items: center;
+        /* 上下中央 */
+        justify-content: center;
+        /* 左右中央 */
         width: 300px;
         height: 68px;
         border-radius: 32px;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         background-color: #fff;
         font-size: 3.2rem;
         /* あかり */
@@ -246,10 +253,10 @@ h1 {
     }
 
     header li a:hover {
-    transform: scale(0.95);
-    transition: 0.3s;
-    color: #FF7800;
-}
+        transform: scale(0.95);
+        transition: 0.3s;
+        color: #FF7800;
+    }
 }
 
 /* サブタイトル */
@@ -264,7 +271,7 @@ h1 {
 }
 
 /* イベントカード型テンプレ */
-.card_shape{
+.card_shape {
     display: block;
     margin: 2.4rem 2.4rem 1.6rem 0.8rem;
     width: 240px;
@@ -274,7 +281,7 @@ h1 {
     background-color: #fff;
 }
 
-.card_shape img{
+.card_shape img {
     width: 200px;
     height: 150px;
     border-radius: 12px;
@@ -282,26 +289,26 @@ h1 {
     margin: 0 auto;
 }
 
-.card_shape h3{
-font-size: 1.6rem;
-margin: 0.8rem 0 0.8rem 0;
-line-height: 2.8rem;
-font-weight: 900;
+.card_shape h3 {
+    font-size: 1.6rem;
+    margin: 0.8rem 0 0.8rem 0;
+    line-height: 2.8rem;
+    font-weight: 900;
 }
 
-.card_shape span{
+.card_shape span {
     font-size: 1.2rem;
 }
 
-.card_inner{
+.card_inner {
     padding: 1.2rem;
 }
 
-.card_subtitle{
+.card_subtitle {
     font-weight: 600;
 }
 
-.card_tag{
+.card_tag {
     background-color: #58BE15;
     width: auto;
     height: auto;
@@ -314,31 +321,32 @@ font-weight: 900;
     font-size: 1rem;
 }
 
-.card_line{
+.card_line {
     border-bottom: 2px dashed #58BE15;
     margin: 0.8rem 0;
 }
 
-.card_text{
+.card_text {
     width: auto;
     margin: 0 auto;
 }
 
-.card_wrap{
+.card_wrap {
     position: relative;
     display: inline-block;
     transition: 0.3s;
 }
 
-.card_wrap:hover{
+.card_wrap:hover {
     transition: 0.3s;
-    transform: scale(0.95);}
+    transform: scale(0.95);
+}
 
 /* イベントカード型-カウントダウン */
-.card_countdown{
+.card_countdown {
     position: absolute;
     left: 176px;
-    top:8px;
+    top: 8px;
     background-color: #FF7800;
     border-radius: 50px;
     width: 88px;
@@ -354,26 +362,28 @@ font-weight: 900;
 }
 
 .card_countdown span :nth-child(1),
-.card_countdown span :nth-child(3){
+.card_countdown span :nth-child(3) {
     font-size: 1.6rem;
 }
 
-.card_countdownno{
+.card_countdownno {
     font-size: 2.4rem;
 }
+
 .card_countdown span :nth-child(1),
-.card_countdown span :nth-child(3){
+.card_countdown span :nth-child(3) {
     font-size: 1.6rem;
 }
-.card_countdownno{
+
+.card_countdownno {
     font-size: 2.4rem;
 }
 
 /* イベントカード型-終了 */
-.card_past{
+.card_past {
     position: absolute;
     left: 176px;
-    top:8px;
+    top: 8px;
     background-color: #2d2d2d;
     border-radius: 50px;
     width: 88px;
@@ -388,12 +398,12 @@ font-weight: 900;
     font-style: normal;
 }
 
-.card_past span{
+.card_past span {
     font-size: 2rem;
 }
 
 /* イベントカード型-ブックマーク */
-.card_bookmark{
+.card_bookmark {
     position: absolute;
     left: 16px;
     top: 24px;
@@ -408,72 +418,77 @@ font-weight: 900;
 
 
 /* コラムカード型 */
-.cardlist_wrap{
+.cardlist_wrap {
     width: 560px;
     height: auto;
     border: solid 8px #FF7800;
     border-radius: 12px;
     display: block;
-    margin:2.4rem;
+    margin: 2.4rem;
     transition: 0.3s;
     background-color: #fff;
 }
 
 @media screen and (max-width:768px) {
-.cardlist_wrap{width: 240px;}
+    .cardlist_wrap {
+        width: 240px;
+    }
 }
 
-.cardlist_wrap:hover{
+.cardlist_wrap:hover {
     transform: scale(0.95);
     transition: 0.3s;
 }
 
-.cardlist_flex img{
+.cardlist_flex img {
     width: 240px;
     height: 180px;
     border-radius: 12px;
     margin-right: 1.6rem;
 }
+
 @media screen and (max-width:768px) {
-    .cardlist_flex img{
-    width: 200px;
-    height: 150px;
-    border-radius: 12px;
-    margin-right: 1.6rem;
-}
+    .cardlist_flex img {
+        width: 200px;
+        height: 150px;
+        border-radius: 12px;
+        margin-right: 1.6rem;
+    }
 }
 
-.cardlist_inner{
+.cardlist_inner {
     padding: 1.2rem;
 }
 
 /* flex設定 */
-.cardlist_flex{
+.cardlist_flex {
     display: flex;
     line-height: 3.2rem;
 }
+
 @media screen and (max-width:768px) {
+
     /* SP版の時flexを解除 */
-.cardlist_flex{
-    display: block;
-    line-height: 3.2rem;
-}
+    .cardlist_flex {
+        display: block;
+        line-height: 3.2rem;
+    }
 }
 
 /* flexが効いている状態（PC版）でのimg処理 */
-.cardlist_flex img{
+.cardlist_flex img {
     flex: none;
 }
 
-.cardlist_toptext{
+.cardlist_toptext {
     font-size: 1.6rem;
 }
 
-.cardlist_data{
+.cardlist_data {
     font-size: 1.6rem;
 }
 
-.cardlist_tag{
+.cardlist_tag {
     background-color: #FF7800;
     width: auto;
     height: auto;
@@ -487,19 +502,19 @@ font-weight: 900;
     line-height: 2rem;
 }
 
-.cardlist_toptext h3{
+.cardlist_toptext h3 {
     font-size: 1.6rem;
     font-weight: 600;
 }
 
-.cardlist_line{
+.cardlist_line {
     border-bottom: 2px dashed #FF7800;
     margin: 0.8rem 0;
 }
 
 
 /* 主催団体カード型 */
-.orgcard_shape{
+.orgcard_shape {
     display: block;
     margin: 0.8rem;
     width: 240px;
@@ -509,7 +524,7 @@ font-weight: 900;
     background-color: #fff;
 }
 
-.orgcard_shape img{
+.orgcard_shape img {
     width: 200px;
     height: 150px;
     border-radius: 12px;
@@ -517,31 +532,31 @@ font-weight: 900;
     margin: 0 auto;
 }
 
-.orgcard_shape h3{
+.orgcard_shape h3 {
     font-size: 1.6rem;
     margin: 0.8rem 0;
     line-height: 2rem;
     font-weight: 600;
 }
 
-.orgcard_shape span{
+.orgcard_shape span {
     font-size: 1.2rem;
 }
 
-.orgcard_line{
+.orgcard_line {
     border-bottom: 2px dashed #FFCC00;
     margin: 0.8rem 0;
 }
 
 /* 一覧へ飛ぶボタン */
-.btn_wrap{
+.btn_wrap {
     width: 260px;
     padding: 2rem 6.4rem 2rem 3.2rem;
     background-color: #58BE15;
     border-radius: 50px;
     color: #fff;
     font-size: 2rem;
-        /* あかり */
+    /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -551,19 +566,19 @@ font-weight: 900;
     margin: 2.4rem 0;
 }
 
-.btn_wrap:hover{
+.btn_wrap:hover {
     transition: 0.3s;
     transform: translateY(4px);
 }
 
-.btn_wrap:after{
+.btn_wrap:after {
     content: ">";
     position: absolute;
     right: 48px;
     transition: 0.3s;
 }
 
-.btn_wrap:hover::after{
+.btn_wrap:hover::after {
     right: 40px;
     transition: 0.3s;
 }
@@ -573,7 +588,7 @@ font-weight: 900;
 /* ページタイトル（h2） */
 main {
     padding-top: 60px;
-     /* header の高さ分だけ下げる */
+    /* header の高さ分だけ下げる */
 }
 
 .page_top {
@@ -582,16 +597,17 @@ main {
     height: 300px;
     background-image: url("../img/AdobeStock_204053911.jpeg");
     background-size: cover;
-    background-position: center; /* 画像の位置を中央に */
+    background-position: center;
+    /* 画像の位置を中央に */
     position: relative;
     margin-top: 0;
 }
 
 .page_title {
     text-align: center;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     position: absolute;
     color: #fff;
     font-weight: 600;
@@ -602,38 +618,39 @@ main {
 /* ページタイトル-PC */
 @media screen and (min-width:1280px) {
     main {
-    padding-top: 0px;
+        padding-top: 0px;
     }
 }
 
 
 /* パンくずリスト */
-.breadcrumb a{
+.breadcrumb a {
     display: inline;
 }
 
-.breadcrumb{
+.breadcrumb {
     padding: 0.8rem 0;
     margin-bottom: 4.8rem;
-    background-color: #fff ;
+    background-color: #fff;
     border-bottom: 1px solid #FFCC00;
 }
 
-.breadcrumb span{
+.breadcrumb span {
     font-family: "Noto Sans JP", serif;
     padding: 0.8rem 1.6rem;
 }
 
 /* pcのパンくずリストフォントサイズ */
-@media screen and (min-width:1280px){
-    .breadcrumb span{
+@media screen and (min-width:1280px) {
+    .breadcrumb span {
         font-size: 1.4rem;
         margin-left: 4rem;
     }
 }
 
 
-/* ページネーション */
+
+/* 改訂ページネーション */
 .pagenation {
     margin-top: 4.8rem;
     display: flex;
@@ -682,9 +699,11 @@ main {
     /* 上下中央 */
     justify-content: center;
     /* 左右中央 */
+    /* color: #fff; */
     width: 4.2rem;
     height: 4.2rem;
     text-align: center;
+    /* background-color: #58BE15; */
     border-radius: 50%;
     font-size: 2.4rem;
     font-family: "ads-akari", sans-serif;
@@ -693,6 +712,7 @@ main {
     text-decoration: none;
     transition: background-color 0.3s;
     margin: 0 0.6rem;
+
     border: solid 2px #58BE15;
     background-color: #fff;
     color: #58BE15;
