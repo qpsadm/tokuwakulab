@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* FAQの装飾 */
+.faq_qawrap:nth-child(n+2){
+    margin-top: 4.8rem;
+}
+
+.faq_qawrap{
+    margin-bottom: 3.4rem;
+}
