@@ -79,3 +79,42 @@ label {
     width: 100%;
     padding: 16px;
 }
+
+.search_btn{
+    margin-top: 4rem;
+    margin-bottom: 6.4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search_prv_btn,.search_nxt_btn{
+    display: inline-block;
+    color: #fff;
+    padding: 1rem 3.2rem;
+    border-radius: 50px;
+    position: relative;
+    font-size: 1.6rem;
+    font-family: "ads-akari", sans-serif;
+}
+
+.search_prv_btn:hover,.search_nxt_btn:hover{
+    background-color: #fff;
+}
+
+.search_prv_btn{
+    background-color: #58BE15;
+    border: 2px solid #58BE15;
+}
+
+.search_nxt_btn{
+    background-color: #FF7B00;
+    border: 2px solid #FF7B00;
+}
+
+.search_prv_btn:hover{
+    color: #58BE15;
+}
+
+.search_nxt_btn:hover{
+    color: #FF7B00;
+}
