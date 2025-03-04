@@ -1,14 +1,5 @@
 @charset "utf-8";
 
-/* ページタイトル */
-.contact_title{
-    margin: 2.4rem;
-    text-align: center;
-    line-height: 4rem;
-}
-
-
-
 /* お問い合わせ例の装飾 */
 .contact_samplewrap{
     border: 3px solid #58BE15;
