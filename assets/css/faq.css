@@ -11,16 +11,12 @@
     background-color: #fff;
 }
 
-.faq_qawrap:nth-child(1){
-    padding-top: 0.8rem;
-}
-
 
 .faq_questionwrap{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 3.2rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .faq_answerwrap{

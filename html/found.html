@@ -33,9 +33,9 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
-    <!-- ヘッダー用CSSの読み込み -->
-    <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/found.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -44,14 +44,15 @@
 </head>
 
 <body>
+
     <header>
         <div class="inner">
             <!-- ロゴ -->
             <h1>
-                <a href="../html/index.html">
-                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
-                </a>
-            </h1>
+                    <a href="../html/index.html">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                </h1>
             <!-- ハンバーガーボタン -->
             <div class="hamburger pc_none">
                 <span></span>
@@ -61,9 +62,11 @@
         </div>
         <nav class="menu pc_none">
             <ul>
-                <a href="#" class="">
-                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
-                </a>
+                <li>
+                    <a href="#">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                </li>
                 <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
                 <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
                 <li class="menu_item"><a href="column.html">コラム一覧</a></li>
@@ -90,13 +93,16 @@
         <section class="page_top">
             <h2 class="page_title">イベントをさがす</h2>
         </section>
+
         <!-- パンくずリスト -->
         <div class="breadcrumb">
             <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
         </div>
+
         <div class="inner">
             <!-- 検索ボックス -->
             <section class="search">
+                <h3 class="search_title">詳細検索する</h3>
                 <div class="search_wrap">
                     <form action="" method="post" class="search_content">
                         <input type="hidden" name="s">
@@ -104,8 +110,8 @@
                         <h3 class="sub_title">エリア</h3>
                         <details open class="search_accordion">
                             <summary class="search_item_title">エリアを選択する</summary>
+                            <label for="east"><input type="checkbox" name="area[]" id="east" value="東部(徳島市を除く)">東部(徳島市を除く)</label>
                             <label for="tokushima"><input type="checkbox" name="area[]" id="tokushima" value="徳島市">徳島市</label>
-                            <label for="east"><input type="checkbox" name="area[]" id="east" value="東部">東部</label>
                             <label for="west"><input type="checkbox" name="area[]" id="west" value="西部">西部</label>
                             <label for="south"><input type="checkbox" name="area[]" id="south" value="南部">南部</label>
                         </details>
@@ -219,6 +225,7 @@
                             <label for="summer"><input type="checkbox" name="vacation[]" id="summer" value="夏休み">夏休み</label>
                             <label for="winter"><input type="checkbox" name="vacation[]" id="winter" value="冬休み">冬休み</label>
                             <label for="gw"><input type="checkbox" name="vacation[]" id="gw" value="GW">GW</label>
+                            <label for="regular"><input type="checkbox" name="vacation[]" id="regular" value="regular">定期開催</label>
                         </details>
                         <!-- こだわり -->
                         <h3 class="sub_title">こだわり</h3>
@@ -241,17 +248,20 @@
                 </div>
             </section>
 
+            <!-- フリーワード -->
             <section>
                 <form action="" method="post">
-                    <!-- フリーワード -->
+                    <input type="hidden" name="s">
                     <h3 class="sub_title">フリーワード検索</h3>
                     <div class="search_box_wrap">
                         <div class="search_box_inner">
-                            <input type="search" name="s" placeholder="フリーワードで検索する" class="search_box_content">
+                            <input type="search" name="s" placeholder="フリーワードを入れてください" class="search_box_content">
+                            <button type="submit" class="search_word_btn"></button>
                         </div>
                     </div>
                 </form>
             </section>
+
 
             <section>
                 <!-- ここから検索結果 -->
@@ -551,14 +561,18 @@
                             </a>
                         </li>
                     </ul>
+
                     <!-- ページネーション -->
-                    <div>
-                        <span>◁</span>
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>▷</span>
+                    <div class="pagenation">
+                        <div class="pagenation_nav left"></div>
+                        <div class="pagenation_number">1</div>
+                        <div class="pagenation_number">2</div>
+                        <div class="pagenation_number">3</div>
+                        <div class="pagenation_nav right"></div>
                     </div>
+
+                </div>
+
             </section>
 
         </div>
@@ -566,23 +580,23 @@
     </main>
 
     <!-- 豆知識 -->
-    <div>
-        <img src="" alt="">
+    <div class="pc_space">
+        <div class="tips_wrap inner">
+            <div class="tips_text"><span>ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！</span></div>
+            <div class="tips_chara"><img src="../assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
+        </div>
     </div>
-    <!-- トップへ戻る -->
-    <div>
-        <a href="#">
-            <img src="" alt="">
-        </a>
-    </div>
-    <!-- フッター -->
+
     <footer>
         <ul>
-            <li><a href="#">利用規約</a></li>
-            <li><a href="#">主催団体様お問い合わせ</a></li>
+            <li><a href=" service.html">利用規約</a></li>
+            <li><a href="contact.html">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
+        <div class="f_img">
+            <img src="../assets/img/f_img.png" alt="化石の画像">
+        </div>
     </footer>
 </body>
-
 </html>

@@ -18,15 +18,12 @@ $(function () {
 // slickの読み込み
 $(function () {
     $(".slider_kv").slick({
-        // 自動再生
-        autoplay: true,
-        // ドットインジケーターの表示
-        dots: true,
+        autoplay: true,// 自動再生
+        autoplaySpeed: 5000,//自動再生のスピード
+        dots: true,// ドットインジケーターの表示
         // 矢印の表示
-        // arrows: true,
-        // appendArrow: $('.arrow_box'),
-        prevArrow: '<button class="slick-prev"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
-        nextArrow: '<button class="slick-next"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
+        prevArrow: '<button class="slick_prev_kv"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
+        nextArrow: '<button class="slick_next_kv"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
     });
 })
 
@@ -64,23 +61,26 @@ $(function () {
         cssEase: 'linear', // イージングモード
         pauseOnFocus: true,    // フォーカスで停止ON/OFF
         pauseOnHover: true,    // ホバーで停止ON/OFF
-        arrows: false, // スライド切り替え矢印 非表示
         swipeToSlide: true, // スワイプ切り替えON/OFF
-        responsive: [
-            {
-                breakpoint: 780,    // 横幅がこのpx未満に適用
-                settings: {
-                    slidesToShow: 2,    // スライド数
-                }
-            },
-            {
-                breakpoint: 1280,   // 横幅がこのpx未満に適用
-                settings: {
-                    slidesToShow: 3,    // スライド数
-                    centerMode: false,   // 中央揃え
-                }
-            },
-        ]
+        // 矢印の表示
+        prevArrow: '<button class="slick_prev_org"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
+        nextArrow: '<button class="slick_next_org"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
+        // レスポンシブ設定
+        // responsive: [
+        //     {
+        //         breakpoint: 780,    // 横幅がこのpx未満に適用
+        //         settings: {
+        //             slidesToShow: 2,    // スライド数
+        //         }
+        //     },
+        //     {
+        //         breakpoint: 1280,   // 横幅がこのpx未満に適用
+        //         settings: {
+        //             slidesToShow: 3,    // スライド数
+        //             centerMode: false,   // 中央揃え
+        //         }
+        //     },
+        // ]
     });
 });
 
