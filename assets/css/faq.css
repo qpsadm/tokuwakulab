@@ -2,9 +2,65 @@
 
 /* FAQの装飾 */
 .faq_qawrap:nth-child(n+2){
-    margin-top: 4.8rem;
+    padding-top: 5.2rem;
 }
 
 .faq_qawrap{
-    margin-bottom: 3.4rem;
+    padding-bottom: 4rem;
+    border-bottom: 2px solid #FFCC00;
+}
+
+
+.faq_questionwrap{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3.2rem;
+    align-items: flex-start;
+}
+
+.faq_answerwrap{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.faq_q,.faq_a{
+    font-family: "ads-akari", sans-serif;
+    font-size: 2.4rem;
+    padding: 0.8rem;
+    margin: 0 1.6rem;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.faq_q{
+    background-color: #58be15;
+}
+
+.faq_a{
+    background-color: #ff7b00;
+}
+
+.faq_questionwrap p, .faq_answerwrap p {
+    flex: 1;
+    min-width: 0;
+}
+
+.faq_conformwrap{
+    margin: 4.8rem 0;
+}
+
+.faq_h3{
+    padding-left: 0.8rem;
+    line-height: 3.2rem;
+    border-left: 8px solid #FFCC00;
+    margin-bottom: 2.4rem;
+}
+
+.faq_organized{
+    margin-top: 3.2rem;
+}
+
+.faq_btn{
+    text-align: center;
 }
