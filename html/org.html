@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
+    <!-- 電話番号自動認識機能OFF -->
+    <meta name="format-detection" content="telephone=no">
 
     <!-- ファビコンの設定 -->
     <!-- フォントの読み込み -->
@@ -31,323 +33,386 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/org.css">
+
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JavaScriptの読みこみ -->
+    <script src="../assets/js/animation.js"></script>
 </head>
 
-
 <body>
-    <!-- ヘッダー -->
+
     <header>
-        <div>
+        <div class="inner">
             <!-- ロゴ -->
             <h1>
-                    <a href="#">
-                        <div><img src="" alt=""></div>
+                    <a href="../html/index.html">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </h1>
             <!-- ハンバーガーボタン -->
-            <div>
+            <div class="hamburger pc_none">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <nav>
+        <nav class="menu pc_none">
             <ul>
-                <li><a href="">イベント検索</a></li>
-                <li><a href="">イベント一覧</a></li>
-                <li><a href="">コラム一覧</a></li>
-                <li><a href="">お気に入り</a></li>
-                <li><a href="">よくある質問</a></li>
-                <li><a href="">当サイトについて</a></li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                </li>
+                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+            </ul>
+        </nav>
+        <nav class="sp_none">
+            <ul>
+                <li><a href="found.html">イベントをさがす</a></li>
+                <li><a href="event-list.html">イベント一覧</a></li>
+                <li><a href="column.html">コラム一覧</a></li>
+                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="favorite-list.html">お気に入り</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="about.html">当サイトについて</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- ページタイトル -->
-        <h2 class="page_title">主催団体紹介</h2>
-        <div class="inner">
-            <!-- パンくずリスト -->
-            <div>
-                <a href="#">TOP</a>
-                <p>></p><a href="#">イベント一覧</a>
-                <p>></p><a href="#">主催団体一覧</a>
-                <p>></p>
-                <p>主催団体名が入ります</p>
+    <body>
+        <header>
+            <div class="inner">
+                <!-- ロゴ -->
+                <h1>
+                <a href="../html/index.html">
+                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                </a>
+            </h1>
+                <!-- ハンバーガーボタン -->
+                <div class="hamburger pc_none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
+            <nav class="menu pc_none">
+                <ul>
+                    <a href="#" class="">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                    <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
+                    <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
+                    <li class="menu_item"><a href="column.html">コラム一覧</a></li>
+                    <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                    <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
+                    <li class="menu_item"><a href="faq.html">よくある質問</a></li>
+                    <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+                </ul>
+            </nav>
+            <nav class="sp_none">
+                <ul>
+                    <li><a href="found.html">イベントをさがす</a></li>
+                    <li><a href="event-list.html">イベント一覧</a></li>
+                    <li><a href="column.html">コラム一覧</a></li>
+                    <li><a href="post-list.html">お知らせ一覧</a></li>
+                    <li><a href="favorite-list.html">お気に入り</a></li>
+                    <li><a href="faq.html">よくある質問</a></li>
+                    <li><a href="about.html">当サイトについて</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            <section>
-                <h2>主催団体名が入ります</h2>
-                <img src="#" alt="ここにslickが入ります">
+        <main>
+            <!-- ページタイトル -->
+            <h2 class="page_title">主催団体紹介</h2>
+            <div class="inner">
+                <!-- パンくずリスト -->
+                <div>
+                    <a href="#">TOP</a>
+                    <p>></p><a href="#">イベント一覧</a>
+                    <p>></p><a href="#">主催団体一覧</a>
+                    <p>></p>
+                    <p>主催団体名が入ります</p>
+                </div>
 
-                <p>
+                <section>
+                    <h2>主催団体名が入ります</h2>
+                    <img src="#" alt="ここにslickが入ります">
+
+                    <p>
             ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。ここに主催団体名の紹介文が入ります。
         </p>
-            </section>
+                </section>
 
-            <section>
-                <h3>主催団体の基本情報</h3>
+                <section>
+                    <h3>主催団体の基本情報</h3>
 
-                <!-- 基本情報テーブル -->
-                <table>
-                    <tr>
-                        <th>団体名</th>
-                        <td>ここに団体名が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>代表者名</th>
-                        <td>ここに代表者名が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>郵便番号</th>
-                        <td>ここに郵便番号が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>所在地</th>
-                        <td>ここに所在地が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>電話番号</th>
-                        <td>ここに電話番号が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>営業時間</th>
-                        <td>ここに営業時間が入ります</td>
-                    </tr>
-                    <tr>
-                        <th>FAX</th>
-                        <td>ここにFAXが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>メールアドレス</th>
-                        <td>ここにメールアドレスが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>URL</th>
-                        <td>ここにURLが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>Instagram</th>
-                        <td>ここにInstagramが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>X</th>
-                        <td>ここにXが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>facebook</th>
-                        <td>ここにfacebookが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>LINE</th>
-                        <td>ここにLINEが入ります</td>
-                    </tr>
-                    <tr>
-                        <th>備考</th>
-                        <td>ここに備考が入ります</td>
-                    </tr>
-                </table>
-            </section>
+                    <!-- 基本情報テーブル -->
+                    <table>
+                        <tr>
+                            <th>団体名</th>
+                            <td>ここに団体名が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>代表者名</th>
+                            <td>ここに代表者名が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>郵便番号</th>
+                            <td>ここに郵便番号が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>所在地</th>
+                            <td>ここに所在地が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>電話番号</th>
+                            <td>ここに電話番号が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>ここに営業時間が入ります</td>
+                        </tr>
+                        <tr>
+                            <th>FAX</th>
+                            <td>ここにFAXが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>メールアドレス</th>
+                            <td>ここにメールアドレスが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>URL</th>
+                            <td>ここにURLが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>Instagram</th>
+                            <td>ここにInstagramが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>X</th>
+                            <td>ここにXが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>facebook</th>
+                            <td>ここにfacebookが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>LINE</th>
+                            <td>ここにLINEが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>備考</th>
+                            <td>ここに備考が入ります</td>
+                        </tr>
+                    </table>
+                </section>
 
-            <span></span>
+                <span></span>
 
-            <section>
-                <h3>開催予定のイベント</h3>
-                <ul>
-                    <!-- イベントカード型（縦） -->
-                    <li>
-                        <a class="card_wrap" href="#">
+                <section>
+                    <h3>開催予定のイベント</h3>
+                    <ul>
+                        <!-- イベントカード型（縦） -->
+                        <li>
+                            <a class="card_wrap" href="#">
 
-                            <div class="card_countdown">
-                                <span>あと</span>
-                                <span class="card_countdownno">5</span>
-                                <span>日</span>
-                            </div>
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
 
-                            <div class="card_shape">
-                                <div class="card_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
-
-                                    <div class="card_text">
-                                        <h3>イベントタイトルが入ります</h3>
-                                        <div class="card_line"></div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">開催日</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
-                                            </div>
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">申込締切</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
+
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">会場名</span>
-                                            <div>
-                                                <span>徳島大学 常三島キャンパス</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">対象学年</span>
-                                            <div>
-                                                <span>小学5年生から中学2年生</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
                                             </div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
+                                            </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_tag">#地域</div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="card_wrap" href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="card_wrap" href="#">
 
-                            <div class="card_countdown">
-                                <span>あと</span>
-                                <span class="card_countdownno">5</span>
-                                <span>日</span>
-                            </div>
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
 
-                            <div class="card_shape">
-                                <div class="card_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                        </div>
 
-                                    <div class="card_text">
-                                        <h3>イベントタイトルが入ります</h3>
-                                        <div class="card_line"></div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">開催日</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">申込締切</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">会場名</span>
-                                            <div>
-                                                <span>徳島大学 常三島キャンパス</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">対象学年</span>
-                                            <div>
-                                                <span>小学5年生から中学2年生</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
                                             </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_tag">#地域</div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="card_wrap" href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="card_wrap" href="#">
 
-                            <div class="card_countdown">
-                                <span>あと</span>
-                                <span class="card_countdownno">5</span>
-                                <span>日</span>
-                            </div>
+                                <div class="card_countdown">
+                                    <span>あと</span>
+                                    <span class="card_countdownno">5</span>
+                                    <span>日</span>
+                                </div>
 
-                            <div class="card_shape">
-                                <div class="card_inner">
-                                    <div>
-                                        <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                    </div>
+                                <div class="card_shape">
+                                    <div class="card_inner">
+                                        <div>
+                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
+                                        </div>
 
-                                    <div class="card_text">
-                                        <h3>イベントタイトルが入ります</h3>
-                                        <div class="card_line"></div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">開催日</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
+                                        <div class="card_text">
+                                            <h3>イベントタイトルが入ります</h3>
+                                            <div class="card_line"></div>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">開催日</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">申込締切</span>
-                                            <div>
-                                                <span>2025/12/12(土)</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">申込締切</span>
+                                                <div>
+                                                    <span>2025/12/12(土)</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">会場名</span>
-                                            <div>
-                                                <span>徳島大学 常三島キャンパス</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">会場名</span>
+                                                <div>
+                                                    <span>徳島大学 常三島キャンパス</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card_linefeed">
-                                            <span class="card_subtitle">対象学年</span>
-                                            <div>
-                                                <span>小学5年生から中学2年生</span>
+                                            <div class="card_linefeed">
+                                                <span class="card_subtitle">対象学年</span>
+                                                <div>
+                                                    <span>小学5年生から中学2年生</span>
+                                                </div>
                                             </div>
+                                            <div class="card_tag">#地域</div>
                                         </div>
-                                        <div class="card_tag">#地域</div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                            </a>
+                        </li>
+                    </ul>
 
-                <a href="#">イベント一覧へ</a>
-            </section>
+                    <a href="#">イベント一覧へ</a>
+                </section>
 
-            <span></span>
+                <span></span>
 
-            <section>
-                <h3>過去開催イベント</h3>
-                <div>
-                    <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
-                    <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
-                    <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
-                </div>
-            </section>
+                <section>
+                    <h3>過去開催イベント</h3>
+                    <div>
+                        <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
+                        <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
+                        <a href="#">2025-02-18 ここに過去イベントのタイトルが入ります</a>
+                    </div>
+                </section>
 
-            <span></span>
+                <span></span>
 
-            <section>
-                <h3>関連コラム記事</h3>
-                <div>
-                    <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
-                    <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
-                    <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
-                </div>
-                <a href="#">コラム一覧へ</a>
-            </section>
-        </div>
-    </main>
+                <section>
+                    <h3>関連コラム記事</h3>
+                    <div>
+                        <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
+                        <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
+                        <a href="#">2025-02-18 ここにコラムのタイトルが入ります</a>
+                    </div>
+                    <a href="#">コラム一覧へ</a>
+                </section>
+            </div>
+        </main>
 
-    <!-- 豆知識 -->
-    <div>
-        <img src="" alt="">
-    </div>
-    <!-- トップへ戻る -->
-    <div>
-        <a href="#">
+        <!-- 豆知識 -->
+        <div>
             <img src="" alt="">
-        </a>
-    </div>
-    <!-- フッター -->
-    <footer>
-        <ul>
-            <li><a href="">利用規約</a></li>
-            <li><a href="">主催団体様お問い合わせ</a></li>
-        </ul>
-        <small>copyright</small>
-    </footer>
-</body>
+        </div>
+        <!-- トップへ戻る -->
+        <div>
+            <a href="#">
+                <img src="" alt="">
+            </a>
+        </div>
+        <!-- フッター -->
+        <footer>
+            <ul>
+                <li><a href="">利用規約</a></li>
+                <li><a href="">主催団体様お問い合わせ</a></li>
+            </ul>
+            <small>copyright</small>
+        </footer>
+    </body>
 </html>
