@@ -21,8 +21,12 @@
                                 <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
 
                                 <h3>
+
                                     <?php $id = get_field('org_id') ?>
-                                    <?php echo get_the_title($id) ?></h3>
+                                    <a href="<?php echo get_the_permalink($id) ?>">
+                                        <?php echo get_the_title($id) ?>
+                                    </a>
+                                </h3>
 
                                 <br>
 
@@ -139,27 +143,9 @@
                                     <?php endif; ?>
 
 
-                                    <?php if (get_field('eve_contactor')): ?>
-                                        <span class="food_itemData">イベント担当：<?php the_field('eve_contactor'); ?></span><br>
-                                    <?php endif; ?>
-
-
-                                    <?php if (get_field('eve_contact')): ?>
-                                        <span class="food_itemData">イベント担当連絡先：<?php the_field('eve_contact'); ?></span><br>
-                                    <?php endif; ?>
-
-                                    <?php if (get_field('tel')): ?>
-                                        <span class="food_itemData">イベント専用電話番号：<?php the_field('tel'); ?></span><br>
-                                    <?php endif; ?>
-
-
-                                    <?php if (get_field('fax')): ?>
-                                        <span class="food_itemData">イベント専用FAX：<?php the_field('fax'); ?></span><br>
-                                    <?php endif; ?>
-
-
-                                    <?php if (get_field('email')): ?>
-                                        <span class="food_itemData">イベント専用Eメール：<?php the_field('email'); ?></span><br>
+                                    <?php if (get_field('inquiry')): ?>
+                                        <span class="food_itemData">申し込み・お問い合わせ方法：<br>
+                                            <?php the_field('inquiry'); ?></span><br>
                                     <?php endif; ?>
 
 
