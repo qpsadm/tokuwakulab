@@ -67,6 +67,7 @@
     </header>
 
     <main class="pc_space">
+
         <!-- ページタイトル -->
         <section class="page_top">
             <h2 class="page_title">
@@ -79,12 +80,9 @@
             <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
         </div>
 
-
         <div class="inner">
 
-
-
-            <!-- 開催年月日が表示 -->
+            <!-- ボタン -->
             <ul class="column_menu">
                 <li class="column_btn"><a href="#">
                         インタビュー
@@ -196,12 +194,12 @@
                 </ul>
 
                 <!-- ページネーション -->
-                <div>
-                    <span>◁</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>▷</span>
+                <div class="pagenation">
+                    <div class="pagenation_nav">◀︎</div>
+                    <div class="pagenation_number">1</div>
+                    <div class="pagenation_number">2</div>
+                    <div class="pagenation_number">3</div>
+                    <div class="pagenation_nav">▶︎</div>
                 </div>
             </div>
 
@@ -223,9 +221,19 @@
     <footer>
         <ul>
             <li><a href="">利用規約</a></li>
-            <li><a href="">主催団体様お問い合わせ</a></li>
+            <li><a href="">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
         </ul>
         <small>copyright</small>
+        <div class="f_img">
+            <img src="../assets/img/f_img.png" alt="化石の画像">
+        </div>
     </footer>
+    <!-- jQueryの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slickの読み込み -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 自作JSの読み込み -->
+    <script src="../assets/js/animation.js"></script>
 </body>
 </html>

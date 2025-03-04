@@ -90,13 +90,11 @@
         <section class="page_top">
             <h2 class="page_title">イベントをさがす</h2>
         </section>
-
+        <!-- パンくずリスト -->
+        <div class="breadcrumb">
+            <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
+        </div>
         <div class="inner">
-            <!-- パンくずリスト -->
-            <div class="breadcrumb">
-                <span><a href="index.html">TOP</a>><a href="#">パンくずリスト</a>><a href="#">パンくずリスト</a>>パンくずリスト</span>
-            </div>
-
             <!-- 検索ボックス -->
             <section class="search">
                 <div class="search_wrap">
@@ -233,11 +231,11 @@
                             <label for="family"><input type="checkbox" name="other[]" id="family" value="親子で参加">親子で参加</label>
                             <label for="alone"><input type="checkbox" name="other[]" id="alone" value="一人でできる">一人でできる</label>
                         </details>
-                        <div class="">
-                            <!-- イベントをさがすボタン -->
-                            <a href="#">イベントをさがす</a>
+                        <div class="search_btn">
                             <!-- リセットボタン -->
-                            <a href="#">リセット</a>
+                            <input type="reset" value="クリア" class="search_prv_btn">
+                            <!-- イベントをさがすボタン -->
+                            <input type="submit" value="さがす" class="search_nxt_btn">
                         </div>
                     </form>
                 </div>

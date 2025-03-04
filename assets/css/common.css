@@ -161,6 +161,36 @@ font-weight: 900;
 .card_countdownno{
     font-size: 2.4rem;
 }
+.card_countdown span :nth-child(1),
+.card_countdown span :nth-child(3){
+    font-size: 1.6rem;
+}
+.card_countdownno{
+    font-size: 2.4rem;
+}
+
+/* イベントカード型-終了 */
+.card_past{
+    position: absolute;
+    left: 176px;
+    top:8px;
+    background-color: #2d2d2d;
+    border-radius: 50px;
+    width: 88px;
+    height: 88px;
+    display: inline-block;
+    line-height: 88px;
+    text-align: center;
+    color: #fff;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card_past span{
+    font-size: 2rem;
+}
 
 /* イベントカード型-ブックマーク */
 .card_bookmark{
@@ -169,10 +199,11 @@ font-weight: 900;
     top: 24px;
     width: 48px;
     height: 56px;
-    background-color: rgb(218, 218, 218);
+    font-size: 5.2rem;
+    /* background-color: rgb(218, 218, 218); */
     /* ブックマーク後の色 */
-    /* background-color: rgb(249, 7, 7); */
-    clip-path: polygon(12% 0, 90% 0, 90% 90%, 50% 70%, 10% 90%);
+    /* background-color: rgb(249, 7, 7);
+    clip-path: polygon(12% 0, 90% 0, 90% 90%, 50% 70%, 10% 90%); */
 }
 
 
@@ -403,26 +434,26 @@ main {
 
 
 /* ページネーション */
-.pagenation {
+/* .pagenation {
     margin-top: 4.8rem;
     display: flex;
-    align-items: center;  /* 上下中央 */
-    justify-content: center; /* 左右中央 */
-}
+    align-items: center;
+    justify-content: center;
+} */
 
-.pagenation div {
+/* .pagenation div {
     margin: 0 1.2rem;
-}
+} */
 
-.pagenation_nav {
+/* .pagenation_nav {
     color: #FF7800;
     font-size: 2.8rem;
-}
+} */
 
-.pagenation_number {
+/* .pagenation_number {
     display: flex;
-    align-items: center;  /* 上下中央 */
-    justify-content: center; /* 左右中央 */
+    align-items: center;
+    justify-content: center;
     color: #fff;
     width: 4.2rem;
     height: 4.2rem;
@@ -430,8 +461,7 @@ main {
     background-color: #58BE15;
     border-radius: 50%;
     font-size: 2.4rem;
-    /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
+} */
