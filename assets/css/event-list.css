@@ -47,7 +47,7 @@
 
 .event_list li:before {
     font-family: FontAwesome;
-    content: "★\00a0\00a0";
+    content: "★";
     position: absolute;
     left: 0.5rem;
     font-size: 1.2em;
