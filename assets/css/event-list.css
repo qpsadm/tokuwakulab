@@ -68,12 +68,21 @@
 
 .event_result {
     margin-top: 2rem;
+}
+
+.event_result ul {
+    margin-top: 2rem;
+    display: flex;
     flex-direction: column;
     /* 縦並びにする */
     align-items: center;
     /* アイテムを中央揃えに */
 }
 
+.event_result li {
+    width: fit-content;
+    margin: auto;
+}
 
 
 /* TB */
