@@ -63,9 +63,11 @@
         </div>
         <nav class="menu pc_none">
             <ul>
-                <a href="#" class="">
-                    <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
-                </a>
+                <li>
+                    <a href="index.html">
+                        <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    </a>
+                </li>
                 <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
                 <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
                 <li class="menu_item"><a href="column.html">コラム一覧</a></li>
@@ -114,9 +116,9 @@
             <div class="contact_form_wrap">
                 <form action="contact-check.html" method="post">
                     <div class="contact_item">
-                        <label for="">ご用件<span>*</span></label>
+                        <label for="requirement">ご用件<span>*</span></label>
                         <div class="contact_input_flex">
-                            <select name="requirement" id="">
+                            <select name="requirements" id="requirement">
                                 <option value="" selected>選択してください</option>
                                 <option value="1">イベント掲載について</option>
                                 <option value="2">主催団体情報変更について</option>
@@ -127,34 +129,34 @@
                     <div class="contact_item">
                         <label for="name">お名前<span>*</span></label>
                         <div class="contact_input_flex">
-                            <input name="name" type="text" required placeholder="例：徳島　太郎">
+                            <input name="responsible_person" id="name" type="text" required placeholder="例：徳島　太郎">
                             <span>※ご担当者様のお名前を入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
                         <label for="tel">お電話<span>*</span></label>
                         <div class="contact_input_flex">
-                            <input name="tel" type="tel" required placeholder="888-8888-8888">
+                            <input name="phone_number" id="tel" type="tel" required placeholder="888-8888-8888">
                             <span>※ハイフンありで電話番号を入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
                         <label for="email">メール<span>*</span></label>
                         <div class="contact_input_flex">
-                            <input name="email" type="email" required placeholder="sample@gmail.com">
+                            <input name="email_address" id="email" type="email" required placeholder="sample@gmail.com">
                             <span>※メールアドレスを入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
                         <label for="affiliation">所属名</label>
                         <div class="contact_input_flex">
-                            <input name="affiliation" type="text">
+                            <input name="affiliation_name" id="affiliation" type="text">
                             <span>※所属名がありましたら入れてください</span>
                         </div>
                     </div>
                     <div class="contact_item">
-                        <label for="inquiry_detail">お問い合わせ内容<span>*</span></label>
-                        <textarea name="inquiry_detail" maxlength="2000" required></textarea>
+                        <label for="inquiry">お問い合わせ内容<span>*</span></label>
+                        <textarea name="inquiry_detail" id="inquiry" maxlength="2000" required></textarea>
                     </div>
 
                     <div class="contact_agreement">
@@ -171,6 +173,7 @@
                     </div>
                 </form>
             </div>
+        </div>
     </main>
     <!-- 豆知識 -->
     <div>

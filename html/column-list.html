@@ -74,38 +74,43 @@
                 </h2>
         </section>
 
+        <!-- パンくずリスト -->
+        <div class="breadcrumb">
+            <a href="#">TOP</a>
+            <span>></span><a href="#">パンくずリスト</a>
+            <span>></span><a href="#">パンくずリスト</a>
+            <span>></span>
+            <span>パンくずリスト</span>
+        </div>
+
+
         <div class="inner">
-            <!-- パンくずリスト -->
-            <div class="breadcrumb">
-                <a href="#">TOP</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span><a href="#">パンくずリスト</a>
-                <span>></span>
-                <span>パンくずリスト</span>
-            </div>
 
             <!-- 開催年月日が表示 -->
-            <ul>
-                <li><a href="#">
+            <ul class="column_menu">
+                <li class="column_btn"><a href="#">
                         インタビュー
                     </a></li>
-                <li><a href="#">
+                <li class="column_btn"><a href="#">
                         レポート
-                <li><a href="#">
+                <li class="column_btn"><a href="#">
                         科学の魅力
                     </a></li>
-                <li><a href="#">
+                <li class="column_btn"><a href="#">
                         その他
                     </a></li>
             </ul>
 
-            <h3 class="sub_title">テスト</h3>
-
             <!-- ここから検索結果 -->
-            <div>
-                <div>
-                    <p>検索結果〇〇件</p>
-                    <p>1-6件を表示</p>
+            <div class="columnlist_wrap">
+
+                <div class="column_result">
+                    <div>
+                        <span>検索結果</span><span class="column_resultnum">50</span><span>件</span>
+                    </div>
+                    <div>
+                        <span>1-6</span><span>件を表示</span>
+                    </div>
                 </div>
 
                 <!-- コラム検索結果カード -->
@@ -204,16 +209,19 @@
 
         </div>
     </main>
+
     <!-- 豆知識 -->
     <div>
         <img src="" alt="">
     </div>
+
     <!-- トップへ戻る -->
     <div>
         <a href="#">
             <img src="" alt="">
         </a>
     </div>
+
     <footer>
         <ul>
             <li><a href="">利用規約</a></li>
