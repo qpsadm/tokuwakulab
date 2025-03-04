@@ -1,13 +1,9 @@
 @charset "utf-8";
 
-.sub_title {
-    display: block;
-    background-color: #58BE15;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
+.search_title {
     text-align: center;
-    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px dashed #58BE15;
 }
 
 /* フォーム全体の設定 */
@@ -57,10 +53,40 @@ summary::-webkit-details-marker {
 }
 
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
+} */
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #FF7B00;
+    border-color: #FF7B00;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 label {
@@ -68,7 +94,7 @@ label {
 }
 
 /* フリーワード */
-.search_box_wrap {
+/* .search_box_wrap {
     font-size: 1.4rem;
     background-color: #fff;
     border: solid 1px #111;
@@ -78,7 +104,7 @@ label {
 .search_box_content {
     width: 100%;
     padding: 16px;
-}
+} */
 
 .search_btn{
     margin-top: 4rem;
@@ -117,4 +143,58 @@ label {
 
 .search_nxt_btn:hover{
     color: #FF7B00;
+}
+
+/* フリーワード */
+.search_box_wrap {
+    position: relative;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    padding: 0 6rem 0 0;
+}
+
+.search_box_inner {
+    width: 100%;
+    display: flex;
+}
+
+/* .search_box_inner {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+} */
+
+.search_box_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1.6rem;
+}
+
+.search_word_btn::after {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    /* right: 3rem; */
+    padding: 2.4rem;
+    cursor: pointer;
+}
+
+/* 検索ボタンを非表示にする */
+button[type="submit"] {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin-left: -10px;
 }
