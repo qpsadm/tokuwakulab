@@ -85,21 +85,54 @@ function my_add_scripts()
         'my_common',
         get_template_directory_uri() . '/assets/css/common.css'
     );
-
+    wp_enqueue_style(
+        'my_column-list',
+        get_template_directory_uri() . '/assets/css/column-list.css'
+    );
+    wp_enqueue_style(
+        'my_column',
+        get_template_directory_uri() . '/assets/css/column.css'
+    );
+    wp_enqueue_style(
+        'my_contact',
+        get_template_directory_uri() . '/assets/css/contact.css'
+    );
+    wp_enqueue_style(
+        'my_event-list',
+        get_template_directory_uri() . '/assets/css/event-list.css'
+    );
+    wp_enqueue_style(
+        'my_event',
+        get_template_directory_uri() . '/assets/css/event.css'
+    );
+    wp_enqueue_style(
+        'my_faq',
+        get_template_directory_uri() . '/assets/css/faq.css'
+    );
+    wp_enqueue_style(
+        'my_footer',
+        get_template_directory_uri() . '/assets/css/footer.css'
+    );
+    wp_enqueue_style(
+        'my_found',
+        get_template_directory_uri() . '/assets/css/found.css'
+    );
+    wp_enqueue_style(
+        'my_header',
+        get_template_directory_uri() . '/assets/css/header.css'
+    );
+    wp_enqueue_style(
+        'post-list',
+        get_template_directory_uri() . '/assets/css/post-list.css'
+    );
     wp_enqueue_style(
         'my_top',
         get_template_directory_uri() . '/assets/css/top.css'
     );
 
-    wp_enqueue_style(
-        'my_header',
-        get_template_directory_uri() . '/assets/css/header.css'
-    );
 
-    wp_enqueue_style(
-        'my_footer',
-        get_template_directory_uri() . '/assets/css/footer.css'
-    );
+
+
 
 
     // 共通のJSファイルを読み込む
@@ -318,7 +351,7 @@ function my_pre_get_posts($query)
         return;
     }
 
-    //search画面                                       -------投稿タイプをeventに変更済み(3/2 今野)
+    //search画面         -------投稿タイプをeventに変更済み(3/2 今野)
     //★is_post_type_archiveが必要ないなら消す★
     if ($query->is_search() || is_post_type_archive('dataset')) {
         $query->set('post_type', 'event');
@@ -494,53 +527,11 @@ function get_random_message()
 
             $message = get_post_meta(get_the_ID(), 'text', true); // カスタムフィールド「text」を取得
             echo $message;
-
         }
         wp_reset_postdata(); // クエリをリセット（重要）
     }
-
 }
 
-/**
- * 未来のイベントの開催月の初日を取得する
- *
- */
-function get_upcoming_event_months()
-{
-    global $wpdb;
-
-    // 今日の日付を取得（フォーマット: YYYY-MM-DD）
-    $today = date('Y-m-d');
-
-    // データベースから開催日を取得（未来のものだけ）
-    $results = $wpdb->get_col(
-        $wpdb->prepare(
-            "SELECT DISTINCT pm.meta_value
-             FROM {$wpdb->postmeta} pm
-             INNER JOIN {$wpdb->posts} p ON pm.post_id = p.ID
-             WHERE pm.meta_key = %s
-             AND pm.meta_value >= %s
-             AND p.post_type = %s
-             AND p.post_status = 'publish'
-             ORDER BY pm.meta_value ASC",
-            'date_start', // カスタムフィールド名
-            $today,   // 今日以降
-            'event' // 指定された投稿タイプ
-        )
-    );
-
-    $months = [];
-
-    // 月のリストを抽出（YYYY-MM 形式）
-    if (!empty($results)) {
-        foreach ($results as $event_date) {
-            $month = date('Y-m', strtotime($event_date)) . '-01';
-            $months[$month] = true; // 重複排除
-        }
-    }
-
-    return array_keys($months); // ユニークな月のリストを取得
-}
 
 /**
  * 指定した月の初日 (YYYY-MM-01 形式) から、
@@ -563,4 +554,91 @@ function get_param_value($key)
         $value = $_GET[$key];
     };
     return $value;
+}
+
+/**
+ * 未来のイベントの開催月の初日を取得する(サブクエリ)
+ *
+ */
+function get_upcoming_event_months()
+{
+    global $wpdb;
+
+    // 今日の日付を取得（フォーマット: YYYY-MM-DD）
+    $today = date('Y-m-d');
+
+    // カスタムフィールド（開催日）の値を持つ未来の投稿を取得
+    $query_args = [
+        'post_type'      => 'event', // カスタム投稿タイプ（適宜変更）
+        'posts_per_page' => -1,      // すべて取得
+        'meta_key'       => 'date_start', // ソート基準となるカスタムフィールド
+        'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
+        'order'          => 'ASC',    // 昇順（古い順）
+        'meta_query'     => [
+            [
+                'key'     => 'date_start',  // フィールド名（適宜変更）
+                'value'   => $today,
+                'compare' => '>=',  // 今日以降の開催日のみ
+                'type'    => 'DATE'
+            ]
+        ]
+    ];
+
+    $query = new WP_Query($query_args);
+    $months = [];
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $event_date = get_post_meta(get_the_ID(), 'date_start', true);
+            if ($event_date) {
+                $month = date('Y-m', strtotime($event_date)) . '-1'; // YYYY-MM 形式で取得
+                $months[$month] = true; // 配列のキーとして保持（重複防止）
+            }
+        }
+    }
+    wp_reset_postdata();
+
+    return array_keys($months); // ユニークな月リストを取得
+}
+
+/**
+ * 未来のイベントの開催月の初日を取得する（SQL）
+ *
+ */
+function get_upcoming_event_months1($post_type = 'event')
+{
+    global $wpdb;
+
+    // 今日の日付を取得（フォーマット: YYYY-MM-DD）
+    $today = date('Y-m-d');
+
+    // データベースから開催日を取得（未来のものだけ）
+    $results = $wpdb->get_col(
+        $wpdb->prepare(
+            "SELECT DISTINCT pm.meta_value
+            FROM {$wpdb->postmeta} pm
+            INNER JOIN {$wpdb->posts} p ON pm.post_id = p.ID
+            WHERE pm.meta_key = %s
+            AND CAST(pm.meta_value AS DATE) >= %s
+            AND p.post_type = %s
+            AND p.post_status = 'publish'
+            ORDER BY CAST(pm.meta_value AS DATE) ASC",
+            'date_start', // カスタムフィールド名
+            $today,       // 今日以降
+            $post_type    // 指定された投稿タイプ
+        )
+    );
+
+    $months = [];
+
+    // 月のリストを抽出（YYYY-MM 形式）
+    if (!empty($results)) {
+        foreach ($results as $event_date) {
+            $month = date('Y-m', strtotime($event_date)) . '-01';
+            $months[$month] = true; // 重複排除
+        }
+    }
+
+    return array_keys($months); // ユニークな月のリストを取得
 }

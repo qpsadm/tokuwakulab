@@ -20,24 +20,24 @@
 
 .event_list li {
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    max-width: 200px;
+    max-width: 10rem;
     /* ボタンの最大幅 */
     padding: 1em 2em;
     transition: 0.3s ease-in-out;
-    font-weight: bold;
+
     text-decoration: none;
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    margin-bottom: 5px;
-    padding-left: 30px;
-    line-height: 30px;
-    font-size: 15px;
+    /* margin-bottom: 0.5rem;
+    padding-left: 2rem;
+    line-height: 3rem; */
+    font-size: 1rem;
     font-weight: bold;
     border: 1px solid #f4cf15;
     border-radius: 3rem;
@@ -47,9 +47,9 @@
 
 .event_list li:before {
     font-family: FontAwesome;
-    content: "★";
+    content: "★\00a0\00a0";
     position: absolute;
-    left: 2rem;
+    left: 0.5rem;
     font-size: 1.2em;
     transition: transform 0.8s ease-in-out;
     /* 回転のアニメーション */
@@ -117,6 +117,18 @@
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {
+    .event_list li {
+        max-width: 15rem;
+        font-size: 1.5rem;
+
+
+    }
+
+    .event_list li:before {
+        left: 1rem;
+        font-size: 1.2em;
+    }
+
     .event_result {
         grid-template-columns: repeat(2, 1fr);
         /*2カラム*/
@@ -126,6 +138,18 @@
 
 /* PC */
 @media screen and (min-width:1280px) {
+    .event_list li {
+        max-width: 20rem;
+        font-size: 1.5rem;
+        /* margin-bottom: 2rem;
+        padding-left: 3rem; */
+    }
+
+    .event_list li:before {
+        left: 2rem;
+        font-size: 1.2em;
+    }
+
     .event_result {
         grid-template-columns: repeat(3, 1fr);
         /*3カラム*/
