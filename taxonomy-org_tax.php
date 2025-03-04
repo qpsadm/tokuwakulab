@@ -3,6 +3,16 @@
 get_header();
 ?>
 
+<?php
+// サブクエリ
+$args = [
+    // 1ページに表示する記事数
+    'paged' => $paged,
+    'post_type' => 'event',
+    'posts_per_page' => 6,
+];
+?>
+
 <main>
     <section class="section section-foodList">
         <div class="section_inner">
@@ -24,22 +34,14 @@ get_header();
                     <span><?php echo strtoupper($menu->slug); ?></span>
                 </h3>
                 <!-- 団体絞り込みの際にエラー発生 -->
-
-                <ul class="foodList">
-                    <!-- <li class="foodList_item">
-                        <div class="foodCard">
-                            <a href="#">
-                                <span class="foodCard_label">オススメ</span>
-                                <div class="foodCard_pic">
-                                    <img src="assets/img/food/food_img01@2x.png" alt="">
-                                </div>
-                                <div class="foodCard_body">
-                                    <h4 class="foodCard_title">タコス</h4>
-                                    <p class="foodCard_price">¥650</p>
-                                </div>
-                            </a>
-                        </div>
-                    </li> -->
+                <!-- 件数表示 -->
+                <div>検索結果：<?php
+                            $postnums = $count = 0 < get_query_var('posts_per_page') ? $wp_query->found_posts : $wp_query->post_count;
+                            ?>
+                    <?php echo $postnums; ?>
+                    件
+                </div>
+                <ul>
                     <li class="foodList_item">
                         <!-- WordPress ループの開始 -->
                         <?php if (have_posts()) : ?>
@@ -55,12 +57,18 @@ get_header();
                     <?php endwhile; ?>
                     <?php endif; ?>
                 </ul>
+                <!-- ページナビゲーション -->
+                <?php if (function_exists('wp_pagenavi')) : ?>
+                <div class="pagenation">
+                    <?php wp_pagenavi(); ?>
+                </div>
+                <?php endif; ?>
             </section>
         </div>
     </section>
 </main>
 
 <!-- footer.phpを読み込む -->
-<?php
-get_footer();
-?>
+<!-- <?php
+        get_footer();
+        ?> -->
