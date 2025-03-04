@@ -2,11 +2,11 @@
 
 /* 主催団体名 */
 .org_name{
-    font-size: 2.4rem;
-    line-height: 2.4rem;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
     text-align: center;
     font-weight: 600;
-    margin: 4rem;
+    padding: 4rem 0;
 }
 
 /* 主催団体説明 */
