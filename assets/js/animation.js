@@ -25,8 +25,8 @@ $(function () {
         // 矢印の表示
         // arrows: true,
         // appendArrow: $('.arrow_box'),
-        prevArrow: '<button class="slick-prev"><img src="prev-arrow.png" alt="Previous"></button>',
-        nextArrow: '<button class="slick-next"><img src="next-arrow.png" alt="Next"></button>',
+        prevArrow: '<button class="slick-prev"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
+        nextArrow: '<button class="slick-next"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
     });
 })
 
