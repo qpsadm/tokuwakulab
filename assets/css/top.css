@@ -17,7 +17,8 @@ main {
 
 
 /* スリックの設定 */
-.slider_kv {
+.slider_kv,
+.slider_kv li {
     /* margin: 0 auto; */
     position: relative;
     /* max-width: 500px; */
@@ -25,9 +26,9 @@ main {
     height: 70vh;
 }
 
-.slider_kv li {
+/* .slider_kv li {
     height: 70vh;
-}
+} */
 
 .slider_kv img {
     width: 100%;
@@ -36,13 +37,28 @@ main {
 }
 
 .slider_org {
-    width: 100%;
     display: flex;
     justify-content: space-around;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .slider_org {
+        max-width: 560px;
+    }
+}
+
+
+@media screen and (min-width:1280px) {
+    .slider_org {
+        max-width: 840px;
+    }
 }
 
 .slider_org li {
     box-sizing: border-box;
+    margin: 2rem;
 }
 
 /* .slick-prev {
@@ -57,12 +73,12 @@ main {
 /* z-index: 1000;
 } */
 
-/* .arrow_box {
+.arrow_box {
     position: relative;
-} */
+}
 
-/* .prev_arrow,
-.next_arrow {
+.slick-prev,
+.slick-next {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -70,7 +86,7 @@ main {
     position: relative;
 }
 
-.prev_arrow::before {
+.slick-prev::before {
     width: 0;
     height: 0;
     position: absolute;
@@ -79,7 +95,7 @@ main {
     border-bottom: 15px solid transparent;
     border-right: 27px solid #4dc4ff;
     border-left: 0;
-} */
+}
 
 /* セクション間の余白 */
 section {
@@ -157,7 +173,7 @@ section {
 .top_instagram_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 2rem;
 }
 
@@ -226,6 +242,10 @@ section {
     height: 100px;
     border-radius: 32px;
     /* margin: 0 auto; */
+}
+
+.top_instagram_item:hover {
+    opacity: 0.8;
 }
 
 .top_instagram_item img {

@@ -1,16 +1,72 @@
 @charset "UTF-8";
 
-.sub_title {
-    display: block;
-    background-color: #58BE15;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
+/* コラム用メニューボタンのul設定 */
+.column_menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:stretch;
+    height: auto;
 }
 
+/* コラム用メニューボタンの装飾 */
+.column_btn{
+    width: auto;
+    display: inline;
+    padding: 16px 24px;
+    background-color: #56C909;
+    color: #fff;
+    border-radius: 32px;
+    font-size: 2rem;
+    margin: 2rem 0.8rem 0 0;
+    transition: 0.3s;
+}
+
+@media screen and (min-width:1280px) {
+.column_btn{
+    margin: 2rem 2.4rem 0 0;
+}
+.column_btn:hover{
+    transition: 0.3s;
+    transform: translateY(4px);
+}
+}
+
+/* コラム記事の真ん中寄せ */
 .column_list li{
 width: fit-content;
 margin: auto;
+}
+
+/* コラム一覧を包む */
+.columnlist_wrap{
+    margin-top: 4.8rem;
+}
+
+/* 検索結果の数字を包む */
+.column_result{
+    margin: 3.2rem 0;
+}
+@media screen and (min-width:1280px) {
+    .column_result{
+    margin-left: 16rem;
+}
+}
+
+/* コラム検索結果検索結果の1行分のdiv */
+.column_result div{
+    margin-bottom: 0.8rem;
+}
+
+/* コラム検索結果装飾用 */
+.column_resultnum{
+    margin-left:1.6rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+.column_result div:nth-child(1){
+    font-size:2rem;
+}
+.column_result div:nth-child(2){
+    font-size:1.6rem;
 }
