@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.error_wrap{
+    line-height: 2.4rem;
+}
+
+.error_wrap a{
+    display: inline;
+    font-size: 2rem;
+    border-bottom: 2px dotted #FFCC00;
+}
