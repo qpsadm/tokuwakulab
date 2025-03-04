@@ -120,14 +120,13 @@
     .event_list li {
         max-width: 15rem;
         font-size: 1.5rem;
-        font-weight: bold;
+
 
     }
 
     .event_list li:before {
         left: 1rem;
         font-size: 1.2em;
-
     }
 
     .event_result {
@@ -142,7 +141,6 @@
     .event_list li {
         max-width: 20rem;
         font-size: 1.5rem;
-        font-weight: bold;
         /* margin-bottom: 2rem;
         padding-left: 3rem; */
     }
