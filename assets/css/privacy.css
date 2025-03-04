@@ -20,3 +20,10 @@
 .privacy_text{
     padding: 0.8rem 0.8rem 0.8rem 1.6rem;
 }
+
+.privacy_establishment{
+    text-align: center;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+    margin: 1.6rem 0;
+}
