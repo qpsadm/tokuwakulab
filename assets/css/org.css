@@ -6,7 +6,13 @@
     line-height: 3.2rem;
     text-align: center;
     font-weight: 600;
-    padding: 4rem 0;
+    padding: 0 0 4rem 0;
+}
+
+@media screen and (min-width:1280px) {
+.org_name{
+    padding: 0 0 8rem 0;
+}
 }
 
 /* 主催団体説明 */
@@ -14,7 +20,37 @@
     margin: 0.8rem 0 8rem 0;
 }
 
-/* === slick設定 === */
+@media screen and (min-width:1280px) {
+.org_description{
+    margin: 4rem 0 8rem 0;
+}
+}
+
+/* === slickの設定 === */
+.slick_prev_kv,
+.slick_next_kv,
+.slick_prev_org,
+.slick_next_org {
+    /* 矢印のサイズ */
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 1 !important;
+    position: absolute !important;
+    top: 45% !important;
+}
+
+/* 左矢印を移動 */
+.slick_prev_kv,
+.slick_prev_org {
+    left: 1rem !important;
+}
+
+/* 右矢印を移動 */
+.slick_next_kv,
+.slick_next_org {
+    right: 1rem !important;
+}
+
 /* キービジュアル */
 .top_kv_wrap {
     /* position: relative; */
@@ -27,6 +63,22 @@
 .slider_kv li {
     width: 240px;
     height:180px;
+}
+
+@media screen and (min-width:768px) {
+.slider_kv,
+.slider_kv li {
+    width: 450px;
+    height:338px;
+}
+}
+
+@media screen and (min-width:1280px) {
+.slider_kv,
+.slider_kv li {
+    width: 640px;
+    height:480px;
+}
 }
 
 .slider_kv img {
@@ -61,24 +113,7 @@
     margin: 2rem;
 }
 
-/* 基本情報 */
-/* .org_table{
-    background-color: #fff;
-    margin: 0 auto;
-    border: 3px solid #58BE15;
-    border-radius: 2.4rem;
-    border-collapse: separate;
-}
-
-.org_table th{
-text-align: center;
-}
-.org_table th,
-.org_table td{
-    padding: 1.6rem;
-    border-bottom: solid 1px #a4c88b;
-} */
-
+/* === 基本情報 === */
 .org_table {
     border: 3px solid #58BE15;
     background-color: #FFF;
@@ -90,7 +125,14 @@ text-align: center;
 }
 .org_table th,
 .org_table td {
-    padding: 1.6rem;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+}
+@media screen and (min-width:768px) {
+.org_table th,
+.org_table td {
+    padding: 2rem 4rem;
+}
 }
 .org_table th {
     text-align: center;
@@ -101,4 +143,38 @@ text-align: center;
 .org_table td {
     vertical-align: middle;
     border-bottom: 1px solid #c5deb5;
+}
+
+/* subtitle */
+.sub_title{
+    margin: 2.4rem 0 4rem 0;
+}
+@media screen and (min-width:1280px) {
+.sub_title{
+    margin: 2.4rem 0 6.4rem 0;
+}
+}
+
+/* リンクボタン */
+.btn_wrap{
+    margin: 4rem 0 4rem 0;
+    text-align: center;
+}
+
+
+/* イベントリスト */
+.org_eventlist{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: center;
+}
+
+section{
+    text-align: center;
+}
+
+.org_pastevent,
+.org_column{
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
 }
