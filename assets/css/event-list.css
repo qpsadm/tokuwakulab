@@ -54,7 +54,7 @@
     background-color: #FF7B00;
     /* ホバー時に背景色をオレンジに変更 */
     /* :active はクリックしている間、:focus はクリック後も適用 */
-    color: rgb(7, 7, 6);
+    color: #fff;
 }
 
 .tax_list li:hover:before {
