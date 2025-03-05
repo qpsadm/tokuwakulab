@@ -13,8 +13,8 @@
     padding: 2rem;
     /* 余白を追加 */
     font-size: 1.5rem;
-    font-weight: bold;
-    border: 1px solid #F4CF15;
+    /* font-weight: bold; */
+    border: 0.3rem solid #F4CF15;
     border-radius: 3rem;
     text-align: center;
     display: flex;
