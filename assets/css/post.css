@@ -37,7 +37,7 @@
 }
 
 .post_img {
-    border-radius: 24px;
+    border-radius: 32px;
 }
 
 /* コラム記事の設定 */
@@ -138,4 +138,10 @@
 .btn_wrap:hover::after {
     right: 40px;
     transition: 0.3s;
+}
+
+/* ボタンを中央に配置 */
+.post_btn {
+    display: block;
+    margin: 4rem auto;
 }
