@@ -38,12 +38,7 @@ $the_query = new WP_Query($args);
 
     <div class="inner">
 
-        <!-- ページのタイトル -->
-        <!-- <div class="section_header">
-            <h1 class="heading heading-primary"><span>最新情報</span><?php //wp_title('');
-                                                                    ?><?php //echo is_year() ? '年' : '';
-                                                                        ?></h1>
-        </div> -->
+
 
         <div class="tax_list">
             <ul>
@@ -54,7 +49,7 @@ $the_query = new WP_Query($args);
                 <?php
                 $all_link = home_url('/organization');
 
-                echo '<li"><a href="' . $all_link . '">All</a></li>';
+                echo '<li><a href="' . $all_link . '">All</a></li>';
 
                 $terms = get_terms(array(
                     'taxonomy' => 'org_tax',

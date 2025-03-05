@@ -46,7 +46,7 @@ $the_query = new WP_Query($args);
 
                 // 「All」リンク
                 $is_active = ($current_url === $all_link) ? 'active' : '';
-                echo '<li><a href="' . $all_link . '" class="' . $is_active . '">All</a></li>';
+                echo '<li class="tax_list' . $is_active . '"><a href="' . $all_link . '" >All</a></li>';
 
                 // タクソノミーのリンクを取得
                 $terms = get_terms(array(
@@ -59,7 +59,7 @@ $the_query = new WP_Query($args);
                         $term_link = esc_url(get_term_link($term));
                         // 現在のページURLと比較して一致すれば active クラスを追加
                         $is_active = ($current_url === $term_link) ? 'active' : '';
-                        echo '<li><a href="' . $term_link . '" class="' . $is_active . '">' . esc_html($term->name) . '</a></li>';
+                        echo '<li class="tax_list' . $is_active . '"><a href="' . $all_link . '" >' . esc_html($term->name) . '</a></li>';
                     }
                 }
                 ?>

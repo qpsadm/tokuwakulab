@@ -63,58 +63,60 @@ $the_query = new WP_Query($args);
     <div class="inner">
 
         <!-- 月別ボタンの実装 -->
-        <div class="archive_yealy">
-            <ul class="archive_list">
+        <div class="tax_list">
+            <ul>
                 <?php
                 // 取得した日付をボタン（リンク）として表示
                 foreach ($dates as $date) {
                     $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
-                    echo '<a href="' . home_url('/event/') . '?date=' . $date . '"><li>' . $formatted_date . '</li></a>';
+                    echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '</a></li>';
                 }
                 ?>
             </ul>
         </div>
 
-        <div class="section_header">
-            <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
+
+        <!-- ここから検索結果 -->
+        <div class="exp_result">
+
             <?php
             $one_week_later = date('Y年n月', strtotime($date1));
             ?>
-            <h2 class="heading heading-primary">
+            <h3>
 
-                <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
-            </h2>
+                <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)件
+            </h3>
 
             <br>
 
+            <span>
+                <?php
+                // グローバル変数を取得
+                global $wp_query;
 
-            <?php
-            // グローバル変数を取得
-            global $wp_query;
+                // 1ページに表示する記事数
+                $posts_per_page = get_query_var('posts_per_page');
 
-            // 1ページに表示する記事数
-            $posts_per_page = get_query_var('posts_per_page');
+                // 現在のページ番号（1から始まる）
+                $current_page = max(1, get_query_var('paged'));
 
-            // 現在のページ番号（1から始まる）
-            $current_page = max(1, get_query_var('paged'));
+                // 表示中の記事の開始番号
+                $start = ($current_page - 1) * $posts_per_page + 1;
 
-            // 表示中の記事の開始番号
-            $start = ($current_page - 1) * $posts_per_page + 1;
+                // 表示中の記事の終了番号
+                $end = min($current_page * $posts_per_page, $the_query->found_posts);
 
-            // 表示中の記事の終了番号
-            $end = min($current_page * $posts_per_page, $the_query->found_posts);
-
-            // 「何件から何件を表示しているか」を表示
-            echo '<div class="post-range">';
-            echo $start . ' - ' . $end . ' 件を表示';
-            echo '</div>';
-            ?>
-
+                // 「何件から何件を表示しているか」を表示
+                echo '<div class="post-range">';
+                echo $start . ' - ' . $end . ' 件を表示';
+                echo '</div>';
+                ?>
+            </span>
 
         </div>
 
 
-        <ul>
+        <ul class="top_event_list">
 
             <!-- イベントループの開始 -->
             <?php if ($the_query->have_posts()) : ?>
