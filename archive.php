@@ -44,9 +44,10 @@ get_header();
             </div> -->
     <!-- パンくずリスト -->
     <div class="breadcrumb">
-        <?php if (!is_home()) : ?>
-        <?php get_template_part('template-parts/breadcrumb'); ?>
-        <?php endif; ?>
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+                <?php endif; ?></a>
+        </span>
     </div>
     <div class="inner">
 
@@ -73,12 +74,16 @@ get_header();
         </div>
 
         <!-- ページナビゲーション -->
-        <?php if (function_exists('wp_pagenavi')): ?>
         <div class="pagenation">
-            <?php wp_pagenavi(); ?>
-        </div>
-        <?php endif; ?>
+            <div class="wp-pagenavi">
 
+                <?php if (function_exists('wp_pagenavi')): ?>
+                <div class="">
+                    <?php wp_pagenavi(); ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
 </main>
 
 <!-- footer.phpを読み込む -->
