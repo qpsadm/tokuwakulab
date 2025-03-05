@@ -1,14 +1,18 @@
 @charset "utf-8";
 
-.column_content_wrap {
-    border-bottom: 2px solid #FFCC00;
-    margin-bottom: 4rem;
-}
+/* .column_content_wrap {
+    padding: 4rem;
+} */
 
 /* コラムタイトルの設定 */
-.column_ttl_wrap {
-    display: flex;
-    align-items: center;
+
+@media screen and (min-width:768px) {
+
+    .column_ttl_wrap {
+        display: flex;
+        align-items: center;
+    }
+
 }
 
 .column_date span {
@@ -18,12 +22,24 @@
     margin-left: 1.6rem;
 }
 
+
 .column_ttl {
-    padding-left: 5.6rem;
+    margin: 1.6rem 0 0 1.6rem;
     font-size: 3.2rem;
     line-height: 4rem;
 }
 
+@media screen and (min-width:768px) {
+
+    .column_ttl {
+        margin-left: 5.6rem;
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+
+}
+
+/* タグの設定 */
 .column_tag {
     background-color: #FF7B00;
     width: auto;
@@ -33,13 +49,22 @@
     color: #fff;
     font-weight: 600;
     display: inline-block;
-    margin: 2rem 0 2rem 1.6rem;
+    margin: 1.6rem 0 0 1.6rem;
     font-size: 1rem;
 }
 
+/* コラム画像の設定 */
 .column_img {
-    border-radius: 32px;
-    max-width: 1000px;
+    border-radius: 40px;
+}
+
+@media screen and (min-width:768px) {
+
+    .column_img_wrap {
+        width: 80%;
+        margin: 0 auto;
+    }
+
 }
 
 /* コラム記事の設定 */
@@ -162,6 +187,12 @@
     top: 20px;
     right: 48px;
     transition: 0.3s;
+}
+
+/* ボタンを中央に配置 */
+.btn_wrap {
+    display: block;
+    margin: 4rem auto;
 }
 
 .btn_wrap:hover::after {
