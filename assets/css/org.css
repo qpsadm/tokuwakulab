@@ -16,13 +16,23 @@
 }
 
 /* 主催団体説明 */
+
 .org_description{
-    margin: 0.8rem 0 8rem 0;
+    padding: 0.8rem 0;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 
 @media screen and (min-width:1280px) {
 .org_description{
-    margin: 4rem 0 8rem 0;
+    padding-top: 4rem;
+    max-width: 640px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 }
 
@@ -53,31 +63,22 @@
 
 /* キービジュアル */
 .top_kv_wrap {
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
 }
 
 /* スリックの設定 */
 .slider_kv,
 .slider_kv li {
-    width: 240px;
-    height:180px;
+    max-width: 450px;
+    max-height:338px;
 }
-
-@media screen and (min-width:768px) {
-.slider_kv,
-.slider_kv li {
-    width: 450px;
-    height:338px;
-}
-}
-
 @media screen and (min-width:1280px) {
 .slider_kv,
 .slider_kv li {
-    width: 640px;
-    height:480px;
+    max-width: 640px;
+    max-height:480px;
 }
 }
 
@@ -104,7 +105,7 @@
 
 @media screen and (min-width:1280px) {
     .slider_org {
-        max-width: 840px;
+    max-width: 840px;
     }
 }
 

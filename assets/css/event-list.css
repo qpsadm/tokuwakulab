@@ -80,8 +80,8 @@
 } */
 
 .exp_result {
-    margin-top: 2rem;
-    /* 検索結果の上に余白 */
+    margin-bottom: 2rem;
+    /* 検索結果の下に余白 */
 }
 
 .exp_result h3 {
@@ -130,8 +130,8 @@
     }
 
     .tax_list li:before {
-        left: 1rem;
-        font-size: 1.2em;
+
+        font-size: 2rem;
     }
 
     /* 共通カード */
@@ -154,8 +154,8 @@
     }
 
     .tax_list li:before {
-        left: 2rem;
-        font-size: 1.2em;
+        /* left: 2rem; */
+        font-size: 2.5rem;
     }
 
     /* 共通カード */
