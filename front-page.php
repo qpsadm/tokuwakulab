@@ -9,7 +9,7 @@ get_header();
     <section class="kv">
         <div class="kv_inner">
             <!-- ベタ打ち -->
-            <h1 class="kv_title header">徳島わくわくラボ</h1>
+            <h1 class="kv_title ">徳島わくわくラボ</h1>
         </div>
 
         <!-- slickは非表示にしています -->
@@ -37,9 +37,9 @@ get_header();
 <section class="section section-concept" id="concept">
     <div class="section_inner">
         <div class="section_headerWrapper">
-            <header class="section_header">
+
                 <h2 class="heading heading-primary">イベント新着</h2>
-            </header>
+
             <div class="section_pic">
 
                 <!-- ここにPHP挿入 -->
@@ -116,9 +116,9 @@ get_header();
 <section class="section section-concept" id="concept">
     <div class="section_inner">
         <div class="section_headerWrapper">
-            <header class="section_header">
+
                 <h2 class="heading heading-primary">コラム新着</h2>
-            </header>
+
             <div class="section_pic">
                 <ul class="foodList">
                     <?php
@@ -156,9 +156,9 @@ get_header();
 <section class="section section-concept" id="concept">
     <div class="section_inner">
         <div class="section_headerWrapper">
-            <header class="section_header">
+
                 <h2 class="heading heading-primary">おすすめコラム記事</h2>
-            </header>
+
             <div class="section_pic">
 
                 <ul class="foodList">
@@ -192,9 +192,9 @@ get_header();
 <section class="section section-concept" id="concept">
     <div class="section_inner">
         <div class="section_headerWrapper">
-            <header class="section_header">
+
                 <h2 class="heading heading-primary">主催団体紹介</h2>
-            </header>
+
             <div class="section_pic">
 
                 <ul class="foodList">
@@ -239,6 +239,7 @@ get_header();
     </div>
     <!-- 後日調べます -->
 </section>
+
 
 <!-- footer.phpを読み込む -->
 <?php
