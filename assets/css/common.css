@@ -74,7 +74,7 @@ header {
     background-color: #fff;
     align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
 }
 
 header .inner {
@@ -228,10 +228,22 @@ h1 {
         margin: 0 auto;
     }
 
+    header ul {
+    padding: 0 1.6rem;
+    }
+
     header li {
         margin-top: 1.6rem;
         display: flex;
         justify-content: center;
+    }
+
+    /* header li a span {
+        display: flex;
+    } */
+
+    header li a div {
+        display: flex;
     }
 
     header li a {
@@ -317,7 +329,7 @@ h1 {
     color: #fff;
     font-weight: 600;
     display: inline-block;
-    margin: 0.8rem 0;
+    margin: 0.8rem 0 0 0.8rem;
     font-size: 1rem;
 }
 
