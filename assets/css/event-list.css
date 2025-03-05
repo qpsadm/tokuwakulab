@@ -98,23 +98,23 @@
     /* ブロック要素にして改行 */
 }
 
-
-.list_up_result {
+/* 共通カードの配置(commonn.cssで適用したので不要) */
+/* .list_up_result {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: 1fr;
-    /*１カラム*/
-    gap: 1rem;
-    /*各アイテムに均等に余白*/
-}
+    grid-template-columns: 1fr; */
+/*１カラム*/
+/* gap: 1rem; */
+/*各アイテムに均等に余白*/
+/* } */
 
 
 
-.list_up_result li {
+/* .list_up_result li {
     width: max-content;
     /* または適切な幅 */
-    margin: 0 auto;
-}
+/*margin: 0 auto;
+} */
 
 
 /* TB */
@@ -134,10 +134,11 @@
         font-size: 1.2em;
     }
 
-    .list_up_result {
+    /* 共通カード */
+    /* .list_up_result {
         grid-template-columns: repeat(2, 1fr);
-        /*2カラム*/
-    }
+        /*2カラム
+    } */
 }
 
 
@@ -157,8 +158,9 @@
         font-size: 1.2em;
     }
 
-    .list_up_result {
+    /* 共通カード */
+    /* .list_up_result {
         grid-template-columns: repeat(3, 1fr);
-        /*3カラム*/
-    }
+        /*3カラム
+    } */
 }
