@@ -128,8 +128,4 @@ $all_num = $wp_query->found_posts; //記事の総数を取得
 
 </div>
 </main>
-<<<<<<< Updated upstream
-<?php //get_footer(); ?>
-=======
-<!-- <?php get_footer(); ?> -->
->>>>>>> Stashed changes
+<?php get_footer(); ?>
