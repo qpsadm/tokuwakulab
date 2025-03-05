@@ -161,18 +161,6 @@
     text-align: center;
 }
 
-/* section区切り線 */
-.section_line{
-    border: 2px dashed #FFCC00;
-    width: 100%;
-    margin: 6.4rem 0;
-}
-@media screen and (min-width:1280px) {
-.section_line{
-    margin: 8.4rem 0;
-}
-}
-
 
 /* イベントリスト */
 .org_eventlist{
