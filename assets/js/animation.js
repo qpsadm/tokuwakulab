@@ -27,27 +27,6 @@ $(function () {
     });
 })
 
-// $(function () {
-//     $(".slider_org").slick({
-//         // 自動再生
-//         autoplay: true,
-//         // ドットインジケーターの表示
-//         dots: false,
-//         // 矢印の表示
-//         arrows: false,
-//         //表示するスライドの数
-//         slidesToShow: 3,
-//         respondTo: 'slider',
-//         centerMode: true,
-//         responsive: [{
-//             breakpoint: 767,
-//             settings: {
-//                 slidesToShow: 1
-//             }
-//         }]
-//     });
-// })
-
 $(function () {
     // メイン画像のオプション
     $(".slider_org").slick({
@@ -83,25 +62,3 @@ $(function () {
         // ]
     });
 });
-
-// $(function () {
-//     $('.slider_org').slick({
-//         autoplay: true, //自動でスクロール
-//         autoplaySpeed: 0, //自動再生のスライド切り替えまでの時間を設定
-//         speed: 10000, //スライドが流れる速度を設定
-//         cssEase: "linear", //スライドの流れ方を等速に設定
-//         slidesToShow: 2, //表示するスライドの数
-//         // swipe: false, // 操作による切り替えはさせない
-//         arrows: false, //矢印非表示
-//         pauseOnFocus: false, //スライダーをフォーカスした時にスライドを停止させるか
-//         pauseOnHover: false, //スライダーにマウスホバーした時にスライドを停止させるか
-//         responsive: [
-//             {
-//                 breakpoint: 767,
-//                 settings: {
-//                     slidesToShow: 1, //画面幅767px以下でスライド3枚表示
-//                 }
-//             }
-//         ]
-//     });
-// });
