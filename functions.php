@@ -123,7 +123,6 @@ function my_add_scripts()
             null,
             true
         );
-
     } elseif (is_search()) {
         //条件検索CSS
         // wp_enqueue_style('my_search', get_template_directory_uri() . '/assets/css/results.css');
@@ -388,14 +387,21 @@ add_filter(
 // }
 // add_filter('comment_form_defaults', 'my_title_reply');
 
-// /**
-//  * contact Formのときには整形機能をOFFにする
-//  */
-// add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
-// function my_wpcf7_autop()
-// {
-//     return false;
-// }
+/**
+ * contact Formのときには整形機能をOFFにする
+ */
+add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
+function my_wpcf7_autop()
+{
+    return false;
+}
+
+// contact Formの<span>割り込みを解除
+add_filter('wpcf7_form_elements', function ($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    return $content;
+});
 
 
 /**
