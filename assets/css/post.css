@@ -1,30 +1,29 @@
 @charset "utf-8";
 
-.column_content_wrap {
-    border-bottom: 2px solid #FFCC00;
+.post_content_wrap {
     margin-bottom: 4rem;
 }
 
 /* コラムタイトルの設定 */
-.column_ttl_wrap {
+.post_ttl_wrap {
     display: flex;
     align-items: center;
 }
 
-.column_date span {
+.post_date span {
     display: block;
     font-size: 2.4rem;
     line-height: 2.4rem;
     margin-left: 1.6rem;
 }
 
-.column_ttl {
+.post_ttl {
     padding-left: 5.6rem;
     font-size: 3.2rem;
     line-height: 4rem;
 }
 
-.column_tag {
+.post_tag {
     background-color: #FF7B00;
     width: auto;
     height: auto;
@@ -37,43 +36,15 @@
     font-size: 1rem;
 }
 
-.column_img {
-    border-radius: 32px;
-    max-width: 1000px;
+.post_img {
+    border-radius: 24px;
 }
 
 /* コラム記事の設定 */
-.column_item_wrap {
+.post_text_wrap {
     background-color: #fff;
     margin: 2.4rem 0;
     padding: 3.2rem;
-}
-
-.column_item {
-    margin-bottom: 2.4rem;
-}
-
-.column_item:nth-child(1) {
-    margin-bottom: 4.8rem;
-}
-
-.column_item p {
-    margin-top: 2.4rem;
-}
-
-.column_item_ttl {
-    border-left: 20px solid #FFCC00;
-    line-height: 3.2rem;
-}
-
-.sub_title {
-    display: block;
-    background-color: #58BE15;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
 }
 
 /* 記事送りボタン */
@@ -167,36 +138,4 @@
 .btn_wrap:hover::after {
     right: 40px;
     transition: 0.3s;
-}
-
-/* 関連主催団体 */
-.column_relationorg_card {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    margin-bottom: 4.8rem;
-}
-
-/* おすすめコラム記事 */
-.column_recomend_list {
-    margin: 4rem 0 4.8rem;
-    padding: 0 4rem;
-}
-
-@media screen and (min-width:768px) {
-    .column_recomend_list {
-        padding: 0 8rem;
-    }
-}
-
-.column_recomend_list span {
-    font-size: 1.6rem;
-}
-
-.column_recomend_list a {
-    margin-bottom: 2.4rem;
-}
-
-.column_recomend_list a:hover {
-    opacity: 0.8;
 }

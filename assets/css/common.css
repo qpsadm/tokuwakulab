@@ -228,8 +228,9 @@ h1 {
         margin: 0 auto;
     }
 
+    /* ヘッダーボタン左右余白 */
     header ul {
-    padding: 0 1.6rem;
+    padding: 0 3.2rem;
     }
 
     header li {
@@ -238,26 +239,23 @@ h1 {
         justify-content: center;
     }
 
-    /* header li a span {
-        display: flex;
-    } */
-
-    header li a div {
-        display: flex;
-    }
-
     header li a {
         display: flex;
         align-items: center;
-        /* 上下中央 */
         justify-content: center;
-        /* 左右中央 */
         width: 300px;
-        height: 68px;
+        line-height: 3.6rem;
+
+        /* ヘッダーボタン内上下余白 */
+        padding: 1.2rem 0;
+
         border-radius: 32px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        background-color: #fff;
-        font-size: 3.2rem;
+        background-color: rgba(244, 207, 21, 0.2);
+
+        /* ヘッダーボタン文字サイズ */
+        font-size: 2.6rem;
+
         /* あかり */
         font-family: "ads-akari", sans-serif;
         font-weight: 400;
