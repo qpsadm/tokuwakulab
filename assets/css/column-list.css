@@ -56,6 +56,12 @@
     }
 }
 
+.column_btn.active {
+                    background-color: #FF7B00;
+                    /* 好きな色に変更 */
+                    color: rgb(7, 7, 6);
+                }
+
 
 
 /* コラム記事の真ん中寄せ */
