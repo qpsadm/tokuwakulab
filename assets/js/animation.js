@@ -47,16 +47,18 @@ $(function () {
         // レスポンシブ設定
         responsive: [
             {
-                breakpoint: 780,    // 横幅がこのpx未満に適用
-                settings: {
-                    slidesToShow: 2,    // スライド数
-                }
-            },
-            {
                 breakpoint: 1280,   // 横幅がこのpx未満に適用
                 settings: {
                     slidesToShow: 3,    // スライド数
                     centerMode: false,   // 中央揃え
+                }
+            },
+            {
+                breakpoint: 780,    // 横幅がこのpx未満に適用
+                settings: {
+                    slidesToShow: 2,    // スライド数
+                    slidesToScroll: 1,  //  明示的に指定
+
                 }
             },
         ]
