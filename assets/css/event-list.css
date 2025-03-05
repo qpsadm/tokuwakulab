@@ -80,8 +80,8 @@
 } */
 
 .exp_result {
-    margin-top: 2rem;
-    /* 検索結果の上に余白 */
+    margin-bottom: 2rem;
+    /* 検索結果の下に余白 */
 }
 
 .exp_result h3 {
