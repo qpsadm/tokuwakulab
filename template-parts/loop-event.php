@@ -118,17 +118,17 @@
                     // area情報を取得
                     $terms = get_the_terms(get_the_ID(), 'area');
                     // area情報があるか確認
-                    foreach ($terms as $term) {
-                        echo '<div class="card_tag">';
-                        echo '<p class="event-taxonomy">';
-                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
-                        echo '</p>';
-                        echo '</div>';
+                    if (!empty($terms) && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<div class="card_tag">';
+                            echo '<p class="event-taxonomy">';
+                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
+                            echo '</p>';
+                            echo '</div>';
+                        }
                     }
                     ?>
                 <?php endif; ?>
-
-
 
 
                 <!-- 開催時期タクソノミーを取得して表示 -->
@@ -138,17 +138,18 @@
                     // area情報を取得
                     $terms = get_the_terms(get_the_ID(), 'vacation');
                     // area情報があるか確認
+                    // タクソノミーが無ければ非表示
                     if (!empty($terms) && !is_wp_error($terms)) {
-                        // タクソノミーが無ければ非表示
-                        echo '<div class="card_tag">';
-                        // area情報を表示
-                        echo '<p class="event-taxonomy">';
+
                         foreach ($terms as $term) {
 
+                            echo '<div class="card_tag">';
+                            // area情報を表示
+                            echo '<p class="event-taxonomy">';
                             echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
+                            echo '</p>';
+                            echo '</div>';
                         }
-                        echo '</p>';
-                        echo '</div>';
                     }
                     ?>
                 <?php endif; ?>
