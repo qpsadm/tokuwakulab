@@ -73,24 +73,26 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </li>
+                <li class="menu_item"><a href="<?php echo home_url('/event/'); ?>">イベント月別一覧</a></li>
                 <li class="menu_item"><a href="<?php echo home_url('/?s='); ?>">イベントをさがす</a></li>
-                <li class="menu_item"><a href="<?php echo home_url('/event/'); ?>">イベント一覧</a></li>
-                <li class="menu_item"><a href="<?php echo home_url('/column/'); ?>">コラム一覧</a></li>
-                <li class="menu_item"><a href="<?php echo home_url('/category/news/'); ?>">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="<?php echo home_url('/category/news/'); ?>">お知らせ</a></li>
+                <li class="menu_item"><a href="<?php echo home_url('/organization/'); ?>">主催団体一覧</a></li>
+                <li class="menu_item"><a href="<?php echo home_url('/column/'); ?>">コラム</a></li>
                 <li class="menu_item"><a href="<?php echo home_url('/mypage/'); ?>">お気に入り</a></li>
-                <li class="menu_item"><a href="<?php echo home_url('/faq/'); ?>">よくある質問</a></li>
-                <li class="menu_item"><a href="<?php echo home_url('/about/'); ?>">当サイトについて</a></li>
+                <li class="menu_item"><a href="<?php echo home_url('/contact/'); ?>">主催団体様<br>
+                        お問い合わせ</a></li>
             </ul>
         </nav>
         <nav class="sp_none">
             <ul>
+                <li><a href="<?php echo home_url('/event/'); ?>">イベント月別一覧</a></li>
                 <li><a href="<?php echo home_url('/?s='); ?>">イベントをさがす</a></li>
-                <li><a href="<?php echo home_url('/event/'); ?>">イベント一覧</a></li>
-                <li><a href="<?php echo home_url('/column/'); ?>">コラム一覧</a></li>
-                <li><a href="<?php echo home_url('/category/news/'); ?>">お知らせ一覧</a></li>
+                <li><a href="<?php echo home_url('/category/news/'); ?>">お知らせ</a></li>
+                <li><a href="<?php echo home_url('/organization/'); ?>">主催団体一覧</a></li>
+                <li><a href="<?php echo home_url('/column/'); ?>">コラム</a></li>
                 <li><a href="<?php echo home_url('/mypage/'); ?>">お気に入り</a></li>
-                <li><a href="<?php echo home_url('/faq/'); ?>">よくある質問</a></li>
-                <li><a href="<?php echo home_url('/about/'); ?>">当サイトについて</a></li>
+                <li><a href="<?php echo home_url('/contact/'); ?>">主催団体様<br>
+                        お問い合わせ</a></li>
             </ul>
         </nav>
 
