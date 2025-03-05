@@ -122,6 +122,7 @@ h1 {
     background: #fff;
 }
 
+
 /* ドロワーメニュー */
 /* アニメーション前 */
 .menu {
@@ -134,13 +135,17 @@ h1 {
     transform: translateX(0);
 }
 
+/* .menu ul {
+    padding-top: 60px;
+} */
+
 /* ドロワーメニュー中身 */
 .menu li {
     font-size: 2.4rem;
-    width: 100%;
+    width: 220px;
     height: auto;
-    padding: 2.0rem 2.0rem;
-    margin-bottom: 2.0rem;
+    padding: 0.8rem 0.8rem;
+    margin-bottom: 1.6rem;
     text-align: center;
     box-sizing: border-box;
 }
@@ -153,10 +158,13 @@ h1 {
     width: 300px;
     /* height: 60px; */
     line-height: 3.6rem;
+    padding: 0.6rem 0;
+
+
     border-radius: 32px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: rgba(244, 207, 21, 0.2);
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
@@ -166,6 +174,7 @@ h1 {
 /* ドロワーメニューのロゴの余白 */
 .menu li:nth-of-type(1){
     padding: 0;
+    /* margin-top: 30px; */
     margin-bottom: 0;
 }
 
