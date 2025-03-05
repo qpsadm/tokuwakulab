@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* サブタイトルの余白 */
+.privacy_h3{
+    margin-bottom: 4rem;
+}
+
+.privacy_wrap{
+    padding:0.8rem 0 3.2rem;
+    border-bottom: 2px solid #ffcc00;
+    background-color: #fff;
+}
+
+.privacy_article{
+    font-size: 2.4rem;
+    font-weight: 500;
+    padding: 1.6rem 0 1.6rem 0.8rem ;
+}
+
+.privacy_text{
+    padding: 0.8rem 0.8rem 0.8rem 1.6rem;
+}
+
+.privacy_establishment{
+    text-align: center;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+    margin: 1.6rem 0;
+}

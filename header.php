@@ -55,7 +55,7 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
             <!-- ロゴ -->
             <h1>
                 <a href="<?php echo home_url(); ?>">
-                    <img src="<?php get_template_directory_uri(); ?>/assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                 </a>
             </h1>
             <!-- ハンバーガーボタン -->
@@ -70,7 +70,7 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
             <ul>
                 <li>
                     <a href="<?php echo home_url('/'); ?>">
-                        <img src="<?php get_template_directory_uri(); ?>/assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </li>
                 <li class="menu_item"><a href="<?php echo home_url('/?s='); ?>">イベントをさがす</a></li>
@@ -93,39 +93,7 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
                 <li><a href="<?php echo home_url('/about/'); ?>">当サイトについて</a></li>
             </ul>
         </nav>
-        <?php
-        // カスタムメニューを読み込む
-        $args = [
-            'menu' => 'global-navigation',
-            'menu-class' => '',
-            'container' => false,
-        ];
-        wp_nav_menu($args);
-        ?>
 
-        <!-- 不要かな。
-                    <div class="header_info">
-                    <form class="header_search" action="<?php echo home_url(); ?>" method="get">
 
-                        <input type="text" aria-label="Search" name="s" value="<?php the_search_query(); ?>">
 
-                        <button type="submit"><i class="fas fa-search"></i></button>
-
-                    </form>
-
-                <div class="header_contact">
-                    <div class="header_time">
-                        <dl>
-                            <dt>OPEN</dt>
-                            <dd>09:00〜21:00</dd>
-                        </dl>
-                        <dl>
-                            <dt>CLOSED</dt>
-                            <dd>Tuesday</dd>
-                        </dl>
-                    </div>
-                    <p>
-                        <a href="<?php echo home_url('/contact/'); ?>"><i class="fa-solid fa-envelope"></i><span>ご予約・お問い合わせ</span></a>
-                    </p>
-                </div>-->
     </header>
