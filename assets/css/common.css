@@ -409,22 +409,13 @@ h1 {
     font-style: normal;
 }
 
-.card_countdown span :nth-child(1),
-.card_countdown span :nth-child(3) {
-    font-size: 1.6rem;
-}
-
-.card_countdownno {
-    font-size: 2.4rem;
+.card_countdownno{
+    font-size: 2rem;
 }
 
 .card_countdown span :nth-child(1),
 .card_countdown span :nth-child(3) {
     font-size: 1.6rem;
-}
-
-.card_countdownno {
-    font-size: 2.4rem;
 }
 
 /* イベントカード型-終了 */
