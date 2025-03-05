@@ -230,7 +230,7 @@ h1 {
 
     /* ヘッダーボタン左右余白 */
     header ul {
-    padding: 0 4.2rem;
+    padding: 0 3.2rem;
     }
 
     header li {
@@ -247,14 +247,14 @@ h1 {
         line-height: 3.6rem;
 
         /* ヘッダーボタン内上下余白 */
-        padding: 0.6rem 0;
+        padding: 1.2rem 0;
 
         border-radius: 32px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         background-color: rgba(244, 207, 21, 0.2);
 
         /* ヘッダーボタン文字サイズ */
-        font-size: 2.4rem;
+        font-size: 2.6rem;
 
         /* あかり */
         font-family: "ads-akari", sans-serif;
