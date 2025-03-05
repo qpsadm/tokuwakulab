@@ -37,8 +37,14 @@
     <!-- 個別CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/event.css">
 
+    <!-- slickCSSの読み込み -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slickの読み込み -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- JavaScriptの読みこみ -->
     <script src="../assets/js/animation.js"></script>
 </head>
@@ -113,11 +119,11 @@
                 <h2>イベントタイトル</h2>
                 <h3>主催団体名</h3>
 
-                <div>
-                    <!-- いいねボタン -->
-                    <a href="#" class="good"></a>
+                <div class="event_action">
                     <!-- お気に入りボタン -->
-                    <a href="#" class="bookmark"></a>
+                    <a href="#" class="event_bookmark"></a>
+                    <!-- いいねボタン -->
+                    <a href="#" class="event_good"></a>
                 </div>
 
 
@@ -130,9 +136,9 @@
                     </ul>
                 </div>
 
-                <!-- ドットナビ -->
-                <div></div>
-                <p>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</p>
+                <div class="event_description">
+                    <p>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</p>
+                </div>
             </section>
 
             <section>
@@ -228,7 +234,7 @@
             <p>※イベントページに飛びます。</p>
 
             <!-- 区切り線 -->
-            <span></span>
+            <div class="section_line"></div>
 
             <section>
                 <h3 class="sub_title">開催予定のイベント</h3>
@@ -248,59 +254,9 @@
                                     <span>日</span>
                                 </div>
 
-                                <!-- カード本体（aタグ） -->
-                                <a class="card_shape" href="#">
-                                    <div class="card_inner">
-                                        <div>
-                                            <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
-                                        </div>
-
-                                        <div class="card_text">
-                                            <h3>イベントタイトルが入ります</h3>
-                                            <div class="card_line"></div>
-                                            <div class="card_linefeed">
-                                                <span class="card_subtitle">開催日</span>
-                                                <div>
-                                                    <span>2025/12/12(土)</span>
-                                                </div>
-                                            </div>
-                                            <div class="card_linefeed">
-                                                <span class="card_subtitle">申込締切</span>
-                                                <div>
-                                                    <span>2025/12/12(土)</span>
-                                                </div>
-                                            </div>
-                                            <div class="card_linefeed">
-                                                <span class="card_subtitle">会場名</span>
-                                                <div>
-                                                    <span>徳島大学 常三島キャンパス</span>
-                                                </div>
-                                            </div>
-                                            <div class="card_linefeed">
-                                                <span class="card_subtitle">対象学年</span>
-                                                <div>
-                                                    <span>小学5年生から中学2年生</span>
-                                                </div>
-                                            </div>
-                                            <div class="card_tag">#地域</div>
-                                            <div class="card_tag">#定期開催</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <!-- イベントカード型 -->
-                        <li>
-                            <div class="card_wrap">
-
-                                <!-- ブックマーク機能 -->
-                                <div class="card_bookmark"></div>
-
-                                <!-- 「あと○日」 -->
-                                <div class="card_countdown">
-                                    <span>あと</span>
-                                    <span class="card_countdownno">15</span>
-                                    <span>日</span>
+                                <!-- 「終了」 -->
+                                <div class="card_past">
+                                    <span>終了</span>
                                 </div>
 
                                 <!-- カード本体（aタグ） -->
@@ -358,6 +314,11 @@
                                     <span>日</span>
                                 </div>
 
+                                <!-- 「終了」 -->
+                                <div class="card_past">
+                                    <span>終了</span>
+                                </div>
+
                                 <!-- カード本体（aタグ） -->
                                 <a class="card_shape" href="#">
                                     <div class="card_inner">
@@ -411,6 +372,11 @@
                                     <span>あと</span>
                                     <span class="card_countdownno">15</span>
                                     <span>日</span>
+                                </div>
+
+                                <!-- 「終了」 -->
+                                <div class="card_past">
+                                    <span>終了</span>
                                 </div>
 
                                 <!-- カード本体（aタグ） -->
@@ -461,24 +427,31 @@
             </section>
 
             <!-- 区切り線 -->
-            <span></span>
+            <div class="section_line"></div>
 
             <section>
                 <h3 class="sub_title">関連コラム記事</h3>
-                <div>
-                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
-                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
-                    <a href="#"><span>2025/12/12</span><span>ここにコラム記事のタイトルが入ります</span></a>
+                <div class="event_column_list">
+                    <span>2025/2/18(木)</span>
+                    <a href="#">
+                        <span>ここにコラムのタイトルが入ります</span></a>
+                    <span>2025/2/18(木)</span>
+                    <a href="#">
+                        <span>ここにコラムのタイトルが入りますここにコラムのタイトルが入ります</span></a>
+                    <span>2025/2/18(木)</span>
+                    <a href="#">
+                        <span>ここにコラムのタイトルが入りますここにコラムのタイトルが入りますここにコラムのタイトルが入ります</span></a>
                 </div>
             </section>
 
             <!-- 区切り線 -->
-            <span></span>
+            <div class="section_line"></div>
 
             <!-- イベント申し込みボタン -->
-            <a href="#" class="event_entry_btn">お申し込みはこちら</a>
-            <p>※イベントページに飛びます。</p>
-
+            <div class="event_entry_wrap">
+                <a href="#" class="event_entry_btn">お申し込みはこちら</a>
+                <p>※イベントページに飛びます。</p>
+            </div>
         </div>
     </main>
 
