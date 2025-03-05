@@ -99,12 +99,7 @@ $the_query = new WP_Query($args);
                 ?>
 
 
-
-
             </div>
-
-
-
 
 
             <ul>
