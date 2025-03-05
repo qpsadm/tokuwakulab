@@ -172,7 +172,7 @@ h1 {
 }
 
 /* ドロワーメニューのロゴの余白 */
-.menu li:nth-of-type(1){
+.menu li:nth-of-type(1) {
     padding: 0;
     /* margin-top: 30px; */
     margin-bottom: 0;
@@ -242,7 +242,7 @@ h1 {
 
     /* ヘッダーボタン左右余白 */
     header ul {
-    padding: 0 4.2rem;
+        padding: 0 4.2rem;
     }
 
     header li {
@@ -293,28 +293,33 @@ h1 {
 }
 
 /* イベントリストのカラム設定 */
-.top_event_list{
+.top_event_list,
+.top_column_list {
     padding: 0px 10px 4.8rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* 120px以上で自動調整 */
     gap: 10px;
-    place-items: center;
+    align-items: start;
+    /* カードを上揃え */
+    justify-items: center;
     /* アイテムをグリッド内で中央配置 */
     margin: 0 auto;
     /* コンテナ自体を中央寄せ */
+
 }
 
 /* section区切り線 */
-.section_line{
+.section_line {
     border: 2px dashed #FFCC00;
     width: 100%;
     margin: 6.4rem 0;
 }
+
 @media screen and (min-width:1280px) {
-.section_line{
-    margin: 8.4rem 0;
-}
+    .section_line {
+        margin: 8.4rem 0;
+    }
 }
 
 
@@ -409,22 +414,13 @@ h1 {
     font-style: normal;
 }
 
-.card_countdown span :nth-child(1),
-.card_countdown span :nth-child(3) {
-    font-size: 1.6rem;
-}
-
-.card_countdownno {
-    font-size: 2.4rem;
+.card_countdownno{
+    font-size: 2rem;
 }
 
 .card_countdown span :nth-child(1),
 .card_countdown span :nth-child(3) {
     font-size: 1.6rem;
-}
-
-.card_countdownno {
-    font-size: 2.4rem;
 }
 
 /* イベントカード型-終了 */

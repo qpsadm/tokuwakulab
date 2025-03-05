@@ -45,20 +45,22 @@ $(function () {
         prevArrow: '<button class="slick_prev_org"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
         nextArrow: '<button class="slick_next_org"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
         // レスポンシブ設定
-        // responsive: [
-        //     {
-        //         breakpoint: 780,    // 横幅がこのpx未満に適用
-        //         settings: {
-        //             slidesToShow: 2,    // スライド数
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 1280,   // 横幅がこのpx未満に適用
-        //         settings: {
-        //             slidesToShow: 3,    // スライド数
-        //             centerMode: false,   // 中央揃え
-        //         }
-        //     },
-        // ]
+        responsive: [
+            {
+                breakpoint: 1280,   // 横幅がこのpx未満に適用
+                settings: {
+                    slidesToShow: 3,    // スライド数
+                    centerMode: false,   // 中央揃え
+                }
+            },
+            {
+                breakpoint: 780,    // 横幅がこのpx未満に適用
+                settings: {
+                    slidesToShow: 2,    // スライド数
+                    slidesToScroll: 1,  //  明示的に指定
+
+                }
+            },
+        ]
     });
 });

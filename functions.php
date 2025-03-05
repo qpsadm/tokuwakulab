@@ -47,31 +47,13 @@ function my_add_scripts()
 {
     // 本サイトの共通スタイルシート
 
-    // １、外部のスタイルシート
+    // １、外部ファイルの読み込み
     // FontAwesome CDN
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 
     //noto sans jp
     wp_enqueue_style('noto-sans-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
-
-    // GoogleFonts: Noto+Sans+JP,Noto+Serif+JP,Roboto+Slab,Roboto:ital
-    // wp_enqueue_style(
-    //     'google-fonts-css1',
-    //     'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap'
-    // );
-
-    // // GoogleFonts: Zen Maru Gothic
-    // wp_enqueue_style(
-    //     'google-web-font2',
-    //     'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap'
-    // );
-
-    // // GoogleFonts: Material+Icons
-    // wp_enqueue_style(
-    //     'google-web-font3',
-    //     'https://fonts.googleapis.com/icon?family=Material+Icons'
-    // );
 
 
     // ２、リセットCSS
@@ -81,65 +63,13 @@ function my_add_scripts()
     );
 
     // ３、共通CSS
-    // wp_enqueue_style(
-    //     'my_foodscience',
-    //     get_template_directory_uri() . '/assets/css/foodscience.css'
-    // );
     wp_enqueue_style(
         'my_common',
         get_template_directory_uri() . '/assets/css/common.css'
     );
-    wp_enqueue_style(
-        'my_column-list',
-        get_template_directory_uri() . '/assets/css/column-list.css'
-    );
-    wp_enqueue_style(
-        'my_column',
-        get_template_directory_uri() . '/assets/css/column.css'
-    );
-    wp_enqueue_style(
-        'my_contact',
-        get_template_directory_uri() . '/assets/css/contact.css'
-    );
-    wp_enqueue_style(
-        'my_event-list',
-        get_template_directory_uri() . '/assets/css/event-list.css'
-    );
-    wp_enqueue_style(
-        'my_event',
-        get_template_directory_uri() . '/assets/css/event.css'
-    );
-    wp_enqueue_style(
-        'my_faq',
-        get_template_directory_uri() . '/assets/css/faq.css'
-    );
-    wp_enqueue_style(
-        'my_footer',
-        get_template_directory_uri() . '/assets/css/footer.css'
-    );
-    wp_enqueue_style(
-        'my_found',
-        get_template_directory_uri() . '/assets/css/found.css'
-    );
-    wp_enqueue_style(
-        'my_header',
-        get_template_directory_uri() . '/assets/css/header.css'
-    );
-    wp_enqueue_style(
-        'post-list',
-        get_template_directory_uri() . '/assets/css/post-list.css'
-    );
-    wp_enqueue_style(
-        'my_top',
-        get_template_directory_uri() . '/assets/css/top.css'
-    );
 
 
-
-
-
-
-    // 共通のJSファイルを読み込む
+    // ３、共通JS
     // WordPressのjqueryを無効させる
     wp_deregister_script('jquery');
 
@@ -152,7 +82,7 @@ function my_add_scripts()
         false  //true：フッターに読み込むように
     );
 
-    //  animation.js
+    //  animation.jsの読み込み
     wp_enqueue_script(
         'my_animation_js',
         get_template_directory_uri() . '/assets/js/animation.js',
@@ -161,24 +91,13 @@ function my_add_scripts()
         true
     );
 
-    //                                                                            ★★★必要なら表示して修正（2/26石田）
-    //  hamburger.js
-    // wp_enqueue_script(
-    //     'my_hamburger_js',
-    //     get_template_directory_uri() . '/assets/js/hamburger.js',
-    //     array('jquery'),
-    //     null,
-    //     true
-    // );
-
-
     //  adobe-font.jsの読み込み
     wp_enqueue_script(
         'adobe_font_js',
         get_template_directory_uri() . '/assets/js/adobe-font.js',
         '',
         null,
-        false
+        true
     );
 
     /**
@@ -186,27 +105,17 @@ function my_add_scripts()
      *     //*                                                             ★★★トップページ作成時に確認。（2/26石田）
      */
     if (is_home()) {
-        // wp_enqueue_style(
-        //     'my_top',
-        //     get_template_directory_uri() . '/assets/css/top.css'
-        // );
-
-        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
-        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
-
+        // 個別cssの読み込み
         wp_enqueue_style(
-            'my_column_slider',
-            get_template_directory_uri() . '/assets/css/column_slider.css'
+            'my_top',
+            get_template_directory_uri() . '/assets/css/top.css'
         );
 
-        // // column_slider.js
-        // wp_enqueue_script(
-        //     'my_column_slider_js',
-        //     get_template_directory_uri() . '/assets/js/column_slider.js',
-        //     array('jquery'),,
-        //     '',
-        //     true
-        // );
+        // slickCSSの読み込み
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+        // slickJSの読み込み
         wp_enqueue_script(
             'slick-js',
             'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
@@ -214,115 +123,127 @@ function my_add_scripts()
             null,
             true
         );
+    }
+    //イベント一覧or主催団体一覧(タクソノミーも)
+    elseif (is_post_type_archive('event') || is_post_type_archive('organization') || is_tax('org_tax')) {
+        wp_enqueue_style(
+            'my_event_list_style',
+            get_template_directory_uri() . '/assets/css/event-list.css',
+        );
+    }
+    // イベント個別
+    elseif (is_singular('event')) {
+        wp_enqueue_style(
+            'my_event_style',
+            get_template_directory_uri() . '/assets/css/event.css',
+        );
 
-        //search
-        // wp_enqueue_script(
-        //     'my_searchpopup_js',
-        //     get_template_directory_uri() . '/assets/js/searchpopup.js',
-        //     array('jquery'),
-        //     null,
-        //     true
-        // );
-        //*                                                                       ★★★404ページ作成時に確認。いったん非表示に。（2/26石田）
-        // } elseif (is_404()) {
-        // wp_enqueue_style(
-        //     'my_error404',
-        //     get_template_directory_uri() . '/assets/css/404.css'
-        // );
-        //*                                                                       ★★★検索ページ作成時に確認。（2/26石田）
-    } elseif (is_search() || is_post_type_archive('dataset')) {
+        // slickCSSの読み込み
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+        // slickJSの読み込み
+        wp_enqueue_script(
+            'slick-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+            array('jquery'),
+            null,
+            true
+        );
+    }
+    // イベントを探す
+    elseif (is_search()) {
         //条件検索CSS
-        // wp_enqueue_style('my_search', get_template_directory_uri() . '/assets/css/results.css');
-        // wp_enqueue_style('my_searchpopup_css', get_template_directory_uri() . '/assets/css/searchpopup.css');
+        wp_enqueue_style('my_search', get_template_directory_uri() . '/assets/css/found.css');
+    }
+    // お知らせ一覧
+    elseif (is_category('news')) {
+        wp_enqueue_style(
+            'my_news_list_style',
+            get_template_directory_uri() . '/assets/css/post-list.css',
+        );
+    }
+    //お知らせ個別
+    elseif (is_single()) {
+        wp_enqueue_style(
+            'my_news_style',
+            get_template_directory_uri() . '/assets/css/post.css',
+        );
+    }
+    // 主催団体個別
+    elseif (is_singular('organization')) {
+        wp_enqueue_style(
+            'my_org_style',
+            get_template_directory_uri() . '/assets/css/org.css',
+        );
 
-        // wp_enqueue_script(
-        //     'my_searchpopup-js',
-        //     get_template_directory_uri() . '/assets/js/searchpopup.js',
-        //     '',
-        //     '',
-        //     true
-        // );
-        //*                                                                       ★★★イベント作成時に確認。（2/26石田）
-    } elseif (is_singular('event')) {
-        // wp_enqueue_style(
-        //     'my_dataset_style',
-        //     get_template_directory_uri() . '/assets/css/details.css',
-        // );
-        // wp_enqueue_style('class_slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
-        // wp_enqueue_style('class_slick-theme_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
-        // wp_enqueue_script(
-        //     'class_slick_js',
-        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-        //     ['jquery'],
-        //     '',
-        //     true
-        // ); //slick.js スライダー用
-        // wp_enqueue_script(
-        //     'class_slick-carousel-js',
-        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-        //     array('jquery'),
-        //     '1.9.0',
-        //     true //footerに出力
-        // );
-        // wp_enqueue_script(
-        //     'my_slider_js',
-        //     get_template_directory_uri() . '/assets/js/slider.js',
-        //     ['jquery'], // jQuery に依存
-        //     '', // バージョン指定なし
-        //     true // フッターに出力
-        // );
-        // wp_enqueue_script(
-        //     'my_accordion_js',
-        //     get_template_directory_uri() . '/assets/js/accordion.js',
-        //     ['jquery'], // jQuery に依存
-        //     '', // バージョン指定なし
-        //     true // フッターに出力
-        // );
+        // slickCSSの読み込み
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
-        //お問い合わせページ関連。                                                      ★★★必要なら表示して修正（2/26石田）
-        // } elseif (is_page('contact') || is_page('confirm') || is_page('thanks')) {
-        //     wp_enqueue_style(
-        //         'my_input',
-        //         get_template_directory_uri() . '/assets/css/input.css',
-        //     );
-        //     wp_enqueue_script(
-        //         'my_mail_js',
-        //         get_template_directory_uri() . '/assets/js/mail_form.js',
-        //         ['jquery'], // jQuery に依存
-        //         '', // バージョン指定なし
-        //         true // フッターに出力
-        //     );
-
-        // お気に入りリスト                                                            ★★★必要なら表示して修正（2/26石田）
-        // } elseif (is_page('mypage')) {
-        //     wp_enqueue_style(
-        //         'my_favorite',
-        //         get_template_directory_uri() . '/assets/css/favorite.css'
-        //     );
-        // ニュース一覧                                                        ★★★必要なら表示して修正（2/26石田）
-        // } elseif (is_category(['news', 'info'])) {
-        //     wp_enqueue_style(
-        //         'my_news_list',
-        //         get_template_directory_uri() . '/assets/css/news_list.css'
-        //     );
-        // ニュース詳細                                                        ★★★必要なら表示して修正（2/26石田）
-        // } elseif (is_single()) {
-        //     wp_enqueue_style(
-        //         'my_news',
-        //         get_template_directory_uri() . '/assets/css/news.css'
-        //     );
-
-        // プライバシーポリシー                                                     ★★★必要なら表示して修正（2/26石田）
-        // } elseif (is_page('praivacy')) {
-        // プライバシーポリシー
-        // wp_enqueue_style(
-        //     'my_praivacy',
-        //     get_template_directory_uri() . '/assets/css/privacy.css'
-        // );
-    } elseif (is_post_type_archive('faq')) {
+        // slickJSの読み込み
+        wp_enqueue_script(
+            'slick-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+            array('jquery'),
+            null,
+            true
+        );
+    }
+    //コラム一覧(タクソノミーページも)
+    elseif (is_post_type_archive('column')||is_tax('column_type')) {
+        wp_enqueue_style(
+            'my_column_list_style',
+            get_template_directory_uri() . '/assets/css/column-list.css',
+        );
+    }
+    // コラム個別
+    elseif (is_singular('column')) {
+        wp_enqueue_style(
+            'my_column_style',
+            get_template_directory_uri() . '/assets/css/column.css',
+        );
+    }
+    // お気に入りページ
+    elseif (is_page('mypage')) {
+        wp_enqueue_style(
+            'my_mypage_style',
+            get_template_directory_uri() . '/assets/css/favorite-list.css',
+        );
+    }
+    //お問い合わせページ関連。
+    elseif (is_page('contact') || is_page('confirm') || is_page('thanks')) {
+        wp_enqueue_style(
+            'my_contact_style',
+            get_template_directory_uri() . '/assets/css/contact.css',
+        );
+    }
+    // プライバシーポリシー
+    elseif (is_page('privacy_policy')) {
+        wp_enqueue_style(
+            'my_privacy_policy_style',
+            get_template_directory_uri() . '/assets/css/privacy.css'
+        );
+    }
+    // 利用規約
+    elseif (is_page('terms_of_service')) {
+        wp_enqueue_style(
+            'my_terms_of_service_style',
+            get_template_directory_uri() . '/assets/css/service.css'
+        );
+    }
+    // faq
+    elseif (is_post_type_archive('faq')) {
         wp_enqueue_style(
             'my_faq_style',
             get_template_directory_uri() . '/assets/css/faq.css',
+        );
+    }
+    // 404
+    elseif (is_404()) {
+        wp_enqueue_style(
+            'my_404_style',
+            get_template_directory_uri() . '/assets/css/error.css',
         );
     }
 }
@@ -494,14 +415,21 @@ add_filter(
 // }
 // add_filter('comment_form_defaults', 'my_title_reply');
 
-// /**
-//  * contact Formのときには整形機能をOFFにする
-//  */
-// add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
-// function my_wpcf7_autop()
-// {
-//     return false;
-// }
+/**
+ * contact Formのときには整形機能をOFFにする
+ */
+add_filter('wpcf7_autop_or_not', 'my_wpcf7_autop');
+function my_wpcf7_autop()
+{
+    return false;
+}
+
+// contact Formの<span>割り込みを解除
+add_filter('wpcf7_form_elements', function ($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    return $content;
+});
 
 
 /**

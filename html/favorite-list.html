@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <!-- 個別CSSの読み込み -->
-
+<link rel="stylesheet" href="../assets/css/favorite-list.css">
 
 
     <!-- jQueryの読み込み -->
@@ -48,10 +48,10 @@
         <div class="inner">
             <!-- ロゴ -->
             <h1>
-                            <a href="../html/index.html">
-                                <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
-                            </a>
-                        </h1>
+                        <a href="../html/index.html">
+                            <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
+                        </a>
+                    </h1>
             <!-- ハンバーガーボタン -->
             <div class="hamburger pc_none">
                 <span></span>
@@ -66,29 +66,34 @@
                         <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </li>
+                <li class="menu_item"><a href="event-list.html">イベント月別一覧</a></li>
                 <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
-                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
-                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
-                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ</a></li>
+                <li class="menu_item"><a href="org-list.html">主催団体一覧</a></li>
+                <li class="menu_item"><a href="column-list.html">コラム</a></li>
                 <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
-                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
-                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+                <li class="menu_item"><a href="contact.html">
+                        主催団体様<br>
+                        お問い合わせ
+                    </a></li>
             </ul>
         </nav>
         <nav class="sp_none">
             <ul>
+                <li><a href="event-list.html">イベント月別一覧</a></li>
                 <li><a href="found.html">イベントをさがす</a></li>
-                <li><a href="event-list.html">イベント一覧</a></li>
-                <li><a href="column.html">コラム一覧</a></li>
-                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="post-list.html">お知らせ</a></li>
+                <li><a href="org-list.html">主催団体一覧</a></li>
+                <li><a href="column-list.html">コラム</a></li>
                 <li><a href="favorite-list.html">お気に入り</a></li>
-                <li><a href="faq.html">よくある質問</a></li>
-                <li><a href="about.html">当サイトについて</a></li>
+                <li><a href="contact.html">
+                        主催団体様
+                        <br>
+                        お問い合わせ
+                    </a></li>
             </ul>
         </nav>
     </header>
-
-
     <main class="pc_space">
         <!-- クラス入れた -->
         <section class="page_top">
@@ -103,23 +108,26 @@
 
         <div class="inner">
 
-            <section>
+
                 <!-- ブックマーク注意書き -->
-                <div>
+                <div class="bookwarning_note">
                     <p>ブックマークにはCookieを使用しています。<br>
                     Cookieの削除に伴いブックマークした情報も削除されます。</p>
                 </div>
-            </section>
+           
 
             <section>
-                <!-- 件数表示 -->
-                <div><span>10件</span></div>
+                <div class="favorite_result">
+                    <!-- 件数表示 -->
+                    <div>
+                        <span>10</span><span>件</span>
+                    </div>
 
-                <!-- 表示順切り替え -->
-                <div>
-                    <span>締め切り順↑↓</span>
+                    <!-- 表示順切り替え -->
+                    <div>
+                        <span>締め切り順↑↓</span>
+                    </div>
                 </div>
-
                 <!-- イベントカード型（縦） -->
                 <ul class="top_event_list">
                     <!-- イベントカード型 -->
