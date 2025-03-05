@@ -43,93 +43,105 @@ if ($date1) {
 $the_query = new WP_Query($args);
 ?>
 
-<p>ここにKVとタイトルが入る</p>
 
 
-<main>
-    <section class="section section-foodList">
-        <div class="section_inner">
-
-
-            <div class="archive_yealy">
-                <ul class="archive_list">
-                    <?php
-                    // 取得した日付をボタン（リンク）として表示
-                    foreach ($dates as $date) {
-                        $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
-                        echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '</a></li>';
-                    }
-                    ?>
-                </ul>
-            </div>
-
-            <div class="section_header">
-                <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
-                <?php
-                $one_week_later = date('Y年n月', strtotime($date1));
-                ?>
-                <h2 class="heading heading-primary">
-
-                    <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
-                </h2>
-
-                <br>
-
-
-                <?php
-                // グローバル変数を取得
-                global $wp_query;
-
-                // 1ページに表示する記事数
-                $posts_per_page = get_query_var('posts_per_page');
-
-                // 現在のページ番号（1から始まる）
-                $current_page = max(1, get_query_var('paged'));
-
-                // 表示中の記事の開始番号
-                $start = ($current_page - 1) * $posts_per_page + 1;
-
-                // 表示中の記事の終了番号
-                $end = min($current_page * $posts_per_page, $the_query->found_posts);
-
-                // 「何件から何件を表示しているか」を表示
-                echo '<div class="post-range">';
-                echo $start . ' - ' . $end . ' 件を表示';
-                echo '</div>';
-                ?>
-
-
-            </div>
-
-
-            <ul>
-
-                <!-- イベントループの開始 -->
-                <?php if ($the_query->have_posts()) : ?>
-                    <?php while ($the_query->have_posts()) : ?>
-                        <?php $the_query->the_post(); ?>
-
-                        <li>
-                            <!-- テンプレートパーツloop-food.phpを読み込む -->
-                            <?php get_template_part('template-parts/loop', 'event') ?>
-                        </li>
-
-                        <!-- WordPress ループの終了 -->
-                    <?php endwhile; ?>
-
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-            </ul>
+<main class="pc_space">
+    <!-- ページタイトル -->
+    <section class="page_top">
+        <h2 class="page_title">月別イベント一覧</h2>
     </section>
 
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            <?php endif; ?></a>
+        </span>
+    </div>
 
-    <!-- ページナビゲーション -->
 
-    <?php if (function_exists('wp_pagenavi')): ?>
-        <div class="pagination">
-            <?php wp_pagenavi(); ?>
+    <div class="inner">
+
+        <!-- 月別ボタンの実装 -->
+        <div class="archive_yealy">
+            <ul class="archive_list">
+                <?php
+                // 取得した日付をボタン（リンク）として表示
+                foreach ($dates as $date) {
+                    $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
+                    echo '<a href="' . home_url('/event/') . '?date=' . $date . '"><li>' . $formatted_date . '</li></a>';
+                }
+                ?>
+            </ul>
         </div>
-    <?php endif; ?>
+
+        <div class="section_header">
+            <!-- <h2 class="heading heading-primary"><span>イベント</span>月別イベント一覧 (<?php echo $the_query->found_posts; ?>)</h2> -->
+            <?php
+            $one_week_later = date('Y年n月', strtotime($date1));
+            ?>
+            <h2 class="heading heading-primary">
+
+                <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)
+            </h2>
+
+            <br>
+
+
+            <?php
+            // グローバル変数を取得
+            global $wp_query;
+
+            // 1ページに表示する記事数
+            $posts_per_page = get_query_var('posts_per_page');
+
+            // 現在のページ番号（1から始まる）
+            $current_page = max(1, get_query_var('paged'));
+
+            // 表示中の記事の開始番号
+            $start = ($current_page - 1) * $posts_per_page + 1;
+
+            // 表示中の記事の終了番号
+            $end = min($current_page * $posts_per_page, $the_query->found_posts);
+
+            // 「何件から何件を表示しているか」を表示
+            echo '<div class="post-range">';
+            echo $start . ' - ' . $end . ' 件を表示';
+            echo '</div>';
+            ?>
+
+
+        </div>
+
+
+        <ul>
+
+            <!-- イベントループの開始 -->
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+
+                    <li>
+                        <!-- テンプレートパーツloop-food.phpを読み込む -->
+                        <?php get_template_part('template-parts/loop', 'event') ?>
+                    </li>
+
+                    <!-- WordPress ループの終了 -->
+                <?php endwhile; ?>
+
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </ul>
+
+
+
+        <!-- ページナビゲーション -->
+
+        <?php if (function_exists('wp_pagenavi')): ?>
+            <div class="pagination">
+                <?php wp_pagenavi(); ?>
+            </div>
+        <?php endif; ?>
 </main>
 
 <!-- footer.phpを読み込む -->
