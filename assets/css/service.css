@@ -10,7 +10,7 @@
 
 .service_wrap{
     padding-bottom: 4rem;
-    border-bottom: 2px solid #FFCC00;
+    border-bottom: 2px dashed #FFCC00;
     background-color: #fff;
 }
 
