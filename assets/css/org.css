@@ -174,7 +174,7 @@
 justify-content: center;
 }
 
-.btn_center{
+.btnwrap_wrap{
     text-align: center;
 }
 
@@ -182,4 +182,8 @@ justify-content: center;
 .org_column{
     font-size: 1.6rem;
     margin-bottom: 2.4rem;
+}
+
+.sub_title div{
+    margin: 0 auto;
 }
