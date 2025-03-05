@@ -2,46 +2,38 @@
 <?php
 get_header();
 ?>
+<main class="pc_space">
+    <!-- トップページ専用のKV -->
+    <?php if (is_home()) : ?>
+    <div class="top_kv_wrap">
+        <ul class="slider_kv">
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_537320558.jpeg" alt="キービジュアル"></li>
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
+        </ul>
+    </div>
+    <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div>
 
-<!-- トップページ専用のKV -->
-<?php if (is_home()) : ?>
 
-    <section class="kv">
-        <div class="kv_inner">
-            <!-- ベタ打ち -->
-            <h1 class="kv_title ">徳島わくわくラボ</h1>
-        </div>
-
-        <!-- slickは非表示にしています -->
-        <!-- <div class="kv_slider js-slider">
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_461039205.jpeg');"></div>
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_357399495.jpeg');"></div>
-            <div class="kv_sliderItem" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_570522660.jpeg');"></div>
-        </div> -->
-
-        <!-- NEWS表示用、仮組み -->
-        <div class="kv_news text_border">
-            <p class="kv_news_text">
-                <!--ここにPHPを設定-->
+    <!-- NEWS表示用、仮組み3/5非表示 -->
+    <!-- <div class="kv_news text_border">
+        <p class="kv_news_text">
+                ここにPHPを設定
                 <span>2025-03-17</span>
                 <a class="news_link" href="https://tks-navi.com/2025-03-20/2038/">
                     ここにお知らせがある時にお知らせタイトルが入ります。</a>
             </p>
-        </div>
+    </div> -->
+    <?php endif; ?>
 
-    </section>
 
-<?php endif; ?>
-
-<!-- イベント新着セクション。横並びカード3件表示 -->
-<section class="section section-concept" id="concept">
-    <div class="section_inner">
-        <div class="section_headerWrapper">
-
-                <h2 class="heading heading-primary">イベント新着</h2>
-
-            <div class="section_pic">
-
+    <div class="inner">
+        <!-- イベント新着セクション。横並びカード3件表示 -->
+        <section>
+            <div class="top_event_ttl">
+                <h2>もうすぐ開催のイベント</h2>
+            </div>
+            <div>
                 <!-- ここにPHP挿入 -->
                 <?php
                 $dates = get_upcoming_event_months();
@@ -81,46 +73,38 @@ get_header();
 
                 ?>
 
-                <ul class="foodList">
-
+                <ul class="top_event_list">
                     <!-- イベントループの開始 -->
                     <?php if ($the_query->have_posts()) : ?>
-                        <?php while ($the_query->have_posts()) : ?>
-                            <?php $the_query->the_post(); ?>
+                    <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
 
-                            <li class="foodList_item">
-                                <!-- テンプレートパーツloop-food.phpを読み込む -->
-                                <?php get_template_part('template-parts/loop', 'event') ?>
-                            </li>
+                    <li class="foodList_item">
+                        <!-- テンプレートパーツloop-food.phpを読み込む -->
+                        <?php get_template_part('template-parts/loop', 'event') ?>
+                    </li>
 
-                            <!-- WordPress ループの終了 -->
-                        <?php endwhile; ?>
+                    <!-- WordPress ループの終了 -->
+                    <?php endwhile; ?>
 
-                        <?php wp_reset_postdata(); ?>
+                    <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
                 </ul>
 
+                <!-- もっと見るボタン -->
+
+                <a class="btn_wrap top_btn" href="<?php echo home_url("/event/"); ?>">イベント一覧へ</a>
             </div>
-        </div>
-        <div class="section_body">
-            <div class="section_btn">
-                <a href="<?php echo get_permalink(31); ?>" class="btn btn-more">イベント一覧へ</a>
+
+        </section>
+        <!-- コラム新着セクション。縦並びカード3件表示 -->
+        <section>
+            <!-- 見出し -->
+            <div class="top_column_ttl">
+                <h2>おすすめコラム記事</h2>
             </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- コラム新着セクション。縦並びカード3件表示 -->
-<section class="section section-concept" id="concept">
-    <div class="section_inner">
-        <div class="section_headerWrapper">
-
-                <h2 class="heading heading-primary">コラム新着</h2>
-
-            <div class="section_pic">
-                <ul class="foodList">
+            <div>
+                <ul class="top_column_list">
                     <?php
                     // 最新3件のコラムを取得
                     $latest_columns = new WP_Query(array(
@@ -133,9 +117,9 @@ get_header();
                     if ($latest_columns->have_posts()) :
                         while ($latest_columns->have_posts()) : $latest_columns->the_post();
                     ?>
-                            <li class="foodList_item">
-                                <?php get_template_part('template-parts/loop', 'column'); ?>
-                            </li>
+                    <li>
+                        <?php get_template_part('template-parts/loop', 'column'); ?>
+                    </li>
                     <?php
                         endwhile;
                         wp_reset_postdata(); // クエリのリセット
@@ -143,103 +127,121 @@ get_header();
                     ?>
                 </ul>
             </div>
-        </div>
-        <div class="section_body">
-            <div class="section_btn">
-                <a href="<?php echo home_url('/column/'); ?>" class="btn btn-more">コラム記事一覧へ</a>
-            </div>
-        </div>
-    </div>
-</section>
+            <a class="btn_wrap  top_btn" href="<?php echo home_url('/column/'); ?>">
+                コラム一覧へ
+            </a>
 
-<!-- おすすめコラム記事。2件ランダム表示 -->
-<section class="section section-concept" id="concept">
-    <div class="section_inner">
-        <div class="section_headerWrapper">
+        </section>
+        <!-- おすすめコラム記事。2件ランダム表示 3/5非表示 -->
+        <!-- <section class="section section-concept" id="concept">
+            <div class="section_inner">
+                <div class="section_headerWrapper">
 
-                <h2 class="heading heading-primary">おすすめコラム記事</h2>
+                    <h2 class="heading heading-primary">おすすめコラム記事</h2>
 
-            <div class="section_pic">
+                    <div class="section_pic">
 
-                <ul class="foodList">
-                    <?php
-                    // ランダムに2件のコラムを取得
-                    $random_columns = new WP_Query(array(
-                        'post_type'      => 'column', // カスタム投稿タイプが「column」
-                        'posts_per_page' => 2,       // 2件取得
-                        'orderby'        => 'rand',  // ランダム表示
-                        'post_status' => 'publish'
-                    ));
+                        <ul class="foodList">
+                            <?php
+                            // ランダムに2件のコラムを取得
+                            $random_columns = new WP_Query(array(
+                                'post_type'      => 'column', // カスタム投稿タイプが「column」
+                                'posts_per_page' => 2,       // 2件取得
+                                'orderby'        => 'rand',  // ランダム表示
+                                'post_status' => 'publish'
+                            ));
 
-                    if ($random_columns->have_posts()) :
-                        while ($random_columns->have_posts()) : $random_columns->the_post();
-                    ?>
+                            if ($random_columns->have_posts()) :
+                                while ($random_columns->have_posts()) : $random_columns->the_post();
+                            ?>
                             <li class="foodList_item">
-                                <?php get_template_part('template-parts/loop', 'column'); ?>
+                                <?php //get_template_part('template-parts/loop', 'column');
+                                ?>
                             </li>
-                    <?php
-                        endwhile;
-                        wp_reset_postdata(); // クエリのリセット
-                    endif;
-                    ?>
-                </ul>
+                            <?php
+                                endwhile;
+                                wp_reset_postdata(); // クエリのリセット
+                            endif;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- 主催団体の紹介セクション -->
-<section class="section section-concept" id="concept">
-    <div class="section_inner">
-        <div class="section_headerWrapper">
-
-                <h2 class="heading heading-primary">主催団体紹介</h2>
-
-            <div class="section_pic">
-
-                <ul class="foodList">
-                    <?php
-                    // ランダムに2件のコラムを取得
-                    $organization = new WP_Query(array(
-                        'post_type'      => 'organization', // カスタム投稿タイプが「column」
-                        'posts_per_page' => 2,       // 2件取得
-                        'orderby'        => 'desc',
-                        'post_status' => 'publish'
-                    ));
-
-                    if ($organization->have_posts()) :
-                        while ($organization->have_posts()) : $organization->the_post();
-                    ?>
-                            <li class="foodList_item">
-                                <?php get_template_part('template-parts/loop', 'organization'); ?>
-                            </li>
-                    <?php
-                        endwhile;
-                        wp_reset_postdata(); // クエリのリセット
-                    endif;
-                    ?>
-                </ul>
+        </section> -->
+        <section>
+            <!-- 見出し -->
+            <div class="top_news_ttl">
+                <h2>お知らせ新着</h2>
             </div>
-        </div>
-        <div class="section_body">
-            <div class="section_btn">
-                <a href="<?php echo home_url('/organization/'); ?>" class="btn btn-more">主催団体一覧へ</a>
+            <div class="top_news_list">
+                <div class="top_news_item_wrap">
+                    <span>2025/2/18(木)</span>
+                    <a href="#"><span class="top_news_item">お知らせが入ります。</span></a>
+                </div>
+                <div class="top_news_item_wrap">
+                    <span>2025/2/18(木)</span>
+                    <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。</span></a>
+                </div>
+                <div class="top_news_item_wrap">
+                    <span>2025/2/18(木)</span>
+                    <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。お知らせが入ります。</span></a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- インスタグラムセクション -->
-<section class="section">
-    <div>
-        <p>インスタグラムのエリア</p>
-    </div>
-    <div>
-        <?php echo do_shortcode('[instagram-feed=1]'); ?>
-    </div>
-    <!-- 後日調べます -->
-</section>
+        <!-- 主催団体の紹介セクション -->
+        <section>
+            <!-- 見出し -->
+            <div class="top_org_ttl">
+                <h2>主催団体様</h2>
+            </div>
+            <div class="top_org_txt">
+                <p>イベントを主催している団体様を紹介します！</p>
+            </div>
+            <ul class="top_org_list slider_org">
+                <!-- 主催団体カード型 -->
+                <?php
+                // ランダムに2件のコラムを取得
+                $organization = new WP_Query(array(
+                    'post_type'      => 'organization', // カスタム投稿タイプが「column」
+                    'posts_per_page' => -1,       // 2件取得
+                    'orderby'        => 'desc',
+                    'post_status' => 'publish'
+                ));
 
+                if ($organization->have_posts()) :
+                    while ($organization->have_posts()) : $organization->the_post();
+                ?>
+                <li class="foodList_item">
+                    <?php get_template_part('template-parts/loop', 'organization'); ?>
+                </li>
+                <?php
+                    endwhile;
+                    wp_reset_postdata(); // クエリのリセット
+                endif;
+                ?>
+            </ul>
+            <a class="btn_wrap  top_btn" href="<?php echo home_url('/organization/'); ?>">
+                主催団体一覧へ
+            </a>
+        </section>
+
+        <!-- インスタグラムセクション -->
+        <section>
+            <div class="top_instagram_wrap">
+                <div class="top_instagram_bg">
+                    <div class="top_instagram_ttl">
+                        <h2>instagram</h2>
+                    </div>
+                    <div>
+                        <?php echo do_shortcode('[instagram-feed=1]'); ?>
+                    </div>
+                    <!-- 後日調べます -->
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
 
 <!-- footer.phpを読み込む -->
 <?php
