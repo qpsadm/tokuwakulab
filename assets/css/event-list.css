@@ -130,8 +130,8 @@
     }
 
     .tax_list li:before {
-        left: 1rem;
-        font-size: 1.2em;
+
+        font-size: 2rem;
     }
 
     /* 共通カード */
@@ -154,8 +154,8 @@
     }
 
     .tax_list li:before {
-        left: 2rem;
-        font-size: 1.2em;
+        /* left: 2rem; */
+        font-size: 2.5rem;
     }
 
     /* 共通カード */
