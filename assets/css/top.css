@@ -203,23 +203,6 @@ section {
 
 /* 各リスト共通設定 */
 
-/* 各カード型の１カラム設定 */
-.top_event_list,
-.top_column_list {
-    padding: 0px 10px 4.8rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* 120px以上で自動調整 */
-    gap: 10px;
-    align-items: start;
-    /* カードを上揃え */
-    justify-items: center;
-    /* アイテムをグリッド内で中央配置 */
-    margin: 0 auto;
-    /* コンテナ自体を中央寄せ */
-
-}
-
 /* お知らせ新着の設定 */
 .top_news_list {
     background-color: #FFFDE7;
