@@ -124,8 +124,8 @@ function my_add_scripts()
             true
         );
     }
-    //イベント一覧or主催団体一覧
-    elseif (is_post_type_archive('event') || is_post_type_archive('organization')) {
+    //イベント一覧or主催団体一覧(タクソノミーも)
+    elseif (is_post_type_archive('event') || is_post_type_archive('organization') || is_tax('org_tax')) {
         wp_enqueue_style(
             'my_event_list_style',
             get_template_directory_uri() . '/assets/css/event-list.css',
@@ -190,8 +190,8 @@ function my_add_scripts()
             true
         );
     }
-    //コラム一覧
-    elseif (is_post_type_archive('column')) {
+    //コラム一覧(タクソノミーページも)
+    elseif (is_post_type_archive('column')||is_tax('column_type')) {
         wp_enqueue_style(
             'my_column_list_style',
             get_template_directory_uri() . '/assets/css/column-list.css',
