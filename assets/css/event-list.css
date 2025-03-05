@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-.breadcrumb {
-    display: flex;
-}
 
 .event_list ul {
     list-style: none;
