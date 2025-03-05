@@ -116,23 +116,20 @@ main {
 
 /* 主催団体のslick幅設定 */
 .slider_org {
-    display: flex;
-    justify-content: space-around;
     max-width: 300px;
     margin: 0 auto;
 }
 
-
 @media screen and (min-width:768px) {
     .slider_org {
-        max-width: 560px;
+        max-width: 640px;
     }
 }
 
 
 @media screen and (min-width:1280px) {
     .slider_org {
-        max-width: 840px;
+        max-width: 1100px;
     }
 }
 

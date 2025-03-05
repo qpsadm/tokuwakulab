@@ -21,6 +21,34 @@
 }
 
 
+/* いいね・ブックマーク */
+.event_action {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* いいね・ブックマークのそれぞれの枠 */
+.event_action a {
+    width: 80px;
+    height: 40px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.event_good {
+    background-image: url(../img/good.jpeg);
+}
+
+.event_bookmark {
+    background-image: url(../img/bookmark.jpeg);
+}
+
+
 /* === slickの設定 === */
 .slick_prev_kv,
 .slick_next_kv,
@@ -99,9 +127,27 @@ flex-wrap: wrap;
     margin: 2rem;
 }
 
+/* === slickの設定終わり === */
 
 
+/* イベント説明 */
+.event_description{
+    padding: 0.8rem 0;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
+@media screen and (min-width:1280px) {
+.event_description{
+    padding-top: 4rem;
+    max-width: 640px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+}
 
 table {
     border: 3px solid #ffb700;
@@ -153,6 +199,9 @@ td {
 }
 
 
+.event_btn_wrap {
+
+}
 
 
 /* クチコミ送信ボタン */
@@ -226,5 +275,29 @@ td {
     transition: 0.3s;
     /* display: inline-block; */
     display: flex;
-    margin: 2.4rem 0;
+    margin-top: 2.4rem;
+}
+
+/* 関連コラム記事 */
+.event_column_list {
+    margin: 4rem 0 4.8rem;
+    padding: 0 4rem;
+}
+
+@media screen and (min-width:768px) {
+    .event_column_list {
+        padding: 0 8rem;
+    }
+}
+
+.event_column_list span {
+    font-size: 1.6rem;
+}
+
+.event_column_list a {
+    margin-bottom: 2.4rem;
+}
+
+.event_column_list a:hover {
+    opacity: 0.8;
 }

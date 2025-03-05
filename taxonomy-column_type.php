@@ -38,13 +38,7 @@ $the_query = new WP_Query($args);
         <!-- タクソノミーボタンの実装 -->
 
         <ul class="column_menu">
-            <style>
-                .column_btn.active {
-                    background-color: #f0c040;
-                    /* 好きな色に変更 */
-                    color: rgb(7, 7, 6);
-                }
-            </style>
+
             <?php
             $all_link = home_url('/column');
             $current_term = get_queried_object(); // 現在のタクソノミー情報を取得
