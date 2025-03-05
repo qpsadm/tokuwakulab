@@ -112,7 +112,7 @@ h1 {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 9998;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -149,19 +149,24 @@ h1 {
 .menu_item {
     display: flex;
     align-items: center;
-    /* 上下中央 */
     justify-content: center;
-    /* 左右中央 */
     width: 300px;
-    height: 60px;
+    /* height: 60px; */
+    line-height: 3.6rem;
     border-radius: 32px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    background-color: #fff;
+    background-color: rgba(244, 207, 21, 0.2);
     font-size: 3.2rem;
     /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+/* ドロワーメニューのロゴの余白 */
+.menu li:nth-of-type(1){
+    padding: 0;
+    margin-bottom: 0;
 }
 
 /* ハンバーガーライン位置決定 */
@@ -217,9 +222,7 @@ h1 {
         height: calc(100vh);
         position: fixed;
         top: 0;
-        /* 上端に配置 */
         right: 0;
-        /* 右端に配置 */
         display: inline;
     }
 
@@ -792,33 +795,28 @@ footer {
             #a27d71 19rem,
             #7f4d3e 20rem);
 
-    text-align: center;
+    /* text-align: center;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
 
 }
 
-footer ul {
+/* footer ul {
     display: flex;
     flex-direction: column;
-    /* 縦並びに配置 */
     align-items: center;
-    /* 中央揃え */
     gap: 1.5rem;
-    /* 均等な間隔を開ける */
     list-style: none;
     padding: 0;
     margin: 0 0 1rem;
-    /* 下に余白をつけて small との間隔を調整 */
-}
+} */
 
-footer li {
+/* footer li {
     color: white;
     font-size: 1.4rem;
-
-}
+} */
 
 footer small {
     color: white;
@@ -859,23 +857,19 @@ footer small {
         width: calc(100% - 320px);
         height: auto;
 
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
-        /* 中央揃え */
-        justify-content: center;
-        /* 縦方向の中央揃え */
+        justify-content: center; */
     }
 
-    footer ul {
+    /* footer ul {
         display: flex;
         gap: 2rem;
         flex-direction: row;
         justify-content: center;
-        /* 中央配置 */
         gap: 3rem;
-        /* 均等な間隔を開ける */
-    }
+    } */
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
