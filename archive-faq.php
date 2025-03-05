@@ -1,51 +1,66 @@
 <?php get_header(); ?>
-<main>
-    <section class="section section-foodList">
-        <div class="section_inner">
-            <div class="section_header">
-                <h2 class="heading heading-primary">よくある質問</h2>
-            </div>
+
+<main class="pc_space">
+
+    <!-- ページタイトル -->
+    <section class="page_top">
+        <h2 class="page_title">よくある質問</h2>
+    </section>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+                <?php endif; ?></a>
+        </span>
+    </div>
+    <div class="inner">
+        <div class="faq_qasec">
             <?php
-            $faq_terms = get_terms(["taxonomy" => "faq_tax"]); //配列で取得する
-            if (!empty($faq_terms)): //空白でなければ
-            ?>
-                <?php foreach ($faq_terms as $faq): ?>
-                    <section class="section_body">
-                        <h3 class="heading heading-secondary"><?php echo $faq->name ?></h3>
-                        <ul class="">
-                            <?php
-                            $args = [
-                                "post_type" => "faq",
-                                "posts_per_page" => -1, //全部表示
-                            ];
-                            $taxquerysp = ["relation" => "AND"];
-                            $taxquerysp[] = [
-                                "taxonomy" => "faq_tax",
-                                "terms" => "$faq->slug",
-                                "field" => "slug",
-                            ];
-                            $args["tax_query"] = $taxquerysp;
-                            $the_query = new WP_Query($args);
-                            if ($the_query->have_posts()): ?>
-                                <?php while ($the_query->have_posts()): ?>
-                                    <?php $the_query->the_post(); ?>
-                                    <li class="">
-                                        <div class="">
-                                            <h4 class="foodCard_title"><?php the_title(); ?></h4>
-                                            <p>質問：<?php the_field("question"); ?></p>
-                                            <p>回答：<?php the_field("answer"); ?></p>
-                                        </div>
-                                    </li>
-                                <?php endwhile; ?>
-                                <?php wp_reset_postdata(); ?>
-                            <?php endif; ?>
-                        </ul>
-                    </section>
-                <?php endforeach; ?>
+            $args = [
+                "post_type" => "faq",
+                "posts_per_page" => -1, //全部表示
+            ];
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()): ?>
+            <?php while ($the_query->have_posts()): ?>
+            <?php $the_query->the_post(); ?>
+            <!-- １かたまりのQ&A -->
+            <div class="faq_qawrap">
+                <!-- Q -->
+                <div class="faq_questionwrap">
+                    <span class="faq_q">Q</span>
+                    <p><?php the_field("question"); ?></p>
+                </div>
+                <!-- A -->
+                <div class="faq_answerwrap">
+                    <span class="faq_a">A</span>
+                    <p><?php the_field("answer"); ?></p>
+                </div>
+            </div>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-    </section>
-</main>
 
+        <!-- 主催団体向けのフォーム -->
+        <section class="faq_conformwrap">
+            <div class="faq_consideration">
+                <h3 class="faq_h3">イベント掲載をご検討中の主催団体様へ</h3>
+                <p>下記お問い合わせフォームからお問い合わせください。<br>
+                    確認後、ご連絡いたします。</p>
+            </div>
+            <div class="faq_organized">
+                <h3 class="faq_h3">掲載中の主催団体様へ</h3>
+                <p>お電話番号や住所など基本情報に変更がある場合は、<br>
+                    下記お問い合わせフォームへお問い合わせください。<br>
+                    確認後、ご連絡いたします。</p>
+            </div>
+        </section>
+        <div class="faq_btn">
+            <a class="btn_wrap" href="<?php echo home_url("/contact/"); ?>">お問い合わせへ</a>
+        </div>
+    </div>
+</main>
 
 <?php get_footer(); ?>

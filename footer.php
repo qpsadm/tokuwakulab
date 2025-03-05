@@ -1,45 +1,38 @@
-<footer class="footer">
-    <?php
-    // functions.php で定義した関数を呼び出す
-    if (function_exists('get_random_message')) {
-        get_random_message();
-    }
-    ?>
-
-    <div class="footer_inner">
-        <div class="footer_info">
-            <div class="footer_logo">
-                <h3 class="logo logo-white"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?><span><?php bloginfo('description'); ?></span></a></h3>
+    <!-- 豆知識 -->
+    <div class="pc_space">
+        <div class="tips_wrap inner">
+            <div class="tips_text">
+                <span> <?php
+                        // functions.php で定義した豆知識のランダム関数を呼び出す
+                        if (function_exists('get_random_message')) {
+                            get_random_message();
+                        }
+                        ?>
+                </span>
             </div>
-            <div class="footer_text">
-                <p>〒162-0846 東京都新宿区市谷左内町21-13</p>
-            </div>
-        </div>
-        <section class="footer_sns">
-            <h3>SHARE ON</h3>
-            <?php
-            // カスタムメニューを読み込む
-            $args = [
-                'menu' => 'footer-sns',
-                'menu-class' => '',
-                'container' => false,
-            ];
-            wp_nav_menu($args);
-            ?>
-        </section>
-        <div class="footer_copyright">
-            <small>&copy; FOOD SCIENCE All rights reserved.</small>
+            <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
         </div>
     </div>
-</footer>
 
-<div class="pageTop js-toTop">
-    <a href="#"><i class="fas fa-arrow-up"></i><span>TOP PAGE</span></a>
-</div>
+    <footer>
+        <ul>
+            <li><a href="<?php echo home_url('/terms_of_service/'); ?>">利用規約</a></li>
+            <li><a href="contact.html">主催団体様<br class="brpc_none">お問い合わせ</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー・<br class="brpc_none">免責事項</a></li>
+        </ul>
+        <small>copyright</small>
+        <div class="f_img">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="化石の画像">
+        </div>
+    </footer>
 
-<?php
-wp_footer();
-?>
-</body>
+    <!-- <div class="pageTop js-toTop">
+        <a href="#"><i class="fas fa-arrow-up"></i><span>TOP PAGE</span></a>
+    </div> -->
 
-</html>
+    <?php
+    wp_footer();
+    ?>
+    </body>
+
+    </html>
