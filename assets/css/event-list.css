@@ -25,7 +25,7 @@
     /* max-width: 10rem; */
     max-width: 15rem;
     /* ボタンの最大幅 */
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #fff;
@@ -48,15 +48,24 @@
     /* 回転のアニメーション */
 }
 
-.tax_list li:hover {
+.tax_list li:hover,
+.tex_list li:active,
+.tex_list li:focus {
     background-color: #FF7B00;
     /* ホバー時に背景色をオレンジに変更 */
+    /* :active はクリックしている間、:focus はクリック後も適用 */
 }
 
 .tax_list li:hover:before {
     transform: rotate(360deg);
     /* アイコンが360度回転 */
     /*   color: #f4cf15; */
+}
+
+
+.tax_list li {
+    padding-left: 3.5rem;
+    /* アイコンとテキストの間に余白を作る */
 }
 
 /* h3にclassを付与したら適応 */
