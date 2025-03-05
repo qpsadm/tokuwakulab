@@ -47,31 +47,13 @@ function my_add_scripts()
 {
     // 本サイトの共通スタイルシート
 
-    // １、外部のスタイルシート
+    // １、フォントの読み込み
     // FontAwesome CDN
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
     //noto sans jp
     wp_enqueue_style('noto-sans-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
-
-    // GoogleFonts: Noto+Sans+JP,Noto+Serif+JP,Roboto+Slab,Roboto:ital
-    // wp_enqueue_style(
-    //     'google-fonts-css1',
-    //     'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap'
-    // );
-
-    // // GoogleFonts: Zen Maru Gothic
-    // wp_enqueue_style(
-    //     'google-web-font2',
-    //     'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap'
-    // );
-
-    // // GoogleFonts: Material+Icons
-    // wp_enqueue_style(
-    //     'google-web-font3',
-    //     'https://fonts.googleapis.com/icon?family=Material+Icons'
-    // );
 
 
     // ２、リセットCSS
@@ -81,65 +63,13 @@ function my_add_scripts()
     );
 
     // ３、共通CSS
-    // wp_enqueue_style(
-    //     'my_foodscience',
-    //     get_template_directory_uri() . '/assets/css/foodscience.css'
-    // );
     wp_enqueue_style(
         'my_common',
         get_template_directory_uri() . '/assets/css/common.css'
     );
-    wp_enqueue_style(
-        'my_column-list',
-        get_template_directory_uri() . '/assets/css/column-list.css'
-    );
-    wp_enqueue_style(
-        'my_column',
-        get_template_directory_uri() . '/assets/css/column.css'
-    );
-    wp_enqueue_style(
-        'my_contact',
-        get_template_directory_uri() . '/assets/css/contact.css'
-    );
-    wp_enqueue_style(
-        'my_event-list',
-        get_template_directory_uri() . '/assets/css/event-list.css'
-    );
-    wp_enqueue_style(
-        'my_event',
-        get_template_directory_uri() . '/assets/css/event.css'
-    );
-    wp_enqueue_style(
-        'my_faq',
-        get_template_directory_uri() . '/assets/css/faq.css'
-    );
-    wp_enqueue_style(
-        'my_footer',
-        get_template_directory_uri() . '/assets/css/footer.css'
-    );
-    wp_enqueue_style(
-        'my_found',
-        get_template_directory_uri() . '/assets/css/found.css'
-    );
-    wp_enqueue_style(
-        'my_header',
-        get_template_directory_uri() . '/assets/css/header.css'
-    );
-    wp_enqueue_style(
-        'post-list',
-        get_template_directory_uri() . '/assets/css/post-list.css'
-    );
-    wp_enqueue_style(
-        'my_top',
-        get_template_directory_uri() . '/assets/css/top.css'
-    );
 
 
-
-
-
-
-    // 共通のJSファイルを読み込む
+    // ３、共通JS
     // WordPressのjqueryを無効させる
     wp_deregister_script('jquery');
 
@@ -152,7 +82,7 @@ function my_add_scripts()
         false  //true：フッターに読み込むように
     );
 
-    //  animation.js
+    //  animation.jsの読み込み
     wp_enqueue_script(
         'my_animation_js',
         get_template_directory_uri() . '/assets/js/animation.js',
@@ -161,24 +91,13 @@ function my_add_scripts()
         true
     );
 
-    //                                                                            ★★★必要なら表示して修正（2/26石田）
-    //  hamburger.js
-    // wp_enqueue_script(
-    //     'my_hamburger_js',
-    //     get_template_directory_uri() . '/assets/js/hamburger.js',
-    //     array('jquery'),
-    //     null,
-    //     true
-    // );
-
-
     //  adobe-font.jsの読み込み
     wp_enqueue_script(
         'adobe_font_js',
         get_template_directory_uri() . '/assets/js/adobe-font.js',
         '',
         null,
-        false
+        true
     );
 
     /**
@@ -186,27 +105,17 @@ function my_add_scripts()
      *     //*                                                             ★★★トップページ作成時に確認。（2/26石田）
      */
     if (is_home()) {
-        // wp_enqueue_style(
-        //     'my_top',
-        //     get_template_directory_uri() . '/assets/css/top.css'
-        // );
-
-        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
-        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
-
+        // 個別cssの読み込み
         wp_enqueue_style(
-            'my_column_slider',
-            get_template_directory_uri() . '/assets/css/column_slider.css'
+            'my_top',
+            get_template_directory_uri() . '/assets/css/top.css'
         );
 
-        // // column_slider.js
-        // wp_enqueue_script(
-        //     'my_column_slider_js',
-        //     get_template_directory_uri() . '/assets/js/column_slider.js',
-        //     array('jquery'),,
-        //     '',
-        //     true
-        // );
+        // slickCSSの読み込み
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+        // slickJSの読み込み
         wp_enqueue_script(
             'slick-js',
             'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
@@ -215,22 +124,7 @@ function my_add_scripts()
             true
         );
 
-        //search
-        // wp_enqueue_script(
-        //     'my_searchpopup_js',
-        //     get_template_directory_uri() . '/assets/js/searchpopup.js',
-        //     array('jquery'),
-        //     null,
-        //     true
-        // );
-        //*                                                                       ★★★404ページ作成時に確認。いったん非表示に。（2/26石田）
-        // } elseif (is_404()) {
-        // wp_enqueue_style(
-        //     'my_error404',
-        //     get_template_directory_uri() . '/assets/css/404.css'
-        // );
-        //*                                                                       ★★★検索ページ作成時に確認。（2/26石田）
-    } elseif (is_search() || is_post_type_archive('dataset')) {
+    } elseif (is_search()) {
         //条件検索CSS
         // wp_enqueue_style('my_search', get_template_directory_uri() . '/assets/css/results.css');
         // wp_enqueue_style('my_searchpopup_css', get_template_directory_uri() . '/assets/css/searchpopup.css');
