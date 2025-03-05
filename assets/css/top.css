@@ -211,10 +211,13 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* 120px以上で自動調整 */
     gap: 10px;
-    place-items: center;
+    align-items: start;
+    /* カードを上揃え */
+    justify-items: center;
     /* アイテムをグリッド内で中央配置 */
     margin: 0 auto;
     /* コンテナ自体を中央寄せ */
+
 }
 
 /* お知らせ新着の設定 */

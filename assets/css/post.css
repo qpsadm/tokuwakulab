@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-.post_content_wrap {
+/* .post_content_wrap {
     margin-bottom: 4rem;
-}
+} */
 
 /* コラムタイトルの設定 */
 .post_ttl_wrap {
@@ -36,8 +36,19 @@
     font-size: 1rem;
 }
 
+
+/* コラム画像の設定 */
 .post_img {
-    border-radius: 32px;
+    border-radius: 40px;
+}
+
+@media screen and (min-width:768px) {
+
+    .post_img_wrap {
+        width: 80%;
+        margin: 0 auto;
+    }
+
 }
 
 /* コラム記事の設定 */
@@ -141,7 +152,7 @@
 }
 
 /* ボタンを中央に配置 */
-.post_btn {
+.btn_wrap {
     display: block;
     margin: 4rem auto;
 }
