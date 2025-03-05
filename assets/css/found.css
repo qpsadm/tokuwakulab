@@ -3,7 +3,7 @@
 .search_title {
     text-align: center;
     font-weight: 600;
-    border-bottom: 2px dashed #58BE15;
+    /* border-bottom: 2px dashed #58BE15; */
 }
 
 /* フォーム全体の設定 */
@@ -52,13 +52,6 @@ summary::-webkit-details-marker {
 	display: none;
 }
 
-
-/* input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    margin-right: 0.5rem;
-} */
-
 input[type="checkbox"] {
     appearance: none;
     width: 16px;
@@ -93,18 +86,20 @@ label {
     font-size: 1.6rem;
 }
 
-/* フリーワード */
-/* .search_box_wrap {
-    font-size: 1.4rem;
-    background-color: #fff;
-    border: solid 1px #111;
-    border-radius: 5px;
+/* アコーディオンが開かれているとき */
+.search_accordion[open] {
+    /* パネルの背景色を変更 */
+    background-color: #f0f0f0;
+    padding: 1rem; /* パネル内の余白を追加 */
+    /* border: 1px solid #ccc; 境界線を追加 */
 }
 
-.search_box_content {
-    width: 100%;
-    padding: 16px;
-} */
+/* チェックボックスラベルのスタイルも追加可能 */
+.search_accordion[open] label {
+    display: block;
+    margin: 8px 0; /* チェックボックスの間にスペースを追加 */
+}
+
 
 .search_btn{
     margin-top: 4rem;
@@ -153,21 +148,13 @@ label {
     border-radius: 10px;
     font-size: 1.4rem;
     padding: 0 6rem 0 0;
+    margin-bottom: 2.4rem;
 }
 
 .search_box_inner {
     width: 100%;
     display: flex;
 }
-
-/* .search_box_inner {
-    content: '\f002';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    right: 1rem;
-    cursor: pointer;
-} */
 
 .search_box_content {
     width: 100%;
@@ -183,7 +170,6 @@ label {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    /* right: 3rem; */
     padding: 2.4rem;
     cursor: pointer;
 }
@@ -197,4 +183,18 @@ button[type="submit"] {
     height: 0;
     padding: 0;
     margin-left: -10px;
+}
+
+/* 結果表示 */
+.search_result {
+    margin-bottom: 2rem;
+}
+
+.search_result h3 {
+    margin-bottom: 1rem;
+}
+
+.search_result span {
+    font-size: 1.6rem;
+    line-height: 1.6;
 }

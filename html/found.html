@@ -33,10 +33,10 @@
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- 個別CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/found.css">
-
+    <!-- fontawesomeの読み込み -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- JavaScriptの読みこみ -->
@@ -44,7 +44,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="inner">
             <!-- ロゴ -->
@@ -67,24 +66,31 @@
                         <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </li>
+                <li class="menu_item"><a href="event-list.html">イベント月別一覧</a></li>
                 <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
-                <li class="menu_item"><a href="event-list.html">イベント一覧</a></li>
-                <li class="menu_item"><a href="column.html">コラム一覧</a></li>
-                <li class="menu_item"><a href="post-list.html">お知らせ一覧</a></li>
+                <li class="menu_item"><a href="post-list.html">お知らせ</a></li>
+                <li class="menu_item"><a href="org-list.html">主催団体一覧</a></li>
+                <li class="menu_item"><a href="column-list.html">コラム</a></li>
                 <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
-                <li class="menu_item"><a href="faq.html">よくある質問</a></li>
-                <li class="menu_item"><a href="about.html">当サイトについて</a></li>
+                <li class="menu_item"><a href="contact.html">
+                        主催団体様<br>
+                        お問い合わせ
+                    </a></li>
             </ul>
         </nav>
         <nav class="sp_none">
             <ul>
+                <li><a href="event-list.html">イベント月別一覧</a></li>
                 <li><a href="found.html">イベントをさがす</a></li>
-                <li><a href="event-list.html">イベント一覧</a></li>
-                <li><a href="column.html">コラム一覧</a></li>
-                <li><a href="post-list.html">お知らせ一覧</a></li>
+                <li><a href="post-list.html">お知らせ</a></li>
+                <li><a href="org-list.html">主催団体一覧</a></li>
+                <li><a href="column-list.html">コラム</a></li>
                 <li><a href="favorite-list.html">お気に入り</a></li>
-                <li><a href="faq.html">よくある質問</a></li>
-                <li><a href="about.html">当サイトについて</a></li>
+                <li><a href="contact.html">
+                        主催団体様
+                        <br>
+                        お問い合わせ
+                    </a></li>
             </ul>
         </nav>
     </header>
@@ -101,17 +107,17 @@
 
         <div class="inner">
             <!-- 検索ボックス -->
-            <section class="search">
+            <section>
                 <h3 class="search_title">詳細検索する</h3>
                 <div class="search_wrap">
-                    <form action="" method="post" class="search_content">
+                    <form action="" method="get" class="search_content">
                         <input type="hidden" name="s">
                         <!-- エリア -->
                         <h3 class="sub_title">エリア</h3>
                         <details open class="search_accordion">
                             <summary class="search_item_title">エリアを選択する</summary>
-                            <label for="east"><input type="checkbox" name="area[]" id="east" value="東部(徳島市を除く)">東部(徳島市を除く)</label>
                             <label for="tokushima"><input type="checkbox" name="area[]" id="tokushima" value="徳島市">徳島市</label>
+                            <label for="east"><input type="checkbox" name="area[]" id="east" value="東部(徳島市を除く)">東部(徳島市を除く)</label>
                             <label for="west"><input type="checkbox" name="area[]" id="west" value="西部">西部</label>
                             <label for="south"><input type="checkbox" name="area[]" id="south" value="南部">南部</label>
                         </details>
@@ -240,7 +246,7 @@
                         </details>
                         <div class="search_btn">
                             <!-- リセットボタン -->
-                            <input type="reset" value="クリア" class="search_prv_btn">
+                            <input type="reset" value="クリア" class="search_prv_btn" onclick="">
                             <!-- イベントをさがすボタン -->
                             <input type="submit" value="さがす" class="search_nxt_btn">
                         </div>
@@ -250,7 +256,8 @@
 
             <!-- フリーワード -->
             <section>
-                <form action="" method="post">
+                <h3 class="search_title">フリーワードで検索する</h3>
+                <form action="" method="get">
                     <input type="hidden" name="s">
                     <h3 class="sub_title">フリーワード検索</h3>
                     <div class="search_box_wrap">
@@ -262,31 +269,32 @@
                 </form>
             </section>
 
-
             <section>
                 <!-- ここから検索結果 -->
-                <div>
+                <div class="search_result">
                     <div>
-                        <p>検索結果〇〇件</p>
-                        <p>1-6件を表示</p>
+                        <h3>検索結果：99件</h3>
+                        <span>1-6</span><span>件を表示</span>
                     </div>
-                    <ul>
-                        <!-- 共通カード型 -->
-                        <li>
-                            <a class="card_wrap" href="#">
 
+                    <!-- 共通カード型 -->
+                    <ul class="top_event_list">
+                        <li>
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -315,26 +323,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
-
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -363,26 +373,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
-
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -411,26 +423,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
-
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -459,26 +473,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
-
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -507,26 +523,28 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a class="card_wrap" href="#">
-
+                            <div class="card_wrap">
+                                <!-- ブックマーク機能 -->
+                                <div class="card_bookmark"></div>
+                                <!-- 「あと○日」 -->
                                 <div class="card_countdown">
                                     <span>あと</span>
-                                    <span class="card_countdownno">5</span>
+                                    <span class="card_countdownno">15</span>
                                     <span>日</span>
                                 </div>
-
-                                <div class="card_shape">
+                                <!-- カード本体（aタグ） -->
+                                <a class="card_shape" href="#">
                                     <div class="card_inner">
                                         <div>
                                             <img src="../assets/img/evt_01_250220_1.jpeg" alt="">
                                         </div>
-
                                         <div class="card_text">
                                             <h3>イベントタイトルが入ります</h3>
                                             <div class="card_line"></div>
@@ -555,20 +573,23 @@
                                                 </div>
                                             </div>
                                             <div class="card_tag">#地域</div>
+                                            <div class="card_tag">#定期開催</div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </li>
                     </ul>
 
                     <!-- ページネーション -->
                     <div class="pagenation">
-                        <div class="pagenation_nav left"></div>
-                        <div class="pagenation_number">1</div>
-                        <div class="pagenation_number">2</div>
-                        <div class="pagenation_number">3</div>
-                        <div class="pagenation_nav right"></div>
+                        <div class="wp-pagenavi">
+                            <a href="#" class="previouspostslink">«</a>
+                            <a href="#" class="page">1</a>
+                            <a href="#" class="page">2</a>
+                            <a href="#" class="page">3</a>
+                            <a href="#" class="nextpostslink">»</a>
+                        </div>
                     </div>
 
                 </div>
