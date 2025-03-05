@@ -168,6 +168,7 @@ get_header();
                 </div>
             </div>
         </section> -->
+        <!-- お知らせ新着。3件表示  -->
         <section>
             <!-- 見出し -->
             <div class="top_news_ttl">
@@ -175,16 +176,23 @@ get_header();
             </div>
             <div class="top_news_list">
                 <div class="top_news_item_wrap">
-                    <span>2025/2/18(木)</span>
-                    <a href="#"><span class="top_news_item">お知らせが入ります。</span></a>
-                </div>
-                <div class="top_news_item_wrap">
-                    <span>2025/2/18(木)</span>
-                    <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。</span></a>
-                </div>
-                <div class="top_news_item_wrap">
-                    <span>2025/2/18(木)</span>
-                    <a href="#"><span class="top_news_item">お知らせが入ります。お知らせが入ります。お知らせが入ります。</span></a>
+                    <?php
+                    global $wp_query;
+                    $post_id = $wp_query->get_queried_object_id();
+                    //echo get_favorites_button($post_id);
+                    ?>
+
+                    <!-- WordPress ループの開始 -->
+                    <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : ?>
+                    <?php the_post(); ?>
+
+                    <!-- テンプレートパーツloop-news.phpを読み込む -->
+                    <?php get_template_part('template-parts/loop', 'news') ?>
+
+                    <!-- WordPress ループの終了 -->
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
