@@ -125,8 +125,14 @@
 }
 .org_table th,
 .org_table td {
-    padding: 1.6rem;
+    padding: 0.8rem;
     font-size: 1.3rem;
+}
+@media screen and (min-width:768px) {
+.org_table th,
+.org_table td {
+    padding: 2rem 4rem;
+}
 }
 .org_table th {
     text-align: center;
