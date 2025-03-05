@@ -191,13 +191,13 @@ function my_add_scripts()
         //     get_template_directory_uri() . '/assets/css/top.css'
         // );
 
-        // wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
-        // wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
+        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'); //slick
+        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'); //slick-theme
 
-        // wp_enqueue_style(
-        //     'my_column_slider',
-        //     get_template_directory_uri() . '/assets/css/column_slider.css'
-        // );
+        wp_enqueue_style(
+            'my_column_slider',
+            get_template_directory_uri() . '/assets/css/column_slider.css'
+        );
 
         // // column_slider.js
         // wp_enqueue_script(
@@ -207,13 +207,13 @@ function my_add_scripts()
         //     '',
         //     true
         // );
-        // wp_enqueue_script(
-        //     'slick-js',
-        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-        //     array('jquery'),
-        //     null,
-        //     true
-        // );
+        wp_enqueue_script(
+            'slick-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+            array('jquery'),
+            null,
+            true
+        );
 
         //search
         // wp_enqueue_script(
@@ -319,7 +319,7 @@ function my_add_scripts()
         //     'my_praivacy',
         //     get_template_directory_uri() . '/assets/css/privacy.css'
         // );
-    }elseif(is_post_type_archive('faq')){
+    } elseif (is_post_type_archive('faq')) {
         wp_enqueue_style(
             'my_faq_style',
             get_template_directory_uri() . '/assets/css/faq.css',
