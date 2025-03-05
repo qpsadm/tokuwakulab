@@ -89,7 +89,7 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
                 <li><a href="<?php echo home_url('/?s='); ?>">イベントをさがす</a></li>
                 <li><a href="<?php echo home_url('/category/news/'); ?>">お知らせ</a></li>
                 <li><a href="<?php echo home_url('/organization/'); ?>">主催団体一覧</a></li>
-                <li><a href="<?php echo home_url('/column/'); ?>">コラム一覧</a></li>
+                <li><a href="<?php echo home_url('/column/'); ?>">コラム</a></li>
                 <li><a href="<?php echo home_url('/mypage/'); ?>">お気に入り</a></li>
                 <li><a href="<?php echo home_url('/contact/'); ?>">主催団体様<br>
                         お問い合わせ</a></li>
