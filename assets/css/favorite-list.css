@@ -1,1 +1,37 @@
 @charset "utf-8";
+
+.bookwarning_note {
+    width: 90%;
+    /* 横幅を少し小さくする */
+    max-width: 60rem;
+    /* 最大幅を指定 */
+    margin: 0 auto 4.8rem auto;
+    /* 中央配置 */
+    background-color: #56C909;
+    color: #363636;
+    /* 文字色を白にすると見やすい */
+    padding: 2rem;
+    /* 余白を追加 */
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+    border: 0.3rem solid #F4CF15;
+    border-radius: 3rem;
+    text-align: center;
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: center;
+    /* 横方向の中央配置 */
+    align-items: center;
+    /* 縦方向の中央配置 */
+}
+
+
+.favorite_result {
+    width: 100%;
+    margin-bottom: 4.8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

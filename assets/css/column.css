@@ -1,38 +1,45 @@
 @charset "utf-8";
 
-/* .column_content_wrap {
-    padding: 4rem;
-} */
-
 /* コラムタイトルの設定 */
+.column_ttl_wrap,
+.post_ttl_wrap {
+    margin-bottom: 2rem;
+}
 
 @media screen and (min-width:768px) {
 
-    .column_ttl_wrap {
+    .column_ttl_wrap,
+    .post_ttl_wrap {
         display: flex;
         align-items: center;
+
     }
 
 }
 
-.column_date span {
+/* コラムタイトル日付 */
+.column_date span,
+.post_date span {
     display: block;
     font-size: 2.4rem;
     line-height: 2.4rem;
     margin-left: 1.6rem;
 }
 
-
-.column_ttl {
+/* コラムタイトル */
+.column_ttl,
+.post_ttl {
     margin: 1.6rem 0 0 1.6rem;
-    font-size: 3.2rem;
-    line-height: 4rem;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    font-weight: 500;
 }
 
 @media screen and (min-width:768px) {
 
-    .column_ttl {
-        margin-left: 5.6rem;
+    .column_ttl,
+    .post_ttl {
+        padding-left: 5.6rem;
         font-size: 3.2rem;
         line-height: 4rem;
     }
@@ -40,7 +47,8 @@
 }
 
 /* タグの設定 */
-.column_tag {
+.column_tag,
+.post_tag {
     background-color: #FF7B00;
     width: auto;
     height: auto;
@@ -53,22 +61,38 @@
     font-size: 1rem;
 }
 
+@media screen and (min-width:1280px) {
+
+    .column_tag,
+    .post_tag {
+        padding: 0.4rem 2rem;
+        font-size: 1.4rem;
+    }
+}
+
 /* コラム画像の設定 */
-.column_img {
+.column_img_wrap,
+.post_img_wrap {
+    margin: 2rem auto;
+}
+
+.column_img,
+.post_img {
     border-radius: 40px;
 }
 
 @media screen and (min-width:768px) {
 
-    .column_img_wrap {
+    .column_img_wrap,
+    .post_img_wrap {
         width: 80%;
-        margin: 0 auto;
     }
 
 }
 
 /* コラム記事の設定 */
-.column_item_wrap {
+.column_item_wrap,
+.post_text_wrap {
     background-color: #fff;
     margin: 2.4rem 0;
     padding: 3.2rem;
@@ -87,8 +111,18 @@
 }
 
 .column_item_ttl {
+    font-size: 2rem;
+    font-weight: 500;
     border-left: 20px solid #FFCC00;
-    line-height: 3.2rem;
+    line-height: 2.4rem;
+    padding: 1.6rem 0 1.6rem 1.6rem;
+}
+
+@media screen and (min-width:768px) {
+    .column_item_ttl {
+        font-size: 2.4rem;
+    }
+
 }
 
 .sub_title {
