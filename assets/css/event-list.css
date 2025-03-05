@@ -1,53 +1,46 @@
 @charset "utf-8";
 
-.breadcrumb {
-    display: flex;
-}
 
-.event_list ul {
+.tax_list ul {
     list-style: none;
-    padding: 0.5em 0.7em;
-    /* border: solid 2px #FF7B00; */
-    border-radius: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    /* アイテムが折り返されるように */
-    justify-content: space-around;
-    align-items: center;
-    gap: 2rem;
-    /* アイテム間の間隔 */
+    padding: 0 1rem 4.8rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* スマホ用は２カラム */
+    gap: 1rem;
+    place-items: center;
+    /* アイテムをグリッド内で中央配置 */
+    margin: 0 auto;
+    /* コンテナ自体を中央寄せ */
 }
 
-.event_list li {
+.tax_list li {
     width: 100%;
     font-size: 2rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 10rem;
+    /* max-width: 10rem; */
+    max-width: 15rem;
     /* ボタンの最大幅 */
-    padding: 1em 2em;
+    padding: 1rem 2rem;
     transition: 0.3s ease-in-out;
-
     text-decoration: none;
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    /* margin-bottom: 0.5rem;
-    padding-left: 2rem;
-    line-height: 3rem; */
+
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid #f4cf15;
+    border: 1px solid #F4CF15;
     border-radius: 3rem;
-
 }
 
-
-.event_list li:before {
+.tax_list li:before {
     font-family: FontAwesome;
-    content: "★\00a0\00a0";
+    content: "★";
     position: absolute;
     left: 0.5rem;
     font-size: 1.2em;
@@ -55,12 +48,12 @@
     /* 回転のアニメーション */
 }
 
-.event_list li:hover {
+.tax_list li:hover {
     background-color: #FF7B00;
     /* ホバー時に背景色をオレンジに変更 */
 }
 
-.event_list li:hover:before {
+.tax_list li:hover:before {
     transform: rotate(360deg);
     /* アイコンが360度回転 */
     /*   color: #f4cf15; */
@@ -77,17 +70,17 @@
     color: #fff;
 } */
 
-.eventlist_result {
+.exp_result {
     margin-top: 2rem;
     /* 検索結果の上に余白 */
 }
 
-.eventlist_result h3 {
+.exp_result h3 {
     margin-bottom: 1rem;
     /* h3 の下に余白を追加 */
 }
 
-.eventlist_result span {
+.exp_result span {
     font-size: 1.6rem;
     /* 文字サイズを大きく */
     line-height: 1.6;
@@ -97,7 +90,7 @@
 }
 
 
-.event_result {
+.list_up_result {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -108,7 +101,7 @@
 
 
 
-.event_result li {
+.list_up_result li {
     width: max-content;
     /* または適切な幅 */
     margin: 0 auto;
@@ -117,19 +110,22 @@
 
 /* TB */
 @media screen and (min-width:768px) and (max-width:1279px) {
-    .event_list li {
-        max-width: 15rem;
-        font-size: 1.5rem;
 
-
+    .tax_list ul {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .event_list li:before {
+    .tax_list li {
+        max-width: 20rem;
+        font-size: 1.5rem;
+    }
+
+    .tax_list li:before {
         left: 1rem;
         font-size: 1.2em;
     }
 
-    .event_result {
+    .list_up_result {
         grid-template-columns: repeat(2, 1fr);
         /*2カラム*/
     }
@@ -138,19 +134,21 @@
 
 /* PC */
 @media screen and (min-width:1280px) {
-    .event_list li {
-        max-width: 20rem;
-        font-size: 1.5rem;
-        /* margin-bottom: 2rem;
-        padding-left: 3rem; */
+    .tax_list ul {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    .event_list li:before {
+    .tax_list li {
+        max-width: 30rem;
+        font-size: 1.5rem;
+    }
+
+    .tax_list li:before {
         left: 2rem;
         font-size: 1.2em;
     }
 
-    .event_result {
+    .list_up_result {
         grid-template-columns: repeat(3, 1fr);
         /*3カラム*/
     }

@@ -2,10 +2,19 @@
 
 .error_wrap{
     line-height: 2.4rem;
+    padding-top: 16rem;
 }
 
 .error_wrap a{
     display: inline;
     font-size: 2rem;
     border-bottom: 2px dotted #FFCC00;
+}
+
+.error_wrap a:hover{
+    color: #FF7B00;
+}
+
+.error_wrap p:nth-child(1){
+    padding-bottom: 0.8rem;
 }
