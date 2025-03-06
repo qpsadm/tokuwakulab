@@ -1,133 +1,171 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-<main>
-
-
-    <?php if (have_posts()): ?>
-        <?php while (have_posts()): ?>
-            <?php the_post(); ?>
-
-            <section class="section">
-                <div class="section_inner">
-
-                    <div class="food">
-                        <div class="food_body">
-                            <div class="food_text">
-                                <h2 class="heading heading-primary"><?php the_title(); ?></h2>
-
-
-
-                                <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
-
-                                <h3>
-
-                                    <?php $id = get_field('org_id') ?>
-                                    <a href="<?php echo get_the_permalink($id) ?>">
-                                        <?php echo get_the_title($id) ?>
-                                    </a>
-                                </h3>
-
-                                <br>
+<main class="pc_space">
 
 
 
 
-                                <div class="food_content">
+    <!-- ページタイトル -->
+    <section class="page_top">
+        <h2 class="page_title">イベント詳細</h2>
+    </section>
 
-                                    <?php the_content(); ?>
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            <?php endif; ?></a>
+        </span>
+    </div>
 
-                                </div>
-                            </div>
+    <div class="inner">
+
+
+        <?php if (have_posts()): ?>
+            <?php while (have_posts()): ?>
+                <?php the_post(); ?>
+
+
+                <section class="event_top">
+                    <!-- イベントタイトル -->
+                    <h2><?php the_title(); ?></h2>
+                    <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
+                    <h3>
+                        <?php $id = get_field('org_id') ?>
+                        <a href="<?php echo get_the_permalink($id) ?>">
+                            <?php echo get_the_title($id) ?>
+                        </a>
+                    </h3>
+
+                    <div class="event_action">
+                        <!-- お気に入りボタン -->
+                        <?php echo get_favorites_button($post_id); ?>
+
+                        <!-- いいねボタン -->
+                        <?php echo do_shortcode('[wp_ulike]'); ?>
+                    </div>
+
+
+                    <div class="event_kv_wrap">
+                        <!-- キービジュアル -->
+                        <ul class="slider_kv">
 
                             <!-- 写真 -->
-                            <?php
-                            $pic = get_field('image01');
-                            //大サイズの画像のURL
-                            $pic_url = $pic['sizes']['large'];
-                            ?>
-                            <img src="<?php echo $pic_url; ?>" alt="">
-
+                            <li>
+                                <?php
+                                $pic = get_field('image01');
+                                //大サイズの画像のURL
+                                $pic_url = $pic['sizes']['large'];
+                                ?>
+                                <img src="<?php echo $pic_url; ?>" alt="">
+                            </li>
                             <!-- 「image02」「image03」「image04」は写真がある場合のみ表示 -->
+                            <li>
+                                <?php
+                                $pic = get_field('image02');
+                                if (!empty($pic)) {
+                                    //大サイズの画像のURL
+                                    $pic_url = $pic['sizes']['large'];
 
-                            <?php
-                            $pic = get_field('image02');
-                            if (!empty($pic)) {
-                                //大サイズの画像のURL
-                                $pic_url = $pic['sizes']['large'];
-
-                                echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                            }
-                            ?>
-
-                            <?php
-                            $pic = get_field('image03');
-                            if (!empty($pic)) {
-                                //大サイズの画像のURL
-                                $pic_url = $pic['sizes']['large'];
-
-                                echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                            }
-                            ?>
-
-                            <?php
-                            $pic = get_field('image04');
-                            if (!empty($pic)) {
-                                //大サイズの画像のURL
-                                $pic_url = $pic['sizes']['large'];
-
-                                echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                            }
-                            ?>
-
-                        </div>
-
-                        <!-- イベント本文 -->
-                        <?php the_field('overview'); ?>
-
-                        <h3>基本情報</h3>
-
-                        <ul class="food_list">
-
-                            <li class="food_item">
-                                <span class="food_itemLabel">開催日時</span>
-                                <span class="food_itemData"><?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
-                                    <?php if (get_field('days')): ?>
-                                        【<?php the_field('days'); ?>間】
-                                    <?php endif; ?>
-                                </span>
+                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
+                                }
+                                ?>
                             </li>
 
+                            <li>
+                                <?php
+                                $pic = get_field('image03');
+                                if (!empty($pic)) {
+                                    //大サイズの画像のURL
+                                    $pic_url = $pic['sizes']['large'];
 
-                            <li class="food_item">
-                                <span class="food_itemLabel">会場名</span>
-                                <span class="food_itemData"><?php the_field('address'); ?></span>
+                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
+                                }
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                $pic = get_field('image04');
+                                if (!empty($pic)) {
+                                    //大サイズの画像のURL
+                                    $pic_url = $pic['sizes']['large'];
+
+                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
+                                }
+                                ?>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- イベント本文 -->
+                    <div class="event_description">
+                        <p>
+                            <?php the_field('overview'); ?>
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="sub_title">
+                        基本情報
+                    </h3>
+
+                    <table class="event_table">
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/date.png" alt="">開催日時
+                            </th>
+                            <td>
+                                <?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
+                                <?php if (get_field('days')): ?>
+                                    【<?php the_field('days'); ?>間】
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/map.png" alt="">会場名
+                            </th>
+                            <td>
+                                <?php the_field('address'); ?></span>
                                 <?php if (get_field('nearest_station')): ?>
                                     <span class="food_itemData">
                                         【最寄り駅：<?php the_field('nearest_station'); ?>】
                                     </span>
                                 <?php endif; ?>
-                            </li>
+                            </td>
+                        </tr>
 
-                            <li class="food_item">
-                                <span class="food_itemLabel">対象年齢</span>
-                                <span class="food_itemData"><?php the_field('age_text'); ?></span>
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/age.png" alt="">対象年齢
+                            </th>
+                            <td>
+                                <?php the_field('age_text'); ?></span>
                                 <?php if (get_field('limit')): ?>
                                     <span class="food_itemData">
                                         【人数制限：<?php the_field('limit'); ?>】</span>
                                 <?php endif; ?>
-                            </li>
+                            </td>
+                        </tr>
 
-                            <li class="food_item">
-                                <span class="food_itemLabel">参加費</span>
-                                <span class="food_itemData"><?php the_field('fare'); ?></span>
-                            </li>
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/fare.png" alt="">参加費
+                            </th>
+                            <td>
+                                <?php the_field('fare'); ?>
+                            </td>
+                        </tr>
 
-                            <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
-                                <li class="food_item">
-                                    <span class="food_itemLabel">その他</span>
-                                    <br>
-
+                        <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
+                            <tr>
+                                <th>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/remarks.png" alt="">その他
+                                </th>
+                                <td>
                                     <?php if (get_field('toilet')): ?>
                                         <span class="food_itemData">トイレ：<?php the_field('toilet'); ?></span><br>
                                     <?php endif; ?>
@@ -152,144 +190,167 @@
                                     <?php if (get_field('remarks')): ?>
                                         <span class="food_itemData">備考：<?php the_field('remarks'); ?></span>
                                     <?php endif; ?>
-                                </li>
-                            <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </table>
 
-                        </ul>
 
-                        <!-- こだわりタクソノミーを取得して表示 -->
-                        <br>
+                    <!-- こだわりタクソノミーを取得して表示 -->
+                    <ul class="event_icon_wrap">
 
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'other');
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            echo '<p class="event-taxonomy">';
+                            // echo '<p class="event-taxonomy">';
                             foreach ($terms as $term) {
 
-                                echo '<span class="taxonomy-badge">' . esc_html($term->name) . '</span> ';
+                                echo '<li class="' . esc_attr($term->slug) . '">'  . '</li> ';
+                                echo '<span >' . esc_html($term->name) . '</span>';
                             }
-                            echo '</p>';
+                            // echo '</p>';
+                            // print_r($term);
                         }
                         ?>
 
-
-                        <br>
-                        <span class="food_itemLabel"><?php the_title(); ?>のチラシ</span>
-                        <a target="_blank" href="<?php the_field('flier01'); ?>"><span class="food_itemData">【 ダウンロード 】</span></a>
-                        <br>
-
-                        <h3>会場マップ</h3>
-
-                        <br>
-                        <div>
-                            <?php echo get_field('map'); ?></div>
-                        <br>
-
-                        <h3>参加者の声</h3>
-                        <br>
-                        <h3>クチコミを投稿する</h3>
-
-                        <br>
-
-                        <?php if (get_field('links')) : ?>
-                            <a target="_blank" href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
-                            <span class="food_itemLabel">※イベントページに飛びます。</span>
-                        <?php endif; ?>
-                        <br>
-
+                    </ul>
+                    <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
+                    <div class="event_pdf">
+                        <span class="food_itemLabel"><?php the_title(); ?>のチラシ▶</span>
+                        <a target="_blank" href="<?php the_field('flier01'); ?>"><span class="food_itemData">&nbsp;ダウンロード&nbsp;</span></a>
                     </div>
 
+                </section>
+
+                <!-- 会場マップ -->
+                <section>
+                    <h3 class="sub_title">会場マップ</h3>
+                    <div class="map">
+                        <?php echo get_field('map'); ?>
+                    </div>
+                </section>
+
+                <!-- 参加者様からの感想 -->
+                <section>
+                    <h3 class="sub_title">参加者様からの感想</h3>
+
+                    <!-- クチコミ投稿フォーム -->
+                    <h3 class="sub_title">クチコミを投稿する</h3>
+
+                    <a href="privacy-policy.html">クチコミ投稿についての利用規約</a>
+
+                </section>
+
+
+
+
+                <div class="event_entry_wrap">
+                    <?php if (get_field('links')) : ?>
+                        <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
+                        <p><span>※イベントページに飛びます。</span></p>
+                    <?php endif; ?>
                 </div>
-            </section>
-
-        <?php endwhile; ?>
-    <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
 
 
+        <!-- 区切り線 -->
+        <div class="section_line"></div>
 
+        <section>
 
-    <?php
-    //おすすめイベントを表示する2.26作成中
-    $args = [
-        "post_type" => "event", //投稿記事だけを指定
-        "posts_per_page" => 3, //最新記事を３件表示
-        "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
-
-    ];
-    $latest_query = new WP_Query($args);
-    if ($latest_query->have_posts()):
-    ?>
-        <section class="latest">
-
-            <h2 class="heading heading-secondary">開催予定のイベント</h2>
-
-            <div class="latest_body">
-                <div class="cardList">
-                    <?php while ($latest_query->have_posts()): ?>
-                        <?php $latest_query->the_post(); ?>
-                        <?php get_template_part("template-parts/loop", "news");
-                        ?>
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-
-                </div>
-                <a href="<?php echo home_url("column"); ?>">イベント一覧へ > </a>
-            </div>
-        </section>
-    <?php endif; ?>
-    <section>
-        <div class="section_inner">
-            <div class="section_header">
-                <h2 class="heading heading-primary">関連コラム記事</h2>
-            </div>
             <?php
-            //関連記事作成中2.26(コラムに変更済2.27)
-            //$faq_terms = get_terms(["taxonomy" => "faq_tax"]); //配列で取得する
-            //if (!empty($faq_terms)): //空白でなければ
+            //おすすめイベントを表示する2.26作成中
+            $args = [
+                "post_type" => "event", //投稿記事だけを指定
+                "posts_per_page" => 3, //最新記事を３件表示
+                "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
+
+            ];
+            $latest_query = new WP_Query($args);
+            if ($latest_query->have_posts()):
             ?>
-            <?php //foreach ($faq_terms as $faq):
-            ?>
-            <section class="section_body">
-                <h3 class="heading heading-secondary"><?php //echo $faq->name
-                                                        ?></h3>
-                <ul class="">
-                    <?php
-                    $args = [
-                        "post_type" => "column",
-                        "posts_per_page" => 3, //3つ表示
 
-                    ];
+                <h3 class="sub_title">開催予定のイベント</h3>
 
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()): ?>
-                        <?php while ($the_query->have_posts()): ?>
-                            <?php $the_query->the_post(); ?>
-                            <li class="">
+                <div>
+                    <ul class="top_event_list">
 
-                                <h4 class="foodCard_title">
-                                    <a href="<?php the_permalink(); ?>"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?>-</time><?php the_title(); ?></a>
-                                </h4>
-
-
-                            </li>
+                        <!-- イベントカード型 -->
+                        <?php while ($latest_query->have_posts()): ?>
+                            <?php $latest_query->the_post(); ?>
+                            <?php get_template_part("template-parts/loop", "event");
+                            ?>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                </ul>
-            </section>
-            <?php //endforeach;
-            ?>
-            <?php //endif;
-            ?>
 
-            <br>
-            <?php if (get_field('links')) : ?>
-                <a target="_blank" href="<?php the_field('links'); ?>"><span class="food_itemData">【 お申し込みはこちら > 】</span></a>
-                <span class="food_itemLabel">※イベントページに飛びます。</span>
+                    </ul>
+                </div>
             <?php endif; ?>
-            <br>
 
 
+            <!-- ボタン -->
+            <div class="event_btn_wrap">
+                <a class="event_btn" href="<?php echo home_url("column"); ?>">イベント一覧へ</a>
+            </div>
+
+        </section>
+
+
+        <!-- 区切り線 -->
+        <div class="section_line"></div>
+
+        <section>
+
+            <h3 class="sub_title">関連コラム記事</h3>
+            <div class="event_column_list">
+
+                <?php
+                $args = [
+                    "post_type" => "column",
+                    "posts_per_page" => 3, //3つ表示
+
+                ];
+
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()): ?>
+                    <?php while ($the_query->have_posts()): ?>
+                        <?php $the_query->the_post(); ?>
+
+
+                        <span>
+                            <time datetime="<?php the_time('Y-m-d'); ?>">
+                                <?php the_time('Y/m/d(D)'); ?>
+                            </time>
+                        </span>
+                        <a href="<?php the_permalink(); ?>">
+                            <span>
+                                <?php the_title(); ?>
+                            </span>
+                        </a>
+
+
+
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+
+        </section>
+    </div>
+    </section>
+
+
+    <!-- 区切り線 -->
+    <div class="section_line"></div>
+
+    <div class="event_entry_wrap">
+        <?php if (get_field('links')) : ?>
+            <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
+            <p><span>※イベントページに飛びます。</span></p>
+        <?php endif; ?>
+    </div>
+
+    </div>
 </main>
 
 

@@ -84,7 +84,7 @@ $the_query = new WP_Query($args);
             ?>
             <h3>
 
-                <?php echo $one_week_later; ?>イベント一覧 (<?php echo $the_query->found_posts; ?>)件
+                <?php echo $one_week_later; ?>イベント&nbsp;&nbsp;<?php echo $the_query->found_posts; ?>件
             </h3>
 
             <br>
@@ -138,12 +138,19 @@ $the_query = new WP_Query($args);
 
 
         <!-- ページナビゲーション -->
+        <div class="pagenation">
+            <?php if (function_exists('wp_pagenavi')): ?>
+                <div class="pagination">
+                    <?php wp_pagenavi(); ?>
+                </div>
+            <?php endif; ?>
+        </div>
 
-        <?php if (function_exists('wp_pagenavi')): ?>
-            <div class="pagination">
-                <?php wp_pagenavi(); ?>
-            </div>
-        <?php endif; ?>
+        <!-- 過去一覧へボタン -->
+        <div class="eventlist_more">
+            過去イベント一覧へ
+        </div>
+
 </main>
 
 <!-- footer.phpを読み込む -->
