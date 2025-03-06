@@ -1,56 +1,106 @@
+<?php
+// お気に入りデータの取得処理
+
+if (function_exists('get_user_favorites')) {
+    // クッキー情報を取得
+    $favorites = get_user_favorites();
+    krsort($favorites); //連想配列をキーで昇順ソート
+
+    // お気に入りデータを取得
+    if ($favorites) {
+        $args = [
+            'post_type' => 'event', //イベント投稿
+            'posts_per_page' => -1, //全部表示
+            'ignore_sticky_posts' => true, //先頭固定表示の投稿を無視するためのパラメータ
+            'post__in' => $favorites,
+            'meta_key'       => 'date_start', // ソート基準となるカスタムフィールド
+            'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
+            'order'          => 'ASC',    // 昇順（古い順）
+        ];
+        // サブクエリ生成
+        $the_query = new WP_Query($args);
+
+        // サブクエリの件数
+        $count = $the_query->found_posts;
+    }
+}
+?>
+
 <!-- header.phpを読み込む -->
 <?php get_header(); ?>
-<main>
+<main class="pc_space">
+
+    <section class="page_top">
+        <h2 class="page_title">
+            お気に入り一覧
+        </h2>
+    </section>
+
+    <div class="breadcrumb">
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            <?php endif; ?></a>
+        </span>
+    </div>
+
     <div class="inner">
-        <div class="">
-            <h2>お気に入りイベント一覧</h2>
+        <!-- ブックマーク注意書き -->
+        <div class="bookwarning_note">
+            <p>ブックマークにはCookieを使用しています。<br>
+                Cookieの削除に伴いブックマークした情報も削除されます。</p>
         </div>
 
-        <div class="explanation_fv">
-            <p>ブックマークにはCookieを使用しています。</p>
-            <p>Cookieの削除に伴いブックマークした情報も削除されます。</p>
-        </div>
-        <section>
-            <div class="">
-                <h3>件数表示</h3>
-            </div>
-            <ul class="">
-                <?php
-                if (function_exists('get_user_favorites')) : //関数が存在するか否か確認する
-                    $favorites = get_user_favorites();
-                    krsort($favorites); //連想配列をキーで昇順ソート
+        <?php if ($favorites): ?>
+            <section>
+                <div class="favorite_result">
+                    <!-- 件数表示 -->
+                    <div>
+                        <span><?php echo $count; ?></span>&nbsp;<span>件</span>
+                    </div>
 
-                    //print_r($favorites);
+                    <!-- 表示順切り替え -->
+                    <div>
+                        <span>締め切り順</span>
+                    </div>
+                </div>
 
-                    if ($favorites) :
-                        $the_query = new WP_Query([
-                            'post_type' => 'event', //イベント投稿
-                            'posts_per_page' => -1, //全部表示
-                            'ignore_sticky_posts' => true, //先頭固定表示の投稿を無視するためのパラメータ
-                            'post__in' => $favorites,
-                            'orderby' => 'post__in', //配列で指定された記事IDの並び順を維持
-                        ]); ?>
+                <!-- イベントカード型 -->
+                <ul class="top_event_list">
 
+                    <?php if ($the_query->have_posts()) : ?>
+                        <?php while ($the_query->have_posts()) :  $the_query->the_post(); ?>
 
-                <?php if ($the_query->have_posts()) : ?>
-                <?php while ($the_query->have_posts()) :  $the_query->the_post(); ?>
+                            <li>
 
+                                <!-- テンプレートパーツloop-event.phpを読み込む -->
+                                <?php get_template_part('template-parts/loop', 'event') ?>
 
+                            </li>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                    <?php endif; ?>
 
-                <li>
+                </ul>
+                <!-- 改訂ページネーション -->
+                <div class="pagenation">
 
-                    <!-- テンプレートパーツloop-food.phpを読み込む -->
-                    <?php get_template_part('template-parts/loop', 'event') ?>
+                    <div class="wp-pagenavi">
+                        <?php if (function_exists('wp_pagenavi')): ?>
 
-                </li>
-                <?php endwhile;
-                            wp_reset_postdata(); ?>
-                <?php endif; ?>
+                            <?php wp_pagenavi(); ?>
 
-                <?php endif; ?>
-                <?php endif; ?>
-            </ul>
-        </section>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+            </section>
+        <?php else: ?>
+            <section>
+                <div class="favorite_result">
+                    <p>ブックマークはありません。</p>
+                </div>
+            </section>
+        <?php endif; ?>
     </div>
 
 </main>

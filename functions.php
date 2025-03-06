@@ -582,3 +582,18 @@ function get_upcoming_event_months1($post_type = 'event')
 
     return array_keys($months); // ユニークな月のリストを取得
 }
+
+
+
+// スリックの画像をanimation.jsに渡す
+function my_enqueue_scripts()
+{
+    wp_enqueue_script('slick-custom', get_template_directory_uri() . '/assets/js/animation.js', array('jquery'), null, true);
+
+    // PHPの値をJavaScriptに渡す
+    wp_localize_script('slick-custom', 'slickParams', array(
+        'prevArrow' => '<button class="slick_prev_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_left.png" alt="Previous"></button>',
+        'nextArrow' => '<button class="slick_next_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_right.png" alt="Next"></button>',
+    ));
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');

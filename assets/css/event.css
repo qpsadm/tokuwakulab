@@ -290,8 +290,14 @@ flex-wrap: wrap;
 
 
 /* ボタンの囲い */
-.event_btn_wrap {
-
+.event_entry_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 2.4rem;
 }
 
 
@@ -315,7 +321,7 @@ flex-wrap: wrap;
 
 
 /* 一覧へ飛ぶボタン */
-.event_btn_wrap{
+.event_btn {
     width: 260px;
     padding: 2rem 6.4rem 2rem 3.2rem;
     background-color: #FF7800;
