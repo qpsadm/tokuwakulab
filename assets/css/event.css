@@ -13,10 +13,7 @@
 }
 
 .event_top h3 {
-    /* font-size: 3.2rem; */
-    /* line-height: 3.2rem; */
     text-align: center;
-    /* font-weight: 600; */
     padding: 0 0 3rem 0;
 }
 
@@ -26,7 +23,7 @@
     display: flex;
     justify-content: flex-end;
     padding-bottom: 1rem;
-    max-width: 640px;
+    max-width: 480px;
     margin: 0 auto;
 }
 
@@ -100,7 +97,6 @@ flex-wrap: wrap;
     height: 100%;
     object-fit: cover;
     border-radius: 5rem;
-    /* display: none; */
 }
 
 .slider_org {
@@ -151,19 +147,20 @@ flex-wrap: wrap;
 
 /* イベント基本情報 */
 .event_table {
+    max-width: 450px;
     border: 3px solid #58BE15;
     background-color: #fff;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     border-collapse: separate;
     overflow: hidden;
     border-spacing: 0;
     border-radius: 20px;
-    width: 100%;
 }
 
 .event_table tr {
     display: block;
     margin: 0 3.0rem;
+    border-bottom: 1px solid #58BE15;
 }
 
 .event_table th {
@@ -175,25 +172,21 @@ flex-wrap: wrap;
     padding-bottom: 10px;
 }
 
-.event_table th {
-    /* padding-left: 2rem; */
-    vertical-align: middle;
-    border-bottom: 1px solid #58BE15;
-}
 
+/* 最後の行の tr の border を消す */
 .event_table tr:last-child {
     border-bottom: none;
 }
 
 .event_table td {
     vertical-align: middle;
-        border-bottom: 1px solid #58BE15;
 }
 
 @media screen and (min-width:1280px) {
     .event_table {
     max-width: 640px;
 }
+
 .event_table th,
 .event_table td {
     padding: 2rem 4rem;
@@ -214,7 +207,7 @@ flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 2.4rem;
     padding-bottom: 4.8rem;
-    max-width: 640px;
+    max-width: 450px;
     margin: 0 auto;
     gap: 3.0rem 1rem; /* アイコン間の余白 */
 }
@@ -226,7 +219,12 @@ flex-wrap: wrap;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
 }
+
+/* .event_icon_wrap span {
+    top: 80%;
+} */
 
 
 /* アイコン */
@@ -299,20 +297,20 @@ flex-wrap: wrap;
 
 /* 参加者様からの感想 */
 .event_review {
+    max-width: 450px;
     background-color: #fff;
-    margin-bottom: 2.4rem;
     padding: 2rem 1.5rem;
+    margin: 0 auto 2.4rem;
 }
 
 .event_review_name {
-    width: 100%;
+    display: inline-block;
+    width: fit-content;
     height: 100%;
-    text-align: center;
-    justify-content: center;
+    text-align: left;
     background-color: #ababab;
     border-radius: 30px;
-    padding: 0.3rem;
-    /* margin-bottom: 20px; */
+    padding: 0.3rem 1rem;
 }
 
 .event_review_comment {
@@ -333,7 +331,9 @@ flex-wrap: wrap;
 
 /* クチコミ投稿フォーム */
 .event_review_form {
-    padding-bottom: 56px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
 }
 
 .event_review_item {
@@ -384,11 +384,10 @@ flex-wrap: wrap;
 /* 一覧へ飛ぶボタン */
 .event_btn_wrap {
     display: flex;
-    justify-content: center; /* 横方向中央 */
-    align-items: center; /* 縦方向中央 */
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
-    margin-top: 2.4rem; /* 上の余白（必要に応じて調整） */
 }
 
 
