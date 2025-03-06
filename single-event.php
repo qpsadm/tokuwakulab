@@ -205,8 +205,10 @@
                             // echo '<p class="event-taxonomy">';
                             foreach ($terms as $term) {
 
-                                echo '<li class="' . esc_attr($term->slug) . '">'  . '</li> ';
+                                echo '<li class="event_icon_item ' . esc_attr($term->slug) . '">';
+
                                 echo '<span >' . esc_html($term->name) . '</span>';
+                                echo '</li> ';
                             }
                             // echo '</p>';
                             // print_r($term);
@@ -216,8 +218,8 @@
                     </ul>
                     <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
                     <div class="event_pdf">
-                        <span class="food_itemLabel"><?php the_title(); ?>のチラシ▶</span>
-                        <a target="_blank" href="<?php the_field('flier01'); ?>"><span class="food_itemData">&nbsp;ダウンロード&nbsp;</span></a>
+                        <span>イベントのチラシ▶</span>
+                        <a target="_blank" href="<?php the_field('flier01'); ?>">&nbsp;ダウンロード&nbsp;</a>
                     </div>
 
                 </section>
@@ -236,6 +238,8 @@
 
                     <!-- クチコミ投稿フォーム -->
                     <h3 class="sub_title">クチコミを投稿する</h3>
+
+                    <?php comments_template(); ?>
 
                     <a href="privacy-policy.html">クチコミ投稿についての利用規約</a>
 

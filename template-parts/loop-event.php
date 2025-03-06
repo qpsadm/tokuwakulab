@@ -93,14 +93,18 @@
 
                 </div>
 
-                <?php if (get_field('address')): ?>
-                    <div class="card_linefeed">
-                        <span class="card_subtitle">会場名</span>
-                        <div>
+
+                <div class="card_linefeed">
+                    <span class="card_subtitle">会場名</span>
+                    <div>
+                        <?php if (get_field('address')): ?>
                             <span><?php the_field('address') ?></span>
-                        </div>
+                        <?php else: ?>
+                            <span>-</span>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
+                </div>
+
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">対象学年</span>

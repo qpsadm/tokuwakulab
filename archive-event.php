@@ -87,7 +87,6 @@ $the_query = new WP_Query($args);
                 <?php echo $one_week_later; ?>イベント&nbsp;&nbsp;<?php echo $the_query->found_posts; ?>件
             </h3>
 
-            <br>
 
             <span>
                 <?php
@@ -148,7 +147,7 @@ $the_query = new WP_Query($args);
 
         <!-- 過去一覧へボタン -->
         <div class="eventlist_more">
-            過去イベント一覧へ
+            <a class="eventlist_btn_wrap" href="<?php echo home_url("pastevent"); ?>">過去イベント一覧へ</a>
         </div>
 
 </main>

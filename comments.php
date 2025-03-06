@@ -1,4 +1,5 @@
 <section class="comments">
+
 	<?php
 	// コメントフォームの調整
 	$comment_form_args = [
@@ -12,7 +13,7 @@
 	comment_form($comment_form_args);
 	?>
 
-	// コメントのやり取りを表示する
+	<!-- コメントのやり取りを表示する -->
 	<?php if (have_comments()) : ?>
 		<ol class="commentlist">
 			<?php
