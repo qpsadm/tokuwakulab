@@ -42,7 +42,6 @@
     background-color: #565656;
     opacity: 0.8;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-
     font-size: 1.5rem;
     /* font-weight: bold; */
     border: 1px solid #f6a3cc;
@@ -58,6 +57,7 @@
     font-size: 1.2rem;
     transition: transform 0.8s ease-in-out;
     /* 回転のアニメーション */
+    transform-origin: center;
 }
 
 .tax_list a:hover
@@ -81,8 +81,10 @@
 }
 
 .tax_list a:hover:before {
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
     /* アイコンが360度回転 */
+    transform: rotateY(360deg);
+    /* アイコンが360度縦に回転 */
 
 }
 
