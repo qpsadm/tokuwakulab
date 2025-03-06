@@ -153,13 +153,14 @@
     .tax_list a {
         max-width: 30rem 5rem;
         padding: 1.5rem;
-        padding-left: 4rem;
+        padding-left: 4.8rem;
         /* アイコンとテキストの間に余白を作る */
-        font-size: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 
     .tax_list a:before {
         /* left: 2rem; */
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
