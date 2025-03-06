@@ -30,7 +30,7 @@
 
 
                         <!-- タイトルの日付ボタン -->
-                        <div class="column_date post_date">
+                        <div class="column_date">
                             <span>
                                 <time datetime="<?php the_time('Y-m-d'); ?>">
                                     <?php the_time('Y'); ?>
@@ -42,9 +42,10 @@
                         </div>
 
                         <!-- 記事のタイトル -->
-                        <h2 class="column_ttl post_ttl">
+                        <h2 class="column_ttl">
                             <?php the_title(); ?>
                         </h2>
+
                     </div>
 
 
@@ -55,13 +56,11 @@
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'column_type');
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            echo '<div class="column-taxonomy">';
+
                             foreach ($terms as $term) {
 
-                                //タクソノミー一覧ページに飛ぶリンクを付ける
-                                echo '<a href="' . esc_url(get_term_link($term)) . '" class="post_tag">#' . esc_html($term->name) . '</a> ';
+                                echo '<span class="colmun_tag">#' . esc_html($term->name) . '</span>';
                             }
-                            echo '</div>';
                         }
                         ?>
                     </span>
@@ -80,8 +79,8 @@
                             <!-- フィールドに関連リンクがあれば飛ぶ -->
                             <?php if (get_field('url')): ?>
 
-                                <h3><a href="<?php the_field('url'); ?>" target="_blank">【関連リンク】<?php the_field('url'); ?></a>
-                                </h3>
+                                <p><a href="<?php the_field('url'); ?>" target="_blank">【関連リンク】<?php the_field('url'); ?></a>
+                                </p>
 
 
                             <?php endif; ?>
