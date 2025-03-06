@@ -81,16 +81,16 @@
                 <div class="card_line"></div>
                 <div class="card_linefeed">
                     <span class="card_subtitle">開催日</span>
-                    <div>
-                        <span><?php the_field('date_start'); ?></span>
-                    </div>
+
+                    <span><?php the_field('date_start'); ?></span>
+
                 </div>
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">申込締切</span>
-                    <div>
-                        <span><?php the_field('closing'); ?></span>
-                    </div>
+
+                    <span><?php the_field('closing'); ?></span>
+
                 </div>
 
                 <?php if (get_field('address')): ?>

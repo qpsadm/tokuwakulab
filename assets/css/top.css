@@ -220,7 +220,6 @@ section {
 
 
 /* 各リスト共通設定 */
-
 .top_event_list,
 .top_column_list {
     padding: 0;
@@ -351,4 +350,16 @@ section {
         width: 150px;
         height: 150px;
     }
+}
+
+/* セクションのアニメーション */
+section {
+    opacity: 0;
+    transform: translate(0, 30%);
+    transition: 2s;
+}
+
+.is-active-scroll {
+    transform: translate(0, 0);
+    opacity: 1;
 }

@@ -144,41 +144,46 @@
         </section>
 
 
-        <div class="section_line"></div>
+        <?php
+        // フィールドから「投稿ID」を取得
+        $post_id = get_field('org_id');
+        if ($post_id):
+
+        ?>
+
+            <div class="section_line"></div>
+
+
+            <!-- 関連主催団体 -->
+            <section class="column_content_wrap">
+                <h3 class="sub_title">関連主催団体</h3>
+                <div class="column_relationorg_card">
+
+                    <?php
+                    // もしIDが取得できていれば、そのIDを元に投稿を表示
+                    if ($post_id) {
+                        // IDで投稿を取得
+                        $org = get_post($post_id);
+
+                        // print_r($org);
+                        if ($org) {
+                            // グローバル変数に代入
+                            setup_postdata($org);
+
+                            // カード型を呼び出し、表示
+                            get_template_part('template-parts/loop', 'organization');
+                        }
+                    }
+
+                    wp_reset_postdata();
+                    ?>
 
 
 
+                </div>
+            </section>
 
-        <!-- 関連主催団体 -->
-        <section class="column_content_wrap">
-            <h3 class="sub_title">関連主催団体</h3>
-            <div class="column_relationorg_card">
-
-
-                <?php
-                // フィールドから「投稿ID」を取得
-                $post_id = get_field('org_id');
-
-                // もしIDが取得できていれば、そのIDを元に投稿を表示
-                if ($post_id) {
-                    // IDで投稿を取得
-                    $org = get_post($post_id);
-
-                    // print_r($org);
-                    // 取得した投稿をグローバル変数$postに代入
-                    $post = $org;
-
-                    // カード型を呼び出し、表示
-                    get_template_part('template-parts/loop', 'organization');
-                }
-                ?>
-
-
-
-            </div>
-        </section>
-
-
+        <?php endif; ?>
 
 
         <div class="section_line"></div>

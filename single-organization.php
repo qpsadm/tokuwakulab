@@ -151,39 +151,17 @@
         <!-- 開催予定イベント３件表示 -->
         <section>
             <h3 class="sub_title">開催予定のイベント</h3>
-            <?php
-            $dates = get_upcoming_event_months();
-            // URLのパラメータから検索する開催月を取得
-            $date1 = get_param_value('date');
-            // 初期状態で、開催月が指定されていないので、直近の月を代入する
-            if (is_null($date1)) {
-                $date1 = $dates[0];
-            }
-            $date2 = '2025-03-31';
-            //echo $date1, '-', $date2;
-            ?>
 
             <?php
-            $date1 = isset($_GET['date']) ? $_GET['date'] : null;
-            $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null; // 月末日を取得
 
             // サブクエリ
             $args = [
                 'post_type' => 'event',
                 'posts_per_page' => 3,
-                'orderby'        => 'date', // 投稿日時でソート
+                'meta_key'       => 'date_start', // ソート基準となるカスタムフィールド
+                'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
+                'order'          => 'DESC',    // 降順（新しい順）
             ];
-            $meta_query = ['relation' => 'AND'];
-
-            if ($date1) {
-                $meta_query[] = [
-                    'key' => 'date_start',
-                    'type' => 'DATE',
-                    'compare' => 'BETWEEN',
-                    'value' => [$date1, $date2],
-                ];
-            }
-            $args['meta_query'] = $meta_query;
 
             $the_query = new WP_Query($args);
 
@@ -195,7 +173,7 @@
                 <?php $the_query->the_post(); ?>
 
                 <li>
-                    <!-- テンプレートパーツloop-food.phpを読み込む -->
+                    <!-- テンプレートパーツloop-event.phpを読み込む -->
                     <?php get_template_part('template-parts/loop', 'event') ?>
                 </li>
 
@@ -205,6 +183,7 @@
                 <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </ul>
+
             <div class="btnwrap_wrap">
                 <a href="<?php echo home_url("/event/"); ?>" class="btn_wrap">イベント一覧へ</a>
             </div>
@@ -220,12 +199,16 @@
                 $args = [
                     "post_type" => "event", //イベント
                     'posts_per_archive_page' => 3, //3件表示
+                    'meta_key'       => 'org_id', // ソート基準となるカスタムフィールド
+                    'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
+                    'order'          => 'ASC',    // 昇順（古い順）
                 ];
                 $the_query = new WP_Query($args);
+
                 if ($the_query->have_posts()): ?>
                 <?php while ($the_query->have_posts()): ?>
                 <?php $the_query->the_post(); ?>
-                <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
+                <span><?php the_field("date_start") ?></span>
                 <a href="<?php the_permalink(); ?>">
                     <span><?php the_title(); ?></span></a>
 
@@ -246,6 +229,8 @@
                 $args = [
                     "post_type" => "column", //コラム記事
                     'posts_per_archive_page' => 3, //3件表示
+                    'orderby' => 'rand',
+
                 ];
                 $the_query = new WP_Query($args);
                 if ($the_query->have_posts()): ?>
