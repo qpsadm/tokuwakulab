@@ -163,13 +163,6 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/post-list.css',
         );
     }
-    //お知らせ個別
-    elseif (is_single('news')) {
-        wp_enqueue_style(
-            'my_news_style',
-            get_template_directory_uri() . '/assets/css/post.css',
-        );
-    }
     // 主催団体個別
     elseif (is_singular('organization')) {
         wp_enqueue_style(
@@ -197,8 +190,8 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/column-list.css',
         );
     }
-    // コラム個別
-    elseif (is_singular('column')) {
+    // コラム個別 お知らせ個別
+    elseif (is_singular('column')|| is_singular('post')) {
         wp_enqueue_style(
             'my_column_style',
             get_template_directory_uri() . '/assets/css/column.css',
