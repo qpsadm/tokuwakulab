@@ -3,35 +3,38 @@
 get_header();
 ?>
 
-<!-- WordPress ループの開始 -->
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) : ?>
-        <?php the_post(); ?>
+<main class="pc_space">
+    <!-- WordPress ループの開始 -->
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : ?>
+            <?php the_post(); ?>
 
-        <main>
-            <section class="section">
-                <div class="section_inner">
-                    <div class="section_header">
-                        <h2 class="heading heading-primary">
-                            <?php the_title(); ?>
-                        </h2>
-                    </div>
-
-                    <div class="section_body">
-                        <div class="content">
-
-                            <!-- 固定ページの中身を読み込ンで出力 -->
-                            <?php the_content(); ?>
-
-                        </div>
-                    </div>
-                </div>
+            <!-- ページタイトル -->
+            <section class="page_top">
+                <h2 class="page_title"><?php the_title(); ?></h2>
             </section>
-        </main>
 
-        <!-- WordPress ループの終了 -->
-    <?php endwhile; ?>
-<?php endif; ?>
+            <!-- パンくずリスト -->
+            <div class="breadcrumb">
+                <span><a href="<?php if (!is_home()) : ?>">
+                        <?php get_template_part('template-parts/breadcrumb'); ?>
+                    <?php endif; ?></a>
+                </span>
+            </div>
+
+            <div class="inner">
+
+
+                <!-- 固定ページの中身を読み込ンで出力 -->
+                <?php the_content(); ?>
+
+
+            </div>
+
+            <!-- WordPress ループの終了 -->
+        <?php endwhile; ?>
+    <?php endif; ?>
+</main>
 
 <!-- footer.phpを読み込む -->
 <?php
