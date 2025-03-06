@@ -1,126 +1,70 @@
 <?php get_header(); ?>
 
-<main>
-    <div class="section">
-        <div class="section_inner">
-            <?php if (have_posts()): ?>
-                <?php while (have_posts()): ?>
-                    <?php the_post(); ?>
+<main class="pc_space">
+    <section class="page_top">
+        <h2 class="page_title">お知らせ詳細</h2>
+    </section>
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class("post"); ?>>
-                        <header class="section_header">
-                            <h1 class="heading heading-primary"><?php the_title(); ?></h1>
-                        </header>
-                        <div class="post_content">
-                            <p><time datetime="<?php the_time("Y-m-d"); ?>">更新日：<?php the_time("Y年n月d日(l)"); ?> </time></p>
-                            <div class="content">
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <span><a href="<?php if (!is_home()) : ?>">
+                <?php get_template_part('template-parts/breadcrumb'); ?>
+            <?php endif; ?></a>
+        </span>
+    </div>
 
-                                <?php the_content(); ?>
-                            </div>
-
+    <div class="inner">
+        <section class="post_content_wrap">
+            <?php if (have_posts()): while (have_posts()): the_post(); ?>
+                    <!-- postタイトル -->
+                    <div class="post_ttl_wrap">
+                        <div class="post_date">
+                            <span><?php echo get_the_date('Y'); ?></span>
+                            <span><?php echo get_the_date('m/d(D)'); ?></span>
                         </div>
-                        <div class="post_footer">
-                            <?php $categories = get_the_category();
-                            if ($categories):
-                            ?>
-                                <div class="category">
-                                    <div class="category_list">
-                                        <?php foreach ($categories as $category): ?>
-                                            <div class="category_item"><a href="" class="btn btn-sm is-active"><?php echo $category->name; ?></a></div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
+                        <h2 class="post_ttl"><?php the_title(); ?></h2>
+                    </div>
 
-                            <div class="prevNext">
-                                <?php
-                                $previous_post = get_previous_post();
-                                if ($previous_post): ?>
-                                    <div class="prevNext_item prevNext_item-prev">
-                                        <a href="<?php the_permalink($previous_post); ?>">
-                                            <svg width="20" height="38" viewBox="0 0 20 38">
-                                                <path d="M0,0,19,19,0,38" transform="translate(20 38) rotate(180)" fill="none" stroke="#224163" stroke-width="1" />
-                                            </svg>
-                                            <span><?php echo get_the_title($previous_post); ?>前の記事へ</span>
-                                        </a>
-                                    </div>
-                                <?php endif; ?>
-                                <?php
-                                $next_post = get_next_post();
-                                if ($next_post): ?>
-                                    <div class="prevNext_item prevNext_item-next">
-                                        <a href="<?php the_permalink($next_post); ?>">
-                                            <span><?php echo get_the_title($next_post); ?>次の記事へ</span>
-                                            <svg width="20" height="38" viewBox="0 0 20 38">
-                                                <path d="M1832,1515l19,19L1832,1553" transform="translate(-1832 -1514)" fill="none" stroke="#224163" stroke-width="1" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                <?php endif; ?>
+                    <!-- postカテゴリー表示 -->
+                    <?php $categories = get_the_category(); ?>
+                    <?php if (!empty($categories)): ?>
+                        <div class="post_tag">#<?php echo esc_html($categories[0]->name); ?></div>
+                    <?php endif; ?>
 
-                            </div><a href="<?php echo home_url(""); ?>">一覧へ</a>
+                    <!-- post写真 存在する時のみ表示 -->
+                    <?php if (has_post_thumbnail()): ?>
+                        <div class="post_img_wrap">
+                            <?php the_post_thumbnail('full', ['class' => 'post_img']); ?>
                         </div>
-                    </article>
-                <?php endwhile; ?>
-            <?php endif; ?>
+                    <?php endif; ?>
 
-            <?php
-            //おすすめイベントを表示する
-            $args = [
-                "post_type" => "event", //イベント投稿だけを指定
-                "posts_per_page" => 2, //記事を2件表示
-            ];
-            $latest_query = new WP_Query($args);
-            if ($latest_query->have_posts()):
-            ?>
-                <section class="latest">
-                    <header class="latest_header">
-                        <h2 class="heading-secondary">おすすめイベント</h2>
-                    </header>
-                    <div class="latest_body">
-                        <div class="cardList">
-                            <?php while ($latest_query->have_posts()): ?>
-                                <?php $latest_query->the_post(); ?>
-                                <?php get_template_part("template-parts/loop", "event");
-                                ?>
-                            <?php endwhile; ?>
-                            <?php wp_reset_postdata(); ?>
-
+                    <!-- post本文 -->
+                    <div class="post_item_wrap">
+                        <div class="post_item">
+                            <h3 class="post_item_ttl">ここにコラムの見出し</h3>
+                            <p><?php the_content(); ?></p>
                         </div>
                     </div>
-                </section>
-            <?php endif; ?>
-            <section>
-                <div class="section_inner">
-                    <div class="section_header">
-                        <h2 class="heading heading-primary">関連記事</h2>
+
+                    <!-- 記事送りボタン -->
+                    <div class="flex">
+                        <?php if (get_previous_post()): ?>
+                            <a class="prv_btn" href="<?php echo get_permalink(get_previous_post()); ?>">前の記事へ</a>
+                        <?php endif; ?>
+                        <?php if (get_next_post()): ?>
+                            <a class="nxt_btn" href="<?php echo get_permalink(get_next_post()); ?>">次の記事へ</a>
+                        <?php endif; ?>
                     </div>
-                    <section class="section_body">
-                        <h3 class="heading heading-secondary"></h3>
-                        <ul class="">
-                            <?php
-                            $args = [
-                                "post_type" => "column", //コラム記事
-                                'posts_per_archive_page' => 3, //3件表示
-                            ];
-                            $the_query = new WP_Query($args);
-                            if ($the_query->have_posts()): ?>
-                                <?php while ($the_query->have_posts()): ?>
-                                    <?php $the_query->the_post(); ?>
-                                    <li class="">
-                                        <div class="">
-                                            <h4 class="foodCard_title"><a href="<?php the_permalink(""); ?>">・<?php the_title(); ?></a></h4>
-                                        </div>
-                                    </li>
-                                <?php endwhile; ?>
-                                <?php wp_reset_postdata(); ?>
-                            <?php endif; ?>
-                        </ul>
-                    </section>
-                </div>
-            </section>
-        </div>
+
+                    <!-- もっと見るボタン -->
+                    <a class="btn_wrap" href="<?php echo home_url('/news'); ?>">
+                        お知らせ一覧へ
+                    </a>
+            <?php endwhile;
+            endif; ?>
+        </section>
     </div>
 </main>
+
 
 <?php get_footer(); ?>
