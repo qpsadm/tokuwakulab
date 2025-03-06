@@ -154,7 +154,7 @@
 }
 
 .eventlist_btn_wrap:hover::after {
-    left: 2rem;
+    left: 3.2rem;
     transition: 0.3s;
 }
 
