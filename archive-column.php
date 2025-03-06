@@ -40,7 +40,7 @@ $the_query = new WP_Query($args);
 
             // $is_all_active = (is_post_type_archive('column')) ? 'active' : '';
 
-            echo '<a href="' . $all_link . '"><li class="column_btn active">All</li></a>';
+            echo '<li class="column_btn active"><a href="' . $all_link . '">All</a></li>';
 
             $terms = get_terms(array(
                 'taxonomy' => 'column_type',
@@ -48,7 +48,7 @@ $the_query = new WP_Query($args);
             ));
             if (!empty($terms) && !is_wp_error($terms)) {
                 foreach ($terms as $term) {
-                    echo '<a href="' . esc_url(get_term_link($term)) . '"><li class="column_btn">' . esc_html($term->name) . '</li></a>';
+                    echo '<li class="column_btn"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
                 }
             }
             ?>

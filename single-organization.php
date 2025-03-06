@@ -17,7 +17,7 @@
         <?php if (have_posts()): ?>
             <?php while (have_posts()) : the_post(); ?>
                 <section class="org_top">
-                    <h2 class="org_name">主催団体名</h2>
+                    <h2 class="org_name"><?php the_title(); ?></h2>
                     <!-- キービジュアル -->
                     <div class="top_kv_wrap">
                         <ul class="slider_kv">
@@ -118,7 +118,7 @@
                             <td><?php the_field('remarks'); ?></td>
                         </tr>
 
-                        <!-- <li>
+                        <!-- <li>htmlになかった項目
                             <span>マップ</span>
                             <span>
                                 <?php
@@ -210,15 +210,22 @@
         <section class="column_content_wrap">
             <h3 class="sub_title">過去開催イベント</h3>
             <div class="column_recomend_list">
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにイベントのタイトルが入ります</span></a>
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにイベントのタイトルが入りますここにコラムのタイトルが入ります</span></a>
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにイベントのタイトルが入りますここにコラムのタイトルが入りますここにコラムのタイトルが入ります</span></a>
+                <?php
+                $args = [
+                    "post_type" => "event", //イベント
+                    'posts_per_archive_page' => 3, //3件表示
+                ];
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()): ?>
+                    <?php while ($the_query->have_posts()): ?>
+                        <?php $the_query->the_post(); ?>
+                        <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
+                        <a href="<?php the_permalink(); ?>">
+                            <span><?php the_title(); ?></span></a>
+
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -226,17 +233,25 @@
 
         <!-- 関連コラム記事３件タイトルのみ表示 -->
         <section class="column_content_wrap">
+
             <h3 class="sub_title">関連コラム記事</h3>
             <div class="column_recomend_list">
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにコラムのタイトルが入ります</span></a>
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにコラムのタイトルが入りますここにコラムのタイトルが入ります</span></a>
-                <span>2025/2/18(木)</span>
-                <a href="#">
-                    <span>ここにコラムのタイトルが入りますここにコラムのタイトルが入りますここにコラムのタイトルが入ります</span></a>
+                <?php
+                $args = [
+                    "post_type" => "column", //コラム記事
+                    'posts_per_archive_page' => 3, //3件表示
+                ];
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()): ?>
+                    <?php while ($the_query->have_posts()): ?>
+                        <?php $the_query->the_post(); ?>
+                        <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
+                        <a href="<?php the_permalink(); ?>">
+                            <span><?php the_title(); ?></span></a>
+
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -245,11 +260,6 @@
         </div>
 
         <div class="section_line"></div>
-
-
-
-
-
     </div>
 </main>
 

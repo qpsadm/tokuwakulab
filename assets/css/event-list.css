@@ -8,49 +8,64 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* スマホ用は２カラム */
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    /* 120px以上で自動調整 */
     gap: 1rem;
     place-items: center;
     /* アイテムをグリッド内で中央配置 */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* コンテナ自体を中央寄せ */
 }
 
 .tax_list li {
-    width: 100%;
-    font-size: 2rem;
-    position: relative;
+    width: 90%;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* max-width: 10rem; */
-    max-width: 15rem;
-    /* ボタンの最大幅 */
-    padding: 1rem 2rem;
+}
+
+.tax_list a {
+    width: 100%;
+    max-width: 15rem 5rem;
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    /* アイコンとテキストの間に余白を作る */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
     border: 1px solid #F4CF15;
     border-radius: 3rem;
+
 }
 
-.tax_list li:before {
+.tax_list a:before {
     font-family: FontAwesome;
     content: "★";
     position: absolute;
     left: 0.5rem;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     transition: transform 0.8s ease-in-out;
     /* 回転のアニメーション */
 }
 
-.tax_list li:hover,
-.tex_list li:active,
-.tex_list li:focus {
+.tax_list a:hover
+
+/* ,
+.tax_list li:active,
+.tax_list li:focus
+ */
+    {
     background-color: #FF7B00;
     /* ホバー時に背景色をオレンジに変更 */
     /* :active はクリックしている間、:focus はクリック後も適用 */
@@ -63,16 +78,10 @@
     color: rgb(7, 7, 6);
 }
 
-.tax_list li:hover:before {
+.tax_list a:hover:before {
     transform: rotate(360deg);
     /* アイコンが360度回転 */
 
-}
-
-
-.tax_list li {
-    padding-left: 3.5rem;
-    /* アイコンとテキストの間に余白を作る */
 }
 
 /* h3にclassを付与したら適応 */
@@ -103,47 +112,30 @@
     /* 行間を広げる */
 }
 
-/* 共通カードの配置(commonn.cssで適用したので不要) */
-/* .list_up_result {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr; */
-/*１カラム*/
-/* gap: 1rem; */
-/*各アイテムに均等に余白*/
-/* } */
-
-
-
-/* .list_up_result li {
-    width: max-content;
-    /* または適切な幅 */
-/*margin: 0 auto;
-} */
-
 
 /* TB */
-@media screen and (min-width:768px) and (max-width:1279px) {
+@media screen and (min-width:600px) and (max-width:1279px) {
 
     .tax_list ul {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .tax_list li {
-        max-width: 20rem;
-        font-size: 1.5rem;
+        width: 100%;
     }
 
-    .tax_list li:before {
+    .tax_list a {
+        max-width: 20rem 5rem;
+        padding: 1rem;
+        padding-left: 3.5rem;
+        /* アイコンとテキストの間に余白を作る */
+        font-size: 2rem;
 
+    }
+
+    .tax_list a:before {
         font-size: 2rem;
     }
-
-    /* 共通カード */
-    /* .list_up_result {
-        grid-template-columns: repeat(2, 1fr);
-        /*2カラム
-    } */
 }
 
 
@@ -151,21 +143,23 @@
 @media screen and (min-width:1280px) {
     .tax_list ul {
         grid-template-columns: repeat(4, 1fr);
+
     }
 
     .tax_list li {
-        max-width: 30rem;
-        font-size: 1.5rem;
+        width: 90%;
     }
 
-    .tax_list li:before {
+    .tax_list a {
+        max-width: 30rem 5rem;
+        padding: 1.5rem;
+        padding-left: 4rem;
+        /* アイコンとテキストの間に余白を作る */
+        font-size: 2rem;
+    }
+
+    .tax_list a:before {
         /* left: 2rem; */
         font-size: 2.5rem;
     }
-
-    /* 共通カード */
-    /* .list_up_result {
-        grid-template-columns: repeat(3, 1fr);
-        /*3カラム
-    } */
 }
