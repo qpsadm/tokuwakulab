@@ -29,109 +29,75 @@
                     <div class="column_ttl_wrap">
 
 
-
-
-
-
-
-                        <!-- CSSに足してもらう -->
-                        <div class="column_header">
-                            <style>
-                                .column_header {
-                                    display: flex;
-                                    align-items: center;
-                                    /* 縦の中央揃え */
-                                    gap: 1.6rem;
-                                    /* 要素間の隙間調整 */
-                                }
-
-                                .column_date,
-                                .post_date {
-                                    display: flex;
-                                    flex-direction: column;
-                                    /* 年と日付を縦並びに */
-                                }
-
-                                .column_ttl,
-                                .post_ttl {
-                                    font-size: 3.6rem;
-                                    line-height: 1.2;
-                                    font-weight: 500;
-                                }
-                            </style>
-
-
-
-
-
-
-                            <!-- タイトルの日付ボタン -->
-                            <div class="column_date post_date">
-                                <span>
-                                    <time datetime="<?php the_time('Y-m-d'); ?>">
-                                        <?php the_time('Y'); ?>
-                                    </time>
-                                </span>
-                                <span>
-                                    <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('m/d(D)'); ?></time>
-                                </span>
-                            </div>
-
-                            <!-- 記事のタイトル -->
-                            <h2 class="column_ttl post_ttl">
-                                <?php the_title(); ?>
-                            </h2>
+                        <!-- タイトルの日付ボタン -->
+                        <div class="column_date post_date">
+                            <span>
+                                <time datetime="<?php the_time('Y-m-d'); ?>">
+                                    <?php the_time('Y'); ?>
+                                </time>
+                            </span>
+                            <span>
+                                <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('m/d(D)'); ?></time>
+                            </span>
                         </div>
 
+                        <!-- 記事のタイトル -->
+                        <h2 class="column_ttl post_ttl">
+                            <?php the_title(); ?>
+                        </h2>
+                    </div>
 
 
-                        <!-- コラムタクソノミーハッシュタグ -->
 
-                        <span class="column_tag">
-                            <?php
-                            $terms = get_the_terms(get_the_ID(), 'column_type');
-                            if (!empty($terms) && !is_wp_error($terms)) {
-                                echo '<p class="column-taxonomy">';
-                                foreach ($terms as $term) {
+                    <!-- コラムタクソノミーハッシュタグ -->
 
+                    <span class="column_tag">
+                        <?php
+                        $terms = get_the_terms(get_the_ID(), 'column_type');
+                        if (!empty($terms) && !is_wp_error($terms)) {
+                            echo '<div class="column-taxonomy">';
+                            foreach ($terms as $term) {
 
-                                    //タクソノミー一覧ページに飛ぶリンクを付ける
-                                    echo '<a href="' . esc_url(get_term_link($term)) . '" class="post_tag">#' . esc_html($term->name) . '</a> ';
-                                }
-                                echo '</p>';
+                                //タクソノミー一覧ページに飛ぶリンクを付ける
+                                echo '<a href="' . esc_url(get_term_link($term)) . '" class="post_tag">#' . esc_html($term->name) . '</a> ';
                             }
-                            ?>
-                        </span>
+                            echo '</div>';
+                        }
+                        ?>
+                    </span>
 
-                        <br>
+                    <br>
 
-                        <!-- 記事の投稿内容 -->
-                        <div class="column_item_wrap">
-                            <div class="column_item">
+                    <!-- 記事の投稿内容 -->
+                    <div class="column_item_wrap">
+                        <div class="column_item">
 
-                                <?php the_content(); ?>
+                            <?php the_content(); ?>
 
-                                <br>
+                            <br>
 
 
-                                <!-- フィールドに関連リンクがあれば飛ぶ -->
-                                <?php if (get_field('url')): ?>
+                            <!-- フィールドに関連リンクがあれば飛ぶ -->
+                            <?php if (get_field('url')): ?>
 
-                                    関連リンク：
-                                    <a href="<?php the_field('url'); ?>" target="_blank"><?php the_field('url'); ?></span></a>
+                                <h3><a href="<?php the_field('url'); ?>" target="_blank">【関連リンク】<?php the_field('url'); ?></a>
+                                </h3>
 
-                                <?php endif; ?>
 
-                            </div>
+                            <?php endif; ?>
+
                         </div>
+                    </div>
 
 
-                        <!-- ここいらないかも？ -->
 
-                        <!-- <div class="post_footer"> -->
-                        <!-- <?php $categories = get_the_category();
-                                if ($categories):
-                                ?>
+
+                    <!-- ここいらないかも？ -->
+
+                    <!-- <div class="post_footer"> -->
+                    <!-- <?php $categories = get_the_category();
+                            if ($categories):
+                            ?>
                                 <div class="category">
                                     <div class="category_list">
                                         <?php foreach ($categories as $category): ?>
@@ -142,40 +108,40 @@
                             <?php endif; ?> -->
 
 
-                        <br>
-                        <!-- 記事送りボタン -->
-                        <div class="flex">
-                            <?php
-                            $previous_post = get_previous_post();
-                            if ($previous_post): ?>
-                                <!-- <div class="prevNext_item prevNext_item-prev"> -->
-                                <a class="prv_btn" href="<?php the_permalink($previous_post); ?>">
-                                    <!-- <svg width="20" height="38" viewBox="0 0 20 38">
+                    <br>
+                    <!-- 記事送りボタン -->
+                    <div class="flex">
+                        <?php
+                        $previous_post = get_previous_post();
+                        if ($previous_post): ?>
+                            <!-- <div class="prevNext_item prevNext_item-prev"> -->
+                            <a class="prv_btn" href="<?php the_permalink($previous_post); ?>">
+                                <!-- <svg width="20" height="38" viewBox="0 0 20 38">
                                                 <path d="M0,0,19,19,0,38" transform="translate(20 38) rotate(180)" fill="none" stroke="#224163" stroke-width="1" />
                                             </svg> -->
-                                    <span>前の記事へ</span>
-                                </a>
-                                <!-- </div> -->
-                            <?php endif; ?>
+                                <span>前の記事へ</span>
+                            </a>
+                            <!-- </div> -->
+                        <?php endif; ?>
 
-                            <?php
-                            $next_post = get_next_post();
-                            if ($next_post): ?>
-                                <!-- <div class="prevNext_item prevNext_item-next"> -->
-                                <a class="nxt_btn" href="<?php the_permalink($next_post); ?>">
-                                    <span>次の記事へ</span>
-                                    <!-- <svg width="20" height="38" viewBox="0 0 20 38">
+                        <?php
+                        $next_post = get_next_post();
+                        if ($next_post): ?>
+                            <!-- <div class="prevNext_item prevNext_item-next"> -->
+                            <a class="nxt_btn" href="<?php the_permalink($next_post); ?>">
+                                <span>次の記事へ</span>
+                                <!-- <svg width="20" height="38" viewBox="0 0 20 38">
                                             <path d="M1832,1515l19,19L1832,1553" transform="translate(-1832 -1514)" fill="none" stroke="#224163" stroke-width="1" />
                                         </svg> -->
-                                </a>
-                            <?php endif; ?>
-                        </div>
+                            </a>
+                        <?php endif; ?>
+                    </div>
 
 
-                        <!-- コラム一覧ボタン -->
-                        <a class="btn_wrap" href="<?php echo home_url("column"); ?>">コラム一覧へ</a>
-                    <?php endwhile; ?>
-                <?php endif; ?>
+                    <!-- コラム一覧ボタン -->
+                    <a class="btn_wrap" href="<?php echo home_url("column"); ?>">コラム一覧へ</a>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </section>
 
 
@@ -195,25 +161,19 @@
                 $post_id = get_field('org_id');
 
                 // もしIDが取得できていれば、そのIDを元に投稿を表示
-                if ($post_id) :
-                    $args = [
-                        'post_type' => 'column',  // カスタム投稿タイプ
-                        'p' => $post_id,         // フィールドで入力された投稿IDを指定
-                    ];
+                if ($post_id) {
+                    // IDで投稿を取得
+                    $org = get_post($post_id);
 
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) :
-                        while ($the_query->have_posts()) :
-                            $the_query->the_post();
+                    // print_r($org);
+                    // 取得した投稿をグローバル変数$postに代入
+                    $post = $org;
+
+                    // カード型を呼び出し、表示
+                    get_template_part('template-parts/loop', 'organization');
+                }
                 ?>
-                            <li>
-                                <!-- 特定の投稿IDに対応するカード型を表示 -->
-                                <?php get_template_part('template-parts/loop', 'organization') ?>
-                            </li>
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                <?php endif; ?>
+
 
 
             </div>
@@ -228,32 +188,38 @@
         <!-- おすすめコラム記事 -->
         <section class="column_content_wrap">
             <h3 class="sub_title">おすすめコラム記事</h3>
-            <!-- <div class="column_recomend_list"> -->
+            <div class="column_recomend_list">
 
-            <?php
-            $args = [
-                "post_type" => "column", //コラム記事
-                'posts_per_archive_page' => 3, //3件表示
-            ];
 
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()): ?>
-                <div class="column_recomend_list">
-                    <?php while ($the_query->have_posts()): ?>
-                        <?php $the_query->the_post(); ?>
+                <?php
+                $args = [
+                    "post_type" => "column", //コラム記事
+                    'posts_per_archive_page' => 3, //3件表示
+                ];
 
-                        <a href="<?php the_permalink(); ?>">
-                            <span><time datetime="<?php the_time('Y-m-d'); ?>">
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()): ?>
+                    <div class="column_recomend_list">
+                        <?php while ($the_query->have_posts()): ?>
+                            <?php $the_query->the_post(); ?>
+
+                            <span>
+                                <time datetime="<?php the_time('Y-m-d'); ?>">
                                     <?php the_time('Y/m/d(D)'); ?>
-                                </time></span>
-                            <span><?php the_title(); ?></span>
-                        </a>
+                                </time>
+                            </span>
+                            <a href="<?php the_permalink(); ?>">
+                                <span>
+                                    <?php the_title(); ?>
+                                </span>
+                            </a>
 
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
                 <?php endif; ?>
 
-                </div>
+            </div>
 
         </section>
 
