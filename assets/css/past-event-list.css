@@ -39,12 +39,13 @@
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #fff;
-    background-color: #56C909;
+    background-color: #444444;
+    opacity: 0.8;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     font-size: 1.5rem;
     /* font-weight: bold; */
-    border: 1px solid #F4CF15;
+    border: 1px solid #f6a3cc;
     border-radius: 3rem;
 
 }
@@ -66,10 +67,11 @@
 .tax_list li:focus
  */
     {
-    background-color: #FF7B00;
+    background-color: #5292cc;
     /* ホバー時に背景色をオレンジに変更 */
     /* :active はクリックしている間、:focus はクリック後も適用 */
     color: #fff;
+    opacity: 0.8;
 }
 
 .tax_list li a.active {
@@ -124,7 +126,7 @@
 /* 一覧へ飛ぶボタン */
 .eventlist_btn_wrap {
     width: 30rem;
-    padding: 2rem 6.4rem 2rem 3.2rem;
+    padding: 2rem 3.2rem 2rem 6.4rem;
     background-color: #58BE15;
     border-radius: 5rem;
     color: #fff;
@@ -145,14 +147,14 @@
 }
 
 .eventlist_btn_wrap:after {
-    content: ">";
+    content: "<";
     position: absolute;
-    right: 48px;
+    left: 4rem;
     transition: 0.3s;
 }
 
 .eventlist_btn_wrap:hover::after {
-    right: 40px;
+    left: 2rem;
     transition: 0.3s;
 }
 
