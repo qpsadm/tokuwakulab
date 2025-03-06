@@ -68,7 +68,7 @@
  */
     {
     background-color: #5292cc;
-    /* ホバー時に背景色をオレンジに変更 */
+    /* ホバー時に背景色を青に変更 */
     /* :active はクリックしている間、:focus はクリック後も適用 */
     color: #fff;
     opacity: 0.8;
