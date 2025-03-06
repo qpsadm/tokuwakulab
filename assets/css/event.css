@@ -149,7 +149,7 @@ flex-wrap: wrap;
 }
 }
 
-/* テーブル */
+/* イベント基本情報 */
 .event_table {
     border: 3px solid #58BE15;
     background-color: #fff;
@@ -161,13 +161,22 @@ flex-wrap: wrap;
     width: 100%;
 }
 
+.event_table tr {
+    display: block;
+    margin: 0 3.0rem;
+}
+
+.event_table th {
+    width: 100px;
+}
+
 .event_table th, td {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .event_table th {
-    text-align: center;
+    /* padding-left: 2rem; */
     vertical-align: middle;
     border-bottom: 1px solid #58BE15;
 }
@@ -288,6 +297,27 @@ flex-wrap: wrap;
 }
 
 
+/* 参加者様からの感想 */
+.event_review {
+    background-color: #fff;
+    margin-bottom: 2.4rem;
+    padding: 2rem 1.5rem;
+}
+
+.event_review_name {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: #ababab;
+    border-radius: 30px;
+    padding: 0.3rem;
+    /* margin-bottom: 20px; */
+}
+
+.event_review_comment {
+    margin-top: 1rem;
+}
 
 /* ボタンの囲い */
 .event_entry_wrap {
@@ -301,6 +331,35 @@ flex-wrap: wrap;
 }
 
 
+/* クチコミ投稿フォーム */
+.event_review_form {
+    padding-bottom: 56px;
+}
+
+.event_review_item {
+    background-color: #fff;
+}
+
+.event_review_form span {
+    width: 100%;
+    display: block;
+}
+
+.event_review_form input{
+    margin-bottom: 1rem;
+}
+
+.event_review_form input,textarea {
+    border: 1px solid #111111;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.event_review_form a {
+    text-align: right;
+    text-decoration: underline;
+}
+
 /* クチコミ送信ボタン */
 .event_review_btn {
     display: inline-block;
@@ -312,6 +371,8 @@ flex-wrap: wrap;
     font-family: "ads-akari", sans-serif;
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
+    display: block;
+    margin: 2rem auto;
 }
 
 .event_review_btn:hover {
@@ -321,6 +382,16 @@ flex-wrap: wrap;
 
 
 /* 一覧へ飛ぶボタン */
+.event_btn_wrap {
+    display: flex;
+    justify-content: center; /* 横方向中央 */
+    align-items: center; /* 縦方向中央 */
+    width: 100%;
+    text-align: center;
+    margin-top: 2.4rem; /* 上の余白（必要に応じて調整） */
+}
+
+
 .event_btn {
     width: 260px;
     padding: 2rem 6.4rem 2rem 3.2rem;
@@ -339,19 +410,19 @@ flex-wrap: wrap;
     margin: 2.4rem 0;
 }
 
-.event_btn_wrap:hover{
+.event_btn:hover{
     transition: 0.3s;
     transform: translateY(4px);
 }
 
-.event_btn_wrap:after{
+.event_btn:after{
     content: ">";
     position: absolute;
     right: 48px;
     transition: 0.3s;
 }
 
-.event_btn_wrap:hover::after{
+.event_btn:hover::after{
     right: 40px;
     transition: 0.3s;
 }
