@@ -177,3 +177,8 @@
 .contact_nxt_btn:hover{
     color: #FF7B00;
 }
+
+/* お問い合わせ完了 */
+.contact_done {
+    margin-bottom: 1rem;
+}
