@@ -3,7 +3,6 @@
 .search_title {
     text-align: center;
     font-weight: 600;
-    /* border-bottom: 2px dashed #58BE15; */
 }
 
 /* フォーム全体の設定 */
@@ -19,7 +18,7 @@
 /* アコーディオンタイトルの設定 */
 .search_item_title {
     position: relative;
-    border-bottom: 1px solid #b6b6b6;
+    border-bottom: 2px solid #b6b6b6;
     font-size: 1.6rem;
     font-weight: 500;
     padding: 1.2rem 0;
@@ -57,7 +56,7 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 3px;
     display: inline-block;
     position: relative;
@@ -83,6 +82,8 @@ input[type="checkbox"]:checked::after {
 }
 
 label {
+    display: flex;
+    align-items: center;
     font-size: 1.6rem;
 }
 
@@ -105,17 +106,34 @@ label {
     margin-top: 4rem;
     margin-bottom: 6.4rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .search_prv_btn,.search_nxt_btn{
     display: inline-block;
     color: #fff;
-    padding: 1rem 3.2rem;
+    padding: 1.2rem 3.4rem;
     border-radius: 50px;
     position: relative;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: "ads-akari", sans-serif;
+}
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+.search_prv_btn,.search_nxt_btn {
+    padding: 1.4rem 3.8rem;
+    font-size: 1.4rem;
+    }
+}
+
+/* PC */
+@media screen and (min-width:1280px) {
+    .search_prv_btn,.search_nxt_btn {
+    padding: 1.6rem 4rem;
+    font-size: 1.8rem;
+    }
 }
 
 .search_prv_btn:hover,.search_nxt_btn:hover{
@@ -145,7 +163,7 @@ label {
     position: relative;
     background-color: #fff;
     border: solid 1px #ccc;
-    border-radius: 10px;
+    border-radius: 1rem;
     font-size: 1.4rem;
     padding: 0 6rem 0 0;
     margin-bottom: 2.4rem;
@@ -170,7 +188,7 @@ label {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    padding: 2.2rem;
+    padding: 1.9rem;
     cursor: pointer;
 }
 
@@ -182,7 +200,6 @@ button[type="submit"] {
     width: 0;
     height: 0;
     padding: 0;
-    margin-left: -10px;
 }
 
 /* 結果表示 */
