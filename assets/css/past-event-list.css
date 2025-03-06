@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+
+.tax_list ul {
+    list-style: none;
+    padding: 0 1rem 4.8rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* スマホ用は２カラム */
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    /* 120px以上で自動調整 */
+    gap: 1rem;
+    place-items: center;
+    /* アイテムをグリッド内で中央配置 */
+    /* margin: 0 auto; */
+    /* コンテナ自体を中央寄せ */
+}
+
+.tax_list li {
+    width: 90%;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tax_list a {
+    width: 100%;
+    max-width: 15rem 5rem;
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    /* アイコンとテキストの間に余白を作る */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+    background-color: #444444;
+    opacity: 0.8;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+    border: 1px solid #f6a3cc;
+    border-radius: 3rem;
+
+}
+
+.tax_list a:before {
+    font-family: FontAwesome;
+    content: "★";
+    position: absolute;
+    left: 0.5rem;
+    font-size: 1.2rem;
+    transition: transform 0.8s ease-in-out;
+    /* 回転のアニメーション */
+}
+
+.tax_list a:hover
+
+/* ,
+.tax_list li:active,
+.tax_list li:focus
+ */
+    {
+    background-color: #5292cc;
+    /* ホバー時に背景色をオレンジに変更 */
+    /* :active はクリックしている間、:focus はクリック後も適用 */
+    color: #fff;
+    opacity: 0.8;
+}
+
+.tax_list li a.active {
+    background-color: #F0C040;
+    /* 好きな色に変更 */
+    color: rgb(7, 7, 6);
+}
+
+.tax_list a:hover:before {
+    transform: rotate(360deg);
+    /* アイコンが360度回転 */
+
+}
+
+/* h3にclassを付与したら適応 */
+/* .sub_title {
+    display: block;
+    background-color: #58BE15;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+} */
+
+.exp_result {
+    margin-bottom: 2rem;
+    /* 検索結果の下に余白 */
+}
+
+.exp_result h3 {
+    margin-bottom: 1rem;
+    /* h3 の下に余白を追加 */
+}
+
+.exp_result span {
+    font-size: 1.6rem;
+    /* 文字サイズを大きく */
+    line-height: 1.6;
+    /* 行間を広げる */
+}
+
+.eventlist_more {
+    width: 100%;
+    margin: 4.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* 一覧へ飛ぶボタン */
+.eventlist_btn_wrap {
+    width: 30rem;
+    padding: 2rem 3.2rem 2rem 6.4rem;
+    background-color: #58BE15;
+    border-radius: 5rem;
+    color: #fff;
+    font-size: 2rem;
+    /* あかり */
+    font-family: "ads-akari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    transition: 0.3s;
+    display: inline-block;
+    margin: 2.4rem 0;
+}
+
+.eventlist_btn_wrap:hover {
+    transition: 0.3s;
+    transform: translateY(4px);
+}
+
+.eventlist_btn_wrap:after {
+    content: "<";
+    position: absolute;
+    left: 4rem;
+    transition: 0.3s;
+}
+
+.eventlist_btn_wrap:hover::after {
+    left: 3.2rem;
+    transition: 0.3s;
+}
+
+
+/* TB */
+@media screen and (min-width:600px) and (max-width:1279px) {
+
+    .tax_list ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tax_list li {
+        width: 100%;
+    }
+
+    .tax_list a {
+        max-width: 20rem 5rem;
+        padding: 1rem;
+        padding-left: 3.5rem;
+        /* アイコンとテキストの間に余白を作る */
+        font-size: 2rem;
+
+    }
+
+    .tax_list a:before {
+        font-size: 2rem;
+    }
+}
+
+
+/* PC */
+@media screen and (min-width:1280px) {
+    .tax_list ul {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+    .tax_list li {
+        width: 90%;
+    }
+
+    .tax_list a {
+        max-width: 30rem 5rem;
+        padding: 1.5rem;
+        padding-left: 4.8rem;
+        /* アイコンとテキストの間に余白を作る */
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .tax_list a:before {
+        /* left: 2rem; */
+        font-size: 3rem;
+    }
+}
