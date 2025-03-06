@@ -66,14 +66,14 @@ $(function () {
 });
 
 
-// コンテンツ表示の関数
+// コンテンツをスクロールでふわっと表示
 $(window).scroll(function () {
     // スクロール値を取得
     let scroll = $(window).scrollTop();
     // 画面の高さを取得
     let windowHeight = $(window).height();
 
-    $(".section").each(function () {
+    $("section").each(function () {
         // それぞれのコンテンツまでの高さを取得
         let boxHeight = $(this).offset().top;
         // 条件式に合致する場合はis-activeを付与
