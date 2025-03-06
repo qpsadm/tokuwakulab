@@ -164,7 +164,7 @@ function my_add_scripts()
         );
     }
     //お知らせ個別
-    elseif (is_single()) {
+    elseif (is_single('news')) {
         wp_enqueue_style(
             'my_news_style',
             get_template_directory_uri() . '/assets/css/post.css',
