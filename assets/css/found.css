@@ -90,8 +90,8 @@ label {
 .search_accordion[open] {
     /* パネルの背景色を変更 */
     background-color: #f0f0f0;
-    padding: 1rem; /* パネル内の余白を追加 */
-    /* border: 1px solid #ccc; 境界線を追加 */
+    /* パネル内の余白を追加 */
+    padding: 1.2rem;
 }
 
 /* チェックボックスラベルのスタイルも追加可能 */
@@ -170,7 +170,7 @@ label {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    padding: 2.4rem;
+    padding: 2.2rem;
     cursor: pointer;
 }
 
