@@ -212,3 +212,17 @@ flex-wrap: wrap;
 .sub_title div{
     margin: 0 auto;
 }
+
+/* Google Map */
+.map {
+    position: relative;
+    padding-top: 50%;
+}
+
+.map iframe {
+    position: absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height: 100%;
+}
