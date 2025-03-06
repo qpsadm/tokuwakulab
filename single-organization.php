@@ -9,116 +9,120 @@
     <div class="breadcrumb">
         <span><a href="<?php if (!is_home()) : ?>">
                 <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php endif; ?></a>
+                <?php endif; ?></a>
         </span>
     </div>
 
     <div class="inner">
         <?php if (have_posts()): ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <section class="org_top">
-                    <h2 class="org_name"><?php the_title(); ?></h2>
-                    <!-- キービジュアル -->
-                    <div class="top_kv_wrap">
-                        <ul class="slider_kv">
-                            <li><?php
+        <?php while (have_posts()) : the_post(); ?>
+        <section class="org_top">
+            <h2 class="org_name"><?php the_title(); ?></h2>
+            <!-- キービジュアル -->
+            <div class="top_kv_wrap">
+                <ul class="slider_kv">
+                    <li><?php
                                 $pic = get_field('image01');
                                 $pic_url = $pic['url'];
                                 ?>
-                                <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
-                            </li>
-                            <li><?php
+                        <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
+                    </li>
+                    <li><?php
                                 $pic = get_field('image02');
                                 $pic_url = $pic['url'];
                                 ?>
-                                <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
-                            </li>
-                            <li><?php
+                        <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
+                    </li>
+                    <li><?php
                                 $pic = get_field('image03');
                                 $pic_url = $pic['url'];
                                 ?>
-                                <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
-                            </li>
-                            <li><?php
+                        <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
+                    </li>
+                    <li><?php
                                 $pic = get_field('image04');
                                 $pic_url = $pic['url'];
                                 ?>
-                                <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
-                            </li>
-                        </ul>
-                    </div>
+                        <img src="<?php echo $pic_url; ?>" alt="キービジュアル">
+                    </li>
+                </ul>
+            </div>
 
-                    <!-- 団体紹介文 -->
-                    <div class="org_description">
-                        <p><?php the_field('info'); ?></p>
-                    </div>
-                </section>
+            <!-- 団体紹介文 -->
+            <div class="org_description">
+                <p><?php the_field('info'); ?></p>
+            </div>
+        </section>
 
-                <div class="section_line"></div>
-                <!-- 主催団体の基本情報 -->
-                <section>
-                    <h3 class="sub_title">主催団体の基本情報</h3>
-                    <table class="org_table">
-                        <tr>
-                            <th>団体名</th>
-                            <td><?php the_title(); ?></td>
-                        </tr>
+        <div class="section_line"></div>
+        <!-- 主催団体の基本情報 -->
+        <section>
+            <h3 class="sub_title">主催団体の基本情報</h3>
+            <table class="org_table">
+                <tr>
+                    <th>団体名</th>
+                    <td><?php the_title(); ?></td>
+                </tr>
 
-                        <tr>
-                            <th>代表者名</th>
-                            <td><?php the_field('name'); ?></td>
-                        </tr>
+                <tr>
+                    <th>代表者名</th>
+                    <td><?php the_field('name'); ?></td>
+                </tr>
 
-                        <tr>
-                            <th>郵便番号</th>
-                            <td><?php the_field('postcode'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>所在地</th>
-                            <td><?php the_field('address'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>電話番号</th>
-                            <td><?php the_field('tel'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>営業時間</th>
-                            <td><?php the_field('hour'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>FAX</th>
-                            <td><?php the_field('fax'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス</th>
-                            <td><?php the_field('email'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>URL</th>
-                            <td><?php the_field('url'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Instagram</th>
-                            <td><?php the_field('instagram'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>X</th>
-                            <td><?php the_field('x'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>facebook</th>
-                            <td><?php the_field('facebook'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>LINE</th>
-                            <td><?php the_field('line'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>備考</th>
-                            <td><?php the_field('remarks'); ?></td>
-                        </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td><?php the_field('postcode'); ?></td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td><?php the_field('address'); ?></td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td><?php the_field('tel'); ?></td>
+                </tr>
+                <tr>
+                    <th>営業時間</th>
+                    <td><?php the_field('hour'); ?></td>
+                </tr>
+                <tr>
+                    <th>FAX</th>
+                    <td><?php the_field('fax'); ?></td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td><?php the_field('email'); ?></td>
+                </tr>
+                <tr>
+                    <th>URL</th>
+                    <td><?php the_field('url'); ?></td>
+                </tr>
+                <tr>
+                    <th>Instagram</th>
+                    <td><?php the_field('instagram'); ?></td>
+                </tr>
+                <tr>
+                    <th>X</th>
+                    <td><?php the_field('x'); ?></td>
+                </tr>
+                <tr>
+                    <th>facebook</th>
+                    <td><?php the_field('facebook'); ?></td>
+                </tr>
+                <tr>
+                    <th>LINE</th>
+                    <td><?php the_field('line'); ?></td>
+                </tr>
+                <tr>
+                    <th>Youtube</th>
+                    <td><?php the_field('Youtube'); ?></td>
+                </tr>
+                <tr>
+                    <th>備考</th>
+                    <td><?php the_field('remarks'); ?></td>
+                </tr>
 
-                        <!-- <li>htmlになかった項目
+                <!-- <li>htmlになかった項目
                             <span>マップ</span>
                             <span>
                                 <?php
@@ -134,11 +138,14 @@
                         </li> -->
 
 
-                    </table>
-                </section>
-            <?php endwhile; ?>
+            </table>
+        </section>
+        <?php endwhile; ?>
         <?php endif; ?>
 
+        <div class="section_line"></div>
+        <!-- マップを入れる予定 -->
+        <p>map</p>
         <div class="section_line"></div>
 
         <!-- 開催予定イベント３件表示 -->
@@ -153,7 +160,7 @@
                 $date1 = $dates[0];
             }
             $date2 = '2025-03-31';
-            echo $date1, '-', $date2;
+            //echo $date1, '-', $date2;
             ?>
 
             <?php
@@ -184,18 +191,18 @@
             <ul class="top_event_list">
                 <!-- イベントループの開始 -->
                 <?php if ($the_query->have_posts()) : ?>
-                    <?php while ($the_query->have_posts()) : ?>
-                        <?php $the_query->the_post(); ?>
+                <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
 
-                        <li>
-                            <!-- テンプレートパーツloop-food.phpを読み込む -->
-                            <?php get_template_part('template-parts/loop', 'event') ?>
-                        </li>
+                <li>
+                    <!-- テンプレートパーツloop-food.phpを読み込む -->
+                    <?php get_template_part('template-parts/loop', 'event') ?>
+                </li>
 
-                        <!-- WordPress ループの終了 -->
-                    <?php endwhile; ?>
+                <!-- WordPress ループの終了 -->
+                <?php endwhile; ?>
 
-                    <?php wp_reset_postdata(); ?>
+                <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </ul>
             <div class="btnwrap_wrap">
@@ -203,8 +210,7 @@
             </div>
         </section>
 
-        <div class="section_line">
-        </div>
+        <div class="section_line"></div>
 
         <!-- 過去開催イベントのタイトル表示 -->
         <section class="column_content_wrap">
@@ -217,14 +223,14 @@
                 ];
                 $the_query = new WP_Query($args);
                 if ($the_query->have_posts()): ?>
-                    <?php while ($the_query->have_posts()): ?>
-                        <?php $the_query->the_post(); ?>
-                        <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
-                        <a href="<?php the_permalink(); ?>">
-                            <span><?php the_title(); ?></span></a>
+                <?php while ($the_query->have_posts()): ?>
+                <?php $the_query->the_post(); ?>
+                <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
+                <a href="<?php the_permalink(); ?>">
+                    <span><?php the_title(); ?></span></a>
 
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </div>
         </section>
@@ -243,14 +249,14 @@
                 ];
                 $the_query = new WP_Query($args);
                 if ($the_query->have_posts()): ?>
-                    <?php while ($the_query->have_posts()): ?>
-                        <?php $the_query->the_post(); ?>
-                        <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
-                        <a href="<?php the_permalink(); ?>">
-                            <span><?php the_title(); ?></span></a>
+                <?php while ($the_query->have_posts()): ?>
+                <?php $the_query->the_post(); ?>
+                <span><time datetime="<?php the_time('Y/n/d'); ?>"><?php the_time('Y/n/d/(l)'); ?></time></span>
+                <a href="<?php the_permalink(); ?>">
+                    <span><?php the_title(); ?></span></a>
 
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </div>
         </section>
@@ -260,6 +266,7 @@
         </div>
 
         <div class="section_line"></div>
+
     </div>
 </main>
 
