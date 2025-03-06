@@ -149,8 +149,9 @@ flex-wrap: wrap;
 }
 }
 
-table {
-    border: 3px solid #ffb700;
+/* テーブル */
+.event_table {
+    border: 3px solid #58BE15;
     background-color: #fff;
     margin: 0 auto;
     border-collapse: separate;
@@ -160,28 +161,116 @@ table {
     width: 100%;
 }
 
-th, td {
+.event_table th, td {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-th {
+.event_table th {
     text-align: center;
     vertical-align: middle;
-    border-bottom: 1px solid #ffb700;
+    border-bottom: 1px solid #58BE15;
 }
 
-tr:last-child {
+.event_table tr:last-child {
     border-bottom: none;
 }
 
-
-td {
+.event_table td {
     vertical-align: middle;
-        border-bottom: 1px solid #ffb700;
+        border-bottom: 1px solid #58BE15;
+}
+
+@media screen and (min-width:1280px) {
+    .event_table {
+    max-width: 640px;
+}
+.event_table th,
+.event_table td {
+    padding: 2rem 4rem;
+}
+}
+
+/* イベント基本情報のアイコン */
+.event_table img {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+/* アイコン群の枠 */
+.event_icon_wrap {
+    display: flex;
+    flex-wrap: wrap; /* 折り返し可能にする */
+    justify-content: space-between;
+    padding-top: 2.4rem;
+    padding-bottom: 4.8rem;
+    max-width: 640px;
+    margin: 0 auto;
+    gap: 3.0rem 1rem; /* アイコン間の余白 */
+}
+
+.event_icon_wrap li{
+    width:  calc(33.33% - 1rem); /* 3つ並ぶように調整 */
+    height: 80px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
+/* アイコン */
+.takeout {
+    background-image: url(../img/takeout.jpeg);
+}
+
+.free {
+    background-image: url(../img/free.png);
+}
+
+.parking {
+    background-image: url(../img/parking.jpeg);
+}
+
+.wheelchair {
+    background-image: url(../img/wheelchair.png);
+}
+
+.family {
+    background-image: url(../img/family.png);
+}
+
+.alone {
+    background-image: url(../img/alone.png);
+}
+
+
+/* イベントチラシ */
+.event_pdf {
+    width: 100%;
+    display: flex;
+    gap: 2.0rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.4rem;
+}
+
+.event_pdf span {
+    font-size: 1.4rem;
+}
+
+.event_pdf a {
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    padding: 10px;
+}
 
 
 /* Google Map */
@@ -199,6 +288,8 @@ td {
 }
 
 
+
+/* ボタンの囲い */
 .event_btn_wrap {
 
 }
