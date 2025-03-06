@@ -23,12 +23,10 @@ $all_num = $wp_query->found_posts; //記事の総数を取得
     <?php else: ?>
         <p>検索結果はありませんでした。</p>
     <?php endif; ?>
+
+
 <?php else: ?>
     <!--条件検索のサブクエリ-->
-
-
-
-
 
     <?php
     // ページネーションの設定
@@ -47,7 +45,15 @@ $all_num = $wp_query->found_posts; //記事の総数を取得
         'paged' => $paged,
     ];
 
-    $taxonomies = ['area', 'event_type', 'experience', 'other', 'loc_type', 'age', 'time', 'vacation', 'frequency'];
+    $taxonomies = [
+        'area',
+        'age',
+        'event_type',
+        'experience',
+        'time',
+        'vacation',
+        'other',
+    ];
 
     foreach ($taxonomies as $taxonomy) {
         if (!empty($_GET[$taxonomy])) {
