@@ -22,8 +22,8 @@ $(function () {
         autoplaySpeed: 5000,//自動再生のスピード
         dots: true,// ドットインジケーターの表示
         // 矢印の表示
-        prevArrow: '<button class="slick_prev_kv"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
-        nextArrow: '<button class="slick_next_kv"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
+        prevArrow: slickParams.prevArrow,
+        nextArrow: slickParams.nextArrow,
     });
 })
 
@@ -42,8 +42,8 @@ $(function () {
         pauseOnHover: true,    // ホバーで停止ON/OFF
         swipeToSlide: true, // スワイプ切り替えON/OFF
         // 矢印の表示
-        prevArrow: '<button class="slick_prev_org"><img src="../assets/img/slickarrow_left.png" alt="Previous"></button>',
-        nextArrow: '<button class="slick_next_org"><img src="../assets/img/slickarrow_right.png" alt="Next"></button>',
+        prevArrow: slickParams.prevArrow,
+        nextArrow: slickParams.nextArrow,
         // レスポンシブ設定
         responsive: [
             {
