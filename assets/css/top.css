@@ -140,14 +140,21 @@ main {
 
 /* セクション間の余白 */
 section {
-    margin-bottom: 8rem;
+    margin-bottom: 14rem;
 }
 
 /* ボタンを中央に配置 */
 .top_btn {
     display: block;
-    margin: 4rem auto;
+    margin: 3.2rem auto;
 }
+
+@media screen and (min-width:1280px) {
+    .top_btn {
+        margin: 4.8rem auto;
+    }
+}
+
 
 /* 各タイトルの配置とフォント共通設定 */
 .top_event_ttl,
@@ -173,8 +180,10 @@ section {
     border-radius: 8px;
     margin: 1.6rem;
     padding: 1.6rem;
-    font-size: 2rem;
+    font-size: 3.2rem;
     color: #fff;
+    line-height: 3.2rem;
+    text-align: center;
 }
 
 /* おすすめコラム、お知らせ新着、主催団体様のみカラー変更 */
@@ -197,8 +206,25 @@ section {
 }
 
 
+@media screen and (min-width:1280px) {
+
+    .top_event_ttl h2,
+    .top_column_ttl h2,
+    .top_news_ttl h2,
+    .top_org_ttl h2 {
+        margin: 2.4rem;
+        padding: 2.4rem;
+        font-size: 4rem;
+    }
+}
+
 
 /* 各リスト共通設定 */
+
+.top_event_list,
+.top_column_list {
+    padding: 0;
+}
 
 /* お知らせ新着の設定 */
 .top_news_list {
@@ -294,6 +320,7 @@ section {
         margin: 0 auto;
         /* max-width: 1000PX; */
         grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+        gap: 0;
     }
 
     /* お知らせ新着 */

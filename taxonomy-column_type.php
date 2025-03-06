@@ -44,7 +44,7 @@ $the_query = new WP_Query($args);
             $current_term = get_queried_object(); // 現在のタクソノミー情報を取得
             $is_all_active = (is_post_type_archive('column') || is_home()) ? 'active' : ''; // 「All」のときに active を付与
 
-            echo '<a href="' . $all_link . '"><li class="column_btn ' . $is_all_active . '">All</li></a>';
+            echo '<li class="column_btn ' . $is_all_active . '"><a href="' . $all_link . '">All</a></li>';
 
             $terms = get_terms(array(
                 'taxonomy' => 'column_type',
@@ -53,7 +53,7 @@ $the_query = new WP_Query($args);
             if (!empty($terms) && !is_wp_error($terms)) {
                 foreach ($terms as $term) {
                     $active_class = ($current_term->term_id == $term->term_id) ? 'active' : ''; // 現在のページと一致する場合に active クラスを付与
-                    echo '<a href="' . esc_url(get_term_link($term)) . '"><li class="column_btn ' . $active_class . '">' . esc_html($term->name) . '</li></a>';
+                    echo '<li class="column_btn ' . $active_class . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
                 }
             }
             ?>
