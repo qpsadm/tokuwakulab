@@ -862,13 +862,14 @@ footer {
     display: flex;
     flex-direction: column;
     padding-bottom: 4rem;
+    margin-left: 4rem;
 }
 
 .footer_navitemwrap p {
     font-size: 2.4rem;
     font-weight: 600;
     color: #fff;
-    margin-bottom: 3.2rem;
+    margin-bottom: 4rem;
 }
 
 .footer_navitem a {
@@ -902,7 +903,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_eventlist::before {
@@ -910,7 +911,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_favorite::before {
@@ -918,7 +919,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_orglist::before {
@@ -926,7 +927,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.7rem;
+    left: -1.4rem;
 }
 
 .footer_contact::before {
@@ -934,7 +935,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_postlist::before {
@@ -942,7 +943,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_columnlist::before {
@@ -950,7 +951,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_about::before {
@@ -958,7 +959,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.6rem;
+    left: -1rem;
 }
 
 .footer_service::before {
@@ -966,7 +967,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 .footer_faqlist::before {
@@ -974,7 +975,7 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.3rem;
+    left: -1rem;
 }
 
 .footer_privacylist::before {
@@ -982,13 +983,13 @@ footer {
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     position: absolute;
-    left: -0.4rem;
+    left: -1rem;
 }
 
 @media screen and (min-width:768px) {
     .footer_navflex {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .footer_navitemwrap a {
@@ -997,6 +998,7 @@ footer {
 }
 
 .footer_instawrap {
+    display: none;
     text-align: center;
     margin-bottom: 3.2rem;
 }
