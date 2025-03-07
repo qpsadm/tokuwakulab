@@ -40,10 +40,17 @@
 
                     <div class="event_action">
                         <!-- お気に入りボタン -->
-                        <?php echo get_favorites_button($post_id); ?>
-
+                        <div class="event_bookmark">
+                            <?php
+                            global $wp_query;
+                            $post_id = $wp_query->get_queried_object_id();
+                            echo get_favorites_button($post_id);
+                            ?>
+                        </div>
                         <!-- いいねボタン -->
-                        <?php echo do_shortcode('[wp_ulike]'); ?>
+                        <div class="event_good">
+                            <?php echo do_shortcode('[wp_ulike]'); ?>
+                        </div>
                     </div>
 
 
