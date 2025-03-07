@@ -135,9 +135,6 @@ h1 {
     transform: translateX(0);
 }
 
-/* .menu ul {
-    padding-top: 60px;
-} */
 
 /* ドロワーメニュー中身 */
 .menu li {
@@ -157,7 +154,6 @@ h1 {
     align-items: center;
     justify-content: left;
     width: 300px;
-    /* height: 60px; */
     line-height: 3.6rem;
     padding: 0.6rem 0;
 
@@ -180,7 +176,6 @@ h1 {
 /* ドロワーメニューのロゴの余白 */
 .menu li:nth-of-type(1) {
     padding: 0;
-    /* margin-top: 30px; */
     margin-bottom: 0;
 }
 
