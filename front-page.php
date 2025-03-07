@@ -12,6 +12,9 @@ get_header();
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
             </ul>
         </div>
+
+        <!-- 中間発表用にコメントアウト 3/7 -->
+
         <!-- <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div> -->
 
 
