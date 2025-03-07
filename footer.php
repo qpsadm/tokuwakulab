@@ -1,18 +1,19 @@
     <!-- 豆知識 -->
-    <div class="pc_space">
+    <!-- <div class="pc_space">
         <div class="tips_wrap inner">
             <div class="tips_text">
-                <span> <?php
-                        // functions.php で定義した豆知識のランダム関数を呼び出す
-                        if (function_exists('get_random_message')) {
-                            get_random_message();
-                        }
-                        ?>
-                </span>
-            </div>
-            <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
+                <span>  -->
+    <!-- <?php
+            // functions.php で定義した豆知識のランダム関数を呼び出す
+            if (function_exists('get_random_message')) {
+                get_random_message();
+            }
+            ?> -->
+    <!-- </span>
+            </div> -->
+    <!-- <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <footer>
         <ul>
