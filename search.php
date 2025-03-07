@@ -31,13 +31,13 @@
 
         <!-- フリーワード検索の結果 -->
         <?php if (!empty(get_search_query())): ?>
-            <!-- <?php if ($all_num > 0) : ?>
+            <?php if ($all_num > 0) : ?>
                 <div>
                     <h3>検索結果：<?php echo $all_num ?>件</h3>
                     <span><?php echo $start . ' - ' . $end  ?></span>
                     <span>件を表示</span>
                 </div>
-            <?php endif; ?> -->
+            <?php endif; ?>
             <?php if (have_posts()) : ?>
                 <ul class="top_event_list">
                     <?php while (have_posts()) : the_post(); ?>
@@ -57,8 +57,11 @@
 
             <?php
             // ページネーションの設定
-            // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            // $args['paged'] = $paged;
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+            $posts_per_page = 6; // 1ページあたりの表示件数
+
+            // 今日の日付
+            $today = date('Y-m-d');
 
             // サブクエリ
             $args = [
@@ -68,11 +71,18 @@
                 'tax_query' => ['relation' => 'AND'],
                 'order' => 'DESC', // 昇順
                 'orderby' => 'ID', // 投稿ID順
-                'posts_per_page' => 6, //1ページの表示件数
+                'posts_per_page' => $posts_per_page, //1ページの表示件数
+                'meta_query' => [
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ],
+                ]
             ];
 
-
-
+            // 絞り込み用のタクソノミーリスト
             $taxonomies = [
                 'area',
                 'age',
@@ -92,22 +102,25 @@
                     ];
                 }
             }
-
+            // クエリを実行
             $the_query = new WP_Query($args);
 
+            //記事の総数を取得
+            $all_num = $the_query->found_posts;
 
-            $all_num = $the_query->found_posts; //記事の総数を取得
-
+            // 現在のページで表示している投稿範囲を計算
+            $start = ($paged - 1) * $posts_per_page + 1;
+            $end = min($paged * $posts_per_page, $all_num);
             ?>
 
             <?php if ($the_query->have_posts()): ?>
-                <!-- <?php if ($all_num > 0) : ?>
+                <?php if ($all_num > 0) : ?>
                     <div>
                         <h3>検索結果：<?php echo $all_num ?>件</h3>
                         <span><?php echo $start . ' - ' . $end  ?></span>
                         <span>件を表示</span>
                     </div>
-                <?php endif; ?> -->
+                <?php endif; ?>
                 <ul class="top_event_list">
                     <?php while ($the_query->have_posts()) : ?>
                         <?php $the_query->the_post(); ?>

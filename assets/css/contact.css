@@ -166,12 +166,37 @@
 }
 
 .contact_nxt_btn{
-    background-color: #CCC;
+    background-color: #FF7B00;
     border: 2px solid #FF7B00;
+}
+
+#submit{
+    background-color: #CCC;
 }
 
 .contact_prv_btn:hover{
     color: #58BE15;
+}
+
+#confirm:hover{
+    background-color: #FFF;
+    color: #FF7B00;
+}
+
+/* お問い合わせ確認画面 */
+.contact_confirm{
+    margin: 0.8rem 0 1.6rem;
+    border: 3px solid #58BE15;
+    border-radius: 16px;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    width: 100%;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
 }
 
 /* お問い合わせ完了 */

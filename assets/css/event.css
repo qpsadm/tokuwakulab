@@ -15,20 +15,24 @@
     padding: 0 0 3rem 0;
 }
 
+.orgbtn a {
+    display: inline;
+}
 
 /* いいね・ブックマーク */
 .event_action {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 1rem;
-    max-width: 480px;
+    max-width: 450px;
     margin: 0 auto;
+    gap: 3rem
 }
 
 @media screen and (min-width:1280px) {
-.event_action {
-    max-width: 640px;
-}
+    .event_action {
+        max-width: 640px;
+    }
 }
 
 /* いいね・ブックマークのそれぞれの枠 */
@@ -46,7 +50,8 @@
 }
 
 .event_bookmark {
-    background-image: url(../img/bookmark.jpeg);
+    /* background-image: url(../img/bookmark.jpeg); */
+    font-size: 4.8rem;
 }
 
 
@@ -77,23 +82,25 @@
 
 /* キービジュアル */
 .event_kv_wrap {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* スリックの設定 */
 .slider_kv,
 .slider_kv li {
     max-width: 450px;
-    max-height:338px;
+    max-height: 338px;
 }
+
 @media screen and (min-width:1280px) {
-.slider_kv,
-.slider_kv li {
-    max-width: 640px;
-    max-height:480px;
-}
+
+    .slider_kv,
+    .slider_kv li {
+        max-width: 640px;
+        max-height: 480px;
+    }
 }
 
 .slider_kv img {
@@ -118,7 +125,7 @@ flex-wrap: wrap;
 
 @media screen and (min-width:1280px) {
     .slider_org {
-    max-width: 840px;
+        max-width: 840px;
     }
 }
 
@@ -126,12 +133,13 @@ flex-wrap: wrap;
     box-sizing: border-box;
     margin: 2rem;
 }
+
 /* === slickの設定終わり === */
 
 
 /* イベント説明 */
-.event_description{
-    padding: 0.8rem 0;
+.event_description {
+    padding: 3rem 0;
     max-width: 450px;
     height: auto;
     display: block;
@@ -139,13 +147,13 @@ flex-wrap: wrap;
 }
 
 @media screen and (min-width:1280px) {
-.event_description{
-    padding-top: 4rem;
-    max-width: 640px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    .event_description {
+        padding-top: 4rem;
+        max-width: 640px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* イベント基本情報 */
@@ -165,7 +173,7 @@ flex-wrap: wrap;
     margin: 0 3.0rem;
     padding: 2rem 0;
     border-bottom: 1px solid #58BE15;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 /* 最後の行の tr の border を消す */
@@ -185,8 +193,8 @@ flex-wrap: wrap;
 
 @media screen and (min-width:1280px) {
     .event_table {
-    max-width: 640px;
-}
+        max-width: 640px;
+    }
 }
 
 /* イベント基本情報のアイコン */
@@ -200,7 +208,8 @@ flex-wrap: wrap;
 /* アイコン群の枠 */
 .event_icon_wrap {
     display: flex;
-    flex-wrap: wrap;  /* 3つずつ折り返す */
+    flex-wrap: wrap;
+    /* 3つずつ折り返す */
     justify-content: space-between;
     padding-top: 2.4rem;
     padding-bottom: 4.8rem;
@@ -210,9 +219,9 @@ flex-wrap: wrap;
 }
 
 @media screen and (min-width:1280px) {
-.event_icon_wrap {
-    max-width: 640px;
-}
+    .event_icon_wrap {
+        max-width: 640px;
+    }
 }
 
 .event_icon_item {
@@ -305,8 +314,8 @@ flex-wrap: wrap;
 .map iframe {
     position: absolute;
     left: 0;
-    top:0;
-    width:100%;
+    top: 0;
+    width: 100%;
     height: 100%;
 }
 
@@ -318,6 +327,13 @@ flex-wrap: wrap;
     padding: 2rem 1.5rem;
     margin: 0 auto 2.4rem;
 }
+
+@media screen and (min-width:1280px) {
+    .event_review {
+        max-width: 640px;
+    }
+}
+
 
 .event_review_name {
     display: inline-block;
@@ -341,7 +357,6 @@ flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     text-align: center;
-    margin-top: 2.4rem;
 }
 
 
@@ -350,6 +365,12 @@ flex-wrap: wrap;
     max-width: 450px;
     margin: 0 auto;
     padding-bottom: 1rem;
+}
+
+@media screen and (min-width:1280px) {
+    .event_review_form {
+        max-width: 640px;
+    }
 }
 
 .event_review_item {
@@ -362,11 +383,11 @@ flex-wrap: wrap;
     font-size: 1.6rem;
 }
 
-.event_review_form input{
+.event_review_form input {
     margin-bottom: 1rem;
 }
 
-.event_review_form input,textarea {
+.event_review_form input, textarea {
     border: 1px solid #111111;
     border-radius: 5px;
     width: 100%;
@@ -380,7 +401,6 @@ flex-wrap: wrap;
 
 /* クチコミ送信ボタン */
 .event_review_btn {
-    display: inline-block;
     color: #fff;
     padding: 1rem 3.2rem;
     border-radius: 50px;
@@ -390,7 +410,7 @@ flex-wrap: wrap;
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
     display: block;
-    margin: 2rem auto;
+    margin: 2rem auto 8rem;
 }
 
 .event_review_btn:hover {
@@ -424,25 +444,25 @@ flex-wrap: wrap;
     display: flex;
 }
 
-.event_btn:hover{
+.event_btn:hover {
     transition: 0.3s;
     transform: translateY(4px);
 }
 
-.event_btn:after{
+.event_btn:after {
     content: ">";
     position: absolute;
     right: 48px;
     transition: 0.3s;
 }
 
-.event_btn:hover::after{
+.event_btn:hover::after {
     right: 40px;
     transition: 0.3s;
 }
 
 /* イベント申し込みボタン */
-.event_entry_btn{
+.event_entry_btn {
     width: 260px;
     padding: 2rem 3.2rem;
     background-color: #F4CF15;
@@ -456,8 +476,13 @@ flex-wrap: wrap;
     position: relative;
     transition: 0.3s;
     display: flex;
-    margin-top: 2.4rem;
 }
+
+.event_entry_btn:hover {
+    transition: 0.3s;
+    transform: scale(0.95);
+}
+
 
 .event_entry_wrap p {
     font-size: 1.2rem;

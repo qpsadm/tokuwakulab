@@ -28,7 +28,6 @@ $(function () {
 })
 
 $(function () {
-    // メイン画像のオプション
     $(".slider_org").slick({
         slidesToShow: 1,    // 表示するスライド数
         slidesToScroll: 1,  // スクロールするスライド数
@@ -83,13 +82,12 @@ $(window).scroll(function () {
     });
 });
 
-
 // お問い合わせ画面、チェックボックスを入れるまで送信ボタンを無効化
 
 // チェックボックスが変更されたときのイベントリスナー
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.querySelector('.check-policy');
-    var submitButton = document.querySelector('.contact_nxt_btn');
+    var submitButton = document.querySelector('#submit');
     var hover = document.querySelector('.contact_nxt_btn');
 
     // 初期状態では送信ボタンを無効化

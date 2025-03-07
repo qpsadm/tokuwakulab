@@ -29,13 +29,13 @@
                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
-
+    <!-- fontAwesomeのCDNの読み込み -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <!-- 個別CSSの読み込み -->
     <link rel="stylesheet" href="../assets/css/event-list.css">
-
 
     <!-- jQueryの読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -43,12 +43,13 @@
     <script src="../assets/js/animation.js"></script>
 </head>
 
+
 <body>
     <header>
         <div class="inner">
             <!-- ロゴ -->
             <h1>
-                    <a href="../html/index.html">
+                    <a href="index.html">
                         <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </h1>
@@ -62,17 +63,17 @@
         <nav class="menu pc_none">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.html">
                         <img src="../assets/img/logo.svg" alt="徳島わくわくラボのロゴ">
                     </a>
                 </li>
-                <li class="menu_item"><a href="event-list.html">イベント月別一覧</a></li>
-                <li class="menu_item"><a href="found.html">イベントをさがす</a></li>
-                <li class="menu_item"><a href="post-list.html">お知らせ</a></li>
-                <li class="menu_item"><a href="org-list.html">主催団体一覧</a></li>
-                <li class="menu_item"><a href="column-list.html">コラム</a></li>
-                <li class="menu_item"><a href="favorite-list.html">お気に入り</a></li>
-                <li class="menu_item"><a href="contact.html">
+                <li class="menu_item"><a class="header_eventlist" href="event-list.html">イベント月別一覧</a></li>
+                <li class="menu_item"><a class="header_eventfound" href="found.html">イベントをさがす</a></li>
+                <li class="menu_item"><a class="header_postlist" href="post-list.html">お知らせ</a></li>
+                <li class="menu_item"><a class="header_orglist" href="org-list.html">主催団体一覧</a></li>
+                <li class="menu_item"><a class="header_column" href="column.html">コラム</a></li>
+                <li class="menu_item"><a class="header_favoritelist" href="favorite-list.html">お気に入り</a></li>
+                <li class="menu_item"><a class="header_contact" href="contact.html">
                         主催団体様<br>
                         お問い合わせ
                     </a></li>
@@ -80,13 +81,13 @@
         </nav>
         <nav class="sp_none">
             <ul>
-                <li><a href="event-list.html">イベント月別一覧</a></li>
-                <li><a href="found.html">イベントをさがす</a></li>
-                <li><a href="post-list.html">お知らせ</a></li>
-                <li><a href="org-list.html">主催団体一覧</a></li>
-                <li><a href="column-list.html">コラム</a></li>
-                <li><a href="favorite-list.html">お気に入り</a></li>
-                <li><a href="contact.html">
+                <li><a class="header_eventlist" href="event-list.html">イベント月別一覧</a></li>
+                <li><a class="header_eventfound" href="found.html">イベントをさがす</a></li>
+                <li><a class="header_postlist" href="post-list.html">お知らせ</a></li>
+                <li><a class="header_orglist" href="org-list.html">主催団体一覧</a></li>
+                <li><a class="header_column" href="column.html">コラム</a></li>
+                <li><a class="header_favoritelist" href="favorite-list.html">お気に入り</a></li>
+                <li><a class="header_contact" href="contact.html">
                         主催団体様
                         <br>
                         お問い合わせ
@@ -94,7 +95,6 @@
             </ul>
         </nav>
     </header>
-
 
     <main class="pc_space">
         <!-- クラス入れた -->
@@ -540,32 +540,32 @@
                     <li class="footer_navitemwrap">
                         <p>イベント関連</p>
                         <ul class="footer_navitem">
-                            <li><a href="found.html">イベントをさがす</a></li>
-                            <li><a href="event-list.html">イベント月別一覧</a></li>
-                            <li><a href="favorite-list.html">お気に入り</a></li>
+                            <li><a class="footer_eventfound" href="found.html">イベントをさがす</a></li>
+                            <li><a class="footer_eventlist" href="event-list.html">イベント月別一覧</a></li>
+                            <li><a class="footer_favorite" href="favorite-list.html">お気に入り</a></li>
                         </ul>
                     </li>
                     <li class="footer_navitemwrap">
                         <p>主催団体</p>
                         <ul class="footer_navitem">
-                            <li><a href="org-list.html">主催団体一覧</a></li>
-                            <li><a href="contact.html">主催団体様<br>お問い合わせ</a></li>
+                            <li><a class="footer_orglist" href="org-list.html">主催団体一覧</a></li>
+                            <li><a class="footer_contact" href="contact.html">主催団体様<br>お問い合わせ</a></li>
                         </ul>
                     </li>
                     <li class="footer_navitemwrap">
                         <p>記事</p>
                         <ul class="footer_navitem">
-                            <li><a href="post-list.html">お知らせ</a></li>
-                            <li><a href="column-list.html">コラム</a></li>
+                            <li><a class="footer_postlist" href="post-list.html">お知らせ</a></li>
+                            <li><a class="footer_columnlist" href="column-list.html">コラム</a></li>
                         </ul>
                     </li>
                     <li class="footer_navitemwrap">
                         <p>その他</p>
                         <ul class="footer_navitem">
-                            <li><a href="about.html">当サイトについて</a></li>
-                            <li><a href="service.html">利用規約</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="privacy-policy.html">プライバシーポリシー・<br>免責事項</a></li>
+                            <li><a class="footer_about" href="about.html">当サイトについて</a></li>
+                            <li><a class="footer_service" href="service.html">利用規約</a></li>
+                            <li><a class="footer_faqlist" href="faq.html">よくある質問</a></li>
+                            <li><a class="footer_privacylist" href="privacy-policy.html">プライバシーポリシー・<br>免責事項</a></li>
                         </ul>
                     </li>
                 </ul>
