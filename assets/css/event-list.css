@@ -108,6 +108,13 @@
 .exp_result h3 {
     margin-bottom: 1rem;
     /* h3 の下に余白を追加 */
+    line-height: 3.2rem;
+}
+
+@media screen and (min-width:768px) {
+    .exp_result h3 {
+        line-height: normal;
+    }
 }
 
 .exp_result span {
