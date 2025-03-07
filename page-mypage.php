@@ -15,7 +15,7 @@ if (function_exists('get_user_favorites')) {
             'post__in' => $favorites,
             'meta_key'       => 'date_start', // ソート基準となるカスタムフィールド
             'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
-            'order'          => 'ASC',    // 昇順（古い順）
+            'order'          => '',    // 昇順（古い順）
         ];
         // サブクエリ生成
         $the_query = new WP_Query($args);
@@ -39,7 +39,7 @@ if (function_exists('get_user_favorites')) {
     <div class="breadcrumb">
         <span><a href="<?php if (!is_home()) : ?>">
                 <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php endif; ?></a>
+                <?php endif; ?></a>
         </span>
     </div>
 
@@ -51,55 +51,55 @@ if (function_exists('get_user_favorites')) {
         </div>
 
         <?php if ($favorites): ?>
-            <section>
-                <div class="favorite_result">
-                    <!-- 件数表示 -->
-                    <div>
-                        <span><?php echo $count; ?></span>&nbsp;<span>件</span>
-                    </div>
-
-                    <!-- 表示順切り替え -->
-                    <div>
-                        <span>締め切り順</span>
-                    </div>
+        <section>
+            <div class="favorite_result">
+                <!-- 件数表示 -->
+                <div>
+                    <span>お気に入り表示件数：<?php echo $count; ?></span>&nbsp;<span>件</span>
                 </div>
 
-                <!-- イベントカード型 -->
-                <ul class="top_event_list">
+                <!-- 表示順切り替え -->
+                <!-- <div>
+                    <span>締め切り順</span>
+                </div> -->
+            </div>
 
-                    <?php if ($the_query->have_posts()) : ?>
-                        <?php while ($the_query->have_posts()) :  $the_query->the_post(); ?>
+            <!-- イベントカード型 -->
+            <ul class="top_event_list">
 
-                            <li>
+                <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) :  $the_query->the_post(); ?>
 
-                                <!-- テンプレートパーツloop-event.phpを読み込む -->
-                                <?php get_template_part('template-parts/loop', 'event') ?>
+                <li>
 
-                            </li>
-                        <?php endwhile;
+                    <!-- テンプレートパーツloop-event.phpを読み込む -->
+                    <?php get_template_part('template-parts/loop', 'event') ?>
+
+                </li>
+                <?php endwhile;
                         wp_reset_postdata(); ?>
+                <?php endif; ?>
+
+            </ul>
+            <!-- 改訂ページネーション -->
+            <div class="pagenation">
+
+                <div class="wp-pagenavi">
+                    <?php if (function_exists('wp_pagenavi')): ?>
+
+                    <?php wp_pagenavi(); ?>
+
                     <?php endif; ?>
-
-                </ul>
-                <!-- 改訂ページネーション -->
-                <div class="pagenation">
-
-                    <div class="wp-pagenavi">
-                        <?php if (function_exists('wp_pagenavi')): ?>
-
-                            <?php wp_pagenavi(); ?>
-
-                        <?php endif; ?>
-                    </div>
                 </div>
+            </div>
 
-            </section>
+        </section>
         <?php else: ?>
-            <section>
-                <div class="favorite_result">
-                    <p>ブックマークはありません。</p>
-                </div>
-            </section>
+        <section>
+            <div class="favorite_result">
+                <p>ブックマークはありません。</p>
+            </div>
+        </section>
         <?php endif; ?>
     </div>
 
