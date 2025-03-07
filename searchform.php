@@ -280,7 +280,7 @@
 
                     <div class="search_btn">
                         <!-- リセットボタン -->
-                        <input type="reset" value="クリア" class="search_prv_btn" onclick="resetForm('<?php echo home_url('/?s=1'); ?>')">
+                        <input type="reset" value="クリア" class="search_prv_btn" onclick="resetForm()">
                         <!-- イベントをさがすボタン -->
                         <input type="submit" value="さがす" class="search_nxt_btn">
                     </div>
@@ -306,4 +306,8 @@
         </section>
 
 
-
+        <script>
+            function resetForm() {
+                window.location.href = "<?php echo home_url('/?s='); ?>"; // ホームにリダイレクト（クエリ削除）
+            }
+        </script>

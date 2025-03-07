@@ -10,6 +10,7 @@ html {
     background-image: url(../img/main_bg.png);
     background-size: auto;
     background-repeat: repeat;
+    display: none;
 }
 
 h2 {
@@ -142,20 +143,20 @@ h1 {
 /* ドロワーメニュー中身 */
 .menu li {
     font-size: 2.4rem;
-    width: 220px;
+    width: 260px;
     height: auto;
     padding: 0.8rem 0.8rem;
     margin-bottom: 1.6rem;
-    text-align: center;
     box-sizing: border-box;
     letter-spacing: -0.2rem;
+    padding-left: 1.5rem;
 }
 
 /* ドロワーメニューの装飾 */
 .menu_item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     width: 300px;
     /* height: 60px; */
     line-height: 3.6rem;
@@ -170,6 +171,11 @@ h1 {
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.menu_item a {
+    display: flex;
+    align-items: center;
 }
 
 /* ドロワーメニューのロゴの余白 */
@@ -256,13 +262,14 @@ h1 {
     header li a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         width: 300px;
         line-height: 3.6rem;
         letter-spacing: -0.2rem;
 
         /* ヘッダーボタン内上下余白 */
         padding: 0.6rem 0;
+        padding-left: 1.4rem;
 
         border-radius: 32px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -286,46 +293,53 @@ h1 {
 
 /* herderのフォントオーサム設定 */
 
-.header_eventlist::before{
+.header_eventlist::before {
     content: "\f073";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_eventfound::before{
+.header_eventfound::before {
     content: "\f492";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_postlist::before{
+.header_postlist::before {
     content: "\f0a1";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_orglist::before{
+.header_orglist::before {
     content: "\f544";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_column::before{
+.header_column::before {
     content: "\f31c";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_favoritelist::before{
+.header_favoritelist::before {
     content: "\f02c";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
-.header_contact::before{
+.header_contact::before {
     content: "\f0e0";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 /* サブタイトル */
@@ -462,7 +476,7 @@ h1 {
     font-style: normal;
 }
 
-.card_countdownno{
+.card_countdownno {
     font-size: 2rem;
 }
 
@@ -541,8 +555,8 @@ h1 {
 
 @media screen and (max-width:768px) {
     .cardlist_flex img {
-    width: 264px;
-    height: 198px;
+        width: 264px;
+        height: 198px;
         border-radius: 12px;
         margin-right: 1.6rem;
     }
@@ -850,20 +864,20 @@ footer {
 
 }
 
-.footer_navflex{
+.footer_navflex {
     display: flex;
     flex-direction: column;
     padding-bottom: 4rem;
 }
 
-.footer_navitemwrap p{
+.footer_navitemwrap p {
     font-size: 2.4rem;
     font-weight: 600;
     color: #fff;
     margin-bottom: 3.2rem;
 }
 
-.footer_navitem a{
+.footer_navitem a {
     font-size: 1.6rem;
     line-height: 2.4rem;
     color: #fff;
@@ -876,23 +890,23 @@ footer {
     text-underline-offset: 0.5rem;
 }
 
-.footer_navitem a:hover{
+.footer_navitem a:hover {
     color: #ccc;
 }
 
-.footer_navitemwrap{
+.footer_navitemwrap {
     margin-top: 4rem;
 }
 
 /* footerフォントオーサムの設定 */
-.footer_navitem li{
+.footer_navitem li {
     position: relative;
 }
 
 .footer_eventfound::before {
     content: "\f492";
     font-family: "Font Awesome 6 Free";
-    font-weight:600;
+    font-weight: 600;
     position: absolute;
     left: -0.4rem;
 }
@@ -978,21 +992,22 @@ footer {
 }
 
 @media screen and (min-width:768px) {
-    .footer_navflex{
+    .footer_navflex {
         flex-direction: row;
         justify-content: space-around;
     }
-    .footer_navitemwrap a{
+
+    .footer_navitemwrap a {
         margin: 2.4rem 0;
     }
 }
 
-.footer_instawrap{
+.footer_instawrap {
     text-align: center;
     margin-bottom: 3.2rem;
 }
 
-.footer_instaicon{
+.footer_instaicon {
     font-size: 5.6rem;
     display: inline;
 }
