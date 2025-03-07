@@ -18,15 +18,3 @@
 .error_wrap p:nth-child(1){
     padding-bottom: 0.8rem;
 }
-
-
-
-@media screen and (min-width:768px) {
-    .footer_navflex{
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .footer_navitemwrap a{
-        margin: 2.4rem 0;
-    }
-}
