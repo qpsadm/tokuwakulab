@@ -40,10 +40,17 @@
 
                     <div class="event_action">
                         <!-- お気に入りボタン -->
-                        <?php echo get_favorites_button($post_id); ?>
-
+                        <div class="event_bookmark">
+                            <?php
+                            global $wp_query;
+                            $post_id = $wp_query->get_queried_object_id();
+                            echo get_favorites_button($post_id);
+                            ?>
+                        </div>
                         <!-- いいねボタン -->
-                        <?php echo do_shortcode('[wp_ulike]'); ?>
+                        <div class="event_good">
+                            <?php echo do_shortcode('[wp_ulike]'); ?>
+                        </div>
                     </div>
 
 
@@ -61,40 +68,34 @@
                                 <img src="<?php echo $pic_url; ?>" alt="">
                             </li>
                             <!-- 「image02」「image03」「image04」は写真がある場合のみ表示 -->
-                            <li>
-                                <?php
-                                $pic = get_field('image02');
-                                if (!empty($pic)) {
-                                    //大サイズの画像のURL
-                                    $pic_url = $pic['sizes']['large'];
+                            <?php
+                            $pic = get_field('image02');
+                            if (!empty($pic)) {
+                                //大サイズの画像のURL
+                                $pic_url = $pic['sizes']['large'];
 
-                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                                }
-                                ?>
-                            </li>
+                                echo '<li><img src="' . esc_url($pic_url) . '" alt=""></li>';
+                            }
+                            ?>
 
-                            <li>
-                                <?php
-                                $pic = get_field('image03');
-                                if (!empty($pic)) {
-                                    //大サイズの画像のURL
-                                    $pic_url = $pic['sizes']['large'];
+                            <?php
+                            $pic = get_field('image03');
+                            if (!empty($pic)) {
+                                //大サイズの画像のURL
+                                $pic_url = $pic['sizes']['large'];
 
-                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                                }
-                                ?>
-                            </li>
-                            <li>
-                                <?php
-                                $pic = get_field('image04');
-                                if (!empty($pic)) {
-                                    //大サイズの画像のURL
-                                    $pic_url = $pic['sizes']['large'];
+                                echo '<li><img src="' . esc_url($pic_url) . '" alt=""></li>';
+                            }
+                            ?>
+                            <?php
+                            $pic = get_field('image04');
+                            if (!empty($pic)) {
+                                //大サイズの画像のURL
+                                $pic_url = $pic['sizes']['large'];
 
-                                    echo '<img src="' . esc_url($pic_url) . '" alt="">';
-                                }
-                                ?>
-                            </li>
+                                echo '<li><img src="' . esc_url($pic_url) . '" alt=""></li>';
+                            }
+                            ?>
                         </ul>
                     </div>
 
