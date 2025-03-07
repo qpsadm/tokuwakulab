@@ -47,6 +47,14 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- JavaScriptの読みこみ -->
     <script src="../assets/js/animation.js"></script>
+
+
+
+    <!-- ==============作業用slick JavaScriptの読み込み    ※最後に消す======== -->
+    <script src="../assets/js/mana.js"></script>
+
+
+
 </head>
 
 <body>
@@ -162,19 +170,20 @@
                     </tr>
                     <tr>
                         <th><img src="../assets/img/remarks.png" alt="">その他</th>
-                        <td>ここに詳細が入りますここに詳細が入ります</td>
+                        <td>ここに詳細が入りますここに詳細が入りますここに詳細が入りますここに詳細が入ります</td>
                     </tr>
                 </table>
 
                 <!-- アイコン群 存在するもののみ表示 -->
                 <ul class="event_icon_wrap">
-                    <li class="takeout"></li>
-                    <li class="free"></li>
-                    <li class="parking"></li>
-                    <li class="wheelchair"></li>
-                    <li class="family"></li>
-                    <li class="alone"></li>
+                    <li class="event_icon_item takeout"><span>持ち帰りあり</span></li>
+                    <li class="event_icon_item free"><span>無料</span></li>
+                    <li class="event_icon_item parking"><span>駐車場あり</span></li>
+                    <li class="event_icon_item wheelchair"><span>車椅子での<br class="pc_none">参加OK</span></li>
+                    <li class="event_icon_item family"><span>親子で参加</span></li>
+                    <li class="event_icon_item alone"><span>一人でできる</span></li>
                 </ul>
+
 
                 <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
                 <div class="event_pdf">
@@ -193,39 +202,40 @@
             <!-- 参加者様からの感想 -->
             <section>
                 <h3 class="sub_title">参加者様からの感想</h3>
-                <div>
+                <div class="event_review_wrap">
                     <!-- 感想1つ目 -->
-                    <div>
-                        <p>徳島最高！さん</p>
-                        <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
+                    <div class="event_review">
+                        <p class="event_review_name">徳島最高！さん</p>
+                        <p class="event_review_comment">子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
                     </div>
                     <!-- 感想2つ目 -->
-                    <div>
-                        <p>徳島最高！さん</p>
-                        <p>子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
+                    <div class="event_review">
+                        <p class="event_review_name">徳島最高！さん</p>
+                        <p class="event_review_comment">子どもと一緒に参加しました！私まで勉強になったし、子どももとても喜んでいました。また参加したいです！</p>
                     </div>
                 </div>
 
                 <!-- クチコミ投稿フォーム -->
                 <h3 class="sub_title">クチコミを投稿する</h3>
                 <form action="#" method="">
-                    <table>
-                        <tr>
-                            <th>お名前*</th>
-                            <td><input type="text" name="name" required></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス*</th>
-                            <td><input type="text" name="email" required></td>
-                        </tr>
-                        <tr>
-                            <th>感想*</th>
-                        </tr>
-                        <tr>
-                            <td><textarea name="comment" rows="4" cols="40" required></textarea></td>
-                        </tr>
-                    </table>
-                    <a href="privacy-policy.html">クチコミ投稿についての利用規約</a>
+                    <div class="event_review_form">
+                        <div class="event_review_item">
+                            <span>お名前*</span>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="event_review_item">
+                            <span>メールアドレス*</span>
+                            <input type="text" name="email" required>
+                        </div>
+
+                        <div class="event_review_item">
+                            <span>感想*</span>
+                            <textarea name="comment" rows="4" cols="40" required></textarea>
+                        </div>
+
+                        <a href="privacy-policy.html">クチコミ投稿についての利用規約</a>
+                    </div>
 
                     <!-- 送信ボタン -->
                     <input class="event_review_btn" type="submit" value="クチコミを送信">

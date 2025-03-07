@@ -81,26 +81,30 @@
                 <div class="card_line"></div>
                 <div class="card_linefeed">
                     <span class="card_subtitle">開催日</span>
-                    <div>
-                        <span><?php the_field('date_start'); ?></span>
-                    </div>
+
+                    <span><?php the_field('date_start'); ?></span>
+
                 </div>
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">申込締切</span>
+
+                    <span><?php the_field('closing'); ?></span>
+
+                </div>
+
+
+                <div class="card_linefeed">
+                    <span class="card_subtitle">会場名</span>
                     <div>
-                        <span><?php the_field('closing'); ?></span>
+                        <?php if (get_field('address')): ?>
+                            <span><?php the_field('address') ?></span>
+                        <?php else: ?>
+                            <span>-</span>
+                        <?php endif; ?>
                     </div>
                 </div>
 
-                <?php if (get_field('address')): ?>
-                    <div class="card_linefeed">
-                        <span class="card_subtitle">会場名</span>
-                        <div>
-                            <span><?php the_field('address') ?></span>
-                        </div>
-                    </div>
-                <?php endif; ?>
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">対象学年</span>
@@ -111,7 +115,7 @@
 
 
                 <!-- 開催地域タクソノミーを取得して表示 -->
-                <?php if (!is_search()): ?>
+                <!-- <?php if (!is_search()): ?> -->
                     <!-- サーチ画面では除外 -->
                     <?php
 
@@ -128,11 +132,11 @@
                         }
                     }
                     ?>
-                <?php endif; ?>
+                <!-- <?php endif; ?> -->
 
 
                 <!-- 開催時期タクソノミーを取得して表示 -->
-                <?php if (!is_search()): ?>
+                <!-- <?php if (!is_search()): ?> -->
                     <!-- サーチ画面では除外 -->
                     <?php
                     // area情報を取得
@@ -152,7 +156,7 @@
                         }
                     }
                     ?>
-                <?php endif; ?>
+                <!-- <?php endif; ?> -->
 
 
             </div>

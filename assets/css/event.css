@@ -1,9 +1,6 @@
 @charset "utf-8";
 
-.event_top h2+p {
-    text-align: center;
-}
-
+/* イベントタイトル */
 .event_top h2 {
     font-size: 3.2rem;
     line-height: 3.2rem;
@@ -12,11 +9,9 @@
     padding: 0 0 2rem 0;
 }
 
+/* 主催団体名 */
 .event_top h3 {
-    /* font-size: 3.2rem; */
-    /* line-height: 3.2rem; */
     text-align: center;
-    /* font-weight: 600; */
     padding: 0 0 3rem 0;
 }
 
@@ -26,8 +21,14 @@
     display: flex;
     justify-content: flex-end;
     padding-bottom: 1rem;
-    max-width: 640px;
+    max-width: 480px;
     margin: 0 auto;
+}
+
+@media screen and (min-width:1280px) {
+.event_action {
+    max-width: 640px;
+}
 }
 
 /* いいね・ブックマークのそれぞれの枠 */
@@ -100,7 +101,6 @@ flex-wrap: wrap;
     height: 100%;
     object-fit: cover;
     border-radius: 5rem;
-    /* display: none; */
 }
 
 .slider_org {
@@ -126,7 +126,6 @@ flex-wrap: wrap;
     box-sizing: border-box;
     margin: 2rem;
 }
-
 /* === slickの設定終わり === */
 
 
@@ -149,45 +148,44 @@ flex-wrap: wrap;
 }
 }
 
-/* テーブル */
+/* イベント基本情報 */
 .event_table {
+    max-width: 450px;
     border: 3px solid #58BE15;
     background-color: #fff;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     border-collapse: separate;
     overflow: hidden;
     border-spacing: 0;
     border-radius: 20px;
-    width: 100%;
 }
 
-.event_table th, td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.event_table th {
-    text-align: center;
-    vertical-align: middle;
+.event_table tr {
+    display: block;
+    margin: 0 3.0rem;
+    padding: 2rem 0;
     border-bottom: 1px solid #58BE15;
+    font-size: 1.6rem;
 }
 
+/* 最後の行の tr の border を消す */
 .event_table tr:last-child {
     border-bottom: none;
 }
 
+.event_table th {
+    width: 100px;
+    align-items: center;
+}
+
 .event_table td {
     vertical-align: middle;
-        border-bottom: 1px solid #58BE15;
+    padding-left: 2rem;
 }
 
 @media screen and (min-width:1280px) {
     .event_table {
     max-width: 640px;
-}
-.event_table th,
-.event_table td {
-    padding: 2rem 4rem;
 }
 }
 
@@ -198,51 +196,76 @@ flex-wrap: wrap;
     margin-right: 1rem;
 }
 
+
 /* アイコン群の枠 */
 .event_icon_wrap {
     display: flex;
-    flex-wrap: wrap; /* 折り返し可能にする */
+    flex-wrap: wrap;  /* 3つずつ折り返す */
     justify-content: space-between;
     padding-top: 2.4rem;
     padding-bottom: 4.8rem;
-    max-width: 640px;
+    max-width: 450px;
     margin: 0 auto;
-    gap: 3.0rem 1rem; /* アイコン間の余白 */
+    gap: 3rem 1rem;
 }
 
-.event_icon_wrap li{
-    width:  calc(33.33% - 1rem); /* 3つ並ぶように調整 */
-    height: 80px;
-    display: block;
+@media screen and (min-width:1280px) {
+.event_icon_wrap {
+    max-width: 640px;
+}
+}
+
+.event_icon_item {
+    width: calc(33.33% - 1rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event_icon_item::before {
+    content: "";
+    width: 40px;
+    height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    display: block;
 }
 
 
-/* アイコン */
-.takeout {
+/* アイコン画像を設定 */
+.takeout::before {
     background-image: url(../img/takeout.jpeg);
 }
 
-.free {
+.free::before {
     background-image: url(../img/free.png);
 }
 
-.parking {
+.parking::before {
     background-image: url(../img/parking.jpeg);
 }
 
-.wheelchair {
+.wheelchair::before {
     background-image: url(../img/wheelchair.png);
 }
 
-.family {
+.family::before {
     background-image: url(../img/family.png);
 }
 
-.alone {
+.alone::before {
     background-image: url(../img/alone.png);
+}
+
+.event_icon_item span {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    background-color: #FF7B00;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
 }
 
 
@@ -266,7 +289,7 @@ flex-wrap: wrap;
     color: #fff;
     text-align: center;
     justify-content: center;
-    background-color: #2e2e2e;
+    background-color: #5c5c5c;
     border-radius: 30px;
     font-size: 1.8rem;
     padding: 10px;
@@ -288,6 +311,27 @@ flex-wrap: wrap;
 }
 
 
+/* 参加者様からの感想 */
+.event_review {
+    max-width: 450px;
+    background-color: #fff;
+    padding: 2rem 1.5rem;
+    margin: 0 auto 2.4rem;
+}
+
+.event_review_name {
+    display: inline-block;
+    width: fit-content;
+    height: 100%;
+    text-align: left;
+    background-color: #dbdbdb;
+    border-radius: 30px;
+    padding: 0.3rem 1rem;
+}
+
+.event_review_comment {
+    margin-top: 1rem;
+}
 
 /* ボタンの囲い */
 .event_entry_wrap {
@@ -301,6 +345,39 @@ flex-wrap: wrap;
 }
 
 
+/* クチコミ投稿フォーム */
+.event_review_form {
+    max-width: 450px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.event_review_item {
+    background-color: #fff;
+}
+
+.event_review_form span {
+    width: 100%;
+    display: block;
+    font-size: 1.6rem;
+}
+
+.event_review_form input{
+    margin-bottom: 1rem;
+}
+
+.event_review_form input,textarea {
+    border: 1px solid #111111;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.event_review_form a {
+    width: fit-content;
+    margin-left: auto;
+    text-decoration: underline;
+}
+
 /* クチコミ送信ボタン */
 .event_review_btn {
     display: inline-block;
@@ -312,6 +389,8 @@ flex-wrap: wrap;
     font-family: "ads-akari", sans-serif;
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
+    display: block;
+    margin: 2rem auto;
 }
 
 .event_review_btn:hover {
@@ -321,6 +400,14 @@ flex-wrap: wrap;
 
 
 /* 一覧へ飛ぶボタン */
+.event_btn_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
 .event_btn {
     width: 260px;
     padding: 2rem 6.4rem 2rem 3.2rem;
@@ -328,30 +415,28 @@ flex-wrap: wrap;
     border-radius: 50px;
     color: #fff;
     font-size: 2rem;
-        /* あかり */
+    /* あかり */
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
     transition: 0.3s;
-    /* display: inline-block; */
     display: flex;
-    margin: 2.4rem 0;
 }
 
-.event_btn_wrap:hover{
+.event_btn:hover{
     transition: 0.3s;
     transform: translateY(4px);
 }
 
-.event_btn_wrap:after{
+.event_btn:after{
     content: ">";
     position: absolute;
     right: 48px;
     transition: 0.3s;
 }
 
-.event_btn_wrap:hover::after{
+.event_btn:hover::after{
     right: 40px;
     transition: 0.3s;
 }
@@ -370,9 +455,12 @@ flex-wrap: wrap;
     font-style: normal;
     position: relative;
     transition: 0.3s;
-    /* display: inline-block; */
     display: flex;
     margin-top: 2.4rem;
+}
+
+.event_entry_wrap p {
+    font-size: 1.2rem;
 }
 
 /* 関連コラム記事 */

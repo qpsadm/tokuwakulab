@@ -1,36 +1,21 @@
 <?php get_header(); ?>
 
-<main class="pc_space">
+<main>
+    <div>
 
-    <section class="page_top">
-        <h2 class="page_title">イベントをさがす</h2>
-    </section>
+        <div>
+            <!-- 絞り込み検索フォーム -->
+            <form method="get" action="<?php echo home_url('/'); ?>">
+                <input type="hidden" name="s">
 
-    <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <span><a href="<?php if (!is_home()) : ?>">
-                <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php endif; ?></a>
-        </span>
-    </div>
-
-    <div class="inner">
-
-        <!-- 検索ボックス -->
-        <section>
-            <h3 class="search_title">詳細検索する</h3>
-            <div class="search_wrap">
-
-                <!-- 絞り込み検索フォーム -->
-                <form method="get" action="<?php echo home_url('/'); ?>" class="search_content">
-                    <input type="hidden" name="s">
-
-                    <!-- エリア -->
+                <!-- 地域タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('area');
-                    //タームの設定
-                    $terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('area');   // タクソノミー名を指定
+                    ?>
+
+                    <?php
+                    $terms = get_terms([       //タームの設定
                         'taxonomy' => 'area',
                         'hide_empty' => false,
                         'orderby' => 'slug',
@@ -42,25 +27,26 @@
                     ?>
 
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
-                        <details open class="search_accordion">
-                            <summary class="search_item_title">エリアを選択する</summary>
+                        <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                        <div>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="area[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>
                                     <?php echo esc_html($term->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                        </details>
+                        </div>
                     <?php endif; ?>
+                </div>
 
-
-                    <!-- 年齢-->
+                <!-- 年齢　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('age');
-                    //タームの設定
-                    $terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('age');   // タクソノミー名を指定
+                    ?>
+
+                    <?php
+                    $terms = get_terms([       //タームの設定
                         'taxonomy' => 'age',
                         'hide_empty' => false,
                         'orderby' => 'slug',
@@ -72,25 +58,27 @@
                     ?>
 
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
-                        <details open class="search_accordion">
-                            <summary class="search_item_title">年齢を選択する</summary>
+                        <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                        <div>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="age[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>
                                     <?php echo esc_html($term->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                        </details>
+                        </div>
                     <?php endif; ?>
+                </div>
 
-
-                    <!-- ジャンル -->
+                <!-- ジャンル　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('event_type');
-                    // 親タームの設定
-                    $parent_terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('event_type');   // タクソノミー名を指定
+                    ?>
+
+                    <!-- 時間 親タームの設定 -->
+                    <?php
+                    $parent_terms = get_terms([       //タームの設定
                         'taxonomy' => 'event_type',
                         'hide_empty' => false,
                         'orderby' => 'term_order',
@@ -100,18 +88,17 @@
                     // 受け取ったターム情報を配列にするため。要検討
                     $replace_array_terms = isset($_GET['event_type']) ? (array) $_GET['event_type'] : array();
                     ?>
-                    <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                    <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
 
                     <?php if (!empty($parent_terms) && !is_wp_error($parent_terms)): ?>
-                        <?php foreach ($parent_terms as $parent_term): ?>
-                            <?php if ($parent_term->parent == 0): ?>
-                                <details class="search_accordion">
-                                    <!-- 親タームのタイトル -->
-                                    <summary class="search_item_title"><?php echo esc_html($parent_term->name); ?></summary>
+                        <div>
+                            <?php foreach ($parent_terms as $parent_term): ?>
+                                <?php if ($parent_term->parent == 0): ?>
+                                    <!-- 時間 親タームのタイトル -->
+                                    <h4><?php echo esc_html($parent_term->name); ?></h4>
 
-                                    <!-- 子タームリスト -->
+                                    <!-- 時間 子タームリスト -->
                                     <?php
-                                    // 子タームの設定
                                     $child_terms = get_terms([
                                         'taxonomy' => 'event_type',
                                         'parent' => $parent_term->term_id,
@@ -128,20 +115,21 @@
                                             </label>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
-                                </details>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
+                </div>
 
 
-
-                    <!-- 体験方法 -->
+                <!-- 体験方法　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('experience');
-                    //タームの設定
-                    $terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('experience');   // タクソノミー名を指定
+                    ?>
+
+                    <?php
+                    $terms = get_terms([       //タームの設定
                         'taxonomy' => 'experience',
                         'hide_empty' => false,
                         'orderby' => 'slug',
@@ -153,27 +141,27 @@
                     ?>
 
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
-                        <details open class="search_accordion">
-                            <summary class="search_item_title">体験方法を選択する</summary>
+                        <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                        <div>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="experience[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>
                                     <?php echo esc_html($term->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                        </details>
+                        </div>
                     <?php endif; ?>
+                </div>
 
-
-
-
-                    <!-- 時間帯　タクソノミー -->
+                <!-- 時間帯　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('time');
-                    // 親タームの設定
-                    $parent_terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('time');   // タクソノミー名を指定
+                    ?>
+
+                    <!-- 時間 親タームの設定 -->
+                    <?php
+                    $parent_terms = get_terms([       //タームの設定
                         'taxonomy' => 'time',
                         'hide_empty' => false,
                         'orderby' => 'term_order',
@@ -183,18 +171,17 @@
                     // 受け取ったターム情報を配列にするため。要検討
                     $replace_array_terms = isset($_GET['time']) ? (array) $_GET['time'] : array();
                     ?>
-                    <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                    <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
 
                     <?php if (!empty($parent_terms) && !is_wp_error($parent_terms)): ?>
-                        <?php foreach ($parent_terms as $parent_term): ?>
-                            <?php if ($parent_term->parent == 0): ?>
-                                <details class="search_accordion">
-                                    <!-- 親タームのタイトル -->
-                                    <summary class="search_item_title"><?php echo esc_html($parent_term->name); ?></summary>
+                        <div>
+                            <?php foreach ($parent_terms as $parent_term): ?>
+                                <?php if ($parent_term->parent == 0): ?>
+                                    <!-- 時間 親タームのタイトル -->
+                                    <h4><?php echo esc_html($parent_term->name); ?></h4>
 
-                                    <!-- 子タームリスト -->
+                                    <!-- 時間 子タームリスト -->
                                     <?php
-                                    // 子タームの設定
                                     $child_terms = get_terms([
                                         'taxonomy' => 'time',
                                         'parent' => $parent_term->term_id,
@@ -211,19 +198,20 @@
                                             </label>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
-                                </details>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
+                </div>
 
-
-                    <!-- 開催時期　タクソノミー -->
+                <!-- 開催時期　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('vacation');
-                    //タームの設定
-                    $terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('vacation');   // タクソノミー名を指定
+                    ?>
+
+                    <?php
+                    $terms = get_terms([       //タームの設定
                         'taxonomy' => 'vacation',
                         'hide_empty' => false,
                         'orderby' => 'slug',
@@ -235,25 +223,26 @@
                     ?>
 
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
-                        <details open class="search_accordion">
-                            <summary class="search_item_title">開催時期を選択する</summary>
+                        <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                        <div>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="vacation[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>
                                     <?php echo esc_html($term->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                        </details>
+                        </div>
                     <?php endif; ?>
+                </div>
 
-
-                    <!-- こだわり　タクソノミー -->
+                <!-- こだわり　タクソノミー -->
+                <div>
                     <?php
-                    // タクソノミー名を指定
-                    $taxonomy_obj = get_taxonomy('other');
-                    //タームの設定
-                    $terms = get_terms([
+                    $taxonomy_obj = get_taxonomy('other');   // タクソノミー名を指定
+                    ?>
+
+                    <?php
+                    $terms = get_terms([       //タームの設定
                         'taxonomy' => 'other',
                         'hide_empty' => false,
                         'orderby' => 'slug',
@@ -265,45 +254,49 @@
                     ?>
 
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
-                        <details open class="search_accordion">
-                            <summary class="search_item_title">体験方法を選択する</summary>
+                        <h3><?php echo esc_html($taxonomy_obj->label); ?></h3>
+                        <div>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="other[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>
                                     <?php echo esc_html($term->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                        </details>
+                        </div>
                     <?php endif; ?>
+                </div>
+
+                <div class="btn">
+                    <!-- リセット -->
+                    <label class="reset">
+                        <button type="reset" onclick="resetForm('<?php echo home_url('/?s=1'); ?>')"><span>リセット</span>
+                        </button>
+                    </label>
+                    <!-- 検索 -->
+                    <label class="submit">
+                        <button type="submit" id="searchsubmit">
+                            <span><i class="fa-solid fa-magnifying-glass"></i>検索</span>
+                        </button>
+                    </label>
+                </div>
+            </form>
+        </div>
 
 
-                    <div class="search_btn">
-                        <!-- リセットボタン -->
-                        <input type="reset" value="クリア" class="search_prv_btn" onclick="resetForm('<?php echo home_url('/?s=1'); ?>')">
-                        <!-- イベントをさがすボタン -->
-                        <input type="submit" value="さがす" class="search_nxt_btn">
-                    </div>
-                </form>
-            </div>
-        </section>
-
-
-        <!-- フリーワード -->
-        <section>
-            <h3 class="search_title">フリーワードで検索する</h3>
+        <div>
+            <!-- フリーワード検索 -->
             <!-- function.phpでメインクエリをeventに変更した -->
             <form action="<?php echo home_url('/'); ?>" method="get">
-                <h3 class="sub_title">フリーワード検索</h3>
-                <div class="search_box_wrap">
-                    <div class="search_box_inner">
-                        <input class="search_box_content" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="フリーワードを入れてください">
-                        <button class="search_word_btn" type="submit" aria-label="検索">
+                <div class="box__search">
+                    <div class="inner__search-box">
+                        <input class="window__search" type="search" name="s" value="<?php the_search_query(); ?>" placeholder="キーワードを入力してください">
+                        <button class="btn__search" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
                 </div>
             </form>
-        </section>
+        </div>
 
 
-
+    </div>

@@ -2,7 +2,7 @@
 
 // 開発モードの切り替え
 // 開発モードで公開するときは、trueにしてください。
-define('IS_DEV', false);
+define('IS_DEV', true);
 
 // 管理バーを非表示させたいときに、以下のフィルターフックを有効させてください。
 // add_filter('show_admin_bar', '__return_false');
@@ -184,14 +184,14 @@ function my_add_scripts()
         );
     }
     //コラム一覧(タクソノミーページも)
-    elseif (is_post_type_archive('column')||is_tax('column_type')) {
+    elseif (is_post_type_archive('column') || is_tax('column_type')) {
         wp_enqueue_style(
             'my_column_list_style',
             get_template_directory_uri() . '/assets/css/column-list.css',
         );
     }
     // コラム個別 お知らせ個別
-    elseif (is_singular('column')|| is_singular('post')) {
+    elseif (is_singular('column') || is_singular('post')) {
         wp_enqueue_style(
             'my_column_style',
             get_template_directory_uri() . '/assets/css/column.css',
@@ -588,12 +588,22 @@ function get_upcoming_event_months1($post_type = 'event')
 // スリックの画像をanimation.jsに渡す
 function my_enqueue_scripts()
 {
-    wp_enqueue_script('slick-custom', get_template_directory_uri() . '/assets/js/animation.js', array('jquery'), null, true);
+    wp_enqueue_script(
+        'slick-custom',
+        get_template_directory_uri() . '/assets/js/animation.js',
+        array('jquery'),
+        null,
+        true
+    );
 
     // PHPの値をJavaScriptに渡す
-    wp_localize_script('slick-custom', 'slickParams', array(
-        'prevArrow' => '<button class="slick_prev_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_left.png" alt="Previous"></button>',
-        'nextArrow' => '<button class="slick_next_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_right.png" alt="Next"></button>',
-    ));
+    wp_localize_script(
+        'slick-custom',
+        'slickParams',
+        array(
+            'prevArrow' => '<button class="slick_prev_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_left.png" alt="Previous"></button>',
+            'nextArrow' => '<button class="slick_next_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_right.png" alt="Next"></button>',
+        )
+    );
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
