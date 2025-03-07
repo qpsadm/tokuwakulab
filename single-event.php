@@ -221,8 +221,8 @@
                     </ul>
                     <!-- イベントタイトルのチラシ 存在する時のみ表示 -->
                     <div class="event_pdf">
-                        <span>イベントのチラシ▶</span>
-                        <a target="_blank" href="<?php the_field('flier01'); ?>">&nbsp;ダウンロード&nbsp;</a>
+                        <span>イベントのチラシはこちら▶</span>
+                        <a target="_blank" href="<?php the_field('flier01'); ?>">ダウンロード</a>
                     </div>
 
                 </section>
