@@ -341,7 +341,6 @@ flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     text-align: center;
-    margin-top: 2.4rem;
 }
 
 
@@ -380,7 +379,6 @@ flex-wrap: wrap;
 
 /* クチコミ送信ボタン */
 .event_review_btn {
-    display: inline-block;
     color: #fff;
     padding: 1rem 3.2rem;
     border-radius: 50px;
@@ -390,7 +388,7 @@ flex-wrap: wrap;
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
     display: block;
-    margin: 2rem auto;
+    margin: 2rem auto 8rem;
 }
 
 .event_review_btn:hover {
@@ -456,8 +454,13 @@ flex-wrap: wrap;
     position: relative;
     transition: 0.3s;
     display: flex;
-    /* margin-top: 2.4rem; */
 }
+
+.event_entry_btn:hover{
+    transition: 0.3s;
+    transform: scale(0.95);
+}
+
 
 .event_entry_wrap p {
     font-size: 1.2rem;
