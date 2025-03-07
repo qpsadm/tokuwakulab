@@ -47,7 +47,7 @@ get_header();
                     $date1 = $dates[0];
                 }
                 $date2 = '2025-03-31';
-                echo $date1, '-', $date2;
+                // echo $date1, '-', $date2;
                 ?>
 
                 <?php

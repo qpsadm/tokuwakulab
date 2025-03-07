@@ -9,7 +9,7 @@
     justify-content: center;
     gap: 2rem;
 }
-.column_btn{
+.column_btn a{
     width: auto;
     position: relative;
     display: flex;
@@ -28,7 +28,7 @@
     border-radius: 3rem;
 }
 
-.column_btn:before {
+.column_btn a:before {
     font-family: FontAwesome;
     content: "★";
     position: absolute;
@@ -38,11 +38,11 @@
     transition: transform 0.8s ease-in-out; /* 回転のアニメーション */
 }
 
-.column_btn:hover {
+.column_btn a:hover {
   background-color: #FF7B00; /* ホバー時に背景色をオレンジに変更 */
 }
 
-.column_btn:hover:before {
+.column_btn a:hover:before {
   transform: rotate(360deg); /* アイコンが360度回転 */
 }
 
@@ -56,7 +56,7 @@
     }
 }
 
-.column_btn.active {
+.column_btn a.active {
     background-color: #FF7B00;
     /* 好きな色に変更 */
     color: #fff;
