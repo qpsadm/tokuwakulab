@@ -174,6 +174,22 @@
     color: #58BE15;
 }
 
+/* お問い合わせ確認画面 */
+.contact_confirm{
+    margin: 0.8rem 0 1.6rem;
+    border: 3px solid #58BE15;
+    border-radius: 16px;
+    font-family: "Noto Sans JP", serif;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    width: 100%;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
 /* お問い合わせ完了 */
 .contact_done {
     margin-bottom: 1rem;
