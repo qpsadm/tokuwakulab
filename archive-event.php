@@ -146,10 +146,12 @@ $the_query = new WP_Query($args);
             <?php endif; ?>
         </div>
 
+
+        <!-- 未制作のためコメントアウト3/7 -->
         <!-- 過去一覧へボタン -->
-        <div class="eventlist_more">
+        <!-- <div class="eventlist_more">
             <a class="eventlist_btn_wrap" href="<?php echo home_url("pastevent"); ?>">過去イベント一覧へ</a>
-        </div>
+        </div> -->
 
 </main>
 

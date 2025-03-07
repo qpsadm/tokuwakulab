@@ -154,7 +154,7 @@
 
         <div class="section_line"></div>
 
-        <!-- マップ仮入れ -->
+        <!-- マップ仮入れ3/7 -->
         <section>
             <h3 class="sub_title">会場マップ</h3>
             <div class="map">
@@ -210,13 +210,19 @@
         <section class="column_content_wrap">
             <h3 class="sub_title">過去開催イベント</h3>
             <div class="column_recomend_list">
+                <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
+                <?php $id = get_field('org_id') ?>
+                <a href="<?php echo get_the_permalink($id) ?>">
+                    <?php echo get_the_title($id) ?>
+                </a>
                 <?php
+
                 $args = [
                     "post_type" => "event", //イベント
                     'posts_per_archive_page' => 3, //3件表示
-                    'meta_key'       => 'org_id', // ソート基準となるカスタムフィールド
-                    'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
-                    'order'          => 'ASC',    // 昇順（古い順）
+                    //'meta_key'       => 'org_id', // ソート基準となるカスタムフィールド
+                    //'orderby'        => 'meta_value', // カスタムフィールドの値で並び替え
+                    //'order'          => 'ASC',    // 昇順（古い順）
                 ];
                 $the_query = new WP_Query($args);
 
@@ -244,7 +250,7 @@
                 $args = [
                     "post_type" => "column", //コラム記事
                     'posts_per_archive_page' => 3, //3件表示
-                    'orderby' => 'rand',
+                    'orderby' => 'rand', //ランダム
 
                 ];
                 $the_query = new WP_Query($args);
