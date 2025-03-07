@@ -23,6 +23,7 @@ $args = [
     'paged' => $paged,
     'post_type' => 'event',
     'posts_per_page' => 6,
+
 ];
 
 $meta_query = ['relation' => 'AND'];
