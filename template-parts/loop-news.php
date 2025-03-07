@@ -26,13 +26,7 @@
 <?php //endif;
 ?>
 
-<!-- </div> -->
-<!-- <div class="post_list_item_wrap">
-            <h2 class="card_title"><?php the_title(); ?></h2>
-            <time datetime="<?php the_time('Y-m-d') ?>">更新日：
-                <?php the_time('Y年m月d日(l)') ?>
-            </time>
-        </div> -->
+
 <div class="post_list_item_wrap">
     <span><?php the_time('Y年m月d日(l)') ?></span>
     <a href="<?php the_permalink(); ?>"><span class="post_list_item"><?php the_title(); ?></span></a>
