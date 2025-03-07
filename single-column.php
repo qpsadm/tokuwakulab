@@ -73,8 +73,6 @@
 
                             <?php the_content(); ?>
 
-                            <br>
-
 
                             <!-- フィールドに関連リンクがあれば飛ぶ -->
                             <?php if (get_field('url')): ?>
