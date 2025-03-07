@@ -209,8 +209,6 @@
 .event_icon_wrap {
     display: flex;
     flex-wrap: wrap;
-    /* 3つずつ折り返す */
-    justify-content: space-between;
     padding-top: 2.4rem;
     padding-bottom: 4.8rem;
     max-width: 450px;
@@ -298,7 +296,7 @@
     color: #fff;
     text-align: center;
     justify-content: center;
-    background-color: #5c5c5c;
+    background-color: #b048fb;
     border-radius: 30px;
     font-size: 1.8rem;
     padding: 10px;
@@ -394,7 +392,7 @@
 }
 
 .event_review_form a {
-    display: inline;
+    /* display: inline; */
     width: fit-content;
     margin-left: auto;
     text-decoration: underline;
