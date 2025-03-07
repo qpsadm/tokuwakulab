@@ -142,20 +142,20 @@ h1 {
 /* ドロワーメニュー中身 */
 .menu li {
     font-size: 2.4rem;
-    width: 220px;
+    width: 260px;
     height: auto;
     padding: 0.8rem 0.8rem;
     margin-bottom: 1.6rem;
-    text-align: center;
     box-sizing: border-box;
     letter-spacing: -0.2rem;
+    padding-left: 1.5rem;
 }
 
 /* ドロワーメニューの装飾 */
 .menu_item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     width: 300px;
     /* height: 60px; */
     line-height: 3.6rem;
@@ -170,6 +170,11 @@ h1 {
     font-family: "ads-akari", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.menu_item a{
+    display: flex;
+    align-items: center;
 }
 
 /* ドロワーメニューのロゴの余白 */
@@ -256,13 +261,14 @@ h1 {
     header li a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         width: 300px;
         line-height: 3.6rem;
         letter-spacing: -0.2rem;
 
         /* ヘッダーボタン内上下余白 */
         padding: 0.6rem 0;
+        padding-left: 1.4rem;
 
         border-radius: 32px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -290,42 +296,49 @@ h1 {
     content: "\f073";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_eventfound::before{
     content: "\f492";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_postlist::before{
     content: "\f0a1";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_orglist::before{
     content: "\f544";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_column::before{
     content: "\f31c";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_favoritelist::before{
     content: "\f02c";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .header_contact::before{
     content: "\f0e0";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 /* サブタイトル */
