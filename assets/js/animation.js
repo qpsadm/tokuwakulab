@@ -28,7 +28,6 @@ $(function () {
 })
 
 $(function () {
-    // メイン画像のオプション
     $(".slider_org").slick({
         slidesToShow: 1,    // 表示するスライド数
         slidesToScroll: 1,  // スクロールするスライド数
@@ -83,6 +82,10 @@ $(window).scroll(function () {
     });
 });
 
+// ページ遷移時にふわっと表示
+$(function () {
+    $('html').fadeIn(1500); //1.5秒かけてフェードイン
+});
 
 // お問い合わせ画面、チェックボックスを入れるまで送信ボタンを無効化
 

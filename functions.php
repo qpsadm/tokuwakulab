@@ -286,9 +286,31 @@ function my_pre_get_posts($query)
 
     //search画面         -------投稿タイプをeventに変更済み(3/2 今野)
     //★is_post_type_archiveが必要ないなら消す★
-    if ($query->is_search() || is_post_type_archive('dataset')) {
-        $query->set('post_type', 'event');
-        $query->set('posts_per_page', 6);
+    if ($query->is_search() ) {
+        // 今日の日付を取得
+        $today = date('Y-m-d');
+
+        $meta_query = [
+            [
+                'key'     => 'date_end',
+                'value'   => $today,
+                'compare' => '>=',
+                'type'    => 'DATE', // ACFのDate PickerがYmd形式なら 'NUMERIC'
+            ]
+        ];
+
+        // 既存の `meta_query` がある場合はマージ
+        if ($query->get('meta_query')) {
+            $existing_meta_query = $query->get('meta_query');
+            $meta_query = array_merge($existing_meta_query, $meta_query);
+        }
+
+        // クエリを変更
+        $query->set('meta_query', $meta_query);
+        $query->set('orderby', 'date_end'); // `date_end` で並び替え
+        $query->set('order', 'DESC'); // 過去のものを降順に表示
+        $query->set('post_type', 'event');//イベント投稿に限定
+        $query->set('posts_per_page', 6);//6枚表示
         return;
     }
     if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
