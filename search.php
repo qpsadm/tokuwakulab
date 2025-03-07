@@ -72,14 +72,14 @@
                 'order' => 'DESC', // 昇順
                 'orderby' => 'ID', // 投稿ID順
                 'posts_per_page' => $posts_per_page, //1ページの表示件数
-                // 'meta_query' => [
-                //     [
-                //         'key' => 'date_end',
-                //         'value' => $today,
-                //         'compare' => '>=',
-                //         'type' => 'DATE'
-                //     ],
-                // ]
+                'meta_query' => [
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ],
+                ]
             ];
 
             // 絞り込み用のタクソノミーリスト
