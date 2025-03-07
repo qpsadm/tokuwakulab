@@ -58,26 +58,12 @@ main {
 /* 主催団体のslick矢印設定 */
 /* 左矢印を移動 */
 .slick_prev_org {
-    left: -2rem !important;
+    left: -32px !important;
 }
 
 /* 右矢印を移動 */
 .slick_next_org {
-    right: -2rem !important;
-}
-
-@media screen and (min-width:768px) {
-
-    /* 左矢印を移動 */
-    .slick_prev_org {
-        left: -4rem !important;
-    }
-
-    /* 右矢印を移動 */
-    .slick_next_org {
-        right: -4rem !important;
-    }
-
+    right: -32px !important;
 }
 
 /* デフォルト矢印を非表示 */
@@ -90,14 +76,18 @@ main {
 }
 
 /* ドットのデザイン設定 */
-
-/*ドット同士の間の距離を変える*/
-.slick-dots li {
-    width: 10px !important;
+/* ドットの表示を消す */
+.slick-dots {
+    display: none !important;
 }
 
+/*ドット同士の間の距離を変える*/
+/* .slick-dots li {
+    width: 10px !important;
+} */
+
 /*ドットの色を変える*/
-.slick-dots li button:before {
+/* .slick-dots li button:before {
     font-size: 1rem !important;
     color: #fff !important;
     opacity: 1 !important;
@@ -112,7 +102,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 /* 主催団体のslick幅設定 */
 .slider_org {
@@ -122,7 +112,7 @@ main {
 
 @media screen and (min-width:768px) {
     .slider_org {
-        max-width: 640px;
+        max-width: 700px;
     }
 }
 
@@ -147,6 +137,7 @@ section {
 .top_btn {
     display: block;
     margin: 3.2rem auto;
+    text-align: center;
 }
 
 @media screen and (min-width:1280px) {
@@ -223,6 +214,7 @@ section {
 .top_event_list,
 .top_column_list {
     padding: 0;
+    max-width: 1400px;
 }
 
 /* お知らせ新着の設定 */
@@ -230,6 +222,7 @@ section {
     background-color: #FFFDE7;
     border-radius: 32px;
     padding: 3.2rem 2.4rem;
+    max-width: 1400PX;
 }
 
 .top_news_item_wrap {
@@ -271,7 +264,7 @@ section {
 .top_instagram_bg {
     background: #ffffff;
     border-radius: 26px;
-    /* padding: 4rem; */
+    padding: 4rem;
 }
 
 .top_instagram_acount {
@@ -292,24 +285,6 @@ section {
     padding-left: 1.6rem;
 }
 
-.top_instagram_item {
-    background: gray;
-    width: 100px;
-    height: 100px;
-    border-radius: 32px;
-}
-
-.top_instagram_item:hover {
-    opacity: 0.8;
-}
-
-.top_instagram_item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 32px;
-    object-fit: cover;
-}
-
 
 /* TB and pc*/
 @media screen and (min-width:768px) {
@@ -325,31 +300,9 @@ section {
     /* お知らせ新着 */
     .top_news_list {
         margin: 0 auto;
-        max-width: 800PX;
         padding: 3.2rem 6.4rem;
     }
 
-    /* インスタグラム */
-
-    .top_instagram_list {
-        padding: 8rem;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .top_instagram_acount {
-        margin-left: 6.4rem;
-    }
-
-    /* インスタグラム写真サイズ */
-    .top_instagram_item {
-        width: 150px;
-        height: 150px;
-    }
-
-    .top_instagram_item img {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 /* セクションのアニメーション */

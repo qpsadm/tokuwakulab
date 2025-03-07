@@ -112,8 +112,8 @@
     margin-top: 2.4rem;
 }
 
-.column_item_ttl,
-.post_item_ttl {
+/* コラム記事の見出しの設定 */
+h3 {
     font-size: 2rem;
     font-weight: 500;
     border-left: 20px solid #FFCC00;
