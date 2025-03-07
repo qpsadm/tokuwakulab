@@ -178,6 +178,11 @@
     color: #58BE15;
 }
 
+#confirm:hover{
+    background-color: #FFF;
+    color: #FF7B00;
+}
+
 /* お問い合わせ確認画面 */
 .contact_confirm{
     margin: 0.8rem 0 1.6rem;
