@@ -47,8 +47,8 @@
 }
 
 .event_bookmark {
-    background-image: url(../img/bookmark.jpeg);
-    font-size: 5.2rem;
+    /* background-image: url(../img/bookmark.jpeg); */
+    font-size: 4.8rem;
 }
 
 
@@ -321,6 +321,13 @@ flex-wrap: wrap;
     margin: 0 auto 2.4rem;
 }
 
+@media screen and (min-width:1280px) {
+.event_review {
+    max-width: 640px;
+}
+}
+
+
 .event_review_name {
     display: inline-block;
     width: fit-content;
@@ -351,6 +358,12 @@ flex-wrap: wrap;
     max-width: 450px;
     margin: 0 auto;
     padding-bottom: 1rem;
+}
+
+@media screen and (min-width:1280px) {
+.event_review_form {
+    max-width: 640px;
+}
 }
 
 .event_review_item {
