@@ -31,12 +31,14 @@
                     <!-- イベントタイトル -->
                     <h2><?php the_title(); ?></h2>
                     <!-- 主催団体のページからidを使って主催団体の名前を表示する -->
-                    <h3>
-                        <?php $id = get_field('org_id') ?>
-                        <a href="<?php echo get_the_permalink($id) ?>">
-                            <?php echo get_the_title($id) ?>
-                        </a>
-                    </h3>
+                    <div class="orgbtn">
+                        <h3>
+                            <?php $id = get_field('org_id') ?>
+                            <a href="<?php echo get_the_permalink($id) ?>">
+                                <?php echo get_the_title($id) ?>
+                            </a>
+                        </h3>
+                    </div>
 
                     <div class="event_action">
                         <!-- お気に入りボタン -->
