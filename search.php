@@ -60,6 +60,9 @@
             // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             // $args['paged'] = $paged;
 
+            // 今日の日付
+            $today = date('Y-m-d');
+
             // サブクエリ
             $args = [
                 'paged' => $paged,
@@ -69,6 +72,14 @@
                 'order' => 'DESC', // 昇順
                 'orderby' => 'ID', // 投稿ID順
                 'posts_per_page' => 6, //1ページの表示件数
+                'meta_query' => [
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ],
+                ]
             ];
 
 
