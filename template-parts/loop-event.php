@@ -95,63 +95,64 @@
 
 
                 <div class="card_linefeed">
-                    <span class="card_subtitle">会場名</span>
-                    <div>
-                        <?php if (get_field('address')): ?>
-                            <span><?php the_field('address') ?></span>
-                        <?php else: ?>
-                            <span>-</span>
-                        <?php endif; ?>
-                    </div>
+                    <span class="card_subtitle">対象学年</span>
+                    <!-- <div> -->
+                    <span><?php the_field('age_text') ?></span>
+                    <!-- </div> -->
                 </div>
 
 
                 <div class="card_linefeed">
-                    <span class="card_subtitle">対象学年</span>
-                    <div>
-                        <span><?php the_field('age_text') ?></span>
-                    </div>
+                    <span class="card_subtitle">会場名</span>
+                    <!-- <div> -->
+                    <?php if (get_field('address')): ?>
+                        <span><?php the_field('address') ?></span>
+                    <?php else: ?>
+                        <span>-</span>
+                    <?php endif; ?>
+                    <!-- </div> -->
                 </div>
 
 
-                <!-- 開催地域タクソノミーを取得して表示 -->
-                    <!-- サーチ画面では除外 -->
-                    <?php
 
-                    // area情報を取得
-                    $terms = get_the_terms(get_the_ID(), 'area');
-                    // area情報があるか確認
-                    if (!empty($terms) && !is_wp_error($terms)) {
-                        foreach ($terms as $term) {
-                            echo '<div class="card_tag">';
-                            echo '<p class="event-taxonomy">';
-                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
-                            echo '</p>';
-                            echo '</div>';
-                        }
-                    }
-                    ?>
+                <!-- 開催地域タクソノミーを取得して表示 -->
+                <!-- サーチ画面では除外 -->
+                <?php
+
+                // area情報を取得
+                //$terms = get_the_terms(get_the_ID(), 'area');
+                // area情報があるか確認
+                // if (!empty($terms) && !is_wp_error($terms)) {
+                //     foreach ($terms as $term) {
+                //         echo '<div class="card_tag">';
+                //         echo '<p class="event-taxonomy">';
+                //         echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
+                //         echo '</p>';
+                //         echo '</div>';
+                //     }
+                // }
+                ?>
 
 
                 <!-- 開催時期タクソノミーを取得して表示 -->
-                    <?php
-                    // area情報を取得
-                    $terms = get_the_terms(get_the_ID(), 'vacation');
-                    // area情報があるか確認
-                    // タクソノミーが無ければ非表示
-                    if (!empty($terms) && !is_wp_error($terms)) {
+                <?php
+                // area情報を取得
+                $terms = get_the_terms(get_the_ID(), 'vacation');
+                // area情報があるか確認
+                // タクソノミーが無ければ非表示
+                if (!empty($terms) && !is_wp_error($terms)) {
 
-                        foreach ($terms as $term) {
+                    foreach ($terms as $term) {
 
-                            echo '<div class="card_tag">';
-                            // area情報を表示
-                            echo '<p class="event-taxonomy">';
-                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                            echo '</p>';
-                            echo '</div>';
-                        }
+                        echo '<div class="card_tag">';
+                        // area情報を表示
+                        echo '<p class="event-taxonomy">';
+                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
+                        echo '</p>';
+                        echo '</div>';
                     }
-                    ?>
+                }
+                ?>
 
 
             </div>
