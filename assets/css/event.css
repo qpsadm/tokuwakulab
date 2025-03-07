@@ -131,7 +131,7 @@ flex-wrap: wrap;
 
 /* イベント説明 */
 .event_description{
-    padding: 0.8rem 0;
+    padding: 3rem 0;
     max-width: 450px;
     height: auto;
     display: block;
@@ -456,7 +456,7 @@ flex-wrap: wrap;
     position: relative;
     transition: 0.3s;
     display: flex;
-    margin-top: 2.4rem;
+    /* margin-top: 2.4rem; */
 }
 
 .event_entry_wrap p {
