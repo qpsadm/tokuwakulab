@@ -166,12 +166,21 @@
 }
 
 .contact_nxt_btn{
-    background-color: #CCC;
+    background-color: #FF7B00;
     border: 2px solid #FF7B00;
+}
+
+#submit{
+    background-color: #CCC;
 }
 
 .contact_prv_btn:hover{
     color: #58BE15;
+}
+
+#confirm:hover{
+    background-color: #FFF;
+    color: #FF7B00;
 }
 
 /* お問い合わせ確認画面 */

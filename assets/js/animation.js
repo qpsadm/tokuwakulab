@@ -87,8 +87,8 @@ $(window).scroll(function () {
 // チェックボックスが変更されたときのイベントリスナー
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.querySelector('.check-policy');
-    var submitButton = document.querySelector('.contact_nxt_btn');
-    var hover = document.querySelector('.contact_nxt_btn');
+    var submitButton = document.querySelector('#submit');
+    var hover = document.querySelector('.#submit');
 
     // 初期状態では送信ボタンを無効化
     submitButton.disabled = true;
