@@ -127,7 +127,7 @@
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/date.png" alt="">開催詳細
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/days.png" alt="">開催詳細
                             </th>
                             <td>
                                 <?php if (get_field('days')): ?><span><?php the_field('days') ?></span>
