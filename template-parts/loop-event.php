@@ -70,13 +70,21 @@
                     <?php the_post_thumbnail('medium'); ?>
                 <?php else : ?>
                     <!-- アイキャッチ画像が設定していない場合は、noimage.pngを表示 -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
                 <?php endif; ?>
             </div>
 
 
             <div class="card_text">
-                <h3><?php the_title(); ?></h3>
+                <h3>
+                    <!-- タイトルの表示を29文字に制限 -->
+                    <?php if (mb_strlen($post->post_title) > 29) {
+                        $title = mb_substr($post->post_title, 0, 29);
+                        echo $title . '...';
+                    } else {
+                        echo $post->post_title;
+                    } ?>
+                </h3>
 
                 <div class="card_line"></div>
                 <div class="card_linefeed">

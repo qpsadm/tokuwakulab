@@ -286,7 +286,7 @@ function my_pre_get_posts($query)
 
     //search画面         -------投稿タイプをeventに変更済み(3/2 今野)
     //★is_post_type_archiveが必要ないなら消す★
-    if ($query->is_search() ) {
+    if ($query->is_search()) {
         // 今日の日付を取得
         $today = date('Y-m-d');
 
@@ -307,9 +307,9 @@ function my_pre_get_posts($query)
 
         // クエリを変更
         $query->set('meta_query', $meta_query);
-        $query->set('orderby', 'date_end');//`date_end`で並び替え
+        $query->set('orderby', 'date_end'); //`date_end`で並び替え
         $query->set('order', 'DESC'); // 過去のものを降順に表示
-        $query->set('post_type', 'event');//イベント投稿に限定
+        $query->set('post_type', 'event'); //イベント投稿に限定
         $query->set('posts_per_page', 6); //6枚表示
 
         // **全件数を取得**
@@ -331,7 +331,6 @@ function my_pre_get_posts($query)
         set_query_var('all_num', $all_num);
         set_query_var('start', $start);
         set_query_var('end', $end);
-
     }
     if ($query->is_post_type_archive('column') || $query->is_tax('column_type')) {
         $query->set('post_type', 'column');

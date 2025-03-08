@@ -121,8 +121,18 @@
                             </th>
                             <td>
                                 <?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
-                                <?php if (get_field('days')): ?>
-                                    【<?php the_field('days'); ?>間】
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/date.png" alt="">開催詳細
+                            </th>
+                            <td>
+                                <?php if (get_field('days')): ?><span><?php the_field('days') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -132,18 +142,30 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/map.png" alt="">会場名
                             </th>
                             <td>
-                                <?php the_field('address'); ?></span>
+                                <?php if (get_field('address')): ?>
+                                    <span><?php the_field('address') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
+                                <?php endif; ?>
                                 <?php if (get_field('nearest_station')): ?>
-                                    <span class="food_itemData">
-                                        【最寄り駅：<?php the_field('nearest_station'); ?>】
-                                    </span>
+                                    【最寄り駅：<?php the_field('nearest_station'); ?>】
+
                                 <?php endif; ?>
                             </td>
                         </tr>
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/age.png" alt="">対象年齢
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/venue.png" alt="">会場住所
+                            </th>
+                            <td>
+                                <?php the_field('venue'); ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/age.png" alt="">対象
                             </th>
                             <td>
                                 <?php the_field('age_text'); ?></span>
@@ -160,6 +182,32 @@
                             </th>
                             <td>
                                 <?php the_field('fare'); ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/management.png" alt="">運営管理
+                            </th>
+                            <td>
+                                <?php the_field('management'); ?>
+                                <?php if (get_field('management')): ?><span><?php the_field('management') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/inquiry.png" alt="">問い合わせ
+                            </th>
+                            <td>
+                                <?php the_field('inquiry'); ?>
+                                <?php if (get_field('inquiry')): ?><span><?php the_field('inquiry') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
+                                <?php endif; ?>
                             </td>
                         </tr>
 
@@ -181,12 +229,6 @@
 
                                     <?php if (get_field('bento')): ?>
                                         <span class="food_itemData">お弁当の用意：<?php the_field('bento'); ?></span><br>
-                                    <?php endif; ?>
-
-
-                                    <?php if (get_field('inquiry')): ?>
-                                        <span class="food_itemData">申し込み・お問い合わせ方法：<br>
-                                            <?php the_field('inquiry'); ?></span><br>
                                     <?php endif; ?>
 
 
