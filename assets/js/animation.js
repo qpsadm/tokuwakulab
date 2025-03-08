@@ -15,6 +15,8 @@ $(function () {
     });
 });
 
+
+//以下slickはフロント班のマークアップが終わってから消す。
 // slickの読み込み
 $(function () {
     $(".slider_kv").slick({
