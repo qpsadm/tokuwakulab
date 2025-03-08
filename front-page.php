@@ -135,44 +135,8 @@ get_header();
             </a>
 
         </section>
-        <!-- おすすめコラム記事。2件ランダム表示 3/5非表示 -->
-        <!-- <section class="section section-concept" id="concept">
-            <div class="section_inner">
-                <div class="section_headerWrapper">
 
-                    <h2 class="heading heading-primary">おすすめコラム記事</h2>
-
-                    <div class="section_pic">
-
-                        <ul class="foodList">
-                            <?php
-                            // ランダムに2件のコラムを取得
-                            $random_columns = new WP_Query(array(
-                                'post_type'      => 'column', // カスタム投稿タイプが「column」
-                                'posts_per_page' => 2,       // 2件取得
-                                'orderby'        => 'rand',  // ランダム表示
-                                'post_status' => 'publish'
-                            ));
-
-                            if ($random_columns->have_posts()) :
-                                while ($random_columns->have_posts()) : $random_columns->the_post();
-                            ?>
-                            <li class="foodList_item">
-                                <?php //get_template_part('template-parts/loop', 'column');
-                                ?>
-                            </li>
-                            <?php
-                                endwhile;
-                                wp_reset_postdata(); // クエリのリセット
-                            endif;
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <!-- お知らせ新着。3件表示  -->
-
         <section>
             <!-- 見出し -->
             <div class="top_news_ttl">
@@ -191,8 +155,11 @@ get_header();
                 <!-- WordPress ループの終了 -->
                 <?php endwhile; ?>
                 <?php endif; ?>
-
             </div>
+
+            <a class="btn_wrap  top_btn" href="<?php echo home_url('/news/'); ?>">
+                お知らせ一覧へ
+            </a>
         </section>
 
         <!-- 主催団体の紹介セクション -->
@@ -210,7 +177,7 @@ get_header();
                 // ランダムに2件のコラムを取得
                 $organization = new WP_Query(array(
                     'post_type'      => 'organization', // カスタム投稿タイプが「column」
-                    'posts_per_page' => -1,       // 2件取得
+                    'posts_per_page' => -1,       // 全件表示
                     'orderby'        => 'desc',
                     'post_status' => 'publish'
                 ));
@@ -242,7 +209,6 @@ get_header();
                     <div>
                         <?php echo do_shortcode('[instagram-feed=1]'); ?>
                     </div>
-                    <!-- 後日調べます -->
                 </div>
             </div>
         </section>
