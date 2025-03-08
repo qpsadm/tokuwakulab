@@ -29,6 +29,14 @@
     <!-- ここから検索結果 -->
     <div class="search_result">
 
+
+        <?php
+        // メインクエリの結果を取得
+        $all_num = get_query_var('all_num', 0);
+        $start = get_query_var('start', 0);
+        $end = get_query_var('end', 0);
+        ?>
+
         <!-- フリーワード検索の結果 -->
         <?php if (!empty(get_search_query())): ?>
             <?php if ($all_num > 0) : ?>
@@ -49,6 +57,7 @@
             <?php else: ?>
                 <p>検索結果はありませんでした。</p>
             <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
 
 
         <?php else: ?>
@@ -68,9 +77,9 @@
                 'paged' => $paged,
                 'post_type' => 'event',
                 'post_status' => 'publish', // 公開された投稿のみを表示
-                'tax_query' => ['relation' => 'AND'],
-                'order' => 'DESC', // 昇順
-                'orderby' => 'ID', // 投稿ID順
+                'orderby' => 'meta_value', // 下のフィールドでソート
+                'meta_key' => 'date_end', //フィールドを終了日に設定
+                'order' => 'ASC', // 近い日付順
                 'posts_per_page' => $posts_per_page, //1ページの表示件数
                 'meta_query' => [
                     [
@@ -105,7 +114,7 @@
             // クエリを実行
             $the_query = new WP_Query($args);
 
-            //記事の総数を取得
+            // 記事の総数を取得
             $all_num = $the_query->found_posts;
 
             // 現在のページで表示している投稿範囲を計算
