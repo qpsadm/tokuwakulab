@@ -15,10 +15,6 @@
     padding: 0 0 3rem 0;
 }
 
-.orgbtn a {
-    display: inline;
-}
-
 /* いいね・ブックマーク */
 .event_action {
     display: flex;
