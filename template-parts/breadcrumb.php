@@ -2,4 +2,4 @@
   <div class="inner">
     <?php bcn_display(); ?>
   </div>
-    <?php endif; ?>
+<?php endif; ?>
