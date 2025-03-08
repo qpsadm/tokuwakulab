@@ -218,27 +218,27 @@
                                 </th>
                                 <td>
                                     <?php if (get_field('toilet')): ?>
-                                        <span class="food_itemData">トイレ：<?php the_field('toilet'); ?></span><br>
+                                        <span>トイレ▶&nbsp;<?php the_field('toilet'); ?></span><br>
                                     <?php endif; ?>
 
 
                                     <?php if (get_field('rental')): ?>
-                                        <span class="food_itemData">車椅子貸出：<?php the_field('rental'); ?></span><br>
+                                        <span>車椅子貸出▶&nbsp;<?php the_field('rental'); ?></span><br>
                                     <?php endif; ?>
 
 
                                     <?php if (get_field('clothes')): ?>
-                                        <span class="food_itemData">着替え：<?php the_field('clothes'); ?></span><br>
+                                        <span>着替え▶&nbsp;<?php the_field('clothes'); ?></span><br>
                                     <?php endif; ?>
 
 
                                     <?php if (get_field('bento')): ?>
-                                        <span class="food_itemData">お弁当の用意：<?php the_field('bento'); ?></span><br>
+                                        <span>お弁当の用意▶&nbsp;<?php the_field('bento'); ?></span><br>
                                     <?php endif; ?>
 
 
                                     <?php if (get_field('remarks')): ?>
-                                        <span class="food_itemData">備考：<?php the_field('remarks'); ?></span>
+                                        <span>備考▶&nbsp;<?php the_field('remarks'); ?></span>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -284,14 +284,14 @@
 
                 <!-- 参加者様からの感想 -->
                 <section>
-                    <h3 class="sub_title">参加者様からの感想</h3>
+                    <!-- <h3 class="sub_title">参加者様からの感想</h3> -->
 
                     <!-- クチコミ投稿フォーム -->
-                    <h3 class="sub_title">クチコミを投稿する</h3>
+                    <!-- <h3 class="sub_title">クチコミを投稿する</h3> -->
 
                     <?php comments_template(); ?>
 
-                    <a href="privacy-policy.html">クチコミ投稿についての利用規約</a>
+
 
                 </section>
 
