@@ -84,8 +84,31 @@ function my_add_scripts()
 
     //  animation.jsの読み込み
     wp_enqueue_script(
-        'my_animation_js',
+        'my_animation',
         get_template_directory_uri() . '/assets/js/animation.js',
+        array('jquery'),
+        null,
+        true
+    );
+
+    //  カスタムしたslick.jsの読み込み
+    wp_enqueue_script(
+        'my_slick',
+        get_template_directory_uri() . '/assets/js/slick.js',
+        array('jquery'),
+        null,
+        true
+    );
+
+    //slickの読み込み
+    // slickCSSの読み込み
+    wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+    wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+    // slickJSの読み込み
+    wp_enqueue_script(
+        'slick-js',
+        'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
         array('jquery'),
         null,
         true
@@ -111,18 +134,18 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/top.css'
         );
 
-        // slickCSSの読み込み
-        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
-        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+        // // slickCSSの読み込み
+        // wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        // wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
-        // slickJSの読み込み
-        wp_enqueue_script(
-            'slick-js',
-            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-            array('jquery'),
-            null,
-            true
-        );
+        // // slickJSの読み込み
+        // wp_enqueue_script(
+        //     'slick-js',
+        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+        //     array('jquery'),
+        //     null,
+        //     true
+        // );
     }
     //イベント一覧or主催団体一覧(タクソノミーも)
     elseif (is_post_type_archive('event') || is_post_type_archive('organization') || is_tax('org_tax')) {
@@ -138,18 +161,18 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/event.css',
         );
 
-        // slickCSSの読み込み
-        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
-        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+        // // slickCSSの読み込み
+        // wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        // wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
-        // slickJSの読み込み
-        wp_enqueue_script(
-            'slick-js',
-            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-            array('jquery'),
-            null,
-            true
-        );
+        // // slickJSの読み込み
+        // wp_enqueue_script(
+        //     'slick-js',
+        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+        //     array('jquery'),
+        //     null,
+        //     true
+        // );
     }
     // イベントを探す
     elseif (is_search()) {
@@ -170,18 +193,18 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/org.css',
         );
 
-        // slickCSSの読み込み
-        wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
-        wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+        // // slickCSSの読み込み
+        // wp_enqueue_style('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+        // wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
-        // slickJSの読み込み
-        wp_enqueue_script(
-            'slick-js',
-            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-            array('jquery'),
-            null,
-            true
-        );
+        // // slickJSの読み込み
+        // wp_enqueue_script(
+        //     'slick-js',
+        //     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+        //     array('jquery'),
+        //     null,
+        //     true
+        // );
     }
     //コラム一覧(タクソノミーページも)
     elseif (is_post_type_archive('column') || is_tax('column_type')) {
@@ -627,12 +650,12 @@ function get_upcoming_event_months1($post_type = 'event')
 
 
 
-// スリックの画像をanimation.jsに渡す
+// スリックの画像をslick.jsに渡す
 function my_enqueue_scripts()
 {
     wp_enqueue_script(
         'slick-custom',
-        get_template_directory_uri() . '/assets/js/animation.js',
+        get_template_directory_uri() . '/assets/js/slick.js',
         array('jquery'),
         null,
         true
