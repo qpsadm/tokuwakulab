@@ -70,7 +70,29 @@ $the_query = new WP_Query($args);
                 // 取得した日付をボタン（リンク）として表示
                 foreach ($dates as $date) {
                     $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
-                    echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '</a></li>';
+
+                    // 月初と月末の日付を取得
+                    $month_start = date('Y-m-01', strtotime($date));
+                    $month_end = date('Y-m-t', strtotime($date));
+
+                    // 特定の月の記事数をカウント
+                    $post_count = new WP_Query([
+                        'post_type' => 'event',
+                        'posts_per_page' => -1,
+                        'meta_query' => [
+                            [
+                                'key' => 'date_start',
+                                'type' => 'DATE',
+                                'compare' => 'BETWEEN',
+                                'value' => [$month_start, $month_end],
+                            ]
+                        ],
+                    ]);
+
+                    // 記事数をリンクに追加して表示
+                    echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '&nbsp;(' . $post_count->found_posts . ')</a></li>';
+
+                    wp_reset_postdata();  // クエリをリセット
                 }
                 ?>
             </ul>
@@ -85,7 +107,7 @@ $the_query = new WP_Query($args);
             ?>
             <h3>
 
-                <?php echo $one_week_later; ?>イベント&nbsp;&nbsp;<?php echo $the_query->found_posts; ?>件
+                <?php echo $one_week_later; ?>のイベント&nbsp;<?php echo $the_query->found_posts; ?>件
             </h3>
 
 

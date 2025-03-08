@@ -222,6 +222,11 @@
                                     <?php endif; ?>
 
 
+                                    <?php if (get_field('rental')): ?>
+                                        <span class="food_itemData">車椅子貸出：<?php the_field('rental'); ?></span><br>
+                                    <?php endif; ?>
+
+
                                     <?php if (get_field('clothes')): ?>
                                         <span class="food_itemData">着替え：<?php the_field('clothes'); ?></span><br>
                                     <?php endif; ?>
@@ -385,21 +390,21 @@
                 <?php endif; ?>
 
         </section>
-    </div>
-    </section>
+
+        <!-- 区切り線 -->
+        <div class="section_line"></div>
 
 
-    <!-- 区切り線 -->
-    <div class="section_line"></div>
-
-    <div class="event_entry_wrap">
-        <?php if (get_field('links')) : ?>
-            <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
-            <p><span>※イベントページに飛びます。</span></p>
-        <?php endif; ?>
-    </div>
+        <div class="event_entry_wrap">
+            <?php if (get_field('links')) : ?>
+                <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
+                <p><span>※イベントページに飛びます。</span></p>
+            <?php endif; ?>
+        </div>
 
     </div>
+
+
 </main>
 
 
