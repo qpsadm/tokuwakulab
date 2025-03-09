@@ -241,6 +241,13 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/privacy.css'
         );
     }
+    // 当サイトについて
+    elseif (is_page('about')) {
+        wp_enqueue_style(
+            'my_about_style',
+            get_template_directory_uri() . '/assets/css/about.css'
+        );
+    }
     // 利用規約
     elseif (is_page('terms_of_service')) {
         wp_enqueue_style(
