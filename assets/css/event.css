@@ -23,6 +23,11 @@
     padding: 0 0 3rem 0;
 }
 
+/* 主催団体名ボタンをインライン要素にして、文字の範囲だけがクリックできるようにする */
+.orgbtn a {
+    display: inline;
+}
+
 
 /* いいね・ブックマーク */
 .event_action {
