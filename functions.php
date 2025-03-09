@@ -367,10 +367,10 @@ function set_search_query_vars()
         $start = ($current_page - 1) * $posts_per_page + 1;
         $end = min($current_page * $posts_per_page, $all_num);
 
-        // **デバッグログ**
-        error_log("=== template_redirect デバッグ ===");
-        error_log("検索結果の件数 (all_num): " . $all_num);
-        error_log("表示範囲: " . $start . " - " . $end);
+        // // **デバッグログ**
+        // error_log("=== template_redirect デバッグ ===");
+        // error_log("検索結果の件数 (all_num): " . $all_num);
+        // error_log("表示範囲: " . $start . " - " . $end);
 
         // **テンプレートで取得できるようにセット**
         set_query_var('all_num', $all_num);
