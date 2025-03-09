@@ -1,34 +1,9 @@
 <!-- 検索フォームの呼び出し -->
 <?php get_search_form() ?>
 
-
-<!-- フリーワード検索の結果 -->
-<?php
-
-
-
-// $all_num = $wp_query->found_posts; //記事の総数を取得
-
-// // グローバル変数を取得
-// global $wp_query;
-
-// // 1ページに表示する記事数
-// $posts_per_page = get_query_var('posts_per_page');
-
-// // 現在のページ番号（1から始まる）
-// $current_page = max(1, get_query_var('paged'));
-
-// // 表示中の記事の開始番号
-// $start = ($current_page - 1) * $posts_per_page + 1;
-
-// // 表示中の記事の終了番号
-// $end = min($current_page * $posts_per_page, $the_query->found_posts);
-?>
-
 <section>
     <!-- ここから検索結果 -->
     <div class="search_result">
-
 
         <?php
         // メインクエリの結果を取得
