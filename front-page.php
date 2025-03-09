@@ -135,7 +135,7 @@ get_header();
                     // 最新3件のコラムを取得
                     $latest_columns = new WP_Query(array(
                         'post_type'      => 'column', // カスタム投稿タイプが「column」なら変更不要
-                        'posts_per_page' => 3,       // 最新3件を取得
+                        'posts_per_page' => 4,       // 最新3件を取得
                         'orderby'        => 'date',  // 日付順
                         'order'          => 'DESC'   // 新しい順
                     ));
@@ -212,7 +212,7 @@ get_header();
                 if ($organization->have_posts()) :
                     while ($organization->have_posts()) : $organization->the_post();
                 ?>
-                        <li class="foodList_item">
+                        <li>
                             <?php get_template_part('template-parts/loop', 'organization'); ?>
                         </li>
                 <?php

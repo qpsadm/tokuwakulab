@@ -57,10 +57,11 @@
                 'order' => 'ASC', // 近い日付順
                 'posts_per_page' => $posts_per_page, //1ページの表示件数
                 'meta_query' => [
+                    //終了していないものを取得
                     [
                         'key' => 'date_end',
                         'value' => $today,
-                        'compare' => '>=',
+                        'compare' => '>',
                         'type' => 'DATE'
                     ],
                 ]

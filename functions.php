@@ -323,7 +323,7 @@ function my_pre_get_posts($query)
             [
                 'key'     => 'date_end',
                 'value'   => $today,
-                'compare' => '>=',
+                'compare' => '>',
                 'type'    => 'DATE',
             ]
         ];
@@ -446,18 +446,18 @@ add_action('template_redirect', 'set_search_query_vars');
  * @param array $fields array
  * @retuen array $fields array
  */
-function my_move_comment_field_to_bottom($fields)
-{
-    $comment_field = $fields['comment'];
-    unset($fields['comment']);
-    $fields['comment'] = $comment_field;
+// function my_move_comment_field_to_bottom($fields)
+// {
+//     $comment_field = $fields['comment'];
+//     unset($fields['comment']);
+//     $fields['comment'] = $comment_field;
 
-    return $fields;
-}
-add_filter(
-    'comment_form_fields',
-    'my_move_comment_field_to_bottom'
-);
+//     return $fields;
+// }
+// add_filter(
+//     'comment_form_fields',
+//     'my_move_comment_field_to_bottom'
+// );
 
 // /**
 //*                                                                        ★★★非表示にしました（2/26石田）
