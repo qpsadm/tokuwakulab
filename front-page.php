@@ -172,15 +172,19 @@ get_header();
                     <?php while (have_posts()) : ?>
                         <?php the_post(); ?>
 
-                        <!-- テンプレートパーツloop-news.phpを読み込む -->
-                        <?php get_template_part('template-parts/loop', 'news-top') ?>
+                        <div class="top_news_item_wrap">
+                            <span><?php the_time('Y年m月d日(l)') ?></span>
+                            <a href="<?php the_permalink(); ?>">
+                                <span class="top_news_item">お知らせが入ります。</span>
+                            </a>
+                        </div>
 
                         <!-- WordPress ループの終了 -->
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
 
-            <a class="btn_wrap  top_btn" href="<?php echo home_url('/news/'); ?>">
+            <a class="btn_wrap  top_btn" href="<?php echo home_url('/category/news/'); ?>">
                 お知らせ一覧へ
             </a>
         </section>
