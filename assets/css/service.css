@@ -31,10 +31,13 @@
     margin: 1.6rem 0;
 }
 
+/* aタグ箇所の設定 */
 .service_link {
     display: inline;
+    border-bottom: #111 solid 1px;
 }
 
 .service_link:hover {
-    border-bottom: 2px dashed #FFCC00;
+    color: #FF7800;
+    border-bottom: #FF7800 solid 1px;
 }
