@@ -354,6 +354,7 @@ function my_pre_get_posts($query)
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
+//search.phpのメインクエリで全件数、表示範囲を出力するための変数を渡す設定
 function set_search_query_vars()
 {
     if (is_search() || is_post_type_archive('event')) {
@@ -663,7 +664,7 @@ function get_upcoming_event_months1($post_type = 'event')
 
 
 
-// スリックの画像をslick.jsに渡す
+// スリックの画像をslick.jsに渡す設定
 function my_enqueue_scripts()
 {
     wp_enqueue_script(
