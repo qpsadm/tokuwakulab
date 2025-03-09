@@ -6,12 +6,7 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <span><a href="<?php if (!is_home()) : ?>">
-                <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php endif; ?></a>
-        </span>
-    </div>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
 
     <div class="inner">
         <section class="post_content_wrap">
