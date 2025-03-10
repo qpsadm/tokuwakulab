@@ -35,15 +35,21 @@ $the_query = new WP_Query($args);
 
         <div class="tax_list">
             <ul>
+
                 <?php
+
+                // 現在表示されているタームの情報を取得
+                $current_term = get_queried_object();
+                $current_term_id = isset($current_term->term_id) ? $current_term->term_id : '';
+                $current_taxonomy = isset($current_term->taxonomy) ? $current_term->taxonomy : '';
+
+                // 'All' ボタンのリンクとクラス付与
                 $all_link = home_url('/organization');
-                $current_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                $active_class = ($current_taxonomy !== 'org_tax') ? 'active' : ''; // org_tax以外ならAllをアクティブに
 
-                // 「All」リンク
-                $is_active = ($current_url === $all_link) ? 'active' : '';
-                echo '<li class="tax_list' . $is_active . '"><a href="' . $all_link . '" >All</a></li>';
+                echo '<li><a href="' . $all_link . '" class="' . $active_class . '">All</a></li>';
 
-                // タクソノミーのリンクを取得
+                // 主催団体のタクソノミーを取得
                 $terms = get_terms(array(
                     'taxonomy' => 'org_tax',
                     'hide_empty' => false,
@@ -51,10 +57,10 @@ $the_query = new WP_Query($args);
 
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
-                        $term_link = esc_url(get_term_link($term));
-                        // 現在のページURLと比較して一致すれば active クラスを追加
-                        $is_active = ($current_url === $term_link) ? 'active' : '';
-                        echo '<li class="tax_list' . $is_active . '"><a href="' . $all_link . '" >' . esc_html($term->name) . '</a></li>';
+                        // 現在のタームと一致する場合は 'active' クラスを付与
+                        $active_class = ($term->term_id == $current_term_id) ? 'active' : '';
+
+                        echo '<li><a href="' . esc_url(get_term_link($term)) . '" class="' . $active_class . '">' . esc_html($term->name) . '</a></li>';
                     }
                 }
                 ?>

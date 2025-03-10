@@ -58,10 +58,19 @@ $the_query = new WP_Query($args);
 
     <div class="inner">
 
-        <!-- 月別ボタンの実装 -->
+
+        <!-- 開催月別のボタン -->
         <div class="tax_list">
             <ul>
                 <?php
+                // 現在のURLから 'date' パラメータを取得
+                $current_date = isset($_GET['date']) ? $_GET['date'] : '';
+
+                // デフォルトで最新の月を選択
+                if (empty($current_date) && !empty($dates)) {
+                    $current_date = $dates[0];  // 最新の日付をセット (配列の最初の要素)
+                }
+
                 // 取得した日付をボタン（リンク）として表示
                 foreach ($dates as $date) {
                     $formatted_date = date('Y.m', strtotime($date)); // 表示形式 YYYY.MM
@@ -84,8 +93,11 @@ $the_query = new WP_Query($args);
                         ],
                     ]);
 
+                    // 'date' パラメータと一致する場合は 'active' クラスを付与
+                    $active_class = ($current_date === $date) ? 'active' : '';
+
                     // 記事数をリンクに追加して表示
-                    echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '">' . $formatted_date . '&nbsp;(' . $post_count->found_posts . ')</a></li>';
+                    echo '<li><a href="' . home_url('/event/') . '?date=' . $date . '" class="' . $active_class . '">' . $formatted_date . '&nbsp;(' . $post_count->found_posts . ')</a></li>';
 
                     wp_reset_postdata();  // クエリをリセット
                 }

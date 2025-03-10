@@ -34,18 +34,25 @@ $the_query = new WP_Query($args);
     <div class="inner">
 
 
+        <!-- 主催団体別で絞り込み -->
+        <!-- 主催団体のタクソノミーのボタン -->
 
         <div class="tax_list">
             <ul>
 
-
-                <!-- 主催団体別で絞り込み -->
-                <!-- <p>主催団体</p> -->
                 <?php
+                // 現在表示されているタームの情報を取得
+                $current_term = get_queried_object();
+                $current_term_id = isset($current_term->term_id) ? $current_term->term_id : '';
+                $current_taxonomy = isset($current_term->taxonomy) ? $current_term->taxonomy : '';
+
+                // 'All' ボタンのリンクとクラス付与
                 $all_link = home_url('/organization');
+                $active_class = ($current_taxonomy !== 'org_tax') ? 'active' : ''; // org_tax以外ならAllをアクティブに
 
-                echo '<li><a href="' . $all_link . '">All</a></li>';
+                echo '<li><a href="' . $all_link . '" class="' . $active_class . '">All</a></li>';
 
+                // 主催団体のタクソノミーを取得
                 $terms = get_terms(array(
                     'taxonomy' => 'org_tax',
                     'hide_empty' => false,
@@ -53,7 +60,10 @@ $the_query = new WP_Query($args);
 
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
-                        echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+                        // 現在のタームと一致する場合は 'active' クラスを付与
+                        $active_class = ($term->term_id == $current_term_id) ? 'active' : '';
+
+                        echo '<li><a href="' . esc_url(get_term_link($term)) . '" class="' . $active_class . '">' . esc_html($term->name) . '</a></li>';
                     }
                 }
                 ?>
