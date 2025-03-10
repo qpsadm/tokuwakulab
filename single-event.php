@@ -94,6 +94,38 @@
                             }
                             ?>
                         </ul>
+
+
+                    </div>
+
+                    <div>
+                        <!-- 開催時期タクソノミーを取得して表示 -->
+                        <?php
+
+                        // 表示したいタクソノミーのスラッグを配列で定義
+                        $taxonomies = ['event_type', 'experience', 'vacation'];  // 追加したいタクソノミーをここに書く
+
+                        // 各タクソノミーについて処理
+                        foreach ($taxonomies as $taxonomy) {
+                            // タクソノミーを取得
+                            $terms = get_the_terms(get_the_ID(), $taxonomy);
+                            // タクソノミーがあるか確認
+                            // タクソノミーが無ければ非表示
+                            if (!empty($terms) && !is_wp_error($terms)) {
+
+                                foreach ($terms as $term) {
+
+                                    echo '<div class="card_tag">';
+                                    // area情報を表示
+                                    echo '<p class="event-taxonomy">';
+                                    echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
+                                    echo '</p>';
+                                    echo '</div>';
+                                }
+                            }
+                        }
+
+                        ?>
                     </div>
 
                     <!-- イベント本文 -->
@@ -142,10 +174,7 @@
                                 <?php else: ?>
                                     <span>-</span>
                                 <?php endif; ?>
-                                <?php if (get_field('nearest_station')): ?>
-                                    【最寄り駅：<?php the_field('nearest_station'); ?>】
 
-                                <?php endif; ?>
                             </td>
                         </tr>
 
@@ -160,10 +189,19 @@
 
                         <tr>
                             <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/venue.png" alt="">最寄り駅
+                            </th>
+                            <td>
+                                <?php the_field('nearest_station'); ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/age.png" alt="">対象
                             </th>
                             <td>
-                                <?php the_field('age_text'); ?></span>
+                                <?php the_field('age_text'); ?></span><br>
                                 <?php if (get_field('limit')): ?>
                                     <span class="food_itemData">
                                         【人数制限：<?php the_field('limit'); ?>】</span>
@@ -182,32 +220,18 @@
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/management.png" alt="">運営管理
-                            </th>
-                            <td>
-                                <?php the_field('management'); ?>
-                                <?php if (get_field('management')): ?><span><?php the_field('management') ?></span>
-                                <?php else: ?>
-                                    <span>-</span>
-                                <?php endif; ?>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/inquiry.png" alt="">問い合わせ
                             </th>
                             <td>
-                                <?php the_field('inquiry'); ?>
                                 <?php if (get_field('inquiry')): ?><span><?php the_field('inquiry') ?></span>
                                 <?php else: ?>
                                     <span>-</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
+                        <tr>
+                            <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
 
-                        <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
-                            <tr>
                                 <th>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/remarks.png" alt="">その他
                                 </th>
@@ -231,13 +255,35 @@
                                         <span>お弁当の用意▶&nbsp;<?php the_field('bento'); ?></span><br>
                                     <?php endif; ?>
 
-
-                                    <?php if (get_field('remarks')): ?>
-                                        <span>備考▶&nbsp;<?php the_field('remarks'); ?></span>
-                                    <?php endif; ?>
                                 </td>
-                            </tr>
-                        <?php endif; ?>
+                        </tr>
+
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/management.png" alt="">特記事項
+                            </th>
+                            <td>
+                                <?php if (get_field('remarks')): ?><span><?php the_field('remarks') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/management.png" alt="">運営管理
+                            </th>
+                            <td>
+                                <?php if (get_field('management')): ?><span><?php the_field('management') ?></span>
+                                <?php else: ?>
+                                    <span>-</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+
+                    <?php endif; ?>
                     </table>
 
 

@@ -128,17 +128,17 @@
                 <?php
 
                 // area情報を取得
-                //$terms = get_the_terms(get_the_ID(), 'area');
+                $terms = get_the_terms(get_the_ID(), 'area');
                 // area情報があるか確認
-                // if (!empty($terms) && !is_wp_error($terms)) {
-                //     foreach ($terms as $term) {
-                //         echo '<div class="card_tag">';
-                //         echo '<p class="event-taxonomy">';
-                //         echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
-                //         echo '</p>';
-                //         echo '</div>';
-                //     }
-                // }
+                if (!empty($terms) && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        echo '<div class="card_tag">';
+                        echo '<p class="event-taxonomy">';
+                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
+                        echo '</p>';
+                        echo '</div>';
+                    }
+                }
                 ?>
 
 
