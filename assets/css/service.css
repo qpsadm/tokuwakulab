@@ -12,24 +12,20 @@
     margin-top: 0;
 }
 
-.service_wrap:nth-child(n+2){
-    padding-top: 5.2rem;
-}
-
-.service_wrap:nth-child(1){
-    padding-top: 0.8rem;
-}
-
 .service_wrap{
-    padding-bottom: 4rem;
-    border-bottom: 2px dashed #FFCC00;
+    margin-bottom: 0.8rem;
+}
+
+.service_textarea{
     background-color: #fff;
+    margin-bottom: 8rem;
 }
 
 .service_article{
     font-size: 2.4rem;
     font-weight: 500;
-    padding: 1.6rem 0 1.6rem 0.8rem ;
+    padding: 1.6rem 0 0.8rem 0.8rem ;
+    line-height: 3.2rem;
 }
 
 .service_text{
@@ -40,7 +36,7 @@
     text-align: center;
     font-family: "Noto Sans JP", serif;
     font-size: 1.6rem;
-    margin: 8rem 0 16rem 0;
+    margin: 4rem 0 0 0;
 }
 
 /* aタグ箇所の設定 */
@@ -52,4 +48,8 @@
 .service_link:hover {
     color: #FF7800;
     border-bottom: #FF7800 solid 1px;
+}
+
+.service_inner{
+    padding: 2rem 4rem 4rem 4rem;
 }
