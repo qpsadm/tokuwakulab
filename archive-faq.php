@@ -8,12 +8,7 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <span><a href="<?php if (!is_home()) : ?>">
-                <?php get_template_part('template-parts/breadcrumb'); ?>
-                <?php endif; ?></a>
-        </span>
-    </div>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
     <div class="inner">
         <div class="faq_qasec">
             <?php
@@ -23,23 +18,23 @@
             ];
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()): ?>
-            <?php while ($the_query->have_posts()): ?>
-            <?php $the_query->the_post(); ?>
-            <!-- １かたまりのQ&A -->
-            <div class="faq_qawrap">
-                <!-- Q -->
-                <div class="faq_questionwrap">
-                    <span class="faq_q">Q</span>
-                    <p><?php the_field("question"); ?></p>
-                </div>
-                <!-- A -->
-                <div class="faq_answerwrap">
-                    <span class="faq_a">A</span>
-                    <p><?php the_field("answer"); ?></p>
-                </div>
-            </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
+                <?php while ($the_query->have_posts()): ?>
+                    <?php $the_query->the_post(); ?>
+                    <!-- １かたまりのQ&A -->
+                    <div class="faq_qawrap">
+                        <!-- Q -->
+                        <div class="faq_questionwrap">
+                            <span class="faq_q">Q</span>
+                            <p><?php the_field("question"); ?></p>
+                        </div>
+                        <!-- A -->
+                        <div class="faq_answerwrap">
+                            <span class="faq_a">A</span>
+                            <p><?php the_field("answer"); ?></p>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
 

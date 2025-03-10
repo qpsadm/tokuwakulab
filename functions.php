@@ -241,6 +241,13 @@ function my_add_scripts()
             get_template_directory_uri() . '/assets/css/privacy.css'
         );
     }
+    // 当サイトについて
+    elseif (is_page('about')) {
+        wp_enqueue_style(
+            'my_about_style',
+            get_template_directory_uri() . '/assets/css/about.css'
+        );
+    }
     // 利用規約
     elseif (is_page('terms_of_service')) {
         wp_enqueue_style(
@@ -316,7 +323,7 @@ function my_pre_get_posts($query)
             [
                 'key'     => 'date_end',
                 'value'   => $today,
-                'compare' => '>=',
+                'compare' => '>',
                 'type'    => 'DATE',
             ]
         ];
@@ -347,6 +354,7 @@ function my_pre_get_posts($query)
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
+//search.phpのメインクエリで全件数、表示範囲を出力するための変数を渡す設定
 function set_search_query_vars()
 {
     if (is_search() || is_post_type_archive('event')) {
@@ -360,10 +368,10 @@ function set_search_query_vars()
         $start = ($current_page - 1) * $posts_per_page + 1;
         $end = min($current_page * $posts_per_page, $all_num);
 
-        // **デバッグログ**
-        error_log("=== template_redirect デバッグ ===");
-        error_log("検索結果の件数 (all_num): " . $all_num);
-        error_log("表示範囲: " . $start . " - " . $end);
+        // // **デバッグログ**
+        // error_log("=== template_redirect デバッグ ===");
+        // error_log("検索結果の件数 (all_num): " . $all_num);
+        // error_log("表示範囲: " . $start . " - " . $end);
 
         // **テンプレートで取得できるようにセット**
         set_query_var('all_num', $all_num);
@@ -438,18 +446,18 @@ add_action('template_redirect', 'set_search_query_vars');
  * @param array $fields array
  * @retuen array $fields array
  */
-function my_move_comment_field_to_bottom($fields)
-{
-    $comment_field = $fields['comment'];
-    unset($fields['comment']);
-    $fields['comment'] = $comment_field;
+// function my_move_comment_field_to_bottom($fields)
+// {
+//     $comment_field = $fields['comment'];
+//     unset($fields['comment']);
+//     $fields['comment'] = $comment_field;
 
-    return $fields;
-}
-add_filter(
-    'comment_form_fields',
-    'my_move_comment_field_to_bottom'
-);
+//     return $fields;
+// }
+// add_filter(
+//     'comment_form_fields',
+//     'my_move_comment_field_to_bottom'
+// );
 
 // /**
 //*                                                                        ★★★非表示にしました（2/26石田）
@@ -656,7 +664,7 @@ function get_upcoming_event_months1($post_type = 'event')
 
 
 
-// スリックの画像をslick.jsに渡す
+// スリックの画像をslick.jsに渡す設定
 function my_enqueue_scripts()
 {
     wp_enqueue_script(

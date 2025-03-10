@@ -7,12 +7,7 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <span><a href="<?php if (!is_home()) : ?>">
-                <?php get_template_part('template-parts/breadcrumb'); ?>
-            <?php endif; ?></a>
-        </span>
-    </div>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
 
     <div class="inner">
 
@@ -267,7 +262,7 @@
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
                         <h3 class="sub_title"><?php echo esc_html($taxonomy_obj->label); ?></h3>
                         <details open class="search_accordion">
-                            <summary class="search_item_title">体験方法を選択する</summary>
+                            <summary class="search_item_title">こだわり条件を選択する</summary>
                             <?php foreach ($terms as $term): ?>
                                 <label>
                                     <input type="checkbox" name="other[]" value="<?= esc_attr($term->slug); ?>" <?php checked(in_array($term->slug, $replace_array_terms)); ?>>

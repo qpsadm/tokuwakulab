@@ -43,12 +43,7 @@ get_header();
                 </div>
             </div> -->
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <span><a href="<?php if (!is_home()) : ?>">
-                <?php get_template_part('template-parts/breadcrumb'); ?>
-                <?php endif; ?></a>
-        </span>
-    </div>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
     <div class="inner">
 
         <!-- お知らせ一覧 -->
@@ -61,14 +56,14 @@ get_header();
 
             <!-- WordPress ループの開始 -->
             <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
+                <?php while (have_posts()) : ?>
+                    <?php the_post(); ?>
 
-            <!-- テンプレートパーツloop-news.phpを読み込む -->
-            <?php get_template_part('template-parts/loop', 'news') ?>
+                    <!-- テンプレートパーツloop-news.phpを読み込む -->
+                    <?php get_template_part('template-parts/loop', 'news') ?>
 
-            <!-- WordPress ループの終了 -->
-            <?php endwhile; ?>
+                    <!-- WordPress ループの終了 -->
+                <?php endwhile; ?>
             <?php endif; ?>
 
         </div>
@@ -78,9 +73,9 @@ get_header();
             <div class="wp-pagenavi">
 
                 <?php if (function_exists('wp_pagenavi')): ?>
-                <div class="">
-                    <?php wp_pagenavi(); ?>
-                </div>
+                    <div class="">
+                        <?php wp_pagenavi(); ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
