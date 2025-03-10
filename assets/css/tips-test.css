@@ -31,13 +31,24 @@
     /* background-color: #f0f0f0; */
     /* border-radius: 1rem; */
     color: #333;
-    font-size: 1.6rem;
     line-height: 1.5;
     background-color: transparent;
     /* 背景を透過 */
-    /* z-index: 1; */
-    /* テキストが最前面に表示されるように */
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
 }
+
+@keyframes typing {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 
 /* バブルのコンテナ */
 .bubble_container {
