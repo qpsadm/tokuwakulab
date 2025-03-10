@@ -1,14 +1,14 @@
 <section class="comments">
 
 
-	<!-- 3/9 作成中（峯村） -->
+	<!-- 3/10 作成中（峯村） -->
 
 	<div class="event_review_wrap">
 		<!-- コメントがある場合 -->
 		<?php if (have_comments()) : ?>
 
 
-	<h3 class="sub_title">参加者様からの感想</h3>
+			<h3 class="sub_title">参加者様からの感想</h3>
 
 
 			<?php

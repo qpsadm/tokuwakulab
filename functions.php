@@ -682,6 +682,9 @@ function my_enqueue_scripts()
         array(
             'prevArrow' => '<button class="slick_prev_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_left.png" alt="Previous"></button>',
             'nextArrow' => '<button class="slick_next_kv"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_right.png" alt="Next"></button>',
+            'prevArrowOrg' => '<button class="slick_prev_org"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_left.png" alt="Previous"></button>',
+            'nextArrowOrg' => '<button class="slick_next_org"><img src="' . get_template_directory_uri() . '/assets/img/slickarrow_right.png" alt="Next"></button>',
+
         )
     );
 }
