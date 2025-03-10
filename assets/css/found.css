@@ -15,7 +15,6 @@
     margin-bottom: 1rem;
 }
 
-
 /* アコーディオンタイトルの設定 */
 .search_item_title {
     position: relative;
@@ -23,6 +22,7 @@
     font-size: 1.6rem;
     font-weight: 500;
     padding: 1.2rem 0;
+    margin-bottom: 1.2rem;
 }
 
 /* 閉じているとき「-」 */
@@ -54,14 +54,17 @@ summary::-webkit-details-marker {
 	display: none;
 }
 
+label {
+    font-size: 1.6rem;
+}
+
 input[type="checkbox"] {
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 3px;
-    /* display: inline-block; */
     position: relative;
     margin-right: 0.5rem;
     cursor: pointer;
@@ -75,8 +78,8 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked::after {
     content: "";
     position: absolute;
-    left: 3px;
-    top: 0.5px;
+    left: 4px;
+    top: 1px;
     width: 6px;
     height: 10px;
     border: solid #fff;
@@ -84,23 +87,16 @@ input[type="checkbox"]:checked::after {
     transform: rotate(45deg);
 }
 
-label {
-    /* display: flex; */
-    /* align-items: center; */
-    font-size: 1.6rem;
-}
-
 /* アコーディオンが開かれているとき */
 .search_accordion[open] {
-    /* パネル内の余白を追加 */
     padding: 1.2rem;
 }
 
 /* チェックボックスラベルのスタイルも追加可能 */
 .search_accordion[open] label {
-    /* display: block; */
-    /* チェックボックスの間にスペースを追加 */
-    margin: 8px 0;
+    display: inline-block;
+    /* チェックボックスとlabelの間にスペースを追加 */
+    margin: 1rem 1rem 1rem 0;
 }
 
 /* 検索・リセットボタン */
