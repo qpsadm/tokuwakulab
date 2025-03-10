@@ -205,8 +205,8 @@
             ?>
             <ul class="top_event_list">
                 <!-- イベントループの開始 -->
-                <?php if ($the_query->have_posts()): ?>
-                <?php while ($the_query->have_posts()): ?>
+                <?php if ($the_query->have_posts()) { ?>
+                <?php while ($the_query->have_posts()) { ?>
                 <?php $the_query->the_post(); ?>
 
                 <li>
@@ -214,13 +214,12 @@
                     <?php get_template_part('template-parts/loop', 'event') ?>
                 </li>
 
-                <!-- WordPress ループの終了 -->
-                <?php endwhile; ?>
-
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+                <?php } ?>
+                <?php } else { // 関連イベントがない場合のメッセージ
+                    echo '<p>開催予定のイベントはありません。</p><br>';
+                }
+                wp_reset_postdata(); ?>
             </ul>
-
             <div class="btnwrap_wrap">
                 <a href="<?php echo home_url("/event/"); ?>" class="btn_wrap">イベント一覧へ</a>
             </div>
@@ -230,7 +229,7 @@
 
         <!-- 過去開催イベントのタイトル表示 -->
         <section class="column_content_wrap">
-            <h3 class="sub_title"><?php the_title(); ?>の過去開催イベント</h3>
+            <h3 class="sub_title">過去開催イベント</h3>
             <div class="column_recomend_list">
                 <?php
                 $today = date('Y-m-d'); // 今日の日付を取得

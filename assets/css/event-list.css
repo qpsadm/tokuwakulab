@@ -77,10 +77,10 @@
     color: #fff;
 }
 
-.tax_list li a.active {
-    background-color: #F0C040;
+.tax_list a.active {
+    background-color: #FF7B00;
     /* 好きな色に変更 */
-    color: rgb(7, 7, 6);
+    color: #fff;
 }
 
 .tax_list a:hover:before {

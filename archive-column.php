@@ -28,28 +28,30 @@ $the_query = new WP_Query($args);
     <div class="inner">
 
         <!-- タクソノミーボタンの実装 -->
+
         <ul class="column_menu">
 
             <?php
-            $all_link = home_url('/column');
+            // 現在表示されているタームの情報を取得
+            $current_term = get_queried_object();
+            $current_term_id = $current_term->term_id ?? ''; // 現在のタームIDを取得（なければ空に）
 
-            $is_all_active = (is_post_type_archive('column')) ? 'active' : '';
+            // 'All' ボタン（タームが選択されていないときにアクティブ）
+            echo '<li class="column_btn ' . (empty($current_term_id) ? 'active' : '') . '"><a href="' . home_url('/column') . '">All</a></li>';
 
-            echo '<li class="column_btn active"><a href="' . $all_link . '">All</a></li>';
-
-            $terms = get_terms(array(
+            // 主催団体のタクソノミーを取得
+            $terms = get_terms([
                 'taxonomy' => 'column_type',
                 'hide_empty' => false,
-            ));
-            if (!empty($terms) && !is_wp_error($terms)) {
-                foreach ($terms as $term) {
+            ]);
 
-                    echo '<li class="column_btn"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
-                }
+            foreach ($terms as $term) {
+                // 現在のタームと一致する場合は 'active' クラスを付与
+                $is_active = ($term->term_id == $current_term_id) ? 'active' : '';
+                echo '<li class="column_btn ' . $is_active . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
             }
             ?>
         </ul>
-
 
 
         <!-- ここから検索結果 -->
@@ -77,9 +79,9 @@ $the_query = new WP_Query($args);
                         $end = min($current_page * $posts_per_page, $the_query->found_posts);
 
                         // 「何件から何件を表示しているか」を表示
-                        ////echo '<div class="post-range">';
+                        echo '<div class="post-range">';
                         echo $start . ' - ' . $end . ' 件を表示';
-                        //echo '</div>';
+                        echo '</div>';
                         ?>
                     </span>
                 </div>
