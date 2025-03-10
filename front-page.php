@@ -39,14 +39,14 @@ get_header();
             <div>
                 <!-- ここにPHP挿入 -->
                 <?php
-                $dates = get_upcoming_event_months();
-                // URLのパラメータから検索する開催月を取得
-                $date1 = get_param_value('date');
-                // 初期状態で、開催月が指定されていないので、直近の月を代入する
-                if (is_null($date1)) {
-                    $date1 = $dates[0];
-                }
-                $date2 = '2025-03-31';
+                // $dates = get_upcoming_event_months();
+                // // URLのパラメータから検索する開催月を取得
+                // $date1 = get_param_value('date');
+                // // 初期状態で、開催月が指定されていないので、直近の月を代入する
+                // if (is_null($date1)) {
+                //     $date1 = $dates[0];
+                // }
+                // $date2 = '2025-03-31';
                 // echo $date1, '-', $date2;
                 ?>
 
