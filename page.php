@@ -14,10 +14,10 @@ get_header();
             <?php
             if (is_page('about')) {
                 echo 'about_top';
-            } elseif (is_page('service')) {
+            } elseif (is_page('privacy_policy')) {
+                echo 'policy_top';
+            } elseif (is_page('terms_of_service')) {
                 echo 'service_top';
-            } else {
-                echo 'default_class';
             }
             ?>">
                 <h2 class=" page_title"><?php the_title(); ?></h2>
