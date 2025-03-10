@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .pc_space {
+    height: auto;
     margin-top: 4.8rem;
     margin-bottom: 0;
     display: flex;
@@ -10,25 +11,65 @@
 }
 
 .tips_wrap {
-    top: 0;
-    left: 0;
-    height: 100%;
+    /* top: 0;
+    left: 0; */
+    height: auto;
     text-align: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    /* 内容が枠に収まるように調整 */
 }
 
 
 .tips_text {
-    /* padding: 1rem; */
+    /* display: inline-block; */
+    max-width: 100%;
+    /* 必要に応じて最大幅を指定 */
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    border: 0.5rem solid #F4CF15;
+    border-radius: 3rem;
+    word-wrap: break-word;
+    /* 単語が長すぎる場合に折り返す */
+    white-space: normal;
+    /* 自動改行を有効にする */
     font-size: 1.6rem;
     line-height: 3rem;
-    position: relative;
-    padding: 2rem;
+    padding: 1rem;
     color: #333;
-    line-height: 1.5;
+    line-height: 0.5;
     background-color: transparent;
     /* 背景を透過 */
+}
+
+.tips_text::before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: #F4CF15;
+    left: 3.5rem;
+    bottom: -3rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+/* 小さい丸 */
+.tips_text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: #F4CF15;
+    left: 6rem;
+    bottom: -5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.tips_text span {
+    margin: 20px;
 }
 
 /* バブルのコンテナ */
@@ -138,17 +179,35 @@
 /* TB */
 @media screen and (min-width:768px) {
     .tips_text {
-        /* padding: 1rem; */
         font-size: 1.6rem;
-        line-height: 3rem;
-        position: relative;
-        padding: 2rem;
-        color: #333;
-        line-height: 1.5;
-        background-color: transparent;
-        /* 背景を透過 */
+        line-height: 1.5rem;
         text-align: left;
         /* 左寄せ */
+    }
+
+    .tips_text::before {
+        content: '';
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        background-color: #F4CF15;
+        left: 30rem;
+        bottom: -3rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    /* 小さい丸 */
+    .tips_text::after {
+        content: '';
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        background-color: #F4CF15;
+        left: 28rem;
+        bottom: -5rem;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     /* 泡が揺れながら上に動くアニメーション */
@@ -200,15 +259,34 @@
 @media screen and (min-width:1280px) {
     .tips_text {
         font-size: 2rem;
-        line-height: 3rem;
-        position: relative;
-        padding: 2rem;
-        color: #333;
-        line-height: 2;
-        background-color: transparent;
-        /* 背景を透過 */
+        line-height: 2rem;
         text-align: left;
         /* 左寄せ */
+    }
+
+    .tips_text::before {
+        content: '';
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        background-color: #F4CF15;
+        left: 38rem;
+        bottom: -3rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    /* 小さい丸 */
+    .tips_text::after {
+        content: '';
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        background-color: #F4CF15;
+        left: 40rem;
+        bottom: -5rem;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     /* 泡が揺れながら上に動くアニメーション */
