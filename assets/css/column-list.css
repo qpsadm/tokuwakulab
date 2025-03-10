@@ -1,28 +1,31 @@
 @charset "UTF-8";
 
 /* 貴島さんボタン */
-.column_menu{
+.column_menu {
     padding: 0.5em 0.7em;
     border-radius: 1rem;
     display: flex;
-    flex-wrap: wrap; /* アイテムが折り返されるように */
+    flex-wrap: wrap;
+    /* アイテムが折り返されるように */
     justify-content: center;
     gap: 2rem;
 }
-.column_btn a{
+
+.column_btn a {
     width: auto;
     position: relative;
     display: flex;
     padding: 1.6rem 2.4rem 1.6rem 4.8rem;
-    color: red; /* 文字色 */
+    color: red;
+    /* 文字色 */
     transition: 0.3s ease-in-out;
     font-weight: bold;
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     background-color: #56C909;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     line-height: 30px;
-    font-size:1.6rem;
+    font-size: 1.6rem;
     font-weight: bold;
     border: 1px solid #f4cf15;
     border-radius: 3rem;
@@ -35,24 +38,27 @@
     left: 2rem;
     margin-right: 1.6rem;
     font-size: 1.2em;
-    transition: transform 0.8s ease-in-out; /* 回転のアニメーション */
+    transition: transform 0.8s ease-in-out;
+    /* 回転のアニメーション */
 }
 
 .column_btn a:hover {
-  background-color: #FF7B00; /* ホバー時に背景色をオレンジに変更 */
+    background-color: #FF7B00;
+    /* ホバー時に背景色をオレンジに変更 */
 }
 
 .column_btn a:hover:before {
-  transform: rotate(360deg); /* アイコンが360度回転 */
+    transform: rotate(360deg);
+    /* アイコンが360度回転 */
 }
 
 @media screen and (max-width:767px) {
-.column_menu{
-    justify-content: center;
-}
+    .column_menu {
+        justify-content: center;
+    }
 
-.column_btn{
-    font-size: 1rem;
+    .column_btn {
+        font-size: 1rem;
     }
 }
 
@@ -60,45 +66,48 @@
     background-color: #FF7B00;
     /* 好きな色に変更 */
     color: #fff;
-    }
+}
 
 
 
 /* コラム記事の真ん中寄せ */
-.column_list li{
-width: fit-content;
-margin: auto;
+.column_list li {
+    width: fit-content;
+    margin: auto;
 }
 
 /* コラム一覧を包む */
-.columnlist_wrap{
+.columnlist_wrap {
     margin-top: 4.8rem;
 }
 
 /* 検索結果の数字を包む */
-.column_result{
+.column_result {
     margin: 3.2rem 0;
 }
+
 @media screen and (min-width:1280px) {
-    .column_result{
-    margin-left: 16rem;
-}
+    .column_result {
+        margin-left: 16rem;
+    }
 }
 
 /* コラム検索結果検索結果の1行分のdiv */
-.column_result div{
+.column_result div {
     margin-bottom: 0.8rem;
 }
 
 /* コラム検索結果装飾用 */
-.column_resultnum{
-    margin-left:1.6rem;
+.column_resultnum {
+    margin-left: 1.6rem;
     font-weight: 600;
     font-size: 2.4rem;
 }
-.column_result div:nth-child(1){
-    font-size:2rem;
+
+.column_result div:nth-child(1) {
+    font-size: 2rem;
 }
-.column_result div:nth-child(2){
-    font-size:1.6rem;
+
+.column_result div:nth-child(2) {
+    font-size: 1.6rem;
 }

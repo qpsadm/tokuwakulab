@@ -33,7 +33,7 @@ $the_query = new WP_Query($args);
             <?php
             $all_link = home_url('/column');
 
-            // $is_all_active = (is_post_type_archive('column')) ? 'active' : '';
+            $is_all_active = (is_post_type_archive('column')) ? 'active' : '';
 
             echo '<li class="column_btn active"><a href="' . $all_link . '">All</a></li>';
 
@@ -43,6 +43,7 @@ $the_query = new WP_Query($args);
             ));
             if (!empty($terms) && !is_wp_error($terms)) {
                 foreach ($terms as $term) {
+
                     echo '<li class="column_btn"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
                 }
             }
