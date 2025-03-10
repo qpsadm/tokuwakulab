@@ -6,15 +6,11 @@
     margin-bottom: 0;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
 }
 
 .tips_wrap {
-    /* top: 0;
-    left: 0; */
     height: auto;
-    text-align: center;
     align-items: center;
     overflow: visible;
     /* 内容が枠に収まるように調整 */
@@ -22,12 +18,10 @@
 
 
 .tips_text {
-    /* display: inline-block; */
     max-width: 100%;
     /* 必要に応じて最大幅を指定 */
     height: auto;
     position: relative;
-    padding: 1rem;
     border: 0.5rem solid #F4CF15;
     border-radius: 3rem;
     word-wrap: break-word;
@@ -36,9 +30,8 @@
     /* 自動改行を有効にする */
     font-size: 1.6rem;
     line-height: 3rem;
-    padding: 1rem;
+    padding: 2rem;
     color: #333;
-    line-height: 0.5;
     background-color: transparent;
     /* 背景を透過 */
 }
