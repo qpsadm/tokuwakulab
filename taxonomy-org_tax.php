@@ -79,9 +79,12 @@ $the_query = new WP_Query($args);
 
             <span>
                 <?php
-
                 // グローバル変数を取得
                 global $wp_query;
+
+                // 現在表示されているタームの情報を取得
+                $current_term = get_queried_object();
+                $total_posts = $wp_query->found_posts;  // 現在のクエリで取得した記事数
 
                 // 1ページに表示する記事数
                 $posts_per_page = get_query_var('posts_per_page');
@@ -92,13 +95,13 @@ $the_query = new WP_Query($args);
                 // 表示中の記事の開始番号
                 $start = ($current_page - 1) * $posts_per_page + 1;
 
-                // 表示中の記事の終了番号
-                $end = min($current_page * $posts_per_page, $the_query->found_posts);
+                // 表示中の記事の終了番号（最大値をタクソノミーで取得した件数に）
+                $end = min($current_page * $posts_per_page, $total_posts);
 
                 // 「何件から何件を表示しているか」を表示
-                ////echo '<div class="post-range">';
+                echo '<div class="post-range">';
                 echo $start . ' - ' . $end . ' 件を表示';
-                //echo '</div>';
+                echo '</div>';
                 ?>
             </span>
 

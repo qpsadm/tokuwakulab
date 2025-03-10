@@ -98,7 +98,7 @@
 
                     </div>
 
-                    <div>
+                    <div class="eve_taglist">
                         <!-- 開催時期タクソノミーを取得して表示 -->
                         <?php
 
@@ -189,7 +189,7 @@
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/venue.png" alt="">最寄り駅
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/nearest_station.png" alt="">最寄り駅
                             </th>
                             <td>
                                 <?php the_field('nearest_station'); ?>
@@ -261,7 +261,7 @@
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/management.png" alt="">特記事項
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/other.png" alt="">特記事項
                             </th>
                             <td>
                                 <?php if (get_field('remarks')): ?><span><?php the_field('remarks') ?></span>
@@ -341,7 +341,7 @@
 
                 <div class="event_entry_wrap">
                     <?php if (get_field('links')) : ?>
-                        <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
+                        <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お問い合わせ・<br>お申し込みはこちら</span></a>
                         <p><span>※イベントページに飛びます。</span></p>
                     <?php endif; ?>
                 </div>
@@ -438,7 +438,7 @@
 
         <div class="event_entry_wrap">
             <?php if (get_field('links')) : ?>
-                <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お申し込みはこちら</span></a>
+                <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お問い合わせ・<br>お申し込みはこちら</span></a>
                 <p><span>※イベントページに飛びます。</span></p>
             <?php endif; ?>
         </div>
