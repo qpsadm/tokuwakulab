@@ -170,8 +170,9 @@
 
 
 /* TB */
-@media screen and (min-width:768px) {
+@media screen and (min-width:600px) and (max-width:1060px) {
     .tips_text {
+        margin: 0 2rem;
         font-size: 1.6rem;
         line-height: 1.5rem;
         text-align: left;
@@ -249,8 +250,9 @@
 }
 
 /* pc */
-@media screen and (min-width:1280px) {
+@media screen and (min-width:1061px) {
     .tips_text {
+        margin: 0 4rem;
         font-size: 2rem;
         line-height: 2rem;
         text-align: left;
@@ -263,7 +265,7 @@
         display: block;
         border-radius: 50%;
         background-color: #F4CF15;
-        left: 38rem;
+        left: 36rem;
         bottom: -3rem;
         width: 3rem;
         height: 3rem;
@@ -276,7 +278,7 @@
         display: block;
         border-radius: 50%;
         background-color: #F4CF15;
-        left: 40rem;
+        left: 38rem;
         bottom: -5rem;
         width: 1.5rem;
         height: 1.5rem;
@@ -309,6 +311,16 @@
             opacity: 0;
         }
     }
+
+    .tips_chara {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* 水平方向に中央配置 */
+        align-items: center;
+        /* 垂直方向に中央配置 */
+    }
+
 
     .tips_chara img {
         width: 25rem;
