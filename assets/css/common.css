@@ -647,6 +647,14 @@ h1 {
 
 
 /* 主催団体カード型 */
+
+/* 主催団体カード型を包むaタグ */
+.orgcard_wrap:hover {
+    transition: 0.3s;
+    transform: scale(0.95);
+}
+
+/* 主催団体 */
 .orgcard_shape {
     display: block;
     margin: 0.8rem;
@@ -680,6 +688,12 @@ h1 {
     border-bottom: 2px dashed #FFCC00;
     margin: 0.8rem 0;
 }
+
+.orgcard_inner {
+    padding: 1.2rem;
+}
+
+
 
 /* 一覧へ飛ぶボタン */
 .btn_wrap {
