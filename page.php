@@ -10,8 +10,17 @@ get_header();
             <?php the_post(); ?>
 
             <!-- ページタイトル -->
-            <section class="page_top">
-                <h2 class="page_title"><?php the_title(); ?></h2>
+            <section class="
+            <?php
+            if (is_page('about')) {
+                echo 'about_top';
+            } elseif (is_page('service')) {
+                echo 'service_top';
+            } else {
+                echo 'default_class';
+            }
+            ?>">
+                <h2 class=" page_title"><?php the_title(); ?></h2>
             </section>
 
             <!-- パンくずリスト -->
