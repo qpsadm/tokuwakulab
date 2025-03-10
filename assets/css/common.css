@@ -551,6 +551,7 @@ h1 {
 
 
 /* === コラムカード型 === */
+/* コラムカード型の形 */
 .cardlist_wrap {
     width: 560px;
     height: auto;
@@ -561,25 +562,25 @@ h1 {
     transition: 0.3s;
     background-color: #fff;
 }
-
 @media screen and (max-width:768px) {
     .cardlist_wrap {
         width: 300px;
     }
 }
 
+/* hover用 */
 .cardlist_wrap:hover {
     transform: scale(0.95);
     transition: 0.3s;
 }
 
+/* コラム画像 */
 .cardlist_flex img {
     width: 240px;
     height: 180px;
     border-radius: 12px;
     margin-right: 1.6rem;
 }
-
 @media screen and (max-width:768px) {
     .cardlist_flex img {
         width: 264px;
@@ -589,6 +590,7 @@ h1 {
     }
 }
 
+/* インナー */
 .cardlist_inner {
     padding: 1.2rem;
 }
@@ -598,9 +600,7 @@ h1 {
     display: flex;
     line-height: 3.2rem;
 }
-
 @media screen and (max-width:768px) {
-
     /* SP版の時flexを解除 */
     .cardlist_flex {
         display: block;
