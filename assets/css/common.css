@@ -378,17 +378,19 @@ h1 {
 }
 
 
-/* イベントカード型テンプレ */
+/* === イベントカード型テンプレ === */
+/* カードの形 */
 .card_shape {
     display: block;
     margin: 2.4rem 2.4rem 1.6rem 0.8rem;
     width: 300px;
-    height: auto;
+    height: 486px;
     border: solid 4px #58BE15;
     border-radius: 12px;
     background-color: #fff;
 }
 
+/* イベント画像 */
 .card_shape img {
     width: 264px;
     height: 198px;
@@ -397,6 +399,7 @@ h1 {
     margin: 0 auto;
 }
 
+/* イベントタイトル */
 .card_shape h3 {
     font-size: 1.6rem;
     margin: 0.8rem 0 0.8rem 0;
@@ -404,48 +407,79 @@ h1 {
     font-weight: 900;
 }
 
+/* カード内の文字サイズ */
 .card_shape span {
     font-size: 1.2rem;
 }
 
+/* インナー */
 .card_inner {
     padding: 1.2rem;
 }
 
+/* 項目名 */
 .card_subtitle {
     font-weight: 600;
     margin-right: 0.8rem;
 }
 
+/* 項目：開催日の装飾 */
+.card_eventday {
+    font-weight: 600;
+    margin-right: 2.1rem;
+}
+
+/* 項目：会場名の装飾 */
+.card_hallname {
+    font-weight: 600;
+    margin-right: 2.3rem;
+}
+
+/* 会場名の内容の横幅 */
+.card_halltext{
+    width: 20.4rem;
+}
+
+/* タグ（タクソノミー） */
 .card_tag {
     background-color: #58BE15;
     width: auto;
     height: auto;
-    padding: 0.4rem 2rem;
+    padding: 0.4rem 1.6rem;
     border-radius: 32px;
     color: #fff;
     font-weight: 600;
     display: inline-block;
-    margin: 1.2rem 0.8rem 0 0;
+    margin: 0.8rem 0.4rem 0 0;
     font-size: 1.2rem;
 }
 
+/* タイトルと内容の間の区切り線 */
 .card_line {
     border-bottom: 2px dashed #58BE15;
     margin: 0.8rem 0;
 }
 
+/* 会場名と会場名内容を包む、flexのためのclass */
+.card_linefeed{
+    display: flex;
+}
+
+/* タイトルから会場名までを包むdiv */
 .card_text {
     width: auto;
+    height: 180px;
     margin: 0 auto;
 }
 
+/* card_shapeを包む、countdownと終了の位置設定、hoverのための親div */
 .card_wrap {
     position: relative;
     display: inline-block;
     transition: 0.3s;
 }
 
+/* カード全体をhoverさせる */
 .card_wrap:hover {
     transition: 0.3s;
     transform: scale(0.95);
@@ -470,10 +504,12 @@ h1 {
     font-style: normal;
 }
 
+/* カウントダウンの数字だけ大きく */
 .card_countdownno {
     font-size: 2rem;
 }
 
+/* 「あと」「日」は小さく */
 .card_countdown span :nth-child(1),
 .card_countdown span :nth-child(3) {
     font-size: 1.6rem;
@@ -498,6 +534,7 @@ h1 {
     font-style: normal;
 }
 
+/* 終了のフォントサイズ */
 .card_past span {
     font-size: 2rem;
 }
@@ -510,14 +547,11 @@ h1 {
     width: 48px;
     height: 56px;
     font-size: 5.2rem;
-    /* background-color: rgb(218, 218, 218); */
-    /* ブックマーク後の色 */
-    /* background-color: rgb(249, 7, 7);
-    clip-path: polygon(12% 0, 90% 0, 90% 90%, 50% 70%, 10% 90%); */
 }
 
 
-/* コラムカード型 */
+/* === コラムカード型 === */
+/* コラムカード型の形 */
 .cardlist_wrap {
     width: 560px;
     height: auto;
@@ -528,25 +562,25 @@ h1 {
     transition: 0.3s;
     background-color: #fff;
 }
-
 @media screen and (max-width:768px) {
     .cardlist_wrap {
         width: 300px;
     }
 }
 
+/* hover用 */
 .cardlist_wrap:hover {
     transform: scale(0.95);
     transition: 0.3s;
 }
 
+/* コラム画像 */
 .cardlist_flex img {
     width: 240px;
     height: 180px;
     border-radius: 12px;
     margin-right: 1.6rem;
 }
-
 @media screen and (max-width:768px) {
     .cardlist_flex img {
         width: 264px;
@@ -556,6 +590,7 @@ h1 {
     }
 }
 
+/* インナー */
 .cardlist_inner {
     padding: 1.2rem;
 }
@@ -565,9 +600,7 @@ h1 {
     display: flex;
     line-height: 3.2rem;
 }
-
 @media screen and (max-width:768px) {
-
     /* SP版の時flexを解除 */
     .cardlist_flex {
         display: block;

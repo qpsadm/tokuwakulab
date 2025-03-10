@@ -39,61 +39,38 @@ get_header();
             <div>
                 <!-- ここにPHP挿入 -->
                 <?php
-                // $dates = get_upcoming_event_months();
-                // // URLのパラメータから検索する開催月を取得
-                // $date1 = get_param_value('date');
-                // // 初期状態で、開催月が指定されていないので、直近の月を代入する
-                // if (is_null($date1)) {
-                //     $date1 = $dates[0];
-                // }
-                // $date2 = '2025-03-31';
+                $dates = get_upcoming_event_months();
+                // URLのパラメータから検索する開催月を取得
+                $date1 = get_param_value('date');
+                // 初期状態で、開催月が指定されていないので、直近の月を代入する
+                if (is_null($date1)) {
+                    $date1 = $dates[0];
+                }
+                $date2 = '2025-03-31';
                 // echo $date1, '-', $date2;
                 ?>
 
                 <?php
-                // $date1 = isset($_GET['date']) ? $_GET['date'] : null;
-                // $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null; // 月末日を取得
+                $date1 = isset($_GET['date']) ? $_GET['date'] : null;
+                $date2 = $date1 ? date('Y-m-t', strtotime($date1)) : null; // 月末日を取得
 
                 // サブクエリ
-                // $args = [
-                //     'post_type' => 'event',
-                //     'posts_per_page' => 3,
-                //     'orderby'        => 'date', // 投稿日時でソート
-                // ];
-                // $meta_query = ['relation' => 'AND'];
-
-                // if ($date1) {
-                //     $meta_query[] = [
-                //         'key' => 'date_start',
-                //         'type' => 'DATE',
-                //         'compare' => 'BETWEEN',
-                //         'value' => [$date1, $date2],
-                //     ];
-                // }
-                // $args['meta_query'] = $meta_query;
-
-
-                // 今日の日付
-                $today = date('Y-m-d');
-
                 $args = [
                     'post_type' => 'event',
-                    'post_status' => 'publish', // 公開された投稿のみを表示
-                    'orderby' => 'meta_value', // 下の内容でソート
-                    'meta_key' => 'date_start', //開催日をソート対象に
-                    'order' => 'ASC', // 近い日付順
-                    'posts_per_page' => 3, //1ページの表示件数
-
-                    //開催日が過ぎていないものをソート
-                    'meta_query' => [
-                        [
-                            'key' => 'date_start',
-                            'value' => $today,
-                            'compare' => '>=',
-                            'type' => 'DATE'
-                        ],
-                    ]
+                    'posts_per_page' => 3,
+                    'orderby'        => 'date', // 投稿日時でソート
                 ];
+                $meta_query = ['relation' => 'AND'];
+
+                if ($date1) {
+                    $meta_query[] = [
+                        'key' => 'date_start',
+                        'type' => 'DATE',
+                        'compare' => 'BETWEEN',
+                        'value' => [$date1, $date2],
+                    ];
+                }
+                $args['meta_query'] = $meta_query;
 
                 $the_query = new WP_Query($args);
 
@@ -135,7 +112,7 @@ get_header();
                     // 最新3件のコラムを取得
                     $latest_columns = new WP_Query(array(
                         'post_type'      => 'column', // カスタム投稿タイプが「column」なら変更不要
-                        'posts_per_page' => 4,       // 最新3件を取得
+                        'posts_per_page' => 3,       // 最新3件を取得
                         'orderby'        => 'date',  // 日付順
                         'order'          => 'DESC'   // 新しい順
                     ));
@@ -172,19 +149,15 @@ get_header();
                     <?php while (have_posts()) : ?>
                         <?php the_post(); ?>
 
-                        <div class="top_news_item_wrap">
-                            <span><?php the_time('Y年m月d日(l)') ?></span>
-                            <a href="<?php the_permalink(); ?>">
-                                <span class="top_news_item">お知らせが入ります。</span>
-                            </a>
-                        </div>
+                        <!-- テンプレートパーツloop-news.phpを読み込む -->
+                        <?php get_template_part('template-parts/loop', 'news-top') ?>
 
                         <!-- WordPress ループの終了 -->
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
 
-            <a class="btn_wrap  top_btn" href="<?php echo home_url('/category/news/'); ?>">
+            <a class="btn_wrap  top_btn" href="<?php echo home_url('/news/'); ?>">
                 お知らせ一覧へ
             </a>
         </section>
@@ -193,11 +166,11 @@ get_header();
         <section>
             <!-- 見出し -->
             <div class="top_org_ttl">
-                <h2>主催団体様</h2>
+                <h2>イベント主催団体様</h2>
             </div>
-            <div class="top_org_txt">
+            <!-- <div class="top_org_txt">
                 <p>イベントを主催している団体様を紹介します！</p>
-            </div>
+            </div> -->
             <ul class="top_org_list slider_org">
                 <!-- 主催団体カード型 -->
                 <?php
@@ -212,7 +185,7 @@ get_header();
                 if ($organization->have_posts()) :
                     while ($organization->have_posts()) : $organization->the_post();
                 ?>
-                        <li>
+                        <li class="foodList_item">
                             <?php get_template_part('template-parts/loop', 'organization'); ?>
                         </li>
                 <?php
