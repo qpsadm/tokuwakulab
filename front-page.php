@@ -12,22 +12,9 @@ get_header();
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
             </ul>
         </div>
-
-        <!-- 中間発表用にコメントアウト 3/7 -->
-
-        <!-- <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div> -->
-
-
-        <!-- NEWS表示用、仮組み3/5非表示 -->
-        <!-- <div class="kv_news text_border">
-        <p class="kv_news_text">
-                ここにPHPを設定
-                <span>2025-03-17</span>
-                <a class="news_link" href="https://tks-navi.com/2025-03-20/2038/">
-                    ここにお知らせがある時にお知らせタイトルが入ります。</a>
-            </p>
-    </div> -->
     <?php endif; ?>
+
+    <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div>
 
 
     <div class="inner">
@@ -107,7 +94,7 @@ get_header();
                         <?php while ($the_query->have_posts()) : ?>
                             <?php $the_query->the_post(); ?>
 
-                            <li class="foodList_item">
+                            <li>
                                 <!-- テンプレートパーツloop-food.phpを読み込む -->
                                 <?php get_template_part('template-parts/loop', 'event') ?>
                             </li>
