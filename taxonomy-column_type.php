@@ -63,43 +63,38 @@ $the_query = new WP_Query($args);
 
 
             <div class="column_result">
-                <?php
-                // タクソノミー名でクエリ変数を取得
-                $column_type_slug = get_query_var('column_type');
-                // 取得したクエリ変数から、タクソノミータームの情報を取得
-                $column_type = get_term_by('slug', $column_type_slug, 'column_type');
-                ?>
+                <h3 class="heading heading-secondary">
 
-                <h3 class="heading heading-secondary"><?php single_term_title(''); ?></h3>
+                    <div>
+                        <span>
+                            <?php
+                            // グローバル変数を取得
+                            global $wp_query;
 
+                            // 現在表示されているタームの情報を取得
+                            $current_term = get_queried_object();
+                            $total_posts = $wp_query->found_posts;  // 現在のクエリで取得した記事数
 
-                <div>
-                    <span>
-                        <?php
+                            // 1ページに表示する記事数
+                            $posts_per_page = get_query_var('posts_per_page');
 
-                        // グローバル変数を取得
-                        global $wp_query;
+                            // 現在のページ番号（1から始まる）
+                            $current_page = max(1, get_query_var('paged'));
 
-                        // 1ページに表示する記事数
-                        $posts_per_page = get_query_var('posts_per_page');
+                            // 表示中の記事の開始番号
+                            $start = ($current_page - 1) * $posts_per_page + 1;
 
-                        // 現在のページ番号（1から始まる）
-                        $current_page = max(1, get_query_var('paged'));
+                            // 表示中の記事の終了番号（最大値をタクソノミーで取得した件数に）
+                            $end = min($current_page * $posts_per_page, $total_posts);
 
-                        // 表示中の記事の開始番号
-                        $start = ($current_page - 1) * $posts_per_page + 1;
-
-                        // 表示中の記事の終了番号
-                        $end = min($current_page * $posts_per_page, $the_query->found_posts);
-
-                        // 「何件から何件を表示しているか」を表示
-                        echo '<div class="post-range">';
-                        echo $start . ' - ' . $end . ' 件を表示';
-                        echo '</div>';
-                        ?>
-                    </span>
-                </div>
-
+                            // 「何件から何件を表示しているか」を表示
+                            echo '<div class="post-range">';
+                            echo $start . ' - ' . $end . ' 件を表示';
+                            echo '</div>';
+                            ?>
+                        </span>
+                    </div>
+                </h3>
             </div>
 
 
