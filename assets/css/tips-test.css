@@ -9,18 +9,15 @@
     align-items: center;
 }
 
-.tips_wrap inne {
-    position: absolute;
+.tips_wrap {
     top: 0;
     left: 0;
-    /* width: 100%; */
     height: 100%;
-    display: flex;
-    justify-content: center;
     text-align: center;
     align-items: center;
     overflow: hidden;
 }
+
 
 .tips_text {
     /* padding: 1rem; */
@@ -28,27 +25,11 @@
     line-height: 3rem;
     position: relative;
     padding: 2rem;
-    /* background-color: #f0f0f0; */
-    /* border-radius: 1rem; */
     color: #333;
     line-height: 1.5;
     background-color: transparent;
     /* 背景を透過 */
-    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
 }
-
-@keyframes typing {
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
 
 /* バブルのコンテナ */
 .bubble_container {
@@ -151,4 +132,116 @@
     margin-top: 1rem;
     width: 20rem;
     height: 132.53px;
+}
+
+
+/* TB */
+@media screen and (min-width:768px) {
+    .tips_text {
+        /* padding: 1rem; */
+        font-size: 1.6rem;
+        line-height: 3rem;
+        position: relative;
+        padding: 2rem;
+        color: #333;
+        line-height: 1.5;
+        background-color: transparent;
+        /* 背景を透過 */
+        text-align: left;
+        /* 左寄せ */
+    }
+
+    /* 泡が揺れながら上に動くアニメーション */
+    @keyframes bubble-up {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 1;
+        }
+
+        25% {
+            transform: translateY(-40px) translateX(-5px);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(-80px) translateX(5px);
+            opacity: 0.5;
+        }
+
+        75% {
+            transform: translateY(-120px) translateX(-5px);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateY(-160px) translateX(0);
+            opacity: 0;
+        }
+    }
+
+    .tips_chara {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* 水平方向に中央配置 */
+        align-items: center;
+        /* 垂直方向に中央配置 */
+    }
+
+    .tips_chara img {
+        width: 25rem;
+        margin-right: 20rem;
+        height: auto;
+    }
+
+}
+
+/* pc */
+@media screen and (min-width:1280px) {
+    .tips_text {
+        font-size: 2rem;
+        line-height: 3rem;
+        position: relative;
+        padding: 2rem;
+        color: #333;
+        line-height: 2;
+        background-color: transparent;
+        /* 背景を透過 */
+        text-align: left;
+        /* 左寄せ */
+    }
+
+    /* 泡が揺れながら上に動くアニメーション */
+    @keyframes bubble-up {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 1;
+        }
+
+        25% {
+            transform: translateY(-40px) translateX(-8px);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(-80px) translateX(8px);
+            opacity: 0.5;
+        }
+
+        75% {
+            transform: translateY(-120px) translateX(-8px);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateY(-160px) translateX(0);
+            opacity: 0;
+        }
+    }
+
+    .tips_chara img {
+        width: 25rem;
+        margin-right: 12rem;
+        height: auto;
+    }
 }

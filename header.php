@@ -7,14 +7,8 @@ if (!is_user_logged_in() && IS_DEV == true) {
 ?>
 
 <?php
-$description = "このサイトは徳島県内の科学的なイベント情報を集約したサイトです。";
+$description = "徳島県内の科学技術イベント情報を一括検索！お気に入り登録や公式サイトへのアクセスも簡単。";
 
-// ★確認して消す　今野3/4
-// if (is_home()) {
-//     $description = "description,description,descriptiondescription,description,description。";
-// } else {
-//     $description = "description1,description1,description1,description1,description1。";
-// }
 
 $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,'
 ?>
@@ -22,7 +16,6 @@ $keywords = '徳島,科学,イベント,体験,プログラミング,親子,ロ�
 
 <!DOCTYPE html>
 
-<!-- <html <?php language_attributes(); ?>> もともとの記述はこちら（石田） -->
 <html lang="<?php bloginfo('language'); ?>">
 
 <head>

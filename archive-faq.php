@@ -3,7 +3,7 @@
 <main class="pc_space">
 
     <!-- ページタイトル -->
-    <section class="page_top">
+    <section class="faq_top">
         <h2 class="page_title">よくある質問</h2>
     </section>
 
