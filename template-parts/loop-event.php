@@ -85,46 +85,67 @@
                         echo $post->post_title;
                     } ?>
                 </h3>
-
                 <div class="card_line"></div>
-                <div>
-                    <span class="card_eventday">開催日</span>
-
-                    <span><?php the_field('date_start'); ?></span>
-
-                </div>
-
-                <div>
-                    <span class="card_subtitle">申込締切</span>
-
-                    <span><?php the_field('closing'); ?></span>
-
-                </div>
 
 
-                <div>
-                    <span class="card_subtitle">対象学年</span>
-                    <!-- <div> -->
-                    <span><?php the_field('age_text') ?></span>
-                    <!-- </div> -->
-                </div>
-
-
-                <div class="card_linefeed">
-                    <span class="card_hallname">会場名</span>
-                    <!-- <div> -->
-                    <?php if (get_field('address')): ?>
-                        <span class="card_halltext"><?php the_field('address') ?></span>
+                <div class="<?php if (is_search()) {
+                                echo 'card_linefeed';
+                            } ?>">
+                    <span class="<?php if (is_search()) {
+                                        echo 'card_subtitle';
+                                    } else {
+                                        echo 'card_eventday';
+                                    }
+                                    ?>">開催日
+                    </span>
+                    <?php if (is_search()): ?>
+                        <div><span><?php the_field('date_start'); ?></span></div>
                     <?php else: ?>
-                        <span>-</span>
+                        <span><?php the_field('date_start'); ?></span>
                     <?php endif; ?>
-                    <!-- </div> -->
                 </div>
 
+
+
+                <div class="<?php if (is_search()) {
+                                echo 'card_linefeed';
+                            } ?>">
+                    <span class="card_subtitle">申込締切
+                    </span>
+                    <?php if (is_search()): ?>
+                        <div><span><?php the_field('closing'); ?></span></div>
+                    <?php else: ?>
+                        <span><?php the_field('closing'); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="<?php if (is_search()) {
+                                echo 'card_linefeed';
+                            } ?>">
+                    <span class="card_subtitle">会場名
+                    </span>
+                    <?php if (is_search()): ?>
+                        <div><span><?php the_field('address'); ?></span></div>
+                    <?php else: ?>
+                        <span><?php the_field('address'); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="<?php if (is_search()) {
+                                echo 'card_linefeed';
+                            } ?>">
+                    <span class="card_subtitle">対象学年
+                    </span>
+                    <?php if (is_search()): ?>
+                        <div><span><?php the_field('age_text'); ?></span></div>
+                    <?php else: ?>
+                        <span><?php the_field('age_text'); ?></span>
+                    <?php endif; ?>
+
+                </div>
 
 
                 <!-- 開催地域タクソノミーを取得して表示 -->
-                <!-- サーチ画面では除外 -->
                 <?php
 
                 // area情報を取得
