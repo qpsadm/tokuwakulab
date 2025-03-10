@@ -99,7 +99,7 @@
 }
 
 /* コラム記事の見出しの設定 */
-h3 {
+.column_item h3 {
     font-size: 2rem;
     font-weight: 500;
     border-left: 20px solid #FFCC00;
