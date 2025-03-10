@@ -166,12 +166,58 @@
                     <div class="column_relationorg_card">
 
                         <!-- 主催団体カード型 -->
-                        <ul>
-                            <li>
-                                <!-- テンプレートパーツloop-news.phpを読み込む -->
-                                <?php get_template_part('template-parts/loop', 'organization') ?>
-                            </li>
-                        </ul>
+                        <a class="card_wrap" href="<?php the_permalink(); ?>">
+                            <div class="orgcard_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <?php if ($the_query->has_post_thumbnail()) : ?>
+                                            <!-- アイキャッチ画像があった場合は、表示 -->
+                                            <?php the_post_thumbnail('medium'); ?>
+                                        <?php else : ?>
+                                            <!-- アイキャッチ画像が設定していない場合は、noimage.pngを表示 -->
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3><?php the_title(); ?></h3>
+                                        <div class="orgcard_line"></div>
+                                        <div>
+                                            <span class="card_subtitle">所在地</span>
+                                            <div>
+                                                <span>
+                                                    <?php if (mb_strlen(get_field('address')) > 20) {
+                                                        $address = mb_substr(get_field('address'), 0, 20);
+                                                        echo $address . '…';
+                                                    } else {
+                                                        echo get_field('address');
+                                                    } ?>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="card_subtitle">電話番号</span>
+                                            <div>
+                                                <span>
+                                                    <?php the_field('tel'); ?>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <?php if (get_field('hour')): ?>
+                                            <div>
+                                                <span class="card_subtitle">営業時間</span>
+                                                <div>
+                                                    <span>
+                                                        <?php the_field('hour') ?>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </section>
 
