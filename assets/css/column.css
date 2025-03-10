@@ -6,30 +6,17 @@
     margin-bottom: 2rem;
 }
 
-@media screen and (min-width:768px) {
-
-    .column_ttl_wrap,
-    .post_ttl_wrap {
-        display: flex;
-        align-items: center;
-
-    }
-
-}
-
 /* コラムタイトル日付 */
 .column_date span,
 .post_date span {
-    display: block;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     line-height: 2.4rem;
-    margin-left: 1.6rem;
 }
 
 /* コラムタイトル */
 .column_ttl,
 .post_ttl {
-    margin: 1.6rem 0 0 1.6rem;
+    margin: 1rem 0;
     font-size: 2.4rem;
     line-height: 2.4rem;
     font-weight: 500;
@@ -39,7 +26,6 @@
 
     .column_ttl,
     .post_ttl {
-        padding-left: 5.6rem;
         font-size: 3.2rem;
         line-height: 4rem;
     }
