@@ -163,6 +163,12 @@
                             // グローバル変数に代入
                             setup_postdata($org);
 
+
+
+
+
+
+
                             // カード型を呼び出し、表示
                             get_template_part('template-parts/loop', 'organization');
                         }

@@ -87,14 +87,14 @@
                 </h3>
 
                 <div class="card_line"></div>
-                <div class="card_linefeed">
-                    <span class="card_subtitle">開催日</span>
+                <div>
+                    <span class="card_eventday">開催日</span>
 
                     <span><?php the_field('date_start'); ?></span>
 
                 </div>
 
-                <div class="card_linefeed">
+                <div>
                     <span class="card_subtitle">申込締切</span>
 
                     <span><?php the_field('closing'); ?></span>
@@ -102,7 +102,7 @@
                 </div>
 
 
-                <div class="card_linefeed">
+                <div>
                     <span class="card_subtitle">対象学年</span>
                     <!-- <div> -->
                     <span><?php the_field('age_text') ?></span>
@@ -111,10 +111,10 @@
 
 
                 <div class="card_linefeed">
-                    <span class="card_subtitle">会場名</span>
+                    <span class="card_hallname">会場名</span>
                     <!-- <div> -->
                     <?php if (get_field('address')): ?>
-                        <span><?php the_field('address') ?></span>
+                        <span class="card_halltext"><?php the_field('address') ?></span>
                     <?php else: ?>
                         <span>-</span>
                     <?php endif; ?>
