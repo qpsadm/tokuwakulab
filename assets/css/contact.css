@@ -203,3 +203,8 @@
 .contact_done {
     margin-bottom: 1rem;
 }
+
+/* スピナー削除（送信ボタンの位置修正） */
+.wpcf7-spinner {
+    display: none;
+}

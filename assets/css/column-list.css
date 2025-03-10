@@ -62,7 +62,7 @@
     }
 }
 
-.column_btn a.active {
+.column_menu .active a {
     background-color: #FF7B00;
     /* 好きな色に変更 */
     color: #fff;
