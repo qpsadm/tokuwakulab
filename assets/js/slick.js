@@ -26,8 +26,8 @@ $(function () {
     pauseOnHover: true,    // ホバーで停止ON/OFF
     swipeToSlide: true, // スワイプ切り替えON/OFF
     // 矢印の表示
-    prevArrow: slickParams.prevArrow,
-    nextArrow: slickParams.nextArrow,
+    prevArrow: slickParams.prevArrowOrg,
+    nextArrow: slickParams.nextArrowOrg,
     // レスポンシブ設定
     responsive: [
       {
