@@ -37,6 +37,17 @@ if ($date1) {
         'value' => [$date1, $date2],
     ];
 
+    // 今日の日付
+    $today = date('Y-m-d');
+
+    //終了していないものを取得
+    $meta_query[] = [
+        'key' => 'date_end',
+        'value' => $today,
+        'compare' => '>',
+        'type' => 'DATE'
+    ];
+
     $args['meta_query'] = $meta_query;
 }
 
@@ -84,12 +95,21 @@ $the_query = new WP_Query($args);
                         'post_type' => 'event',
                         'posts_per_page' => -1,
                         'meta_query' => [
+                            'relation'=>'AND',
                             [
                                 'key' => 'date_start',
                                 'type' => 'DATE',
                                 'compare' => 'BETWEEN',
                                 'value' => [$month_start, $month_end],
-                            ]
+                            ],
+
+                            //終了していないものを取得
+                            [
+                                'key' => 'date_end',
+                                'value' => $today,
+                                'compare' => '>',
+                                'type' => 'DATE'
+                            ],
                         ],
                     ]);
 
