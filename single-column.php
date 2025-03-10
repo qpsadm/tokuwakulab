@@ -145,7 +145,7 @@
         $args = [
             'post_type' => 'organization',
             'posts_per_page' => 1,
-            'post__in'=> [$post_id], // 取得したい投稿ID
+            'post__in' => [$post_id], // 取得したい投稿ID
         ];
 
 
@@ -153,124 +153,124 @@
         $the_query = new WP_Query($args);
         ?>
 
-        <?php if($the_query->have_posts()): ?>
-<?php while ($the_query->have_posts()) : ?>
-                        <?php $the_query->the_post(); ?>
-            <div class="section_line"></div>
+        <?php if ($the_query->have_posts()): ?>
+            <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+
+                <div class="section_line"></div>
 
 
-            <!-- 関連主催団体 -->
-            <section class="column_content_wrap">
-                <h3 class="sub_title">関連主催団体</h3>
-                <div class="column_relationorg_card">
+                <!-- 関連主催団体 -->
+                <section class="column_content_wrap">
+                    <h3 class="sub_title">関連主催団体</h3>
+                    <div class="column_relationorg_card">
 
-                    <!-- 主催団体カード型 -->
-                            <a class="card_wrap" href="<?php the_permalink(); ?>">
-                                <div class="orgcard_shape">
-                                    <div class="card_inner">
+                        <!-- 主催団体カード型 -->
+                        <a class="card_wrap" href="<?php the_permalink(); ?>">
+                            <div class="orgcard_shape">
+                                <div class="card_inner">
+                                    <div>
+                                        <?php if ($the_query->has_post_thumbnail()) : ?>
+                                            <!-- アイキャッチ画像があった場合は、表示 -->
+                                            <?php the_post_thumbnail('medium'); ?>
+                                        <?php else : ?>
+                                            <!-- アイキャッチ画像が設定していない場合は、noimage.pngを表示 -->
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="card_text">
+                                        <h3><?php the_title(); ?></h3>
+                                        <div class="orgcard_line"></div>
                                         <div>
-                                            <?php if ($the_query->has_post_thumbnail()) : ?>
-                                                <!-- アイキャッチ画像があった場合は、表示 -->
-                                                <?php the_post_thumbnail('medium'); ?>
-                                            <?php else : ?>
-                                                <!-- アイキャッチ画像が設定していない場合は、noimage.pngを表示 -->
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
-                                            <?php endif; ?>
-                                        </div>
-
-                                        <div class="card_text">
-                                            <h3><?php the_title(); ?></h3>
-                                            <div class="orgcard_line">
-                                            </div>
+                                            <span class="card_subtitle">所在地</span>
                                             <div>
-                                                <span class="card_subtitle">所在地</span>
-                                                <div>
-                                                    <span>
-                                                        <?php if (mb_strlen(get_field('address')) > 20) {
-                                                            $address = mb_substr(get_field('address'), 0, 20);
-                                                            echo $address . '…';
-                                                        } else {
-                                                            echo get_field('address');
-                                                        } ?>
-                                                    </span>
-                                                </div>
+                                                <span>
+                                                    <?php if (mb_strlen(get_field('address')) > 20) {
+                                                        $address = mb_substr(get_field('address'), 0, 20);
+                                                        echo $address . '…';
+                                                    } else {
+                                                        echo get_field('address');
+                                                    } ?>
+                                                </span>
                                             </div>
+                                        </div>
+                                        <div>
                                             <span class="card_subtitle">電話番号</span>
                                             <div>
                                                 <span>
                                                     <?php the_field('tel'); ?>
                                                 </span>
                                             </div>
-                                            <?php if (get_field('hour')): ?>
-                                                <div>
-                                                    <span class="card_subtitle">営業時間</span>
-                                                    <div>
-                                                        <span>
-                                                            <?php the_field('hour') ?>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
+                                        <?php if (get_field('hour')): ?>
+                                            <div>
+                                                <span class="card_subtitle">営業時間</span>
+                                                <div>
+                                                    <span>
+                                                        <?php the_field('hour') ?>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                                            </div>
-            </section>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-<?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-
-
-                </div>
-            </section>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
 
 
+    </div>
+    </section>
 
-            <div class="section_line"></div>
 
 
-            <!-- おすすめコラム記事 -->
-            <section class="column_content_wrap">
-                <h3 class="sub_title">おすすめコラム記事</h3>
+    <div class="section_line"></div>
+
+
+    <!-- おすすめコラム記事 -->
+    <section class="column_content_wrap">
+        <h3 class="sub_title">おすすめコラム記事</h3>
+        <div class="column_recomend_list">
+
+
+            <?php
+            $args = [
+                "post_type" => "column", //コラム記事
+                'posts_per_archive_page' => 3, //3件表示
+            ];
+
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()): ?>
                 <div class="column_recomend_list">
+                    <?php while ($the_query->have_posts()): ?>
+                        <?php $the_query->the_post(); ?>
 
+                        <span>
+                            <time datetime="<?php the_time('Y-m-d'); ?>">
+                                <?php the_time('Y/m/d(D)'); ?>
+                            </time>
+                        </span>
+                        <a href="<?php the_permalink(); ?>">
+                            <span>
+                                <?php the_title(); ?>
+                            </span>
+                        </a>
 
-                    <?php
-                    $args = [
-                        "post_type" => "column", //コラム記事
-                        'posts_per_archive_page' => 3, //3件表示
-                    ];
-
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()): ?>
-                        <div class="column_recomend_list">
-                            <?php while ($the_query->have_posts()): ?>
-                                <?php $the_query->the_post(); ?>
-
-                                <span>
-                                    <time datetime="<?php the_time('Y-m-d'); ?>">
-                                        <?php the_time('Y/m/d(D)'); ?>
-                                    </time>
-                                </span>
-                                <a href="<?php the_permalink(); ?>">
-                                    <span>
-                                        <?php the_title(); ?>
-                                    </span>
-                                </a>
-
-                            <?php endwhile; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </div>
-                    <?php endif; ?>
-
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
                 </div>
+            <?php endif; ?>
 
-            </section>
+        </div>
+
+    </section>
 
     </div>
 
