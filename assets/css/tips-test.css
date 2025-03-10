@@ -22,6 +22,7 @@
     overflow: hidden;
 }
 
+
 .tips_text {
     /* padding: 1rem; */
     font-size: 1.6rem;
@@ -34,21 +35,7 @@
     line-height: 1.5;
     background-color: transparent;
     /* 背景を透過 */
-    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
 }
-
-@keyframes typing {
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
 
 /* バブルのコンテナ */
 .bubble_container {
@@ -152,3 +139,26 @@
     width: 20rem;
     height: 132.53px;
 }
+
+
+/* TB */
+@media screen and (min-width:768px) {
+    .tips_text {
+        /* padding: 1rem; */
+        font-size: 1.6rem;
+        line-height: 3rem;
+        position: relative;
+        padding: 2rem;
+        /* background-color: #f0f0f0; */
+        /* border-radius: 1rem; */
+        color: #333;
+        line-height: 1.5;
+        background-color: transparent;
+        /* 背景を透過 */
+        /* animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite; */
+    }
+
+}
+
+/* pc */
+@media screen and (min-width:1280px) {}
