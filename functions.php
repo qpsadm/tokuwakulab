@@ -280,9 +280,9 @@ function my_custom_title($title)
     if (is_search()) {
         // 条件検索ページの場合はタイトルを以下のように変更
         // tagline（キャッチフレーズ）を無くす
-        // unset($title['tagline']);
+        unset($title['tagline']);
         // タイトルの中身を変更する
-        $title['title'] = '条件検索';
+        $title['title'] = 'イベントを探す';
     }
     // 変更したタイトルを返す
     return $title;
