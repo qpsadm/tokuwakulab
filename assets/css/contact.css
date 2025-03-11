@@ -1,7 +1,19 @@
 @charset "utf-8";
 
+.contact_top {
+    /* margin-top: 60px; */
+    width: 100%;
+    height: 200px;
+    background-image: url("../img/AdobeStock_537320558.png");
+    background-size: cover;
+    background-position: center;
+    /* 画像の位置を中央に */
+    position: relative;
+    margin-top: 0;
+}
+
 /* お問い合わせ例の装飾 */
-.contact_samplewrap{
+.contact_samplewrap {
     border: 3px solid #58BE15;
     border-radius: 16px;
     margin-bottom: 4.8rem;
@@ -9,39 +21,39 @@
     background-color: #fff;
 }
 
-.contact_samplewrap div{
+.contact_samplewrap div {
     font-size: 1.6rem;
     font-family: "Noto Sans JP", serif;
     line-height: 2.4rem;
 }
 
 /* フォームの装飾 */
-.contact_font{
+.contact_font {
     font-weight: 900;
     margin: 2.4rem 0;
 }
 
-.contact_samplelist div::before{
+.contact_samplelist div::before {
     content: "・";
 }
 
-.contact_form_wrap{
+.contact_form_wrap {
     margin: 2.4rem 0;
 }
 
-.contact_form_wrap label{
+.contact_form_wrap label {
     text-align: center;
     font-family: "Noto Sans JP", serif;
     font-size: 1.6rem;
 }
 
-.contact_form_wrap label span{
+.contact_form_wrap label span {
     color: #FF7B00;
 }
 
-.contact_item input ,
+.contact_item input,
 .contact_item select,
-.contact_item textarea{
+.contact_item textarea {
     margin: 0.8rem 0 1.6rem;
     border: 3px solid #58BE15;
     border-radius: 16px;
@@ -52,60 +64,61 @@
     background-color: #fff;
 }
 
-.contact_item input:focus ,
+.contact_item input:focus,
 .contact_item select:focus,
-.contact_item textarea:focus{
+.contact_item textarea:focus {
     border: 3px solid #FF7B00;
     outline: none;
 }
 
-.contact_form_wrap span{
+.contact_form_wrap span {
     font-family: "Noto Sans JP", serif;
     font-size: 1.6rem;
 }
 
-.contact_item{
+.contact_item {
     margin-top: 3.2rem;
     padding-bottom: 1.6rem;
     /* border-bottom: 2px solid #FFCC00; */
 }
 
-.contact_form_wrap a{
+.contact_form_wrap a {
     display: inline;
 }
 
-.contact_input_flex{
+.contact_input_flex {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 
 /* pcのフォーム大きさ変更 */
-@media screen and (min-width:1280px){
+@media screen and (min-width:1280px) {
+
     .contact_samplewrap,
-    .contact_form_wrap{
+    .contact_form_wrap {
         margin: 4.8rem 12rem 0;
     }
 
 
-    .contact_item{
+    .contact_item {
         display: flex;
         align-items: center;
         width: 100%;
     }
 
-    .contact_item label{
+    .contact_item label {
         text-align: left;
         width: 30%;
         padding-left: 0.8rem;
         flex-shrink: 0;
     }
 
-    .contact_item input ,
+    .contact_item input,
     .contact_item select,
-    .contact_item textarea{
+    .contact_item textarea {
         width: 100%;
         max-width: 750rem;
         flex-grow: 1;
@@ -115,38 +128,38 @@
 
 
 
-    .contact_item textarea{
+    .contact_item textarea {
         height: 8rem;
     }
 
 }
 
-.contact_agreement{
+.contact_agreement {
     text-align: center;
     margin: 2.4rem 0;
 }
 
-.contact_agreement a{
+.contact_agreement a {
     border-bottom: 2px dotted #FFCC00;
 }
 
-.contact_agreement a:hover{
+.contact_agreement a:hover {
     color: #FF7B00;
 }
 
-.contact_boxagree{
+.contact_boxagree {
     margin: 2.4rem 0;
 }
 
 
-.contact_btn{
+.contact_btn {
     margin-top: 4rem;
     margin-bottom: 6.4rem;
     display: flex;
     justify-content: space-between;
 }
 
-.contact_prv_btn,.contact_nxt_btn{
+.contact_prv_btn, .contact_nxt_btn {
     display: inline-block;
     color: #fff;
     padding: 1rem 3.2rem;
@@ -156,35 +169,35 @@
     font-family: "ads-akari", sans-serif;
 }
 
-.contact_prv_btn:hover{
+.contact_prv_btn:hover {
     background-color: #fff;
 }
 
-.contact_prv_btn{
+.contact_prv_btn {
     background-color: #58BE15;
     border: 2px solid #58BE15;
 }
 
-.contact_nxt_btn{
+.contact_nxt_btn {
     background-color: #FF7B00;
     border: 2px solid #FF7B00;
 }
 
-#submit{
+#submit {
     background-color: #CCC;
 }
 
-.contact_prv_btn:hover{
+.contact_prv_btn:hover {
     color: #58BE15;
 }
 
-#confirm:hover{
+#confirm:hover {
     background-color: #FFF;
     color: #FF7B00;
 }
 
 /* お問い合わせ確認画面 */
-.contact_confirm{
+.contact_confirm {
     margin: 0.8rem 0 1.6rem;
     border: 3px solid #58BE15;
     border-radius: 16px;
@@ -196,7 +209,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 /* お問い合わせ完了 */
