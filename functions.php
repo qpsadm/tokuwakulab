@@ -314,7 +314,7 @@ function my_pre_get_posts($query)
         return;
     }
 
-    //search画面         -------投稿タイプをeventに変更済み(3/2 今野)
+    //search画面 メインクエリの追加
     if (!is_admin() && $query->is_main_query() && ($query->is_search() || $query->is_post_type_archive('event'))) {
         $today = date('Y-m-d');
 

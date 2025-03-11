@@ -165,7 +165,7 @@ get_header();
                         <div class="top_news_item_wrap">
                             <span><?php the_time('Y年m月d日(l)') ?></span>
                             <a href="<?php the_permalink(); ?>">
-                                <span class="top_news_item">お知らせが入ります。</span>
+                                <span class="top_news_item"><?php the_title(); ?></span>
                             </a>
                         </div>
 

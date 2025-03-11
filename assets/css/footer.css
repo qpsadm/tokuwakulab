@@ -31,7 +31,7 @@ footer {
 .footer_navflex {
     display: flex;
     flex-direction: column;
-    padding-bottom: 4rem;
+    padding: 0 5rem 4rem;
     margin-left: 4rem;
 }
 
