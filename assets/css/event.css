@@ -289,23 +289,24 @@
 
 
 /* SNSアイコン */
-.org_snsicons{
+.org_snsicons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.6rem 0;
 }
-.org_snsicons img{
+
+.org_snsicons img {
     width: 48px;
     height: auto;
-    margin:0.8rem 2rem;
+    margin: 0.8rem 2rem;
 }
 
-.org_snsicons a{
+.org_snsicons a {
     transition: 0.3s;
 }
 
-.org_snsicons a:hover{
+.org_snsicons a:hover {
     transition: 0.3s;
     transform: scale(0.8);
 }
@@ -400,6 +401,7 @@
     font-size: 1.4rem;
 }
 
+/* ダウンロードボタン */
 .event_pdf a {
     width: 150px;
     height: 40px;
@@ -410,6 +412,18 @@
     border-radius: 30px;
     font-size: 1.8rem;
     padding: 10px;
+}
+
+/* ダウンロードボタンアクション */
+.event_pdf a {
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+}
+
+.event_pdf a:hover {
+    transition: 0.3s;
+    transform: scale(0.95);
 }
 
 
@@ -481,7 +495,7 @@
 }
 
 /* footer */
-footer{
+footer {
     margin-top: 8rem;
 }
 
