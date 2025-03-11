@@ -189,6 +189,15 @@
 
                         <tr>
                             <th>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/venue.png" alt="">駐車場
+                            </th>
+                            <td>
+                                <?php the_field('parking'); ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/nearest_station.png" alt="">最寄り駅
                             </th>
                             <td>
@@ -264,7 +273,7 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/other.png" alt="">特記事項
                             </th>
                             <td>
-                                <?php if (get_field('remarks')): ?><span><?php the_field('remarks') ?></span>
+                                <?php if (get_field('remarks')): ?><span class="remarks_red"><?php the_field('remarks') ?></span>
                                 <?php else: ?>
                                     <span>-</span>
                                 <?php endif; ?>
