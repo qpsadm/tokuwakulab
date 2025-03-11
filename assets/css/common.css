@@ -385,7 +385,6 @@ h1 {
     display: block;
     margin: 2.4rem 2.4rem 1.6rem 0.8rem;
     width: 300px;
-    height: 486px;
     border: solid 4px #58BE15;
     border-radius: 12px;
     background-color: #fff;
@@ -403,9 +402,11 @@ h1 {
 /* イベントタイトル */
 .card_shape h3 {
     font-size: 1.6rem;
-    margin: 0.8rem 0 0.8rem 0;
-    line-height: 2.8rem;
+    padding: 0.8rem 0;
     font-weight: 900;
+    height: 5.2rem;
+    display: flex;
+    align-items: center;
 }
 
 /* カード内の文字サイズ */
@@ -458,20 +459,26 @@ h1 {
 /* タイトルと内容の間の区切り線 */
 .card_line {
     border-bottom: 2px dashed #58BE15;
-    margin: 0.8rem 0;
+    margin: 0.4rem 0 0.8rem 0;
 }
 
 /* 会場名と会場名内容を包む、flexのためのclass */
 .card_linefeed {
     display: flex;
+        /* align-items: center; */
+    height:3.6rem ;
+}
+
+.card_tag_wrap{
+    height: 8rem;
 }
 
 /* タイトルから会場名までを包むdiv */
-.card_text {
+/* .card_text {
     width: auto;
     height: 180px;
     margin: 0 auto;
-}
+} */
 
 /* card_shapeを包む、countdownと終了の位置設定、hoverのための親div */
 .card_wrap {
