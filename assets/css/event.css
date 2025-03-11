@@ -298,6 +298,10 @@
     border-radius: 20px;
 }
 
+/* 特記事項を赤文字にする */
+.remarks_red {
+    color: red;
+}
 
 /* イベントチラシ */
 .event_pdf {
