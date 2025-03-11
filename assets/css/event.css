@@ -205,7 +205,7 @@
 
 /* イベント説明 */
 .event_description {
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
     max-width: 450px;
     height: auto;
     display: block;
@@ -224,7 +224,6 @@
     /* 自動改行を有効にする */
     font-size: 1.6rem;
     line-height: 3rem;
-    padding: 2rem;
     color: #333;
     background-color: transparent;
     /* 背景を透過 */
@@ -286,6 +285,29 @@
     width: 20px;
     height: 20px;
     margin-right: 1rem;
+}
+
+
+/* SNSアイコン */
+.org_snsicons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.6rem 0;
+}
+.org_snsicons img{
+    width: 48px;
+    height: auto;
+    margin:0.8rem 2rem;
+}
+
+.org_snsicons a{
+    transition: 0.3s;
+}
+
+.org_snsicons a:hover{
+    transition: 0.3s;
+    transform: scale(0.8);
 }
 
 
@@ -456,6 +478,11 @@
     justify-content: center;
     width: 100%;
     text-align: center;
+}
+
+/* footer */
+footer{
+    margin-top: 8rem;
 }
 
 
