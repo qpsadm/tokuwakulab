@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 背景 */
-body {
+main {
     width: 100%;
     height: 100%;
     background-image: url(../img/bgi.png);
@@ -351,8 +351,8 @@ section {
     line-height: 3rem;
     padding: 2rem;
     color: #333;
-    background-color: transparent;
-    /* 背景を透過 */
+    background-color: rgba(247, 247, 247, 0.7);
+
 }
 
 .tips_text::before {
@@ -493,9 +493,7 @@ section {
     .tips_text {
         margin: 0 2rem;
         font-size: 1.6rem;
-        line-height: 1.5rem;
-        text-align: left;
-        /* 左寄せ */
+        line-height: 3.5rem;
     }
 
     .tips_text::before {
@@ -573,9 +571,7 @@ section {
     .tips_text {
         margin: 0 4rem;
         font-size: 2rem;
-        line-height: 2rem;
-        text-align: left;
-        /* 左寄せ */
+        line-height: 4rem;
     }
 
     .tips_text::before {
