@@ -88,63 +88,55 @@
                 <div class="card_line"></div>
 
 
-                <div class="<?php if (is_search()) {
-                                echo 'card_linefeed';
-                            } ?>">
-                    <span class="<?php if (is_search()) {
-                                        echo 'card_subtitle';
-                                    } else {
-                                        echo 'card_eventday';
-                                    }
-                                    ?>">開催日
-                    </span>
-                    <?php if (is_search()): ?>
-                        <div><span><?php the_field('date_start'); ?></span></div>
-                    <?php else: ?>
-                        <span><?php the_field('date_start'); ?></span>
-                    <?php endif; ?>
+                <div>
+                    <span>開催日</span>
+                    <span><?php the_field('date_start'); ?></span>
                 </div>
 
 
 
-                <div class="<?php if (is_search()) {
-                                echo 'card_linefeed';
-                            } ?>">
+                <div>
                     <span class="card_subtitle">申込締切
                     </span>
-                    <?php if (is_search()): ?>
-                        <div><span><?php the_field('closing'); ?></span></div>
-                    <?php else: ?>
-                        <span><?php the_field('closing'); ?></span>
-                    <?php endif; ?>
+                    <span><?php the_field('closing'); ?></span>
                 </div>
 
-                <div class="<?php if (is_search()) {
-                                echo 'card_linefeed';
-                            } ?>">
-                    <span class="card_subtitle">会場名
-                    </span>
-                    <?php if (is_search()): ?>
-                        <div><span><?php the_field('address'); ?></span></div>
-                    <?php else: ?>
-                        <span><?php the_field('address'); ?></span>
-                    <?php endif; ?>
-                </div>
 
-                <div class="<?php if (is_search()) {
-                                echo 'card_linefeed';
-                            } ?>">
+                <div>
                     <span class="card_subtitle">対象学年
                     </span>
-                    <?php if (is_search()): ?>
-                        <div><span><?php the_field('age_text'); ?></span></div>
-                    <?php else: ?>
-                        <span><?php the_field('age_text'); ?></span>
-                    <?php endif; ?>
-
+                    <span>
+                        <?php
+                        $age = get_field('age_text'); // カスタムフィールドの値を取得
+                        if ($age) { // 値が存在するかチェック
+                            if (mb_strlen($age) > 14) {
+                                echo mb_substr($age, 0, 14) . '...';
+                            } else {
+                                echo $age;
+                            }
+                        } ?>
+                        <?php //the_field('age_text'); ?>
+                    </span>
                 </div>
 
+                <div>
+                    <span class="card_subtitle">会場名
+                    </span>
 
+                    <span>
+                        <?php
+                        $address = get_field('address'); // カスタムフィールドの値を取得
+                        if ($address) { // 値が存在するかチェック
+                            if (mb_strlen($address) > 35) {
+                                echo mb_substr($address, 0, 35) . '...';
+                            } else {
+                                echo $address;
+                            }
+                        } ?>
+                        <?php //the_field('address');
+                        ?>
+                    </span>
+                </div>
                 <!-- 開催地域タクソノミーを取得して表示 -->
                 <?php
 
