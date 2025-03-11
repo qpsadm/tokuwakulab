@@ -210,6 +210,6 @@ button[type="submit"] {
 }
 
 .search_result span {
-    font-size: 1.6rem;
-    line-height: 1.6;
+    /* font-size: 1.6rem; */
+    /* line-height: 1.6; */
 }
