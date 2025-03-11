@@ -521,6 +521,7 @@
 
 /* 一覧へ飛ぶボタン */
 .event_btn_wrap {
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
