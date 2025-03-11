@@ -21,7 +21,6 @@
     font-weight: 600;
     padding: 0 0 4rem 0;
 }
-
 @media screen and (min-width:1280px) {
 .org_name{
     padding: 0 0 8rem 0;
@@ -51,7 +50,6 @@
 }
 
 /* 主催団体説明 */
-
 .org_description{
     padding: 0.8rem 0;
     max-width: 450px;
@@ -59,8 +57,6 @@
     display: block;
     margin: 0 auto;
 }
-
-
 @media screen and (min-width:1280px) {
 .org_description{
     margin-top: 1.6rem;
@@ -183,40 +179,48 @@ flex-wrap: wrap;
 }
 
 /* === 基本情報 === */
+/* イベント基本情報 */
 .org_table {
+    max-width: 450px;
+    width: auto;
     border: 3px solid #58BE15;
-    background-color: #FFF;
-    margin: 0 auto;
+    background-color: #fff;
+    margin: 4rem auto 0;
     border-collapse: separate;
     overflow: hidden;
     border-spacing: 0;
-    border-radius: 2.4rem;
-    width: 280px;
-    height: auto;
+    border-radius: 20px;
+    word-break: break-all;
+    word-wrap: break-all;
 }
-.org_table th,
-.org_table td {
-    padding: 0.8rem;
+
+.org_table tr {
+    display: block;
+    margin: 0 3.0rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #58BE15;
     font-size: 1.3rem;
 }
-@media screen and (min-width:768px) {
-    .org_table {
-    width: 480px;
+
+/* 最後の行の tr の border を消す */
+.org_table tr:last-child {
+    border-bottom: none;
 }
-.org_table th,
-.org_table td {
-    padding: 2rem 4rem;
-}
-}
+
 .org_table th {
-    text-align: center;
-    vertical-align: middle;
-    border-bottom: 1px solid #c5deb5;
+    width: 100px;
+    align-items: center;
 }
 
 .org_table td {
     vertical-align: middle;
-    border-bottom: 1px solid #c5deb5;
+    padding-left: 2rem;
+}
+
+@media screen and (min-width:1280px) {
+    .org_table {
+        max-width: 640px;
+    }
 }
 
 /* subtitle */
@@ -259,14 +263,21 @@ flex-wrap: wrap;
 
 /* Google Map */
 .map {
+    max-width: 450px;
+    height: 225px;
+    margin: 0 auto;
     position: relative;
-    padding-top: 50%;
 }
 
 .map iframe {
-    position: absolute;
-    left: 0;
-    top:0;
-    width:100%;
+    width: 100%;
     height: 100%;
+    border: 0;
+}
+
+@media screen and (min-width:1280px) {
+    .map {
+        max-width: 640px;
+        height: 320px;
+    }
 }
