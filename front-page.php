@@ -11,10 +11,11 @@ get_header();
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_461039205.jpeg" alt="キービジュアル"></li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_411271448.jpeg" alt="キービジュアル"></li>
             </ul>
+            <div class="catchcopy"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div>
         </div>
     <?php endif; ?>
 
-    <div><img src="<?php echo get_template_directory_uri(); ?>/assets/img/catchcopy.svg" alt="見て触って体験する科学！"></div>
+
 
 
     <div class="inner">
@@ -229,7 +230,7 @@ get_header();
             </div>
         </section>
     </div>
-    
+
     <!-- 豆知識 -->
     <div class="pc_space">
         <div class="tips_wrap inner">
