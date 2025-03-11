@@ -22,7 +22,7 @@ p {
 }
 
 .faq_qawrap {
-    padding: 3.2rem;
+    padding: 3.2rem 3.2rem 3.2rem 1.6rem;
     /* padding-right: 4rem; */
     border-bottom: 2px solid #FFCC00;
     background-color: #fff;

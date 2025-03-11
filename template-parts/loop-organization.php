@@ -38,7 +38,15 @@
                 <span class="orgcard_subtitle">営業時間</span>
                 <div>
                     <span>
-                        <?php the_field('hour') ?>
+                        <?php
+                        $age = get_field('hour'); // カスタムフィールドの値を取得
+                        if ($age) { // 値が存在するかチェック
+                            if (mb_strlen($age) > 33) {
+                                echo mb_substr($age, 0, 33) . '...';
+                            } else {
+                                echo $age;
+                            }
+                        } ?>
                     </span>
                 </div>
             </div>
