@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="pc_space">
-    <section class="page_top">
+    <section class="post_top">
         <h2 class="page_title">お知らせ詳細</h2>
     </section>
 

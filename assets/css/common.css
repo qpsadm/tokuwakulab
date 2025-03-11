@@ -170,6 +170,7 @@ h1 {
 
 .menu_item a {
     display: flex;
+    width: 260px;
     align-items: center;
 }
 

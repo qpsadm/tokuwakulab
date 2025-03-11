@@ -220,20 +220,7 @@ footer {
     footer {
         width: calc(100% - 320px);
         height: auto;
-
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
     }
-
-    /* footer ul {
-        display: flex;
-        gap: 2rem;
-        flex-direction: row;
-        justify-content: center;
-        gap: 3rem;
-    } */
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
