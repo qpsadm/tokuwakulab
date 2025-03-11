@@ -122,6 +122,21 @@
     margin-top: 2.4rem;
 }
 
+/* コラム内画像設定 */
+.column_articleimg{
+    text-align: center;
+}
+
+/* コラム内画像を包むdiv */
+.column_articleimg img{
+    width: 500px;
+    height: auto;
+    margin: 2rem 0 4rem 0;
+        border-radius: 40px;
+}
+
+
+
 /* コラム記事の見出しの設定 */
 .column_item h3 {
     font-size: 2rem;
@@ -144,7 +159,7 @@
     display: block;
     background-color: #58BE15;
     padding: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin: 8rem 0 1.5rem 0;
     border-radius: 10px;
     text-align: center;
     color: #fff;
@@ -245,3 +260,8 @@
 .column_recomend_list a:hover {
     opacity: 0.8;
 }
+
+.column_recomend_list a span{
+    border-bottom: 2px dashed #FFCC00;
+    margin: 0.8rem 0;
+    font-weight: 600;}
