@@ -30,7 +30,7 @@ if (function_exists('get_user_favorites')) {
 <?php get_header(); ?>
 <main class="pc_space">
 
-    <section class="page_top">
+    <section class="favorite_top">
         <h2 class="page_title">
             お気に入り一覧
         </h2>
