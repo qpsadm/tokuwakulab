@@ -136,6 +136,6 @@ $the_query = new WP_Query($args);
 </main>
 
 <!-- footer.phpを読み込む -->
-<!-- <?php
+<?php
         get_footer();
-        ?> -->
+        ?>
