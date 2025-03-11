@@ -30,6 +30,7 @@
 /* SNSアイコン */
 .org_snsicons{
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.6rem 0;
