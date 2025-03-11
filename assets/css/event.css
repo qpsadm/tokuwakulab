@@ -216,8 +216,8 @@
     max-width: 100%;
     /* 必要に応じて最大幅を指定 */
     height: auto;
-    border: 0.5rem solid rgba(230, 239, 148, 0.7);
-    border-radius: 3rem;
+    /* border: 0.5rem solid rgba(230, 239, 148, 0.7);
+    border-radius: 3rem; */
     word-wrap: break-word;
     /* 単語が長すぎる場合に折り返す */
     white-space: normal;
@@ -566,8 +566,8 @@
 .event_entry_btn {
     width: 260px;
     padding: 2rem 3.2rem;
-    /* background-color: #F4CF15;
-    border-radius: 50px; */
+    background-color: #F4CF15;
+    border-radius: 50px;
     color: #111111;
     font-size: 2rem;
     /* あかり */
