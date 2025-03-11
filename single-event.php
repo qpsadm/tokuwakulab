@@ -189,7 +189,7 @@
 
                         <tr>
                             <th>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/venue.png" alt="">駐車場
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/parking.jpeg" alt="">駐車場
                             </th>
                             <td>
                                 <?php the_field('parking'); ?>
