@@ -24,17 +24,17 @@
                     <div class="cardlist_line"></div>
 
                     <!-- タクソノミーを取得して表示 -->
-                    <div class="">
+                    <div >
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'column_type');
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            echo '<p class="cardlist_tag">';
+                            echo '<div class="cardlist_tag">';
                             foreach ($terms as $term) {
 
                                 //タクソノミー一覧ページに飛ぶリンクを付ける
                                 echo '<a href="' . esc_url(get_term_link($term)) . '" class="taxonomy-badge">#' . esc_html($term->name) . '</a> ';
                             }
-                            echo '</p>';
+                            echo '</div>';
                         }
                         ?>
                     </div>
