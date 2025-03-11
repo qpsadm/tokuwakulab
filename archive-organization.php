@@ -21,7 +21,7 @@ $the_query = new WP_Query($args);
 
 <main class="pc_space">
 
-    <section class="page_top">
+    <section class="org_list_top">
         <h2 class="page_title">
             主催団体一覧
         </h2>
