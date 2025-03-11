@@ -436,7 +436,7 @@ h1 {
 }
 
 /* 会場名の内容の横幅 */
-.card_halltext{
+.card_halltext {
     width: 20.4rem;
 }
 
@@ -461,7 +461,7 @@ h1 {
 }
 
 /* 会場名と会場名内容を包む、flexのためのclass */
-.card_linefeed{
+.card_linefeed {
     display: flex;
 }
 
@@ -562,6 +562,7 @@ h1 {
     transition: 0.3s;
     background-color: #fff;
 }
+
 @media screen and (max-width:768px) {
     .cardlist_wrap {
         width: 300px;
@@ -581,6 +582,7 @@ h1 {
     border-radius: 12px;
     margin-right: 1.6rem;
 }
+
 @media screen and (max-width:768px) {
     .cardlist_flex img {
         width: 264px;
@@ -600,7 +602,9 @@ h1 {
     display: flex;
     line-height: 3.2rem;
 }
+
 @media screen and (max-width:768px) {
+
     /* SP版の時flexを解除 */
     .cardlist_flex {
         display: block;
@@ -662,7 +666,7 @@ h1 {
     border: solid 4px #FFCC00;
     border-radius: 12px;
     background-color: #fff;
-        transition: 0.3s;
+    transition: 0.3s;
 }
 
 .orgcard_wrap img {
@@ -693,7 +697,7 @@ h1 {
     padding: 1.2rem;
 }
 
-.orgcard_subtitle{
+.orgcard_subtitle {
     font-weight: 600;
 }
 
@@ -909,24 +913,34 @@ footer {
 }
 
 .footer_navflex {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 4rem;
-    margin-left: 4rem;
+    padding: 0 8rem 4.8rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* 120px以上で自動調整 */
+    gap: 0.5rem;
+    place-items: start;
+    /* アイテムをグリッド内で中央配置 */
+
 }
+
+.footer_navitemwrap {
+    margin: 1rem;
+}
+
 
 .footer_navitemwrap p {
     font-size: 2.4rem;
     font-weight: 600;
     color: #fff;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .footer_navitem a {
     font-size: 1.6rem;
     line-height: 2.4rem;
     color: #fff;
-    margin: 3.2rem 0;
+    margin: 2.4rem 0;
     padding-left: 1.6rem;
     text-decoration-line: underline;
     text-decoration-color: #fff;
@@ -1037,11 +1051,6 @@ footer {
 }
 
 @media screen and (min-width:768px) {
-    .footer_navflex {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
     .footer_navitemwrap a {
         margin: 2.4rem 0;
     }
@@ -1083,7 +1092,14 @@ footer {
 
 
 /* TB */
-@media screen and (min-width:768px) and (max-width:1279px) {
+@media screen and (min-width:600px) and (max-width:1100px) {
+    .footer_navflex {
+        padding: 0 8rem 4.8rem;
+        grid-template-columns: repeat(2, 1fr);
+        /* 120px以上で自動調整 */
+        gap: 1rem;
+
+    }
 
     /* TB版で写真のサイズを変更 */
     .f_img img {
@@ -1092,6 +1108,24 @@ footer {
     }
 }
 
+@media screen and (min-width:1101px)and (max-width:1279px) {
+    footer {
+        width: 100%;
+        height: auto;
+
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+    }
+
+    .footer_navflex {
+        padding: 0 4rem 4.8rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+    }
+}
 
 @media screen and (min-width:1280px) {
     footer {
@@ -1111,6 +1145,14 @@ footer {
         justify-content: center;
         gap: 3rem;
     } */
+
+    .footer_navflex {
+        padding: 0 2rem 4.8rem;
+        grid-template-columns: repeat(4, 1fr);
+        /* 120px以上で自動調整 */
+        gap: 1rem;
+
+    }
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
