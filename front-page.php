@@ -244,7 +244,7 @@ get_header();
                     ?>
                 </span>
             </div>
-            <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
+            <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/tips_img.png" alt="当サイトのキャラクター画像"></div>
         </div>
     </div>
 </main>

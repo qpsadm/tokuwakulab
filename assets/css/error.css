@@ -1,20 +1,20 @@
 @charset "utf-8";
 
-.error_wrap{
+.error_wrap {
     line-height: 2.4rem;
     margin: 16rem 0;
 }
 
-.error_wrap a{
+.error_wrap a {
     display: inline;
-    font-size: 2rem;
+    font-size: 1.9rem;
     border-bottom: 2px dashed #FFCC00;
 }
 
-.error_wrap a:hover{
+.error_wrap a:hover {
     color: #FF7B00;
 }
 
-.error_wrap p:nth-child(1){
+.error_wrap p:nth-child(1) {
     padding-bottom: 0.8rem;
 }
