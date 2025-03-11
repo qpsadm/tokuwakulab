@@ -90,66 +90,73 @@
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">開催日</span>
-                    <?php $date_str = get_field('date_start');  ?>
-                    <?php $formatted_date = str_replace(
-                        ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
-                        ['日', '月', '火', '水', '木', '金', '土'],
-                        $date_str
-                    );
-                    echo '<span>' . $formatted_date . '</span>';
-                    ?>
+                    <div>
+                        <?php $date_str = get_field('date_start');  ?>
+                        <?php $formatted_date = str_replace(
+                            ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+                            ['日', '月', '火', '水', '木', '金', '土'],
+                            $date_str
+                        );
+                        echo '<span>' . $formatted_date . '</span>';
+                        ?>
+                    </div>
                 </div>
 
 
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">申込締切</span>
-                    <?php $date_str = get_field('closing');  ?>
-                    <?php $formatted_date = str_replace(
-                        ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
-                        ['日', '月', '火', '水', '木', '金', '土'],
-                        $date_str
-                    );
-                    echo '<span>' . $formatted_date . '</span>';
-                    ?>
+                    <div>
+                        <?php $date_str = get_field('closing');  ?>
+                        <?php $formatted_date = str_replace(
+                            ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+                            ['日', '月', '火', '水', '木', '金', '土'],
+                            $date_str
+                        );
+                        echo '<span>' . $formatted_date . '</span>';
+                        ?>
+                    </div>
                 </div>
 
 
                 <div class="card_linefeed">
                     <span class="card_subtitle">対象学年
                     </span>
-                    <span>
-                        <?php
-                        $age = get_field('age_text'); // カスタムフィールドの値を取得
-                        if ($age) { // 値が存在するかチェック
-                            if (mb_strlen($age) > 14) {
-                                echo mb_substr($age, 0, 14) . '...';
-                            } else {
-                                echo $age;
-                            }
-                        } ?>
-                        <?php //the_field('age_text');
-                        ?>
-                    </span>
+                    <div>
+                        <span>
+                            <?php
+                            $age = get_field('age_text'); // カスタムフィールドの値を取得
+                            if ($age) { // 値が存在するかチェック
+                                if (mb_strlen($age) > 14) {
+                                    echo mb_substr($age, 0, 14) . '...';
+                                } else {
+                                    echo $age;
+                                }
+                            } ?>
+                            <?php //the_field('age_text');
+                            ?>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="card_linefeed">
                     <span class="card_hallname">会場名
                     </span>
-
-                    <span class="card_halltext">
-                        <?php
-                        $address = get_field('address'); // カスタムフィールドの値を取得
-                        if ($address) { // 値が存在するかチェック
-                            if (mb_strlen($address) > 29) {
-                                echo mb_substr($address, 0, 29) . '...';
-                            } else {
-                                echo $address;
-                            }
-                        } ?>
-                        <?php //the_field('address');
-                        ?>
-                    </span>
+                    <div>
+                        <span class="card_halltext">
+                            <?php
+                            $address = get_field('address'); // カスタムフィールドの値を取得
+                            if ($address) { // 値が存在するかチェック
+                                if (mb_strlen($address) > 29) {
+                                    echo mb_substr($address, 0, 29) . '...';
+                                } else {
+                                    echo $address;
+                                }
+                            } ?>
+                            <?php //the_field('address');
+                            ?>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="card_tag_wrap">

@@ -99,10 +99,10 @@
                     </div>
 
                     <div class="eve_taglist">
-                        <!-- 開催時期タクソノミーを取得して表示 -->
+                        <!-- ジャンル、体験方法、開催時期タクソノミーを取得して表示 -->
                         <?php
 
-                        // 表示したいタクソノミーのスラッグを配列で定義
+                        // タクソノミーのスラッグを配列で定義
                         $taxonomies = ['event_type', 'experience', 'vacation'];  // 追加したいタクソノミーをここに書く
 
                         // 各タクソノミーについて処理
@@ -447,11 +447,8 @@
         </section>
 
 
-        <!-- 区切り線 -->
-        <div class="section_line"></div>
-
-        <section>
-
+        <section class="event_space_line">
+            <!-- 関連コラム記事 -->
             <h3 class="sub_title">関連コラム記事</h3>
             <div class="event_column_list">
 
@@ -487,10 +484,8 @@
 
         </section>
 
-        <!-- 区切り線 -->
-        <div class="section_line"></div>
 
-
+        <!-- イベント申し込みボタン -->
         <div class="event_entry_wrap">
             <?php if (get_field('links')) : ?>
                 <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お問い合わせ・<br>お申し込みはこちら</span></a>
