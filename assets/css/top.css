@@ -23,10 +23,14 @@ main {
 .catchcopy{
     position: absolute;
     top: 20px;
-    right: -8px;
+    /* right: -8px; */
+    right: 0;
     width: 240px;
-    height: auto;}
-    @media screen and (min-width:768px) {
+    height: auto;
+}
+
+
+@media screen and (min-width:768px) {
 .catchcopy{
     position: absolute;
     top: 120px;
