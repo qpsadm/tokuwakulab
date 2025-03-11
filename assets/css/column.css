@@ -1,5 +1,29 @@
 @charset "utf-8";
 
+.column_top {
+    /* margin-top: 60px; */
+    width: 100%;
+    height: 200px;
+    background-image: url("../img/AdobeStock_248694432.png");
+    background-size: cover;
+    background-position: center;
+    /* 画像の位置を中央に */
+    position: relative;
+    margin-top: 0;
+}
+
+.post_top {
+    /* margin-top: 60px; */
+    width: 100%;
+    height: 200px;
+    background-image: url("../img/AdobeStock_276825083.png");
+    background-size: cover;
+    background-position: center;
+    /* 画像の位置を中央に */
+    position: relative;
+    margin-top: 0;
+}
+
 /* コラムタイトルの設定 */
 .column_ttl_wrap,
 .post_ttl_wrap {
