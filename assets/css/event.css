@@ -566,8 +566,8 @@
 .event_entry_btn {
     width: 260px;
     padding: 2rem 3.2rem;
-    background-color: #F4CF15;
-    border-radius: 50px;
+    /* background-color: #F4CF15;
+    border-radius: 50px; */
     color: #111111;
     font-size: 2rem;
     /* あかり */
