@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徳島わくわくラボ</title>
 
-    <meta name="description" content="このサイトは徳島県内の科学的なイベント情報を集約したサイトです。">
+    <meta name="description" content="徳島県内の科学技術イベント情報を一括検索！お気に入り登録や公式サイトへのアクセスも簡単。">
     <meta name="keywords" content="徳島,科学,イベント,体験,プログラミング,親子,ロボット,教育,学び,実験,理科,科学館,サイエンス,ものづくり,環境,化学,小学生,中学生,高校生,">
     <!-- 電話番号自動認識機能OFF -->
     <meta name="format-detection" content="telephone=no">
@@ -48,11 +48,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- JavaScriptの読みこみ -->
     <script src="../assets/js/animation.js"></script>
+    <script src="../assets/js/kijima.js"></script>
 
 
 
     <!-- ==============作業用slick JavaScriptの読み込み    ※最後に消す======== -->
-    <script src="../assets/js/haruna.js"></script>
+    <script src="../assets/js/mana.js"></script>
 
 
 
@@ -113,7 +114,7 @@
     <main class="pc_space">
 
         <!-- ページタイトル -->
-        <section class="eventpage_top">
+        <section class="event_title_top">
             <h2 class="page_title">イベント詳細</h2>
         </section>
 
@@ -145,13 +146,15 @@
                     </ul>
                 </div>
 
-                <div class="eve_taglist">#ここにタグが入ります#ここにタグが入ります#ここにタグが入ります#ここにタグが入ります#ここにタグが入ります#ここにタグが入ります#ここにタグが入ります
+                <div class="eve_taglist">
+                    <div class="eve_tag">#地域</div>
+                    <div class="eve_tag">#定期開催</div>
                 </div>
 
-                <div></div>
-
                 <div class="event_description">
-                    <p>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</p>
+                    <div class="event_description_text">
+                    <span>ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。ここにイベントの詳細情報が入ります。</span>
+                    </div>
                 </div>
             </section>
 
@@ -283,6 +286,9 @@
                 <a href="#" class="event_entry_btn">お申し込みはこちら</a>
                 <p>※イベントページに飛びます。</p>
             </div>
+
+            <!-- 区切り線 -->
+            <div class="section_line"></div>
 
             <section>
                 <h3 class="sub_title">開催予定のイベント</h3>
@@ -476,6 +482,9 @@
                 </div>
             </section>
 
+            <!-- 区切り線 -->
+            <div class="section_line"></div>
+
             <section>
                 <h3 class="sub_title">関連コラム記事</h3>
                 <div class="event_column_list">
@@ -491,6 +500,9 @@
                 </div>
             </section>
 
+            <!-- 区切り線 -->
+            <div class="section_line"></div>
+
             <!-- イベント申し込みボタン -->
             <div class="event_entry_wrap">
                 <a href="#" class="event_entry_btn">お申し込みはこちら</a>
@@ -498,6 +510,14 @@
             </div>
         </div>
     </main>
+
+    <!-- 豆知識 -->
+    <div class="pc_space">
+        <div class="tips_wrap inner">
+            <div class="tips_text"><span>ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！ここに豆知識が入ります！</span></div>
+            <div class="tips_chara"><img src="../assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
+        </div>
+    </div>
 
     <footer>
         <div class="inner">
