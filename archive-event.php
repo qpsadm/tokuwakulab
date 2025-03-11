@@ -63,8 +63,8 @@ $the_query = new WP_Query($args);
 
 <main class="pc_space">
     <!-- ページタイトル -->
-    <section class="page_top">
-        <h2 class="page_title">月別イベント一覧</h2>
+    <section class="event_list_top">
+        <h2 class="page_title">イベント月別一覧</h2>
     </section>
 
     <!-- パンくずリスト -->

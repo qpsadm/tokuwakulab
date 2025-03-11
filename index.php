@@ -7,7 +7,7 @@ get_header();
 
     <!-- ページのタイトル -->
     <section class="post_list_top">
-        <h2 class="page_title"><?php wp_title(''); ?>一覧</h2>
+        <h2 class="page_title"><?php wp_title(''); ?></h2>
     </section>
 
     <!-- 切り替え、絞り込むボタン
