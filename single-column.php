@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <main class="pc_space">
-    <section class="page_top">
+    <section class="column_top">
         <h2 class="page_title">
             コラム詳細</h2>
     </section>
@@ -19,11 +19,7 @@
                     <?php the_post(); ?>
 
                     <!-- コラムタイトル -->
-
-
                     <div class="column_ttl_wrap">
-
-
                         <!-- タイトルの日付ボタン -->
                         <div class="column_date">
                             <span>
@@ -35,47 +31,42 @@
                                 <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('m/d(D)'); ?></time>
                             </span>
                         </div>
-
                         <!-- 記事のタイトル -->
                         <h2 class="column_ttl">
                             <?php the_title(); ?>
                         </h2>
-
                     </div>
 
-
-
                     <!-- コラムタクソノミーハッシュタグ -->
-
                     <span class="column_tag">
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'column_type');
                         if (!empty($terms) && !is_wp_error($terms)) {
-
                             foreach ($terms as $term) {
-
                                 echo '<span class="colmun_tag">#' . esc_html($term->name) . '</span>';
                             }
                         }
                         ?>
                     </span>
 
-                    <br>
+                    <!-- コラムアイキャッチ画像 -->
+
+                    <?php if (has_post_thumbnail()): ?>
+                        <div class="column_img_wrap">
+                            <?php the_post_thumbnail('full', ['class' => 'column_img']); ?>
+                        </div>
+                    <?php endif; ?>
 
                     <!-- 記事の投稿内容 -->
                     <div class="column_item_wrap">
                         <div class="column_item">
-
                             <?php the_content(); ?>
-
 
                             <!-- フィールドに関連リンクがあれば飛ぶ -->
                             <?php if (get_field('url')): ?>
 
                                 <p><a href="<?php the_field('url'); ?>" target="_blank">【関連リンク】<?php the_field('url'); ?></a>
                                 </p>
-
-
                             <?php endif; ?>
 
                         </div>
@@ -157,7 +148,6 @@
             <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
 
-                <div class="section_line"></div>
 
 
                 <!-- 関連主催団体 -->
@@ -180,51 +170,47 @@
         <?php endif; ?>
 
 
-    </div>
-    </section>
 
 
 
-    <div class="section_line"></div>
+        <!-- おすすめコラム記事 -->
+        <section class="column_content_wrap">
+            <h3 class="sub_title">おすすめコラム記事</h3>
+            <div class="column_recomend_list">
 
 
-    <!-- おすすめコラム記事 -->
-    <section class="column_content_wrap">
-        <h3 class="sub_title">おすすめコラム記事</h3>
-        <div class="column_recomend_list">
+                <?php
+                $args = [
+                    "post_type" => "column", //コラム記事
+                    'posts_per_archive_page' => 3, //3件表示
+                ];
 
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()): ?>
+                    <div class="column_recomend_list">
+                        <?php while ($the_query->have_posts()): ?>
+                            <?php $the_query->the_post(); ?>
 
-            <?php
-            $args = [
-                "post_type" => "column", //コラム記事
-                'posts_per_archive_page' => 3, //3件表示
-            ];
-
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()): ?>
-                <div class="column_recomend_list">
-                    <?php while ($the_query->have_posts()): ?>
-                        <?php $the_query->the_post(); ?>
-
-                        <span>
-                            <time datetime="<?php the_time('Y-m-d'); ?>">
-                                <?php the_time('Y/m/d(D)'); ?>
-                            </time>
-                        </span>
-                        <a href="<?php the_permalink(); ?>">
                             <span>
-                                <?php the_title(); ?>
+                                <time datetime="<?php the_time('Y-m-d');
+                                                ?>">
+                                    <?php the_time('Y/m/d(D)'); ?>
+                                </time>
                             </span>
-                        </a>
+                            <a href="<?php the_permalink(); ?>">
+                                <span>
+                                    <?php the_title(); ?>
+                                </span>
+                            </a>
 
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-                </div>
-            <?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
+                <?php endif; ?>
 
-        </div>
+            </div>
 
-    </section>
+        </section>
 
     </div>
 

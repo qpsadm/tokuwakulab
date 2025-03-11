@@ -18,6 +18,10 @@ if (is_null($date1)) {
 $date2 = get_last_day_of_month($date1);
 
 // サブクエリ
+
+//↓3/11追加
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
 $args = [
     // 1ページに表示する記事数
     'paged' => $paged,
@@ -95,7 +99,7 @@ $the_query = new WP_Query($args);
                         'post_type' => 'event',
                         'posts_per_page' => -1,
                         'meta_query' => [
-                            'relation'=>'AND',
+                            'relation' => 'AND',
                             [
                                 'key' => 'date_start',
                                 'type' => 'DATE',
