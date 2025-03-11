@@ -124,7 +124,7 @@ get_header();
                     // 最新3件のコラムを取得
                     $latest_columns = new WP_Query(array(
                         'post_type'      => 'column', // カスタム投稿タイプが「column」なら変更不要
-                        'posts_per_page' => 4,       // 最新3件を取得
+                        'posts_per_page' => 3,       // 最新3件を取得
                         'orderby'        => 'date',  // 日付順
                         'order'          => 'DESC'   // 新しい順
                     ));
@@ -229,24 +229,24 @@ get_header();
             </div>
         </section>
     </div>
-</main>
-
-<!-- 豆知識 -->
-<div class="pc_space">
-    <div class="tips_wrap inner">
-        <div class="tips_text">
-            <span>
-                <?php
-                // functions.php で定義した豆知識のランダム関数を呼び出す
-                if (function_exists('get_random_message')) {
-                    get_random_message();
-                }
-                ?>
-            </span>
+    
+    <!-- 豆知識 -->
+    <div class="pc_space">
+        <div class="tips_wrap inner">
+            <div class="tips_text">
+                <span>
+                    <?php
+                    // functions.php で定義した豆知識のランダム関数を呼び出す
+                    if (function_exists('get_random_message')) {
+                        get_random_message();
+                    }
+                    ?>
+                </span>
+            </div>
+            <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
         </div>
-        <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="当サイトのキャラクター画像"></div>
     </div>
-</div>
+</main>
 
 <!-- footer.phpを読み込む -->
 <?php
