@@ -42,7 +42,7 @@
     </div>
     <p class="copyright"><small>copyright© 徳島わくわくラボ All Rights Reserved.</small></p>
     <div class="f_img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="サイト内のキャラクター">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="化石の画像">
     </div>
 </footer>
 

@@ -37,6 +37,11 @@
     padding: 0.8rem 0.8rem 0.8rem 1.6rem;
 }
 
+p {
+    line-height: 2;
+}
+
+
 .service_establishment {
     text-align: center;
     font-family: "Noto Sans JP", serif;
