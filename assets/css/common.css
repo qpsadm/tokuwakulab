@@ -1083,6 +1083,7 @@ footer {
     /*フッター全体に広げる */
     padding: 0 2rem;
     /*左右の余白 （もしかしたらいらないかも）*/
+    margin-top: 8rem;
 }
 
 .f_img img {
