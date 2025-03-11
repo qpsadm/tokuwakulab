@@ -36,7 +36,7 @@
                     <!-- post本文 -->
                     <div class="post_item_wrap">
                         <div class="post_item">
-                            <h3 class="post_item_ttl">ここにコラムの見出し</h3>
+                            <h3 class="post_item_ttl">ここにポストの見出し</h3>
                             <p><?php the_content(); ?></p>
                         </div>
                     </div>
