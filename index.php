@@ -6,7 +6,7 @@ get_header();
 <main class="pc_space">
 
     <!-- ページのタイトル -->
-    <section class="page_top">
+    <section class="post_list_top">
         <h2 class="page_title"><?php wp_title(''); ?>一覧</h2>
     </section>
 

@@ -2,7 +2,7 @@
 
 <main class="pc_space">
 
-    <section class="page_top">
+    <section class="found_top">
         <h2 class="page_title">イベントをさがす</h2>
     </section>
 

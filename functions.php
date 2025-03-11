@@ -689,3 +689,13 @@ function my_enqueue_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+
+//コラム個ページの画像にdivを付ける設定
+function wrap_images_with_div($block_content, $block)
+{
+    if (is_singular('column') && $block['blockName'] === 'core/image') {
+        return '<div class="column_articleimg">' . $block_content . '</div>';
+    }
+    return $block_content;
+}
+add_filter('render_block', 'wrap_images_with_div', 10, 2);
