@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.pc_space {
+.tips_pc_space {
     height: auto;
     margin-top: 4.8rem;
     margin-bottom: 0;
@@ -81,7 +81,7 @@
     position: relative;
     width: 40px;
     height: 40px;
-    background-color: rgba(73, 175, 247, 0.7);
+    background-color: rgba(202, 223, 239, 0.7);
     border-radius: 50%;
     animation: bubble-up 3s infinite ease-in-out;
 }
@@ -93,7 +93,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: rgba(67, 167, 238, 0.5);
+    background-color: rgba(198, 225, 244, 0.5);
     border-radius: 50%;
     animation: bubble-up 3s infinite ease-in-out;
 }
