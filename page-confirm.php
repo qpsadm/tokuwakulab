@@ -2,7 +2,7 @@
 
 <main class="pc_space">
 
-    <section class="page_top">
+    <section class="contact_top">
         <h2 class="page_title">主催団体様<br class="brpc_none">お問い合わせ</h2>
     </section>
 

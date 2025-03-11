@@ -17,7 +17,7 @@ $the_query = new WP_Query($args);
 
 <main class="pc_space">
     <!-- ページタイトル -->
-    <section class="page_top">
+    <section class="column_list_top">
         <h2 class="page_title">コラム一覧</h2>
     </section>
 
