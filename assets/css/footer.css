@@ -3,7 +3,7 @@
 footer {
     width: 100%;
     height: auto;
-    background: linear-gradient(to bottom,
+    background: linear-gradient(to top,
             #6d4c41 0rem,
             #6d4c41 1rem,
             #a27d71 2rem,
@@ -26,37 +26,175 @@ footer {
             #a27d71 19rem,
             #7f4d3e 20rem);
 
+}
+
+.footer_navflex {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    margin-left: 4rem;
+}
+
+.footer_navitemwrap p {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4rem;
+}
+
+.footer_navitem a {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #fff;
+    margin: 3.2rem 0;
+    padding-left: 1.6rem;
+    text-decoration-line: underline;
+    text-decoration-color: #fff;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.5rem;
+}
+
+.footer_navitem a:hover {
+    color: #ccc;
+}
+
+.footer_navitemwrap {
+    margin-top: 4rem;
+}
+
+/* footerフォントオーサムの設定 */
+.footer_navitem li {
+    position: relative;
+}
+
+.footer_eventfound::before {
+    content: "\f492";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_eventlist::before {
+    content: "\f073";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_favorite::before {
+    content: "\f02c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_orglist::before {
+    content: "\f544";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1.4rem;
+}
+
+.footer_contact::before {
+    content: "\f0e0";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_postlist::before {
+    content: "\f0a1";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_columnlist::before {
+    content: "\f31c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_about::before {
+    content: "\e4f3";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_service::before {
+    content: "\e596";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_faqlist::before {
+    content: "\e4e3";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+.footer_privacylist::before {
+    content: "\f3ed";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    left: -1rem;
+}
+
+
+/* TB */
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .footer_navflex {
+        display: flex;
+        flex-wrap: wrap;
+        /* アイテムを折り返す */
+        gap: 10px;
+        /* アイテム間の余白 */
+        /* flex-direction: row; */
+        justify-content: space-between;
+    }
+
+    .footer_navitemwrap {
+        width: calc(50% - 5px);
+        /* 2カラムに均等配置 */
+    }
+
+    .footer_navitemwrap a {
+        margin: 2.4rem 0;
+
+    }
+}
+
+.footer_instawrap {
+    display: none;
     text-align: center;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    margin-bottom: 3.2rem;
 }
 
-footer ul {
-    display: flex;
-    flex-direction: column;
-    /* 縦並びに配置 */
-    align-items: center;
-    /* 中央揃え */
-    gap: 1.5rem;
-    /* 均等な間隔を開ける */
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem;
-    /* 下に余白をつけて small との間隔を調整 */
+.footer_instaicon {
+    font-size: 5.6rem;
+    display: inline;
 }
 
-footer li {
+.copyright {
     color: white;
-    font-size: 1.4rem;
-
-}
-
-footer small {
-    color: white;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
 }
 
 
@@ -77,39 +215,25 @@ footer small {
 }
 
 
-/* TB */
-@media screen and (min-width:768px) and (max-width:1279px) {
-
-    /* TB版で写真のサイズを変更 */
-    .f_img img {
-        width: 16rem;
-        height: auto;
-    }
-}
-
 
 @media screen and (min-width:1280px) {
     footer {
         width: calc(100% - 320px);
         height: auto;
 
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
-        /* 中央揃え */
-        justify-content: center;
-        /* 縦方向の中央揃え */
+        justify-content: center; */
     }
 
-    footer ul {
+    /* footer ul {
         display: flex;
         gap: 2rem;
         flex-direction: row;
         justify-content: center;
-        /* 中央配置 */
         gap: 3rem;
-        /* 均等な間隔を開ける */
-    }
+    } */
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
