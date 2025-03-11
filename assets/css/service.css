@@ -12,27 +12,32 @@
     margin-top: 0;
 }
 
-.service_wrap{
+.service_textarea {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service_wrap {
     margin-bottom: 0.8rem;
 }
 
-.service_textarea{
+.service_textarea {
     background-color: #fff;
     margin-bottom: 8rem;
 }
 
-.service_article{
+.service_article {
     font-size: 2.4rem;
     font-weight: 500;
-    padding: 1.6rem 0 0.8rem 0.8rem ;
+    padding: 1.6rem 0 0.8rem 0.8rem;
     line-height: 3.2rem;
 }
 
-.service_text{
+.service_text {
     padding: 0.8rem 0.8rem 0.8rem 1.6rem;
 }
 
-.service_establishment{
+.service_establishment {
     text-align: center;
     font-family: "Noto Sans JP", serif;
     font-size: 1.6rem;
@@ -50,6 +55,6 @@
     border-bottom: #FF7800 solid 1px;
 }
 
-.service_inner{
+.service_inner {
     padding: 2rem 4rem 4rem 4rem;
 }
