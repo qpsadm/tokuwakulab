@@ -125,7 +125,7 @@
         <div class="pagenation">
             <?php if (function_exists('wp_pagenavi')): ?>
                 <div class="pagination">
-                    <?php wp_pagenavi(); ?>
+                    <?php wp_pagenavi(['query' => $the_query]); ?>
                 </div>
             <?php endif; ?>
         </div>

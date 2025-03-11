@@ -21,12 +21,14 @@ $date2 = get_last_day_of_month($date1);
 
 //↓3/11追加
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+$posts_per_page = 6; // 1ページあたりの表示件数
 
 $args = [
     // 1ページに表示する記事数
     'paged' => $paged,
     'post_type' => 'event',
-    'posts_per_page' => 6,
+    'post_status' => 'publish', // 公開された投稿のみを表示
+    'posts_per_page' => $posts_per_page,
 
 ];
 
@@ -194,7 +196,7 @@ $the_query = new WP_Query($args);
         <div class="pagenation">
             <?php if (function_exists('wp_pagenavi')): ?>
                 <div class="pagination">
-                    <?php wp_pagenavi(); ?>
+                    <?php wp_pagenavi(['query' => $the_query]); ?>
                 </div>
             <?php endif; ?>
         </div>
