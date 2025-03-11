@@ -201,7 +201,7 @@
 /* イベント説明 */
 .event_description {
     padding: 3rem 0;
-    /* max-width: 450px; */
+    max-width: 450px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -228,7 +228,7 @@
 @media screen and (min-width:1280px) {
     .event_description {
         padding-top: 4rem;
-        /* max-width: 640px; */
+        max-width: 640px;
         height: auto;
         display: block;
         margin: 0 auto;
