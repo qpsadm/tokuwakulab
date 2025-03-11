@@ -89,7 +89,7 @@
 
 
                 <div>
-                    <span>開催日</span>
+                    <span class="card_eventday">開催日</span>
                     <span><?php the_field('date_start'); ?></span>
                 </div>
 
@@ -115,20 +115,21 @@
                                 echo $age;
                             }
                         } ?>
-                        <?php //the_field('age_text'); ?>
+                        <?php //the_field('age_text');
+                        ?>
                     </span>
                 </div>
 
-                <div>
-                    <span class="card_subtitle">会場名
+                <div class="card_linefeed">
+                    <span class="card_hallname">会場名
                     </span>
 
-                    <span>
+                    <span class="card_halltext">
                         <?php
                         $address = get_field('address'); // カスタムフィールドの値を取得
                         if ($address) { // 値が存在するかチェック
-                            if (mb_strlen($address) > 35) {
-                                echo mb_substr($address, 0, 35) . '...';
+                            if (mb_strlen($address) > 29) {
+                                echo mb_substr($address, 0, 29) . '...';
                             } else {
                                 echo $address;
                             }
