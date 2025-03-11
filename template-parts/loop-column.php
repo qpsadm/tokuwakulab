@@ -10,7 +10,7 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
                 <?php endif; ?>
                 <div class="cardlist_toptext">
-                    <span><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y年m月d日'); ?></time></span>
+                    <span><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d(D)'); ?></time></span>
                     <h3>
                         <!-- タイトルの表示を14文字に制限 -->
                         <?php if (mb_strlen($post->post_title) > 14) {

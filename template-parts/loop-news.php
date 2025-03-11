@@ -28,6 +28,6 @@
 
 
 <div class="post_list_item_wrap">
-    <span><?php the_time('Y年m月d日(l)') ?></span>
+    <span><?php the_time('Y/m/d(D)') ?></span>
     <a href="<?php the_permalink(); ?>"><span class="post_list_item"><?php the_title(); ?></span></a>
 </div>
