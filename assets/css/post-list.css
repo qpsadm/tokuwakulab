@@ -1,17 +1,32 @@
 @charset "utf-8";
 
+.post_list_top {
+    /* margin-top: 60px; */
+    width: 100%;
+    height: 200px;
+    background-image: url("../img/AdobeStock_227271396.png");
+    background-size: cover;
+    background-position: center;
+    /* 画像の位置を中央に */
+    position: relative;
+    margin-top: 0;
+}
+
 .post_list {
     background-color: #FFFDE7;
     border-radius: 32px;
     padding: 3.2rem 2.4rem;
 }
+
 .post_list_item_wrap {
     margin: 2.4rem 0;
 }
+
 .post_list span {
     font-size: 1.6rem;
     line-height: 3.2rem;
 }
+
 .post_list_item {
     border-bottom: 2px dashed #FFCC00;
     margin: 0.8rem 0;
@@ -20,6 +35,7 @@
 
 /* TB and pc*/
 @media screen and (min-width:768px) {
+
     /* お知らせ新着 */
     .post_list {
         margin: 0 auto;
