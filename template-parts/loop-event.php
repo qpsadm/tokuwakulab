@@ -78,8 +78,8 @@
             <div class="card_text">
                 <h3>
                     <!-- タイトルの表示を29文字に制限 -->
-                    <?php if (mb_strlen($post->post_title) > 29) {
-                        $title = mb_substr($post->post_title, 0, 29);
+                    <?php if (mb_strlen($post->post_title) > 26) {
+                        $title = mb_substr($post->post_title, 0, 26);
                         echo $title . '...';
                     } else {
                         echo $post->post_title;
