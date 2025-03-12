@@ -383,7 +383,7 @@ h1 {
 /* カードの形 */
 .card_shape {
     display: block;
-    margin: 2.4rem  1.6rem 0.8rem;
+    margin: 2.4rem 1.6rem 0.8rem;
     width: 300px;
     border: solid 4px #58BE15;
     border-radius: 12px;
@@ -409,7 +409,7 @@ h1 {
     line-height: 2rem;
 }
 
-.card_text{
+.card_text {
     height: 18rem;
 }
 
@@ -445,7 +445,7 @@ h1 {
 /* 会場名と会場名内容を包む、flexのためのclass */
 .card_linefeed {
     display: flex;
-    height:3.6rem ;
+    height: 3.6rem;
 }
 
 /* 項目：会場名の装飾 */
@@ -460,7 +460,7 @@ h1 {
 }
 
 /* tagを包むdiv */
-.card_tag_wrap{
+.card_tag_wrap {
     height: 8rem;
 }
 
@@ -549,7 +549,7 @@ h1 {
 /* イベントカード型-ブックマーク */
 .card_bookmark {
     position: absolute;
-    left: 16px;
+    left: 32px;
     top: 24px;
     width: 48px;
     height: 56px;
@@ -669,6 +669,7 @@ h1 {
     background-color: #fff;
     transition: 0.3s;
 }
+
 /* カード型をホバーした時の設定 */
 .orgcard_wrap:hover {
     transition: 0.3s;
@@ -690,7 +691,7 @@ h1 {
 }
 
 /* タイトル */
-.orgcard_text h3{
+.orgcard_text h3 {
     font-size: 1.6rem;
     font-weight: 600;
     height: 5.6rem;
@@ -699,7 +700,7 @@ h1 {
     align-items: center;
 }
 
-.orgcard_text{
+.orgcard_text {
     height: 24rem;
 }
 
