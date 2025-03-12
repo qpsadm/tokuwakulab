@@ -1109,7 +1109,7 @@ footer {
 }
 
 .f_img img {
-    width: 100%;
+    width: 240px;
     height: auto;
 }
 
@@ -1129,7 +1129,7 @@ footer {
 
     /* TB版で写真のサイズを変更 */
     .f_img img {
-        width: 16rem;
+        width:360px ;
         height: auto;
     }
 }
@@ -1182,7 +1182,7 @@ footer {
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
-        width: 24rem;
+        width: 400px;
         height: auto;
     }
 }
