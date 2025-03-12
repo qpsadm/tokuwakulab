@@ -340,6 +340,8 @@
     padding-left: 2rem;
 }
 
+
+
 @media screen and (min-width:1280px) {
     .event_table {
         max-width: 640px;

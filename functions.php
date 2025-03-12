@@ -526,13 +526,14 @@ add_filter('wpcf7_form_elements', function ($content) {
 //     }
 // }
 
-//豆知識投稿をランダム表示にする関数（0227石田作成）
+//豆知識投稿をランダム表示にする関数
 function get_random_message()
 {
     $args = array(
         'post_type'      => 'short', //  投稿タイプ'short'を対象に
-        'posts_per_page' => 1,       //  一件にする
-        'orderby'        => 'rand',  //  ランダムで取得
+        'posts_per_page' => 61,       //  一件にする
+        // 'orderby'        => 'rand',  //  ランダムで取得
+
     );
     $query = new WP_Query($args);    // サブクエリを作成
 
