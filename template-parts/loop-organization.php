@@ -11,7 +11,17 @@
         </div>
 
         <div class="orgcard_text">
-            <h3><?php the_title(); ?></h3>
+            <h3>
+                <h3>
+                    <!-- タイトルの表示を29文字に制限 -->
+                    <?php if (mb_strlen($post->post_title) > 26) {
+                        $title = mb_substr($post->post_title, 0, 26);
+                        echo $title . '...';
+                    } else {
+                        echo $post->post_title;
+                    } ?>
+                </h3>
+            </h3>
             <div class="orgcard_line">
             </div>
             <div>
@@ -41,8 +51,8 @@
                         <?php
                         $age = get_field('hour'); // カスタムフィールドの値を取得
                         if ($age) { // 値が存在するかチェック
-                            if (mb_strlen($age) > 33) {
-                                echo mb_substr($age, 0, 33) . '...';
+                            if (mb_strlen($age) > 29) {
+                                echo mb_substr($age, 0, 29) . '...';
                             } else {
                                 echo $age;
                             }
