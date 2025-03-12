@@ -229,62 +229,6 @@
     /* 背景を透過 */
 }
 
-.event_description_text ul {
-    list-style: none;
-    /* デフォルトの記号を消す */
-    counter-reset: list-counter;
-    /* カウンターをリセット */
-}
-
-.event_description_text ul li {
-    counter-increment: list-counter;
-    /* カウンターを増加 */
-}
-
-
-.org_description {
-    padding: 0 0 3rem 0;
-    max-width: 450px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.org_description_text {
-    max-width: 100%;
-    /* 必要に応じて最大幅を指定 */
-    height: auto;
-    /* border: 0.5rem solid rgba(230, 239, 148, 0.7);
-    border-radius: 3rem; */
-    word-wrap: break-word;
-    /* 単語が長すぎる場合に折り返す */
-    white-space: normal;
-    /* 自動改行を有効にする */
-    font-size: 1.6rem;
-    line-height: 3rem;
-    color: #333;
-    background-color: transparent;
-    /* 背景を透過 */
-}
-
-.org_description_text ol {
-    counter-reset: list-counter;
-    /* カウンターのリセット */
-}
-
-.org_description_text ol li {
-    counter-increment: list-counter;
-    /* カウンターの増加 */
-}
-
-.event_description_text ul li::before,
-.org_description_text ol li::before {
-    content: counter(list-counter) ". ";
-    /* 数字を表示 */
-    color: #FF7B00;
-    font-weight: bold;
-}
-
 @media screen and (min-width:1280px) {
     .event_description {
         padding-top: 4rem;
@@ -293,16 +237,6 @@
         display: block;
         margin: 0 auto;
     }
-
-    .org_description {
-        padding-top: 4rem;
-        max-width: 640px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-
 }
 
 /* イベント基本情報 */
@@ -360,7 +294,6 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.6rem 0;
-    align-items: center;
 }
 
 .org_snsicons img {
@@ -724,5 +657,5 @@ footer {
 }
 
 .event_column_list a:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }

@@ -14,61 +14,64 @@
 }
 
 /* 主催団体名 */
-.org_name{
+.org_name {
     font-size: 3.2rem;
     line-height: 3.2rem;
     text-align: center;
     font-weight: 600;
     padding: 0 0 4rem 0;
 }
+
 @media screen and (min-width:1280px) {
-.org_name{
-    padding: 0 0 8rem 0;
-}
+    .org_name {
+        padding: 0 0 8rem 0;
+    }
 }
 
 /* SNSアイコン */
-.org_snsicons{
+.org_snsicons {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.6rem 0;
 }
-.org_snsicons img{
+
+.org_snsicons img {
     width: 48px;
     height: auto;
-    margin:0.8rem 2rem;
+    margin: 0.8rem 2rem;
 }
 
-.org_snsicons a{
+.org_snsicons a {
     transition: 0.3s;
 }
 
-.org_snsicons a:hover{
+.org_snsicons a:hover {
     transition: 0.3s;
     transform: scale(0.8);
 }
 
 /* 主催団体説明 */
-.org_description{
+.org_description {
     padding: 0.8rem 0;
     max-width: 450px;
     height: auto;
     display: block;
     margin: 0 auto;
 }
+
 @media screen and (min-width:1280px) {
-.org_description{
-    margin-top: 1.6rem;
-    max-width: 640px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    .org_description {
+        margin-top: 1.6rem;
+        max-width: 640px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
-.org_section{
+.org_section {
     margin-top: 8rem;
 }
 
@@ -78,10 +81,11 @@
     padding: 0 4rem;
 }
 
-.column_recomend_list a span{
+.column_recomend_list a span {
     border-bottom: 2px dashed #FFCC00;
     margin: 0.8rem 0;
-    font-weight: 600;}
+    font-weight: 600;
+}
 
 @media screen and (min-width:768px) {
     .column_recomend_list {
@@ -98,7 +102,7 @@
 }
 
 .column_recomend_list a:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 /* === slickの設定 === */
@@ -128,23 +132,25 @@
 
 /* キービジュアル */
 .top_kv_wrap {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* スリックの設定 */
 .slider_kv,
 .slider_kv li {
     max-width: 450px;
-    max-height:338px;
+    max-height: 338px;
 }
+
 @media screen and (min-width:1280px) {
-.slider_kv,
-.slider_kv li {
-    max-width: 640px;
-    max-height:480px;
-}
+
+    .slider_kv,
+    .slider_kv li {
+        max-width: 640px;
+        max-height: 480px;
+    }
 }
 
 .slider_kv img {
@@ -170,7 +176,7 @@ flex-wrap: wrap;
 
 @media screen and (min-width:1280px) {
     .slider_org {
-    max-width: 840px;
+        max-width: 840px;
     }
 }
 
@@ -225,40 +231,41 @@ flex-wrap: wrap;
 }
 
 /* subtitle */
-.sub_title{
+.sub_title {
     margin: 2.4rem 0 4rem 0;
 }
+
 @media screen and (min-width:1280px) {
-.sub_title{
-    margin: 2.4rem 0 6.4rem 0;
-}
+    .sub_title {
+        margin: 2.4rem 0 6.4rem 0;
+    }
 }
 
 /* リンクボタン */
-.btn_wrap{
+.btn_wrap {
     margin: 4rem 0 4rem 0;
     text-align: center;
 }
 
 
 /* イベントリスト */
-.org_eventlist{
+.org_eventlist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.btnwrap_wrap{
+.btnwrap_wrap {
     text-align: center;
 }
 
 .org_pastevent,
-.org_column{
+.org_column {
     font-size: 1.6rem;
     margin-bottom: 2.4rem;
 }
 
-.sub_title div{
+.sub_title div {
     margin: 0 auto;
 }
 

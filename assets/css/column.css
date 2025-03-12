@@ -123,16 +123,16 @@
 }
 
 /* コラム内画像設定 */
-.column_articleimg{
+.column_articleimg {
     text-align: center;
 }
 
 /* コラム内画像を包むdiv */
-.column_articleimg img{
+.column_articleimg img {
     width: 500px;
     height: auto;
     margin: 2rem 0 4rem 0;
-        border-radius: 40px;
+    border-radius: 40px;
 }
 
 
@@ -258,10 +258,11 @@
 }
 
 .column_recomend_list a:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
-.column_recomend_list a span{
+.column_recomend_list a span {
     border-bottom: 2px dashed #FFCC00;
     margin: 0.8rem 0;
-    font-weight: 600;}
+    font-weight: 600;
+}

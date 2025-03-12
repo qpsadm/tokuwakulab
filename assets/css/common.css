@@ -355,7 +355,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* 120px以上で自動調整 */
-    gap: 32px;
+    gap: 48px;
     align-items: start;
     /* カードを上揃え */
     justify-items: center;
@@ -383,8 +383,7 @@ h1 {
 /* カードの形 */
 .card_shape {
     display: block;
-    /* margin: 2.4rem 2.4rem 1.6rem 0.8rem; */
-    margin: 2.4rem 1.6rem 0.8rem;
+    margin: 2.4rem  1.6rem 0.8rem;
     width: 300px;
     border: solid 4px #58BE15;
     border-radius: 12px;
@@ -401,18 +400,25 @@ h1 {
 }
 
 /* イベントタイトル */
-.card_shape h3 {
+.card_text h3 {
     font-size: 1.6rem;
-    padding: 0.8rem 0;
     font-weight: 900;
-    height: 5.2rem;
+    height: 5.6rem;
     display: flex;
     align-items: center;
+    line-height: 2rem;
+}
+
+/* タイトルと内容の間の区切り線 */
+.card_line {
+    border-bottom: 2px dashed #58BE15;
+    margin: 0.4rem 0 0.8rem 0;
 }
 
 /* カード内の文字サイズ */
 .card_shape span {
     font-size: 1.2rem;
+    line-height: 1.6rem;
 }
 
 /* インナー */
@@ -457,29 +463,18 @@ h1 {
     font-size: 1.2rem;
 }
 
-/* タイトルと内容の間の区切り線 */
-.card_line {
-    border-bottom: 2px dashed #58BE15;
-    margin: 0.4rem 0 0.8rem 0;
-}
+
 
 /* 会場名と会場名内容を包む、flexのためのclass */
 .card_linefeed {
     display: flex;
-    /* align-items: center; */
-    height: 3.6rem;
+        /* align-items: center; */
+    height:3.6rem ;
 }
 
-.card_tag_wrap {
+.card_tag_wrap{
     height: 8rem;
 }
-
-/* タイトルから会場名までを包むdiv */
-/* .card_text {
-    width: auto;
-    height: 180px;
-    margin: 0 auto;
-} */
 
 /* card_shapeを包む、countdownと終了の位置設定、hoverのための親div */
 .card_wrap {
@@ -672,7 +667,6 @@ h1 {
     /* margin: 2.4rem 2.4rem 1.6rem 0.8rem; */
     margin: 2.4rem 1.6rem 0.8rem;
     width: 300px;
-    height: 450px;
     border: solid 4px #FFCC00;
     border-radius: 12px;
     background-color: #fff;
@@ -687,20 +681,13 @@ h1 {
     margin: 0 auto;
 }
 
-.orgcard_wrap h3 {
-    font-size: 1.6rem;
-    margin: 0.8rem 0 0.8rem 0;
-    line-height: 2.8rem;
-    font-weight: 600;
-}
-
 .orgcard_wrap span {
     font-size: 1.2rem;
 }
 
 .orgcard_line {
     border-bottom: 2px dashed #FFCC00;
-    margin: 0.8rem 0;
+    margin: 0.4rem 0 0.8rem 0;
 }
 
 .orgcard_inner {
@@ -709,6 +696,22 @@ h1 {
 
 .orgcard_subtitle {
     font-weight: 600;
+}
+
+.orgcard_item{
+    /* display: flex;
+    flex-wrap: wrap; */
+    height: 17rem;
+    align-items: center;
+}
+
+.orgcard_text h3{
+    font-size: 1.6rem;
+    font-weight: 600;
+    height: 5.6rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 
