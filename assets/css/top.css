@@ -58,7 +58,8 @@ main {
     position: relative;
     /* max-width: 500px; */
     width: 100%;
-    height: calc(90vh - 60px);
+    /* height: calc(90vh - 60px); */
+    height: 100%;
 }
 
 .slider_kv img {
