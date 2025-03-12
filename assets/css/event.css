@@ -346,11 +346,6 @@
     margin: 0.5rem 0 0;
 }
 
-.event_table th ul li {
-    margin-bottom: 1rem;
-}
-
-
 .eve_table_titel {
     list-style: none;
     font-weight: bolder;
@@ -358,17 +353,10 @@
 
 .eventtabl_boundary {
     background-color: #58BE15;
-    height: 0.4rem;
+    height: 0.2rem;
     width: 100%;
-}
+    margin: 1rem;
 
-
-.event_tabl_line {
-    text-decoration: underline;
-    text-decoration-color: #58BE15;
-    /* 下線の色を緑に変更 */
-    text-decoration-style: solid;
-    /* 下線を破線に変更 */
 }
 
 @media screen and (min-width:1280px) {
