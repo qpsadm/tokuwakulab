@@ -355,7 +355,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* 120px以上で自動調整 */
-    gap: 48px;
+    gap: 32px;
     align-items: start;
     /* カードを上揃え */
     justify-items: center;
@@ -406,11 +406,11 @@ h1 {
     height: 5.6rem;
     display: flex;
     align-items: center;
-    line-height: 2rem;
+    line-height: 20px;
 }
 
 .card_text {
-    height: 18rem;
+    height: 20rem;
 }
 
 /* タイトルと内容の間の区切り線 */
@@ -422,7 +422,7 @@ h1 {
 /* カード内の文字サイズ */
 .card_shape span {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 16px;
 }
 
 /* インナー */
@@ -607,7 +607,7 @@ h1 {
 /* flex設定 */
 .cardlist_flex {
     display: flex;
-    line-height: 3.2rem;
+    line-height: 32px;
 }
 
 @media screen and (max-width:768px) {
@@ -615,7 +615,7 @@ h1 {
     /* SP版の時flexを解除 */
     .cardlist_flex {
         display: block;
-        line-height: 3.2rem;
+        line-height: 32px;
     }
 }
 
@@ -644,7 +644,7 @@ h1 {
     display: inline-block;
     margin: 1.2rem 0.8rem 0 0;
     font-size: 1.2rem;
-    line-height: 2rem;
+    line-height: 20px;
 }
 
 .cardlist_toptext h3 {
@@ -696,7 +696,7 @@ h1 {
     font-size: 1.6rem;
     font-weight: 600;
     height: 5.6rem;
-    line-height: 2rem;
+    line-height: 20px;
     display: flex;
     align-items: center;
 }
@@ -708,7 +708,7 @@ h1 {
 /* カード型本文の文字の大きさ */
 .orgcard_wrap span {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 16px;
 }
 
 /* タイトル下の区切り線 */
@@ -1109,7 +1109,7 @@ footer {
 }
 
 .f_img img {
-    width: 100%;
+    width: 240px;
     height: auto;
 }
 
@@ -1129,7 +1129,7 @@ footer {
 
     /* TB版で写真のサイズを変更 */
     .f_img img {
-        width: 16rem;
+        width: 360px;
         height: auto;
     }
 }
@@ -1157,20 +1157,7 @@ footer {
     footer {
         width: calc(100% - 320px);
         height: auto;
-
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
     }
-
-    /* footer ul {
-        display: flex;
-        gap: 2rem;
-        flex-direction: row;
-        justify-content: center;
-        gap: 3rem;
-    } */
 
     .footer_navflex {
         padding: 0 2rem 4.8rem;
@@ -1182,7 +1169,7 @@ footer {
 
     /* PC版で写真のサイズを変更 */
     .f_img img {
-        width: 24rem;
+        width: 400px;
         height: auto;
     }
 }
