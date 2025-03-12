@@ -14,8 +14,7 @@
                     <!-- postタイトル -->
                     <div class="post_ttl_wrap">
                         <div class="post_date">
-                            <span><?php echo get_the_date('Y'); ?></span>
-                            <span><?php echo get_the_date('m/d(D)'); ?></span>
+                            <span><?php echo get_the_date('Y/m/d(D)'); ?></span>
                         </div>
                         <h2 class="post_ttl"><?php the_title(); ?></h2>
                     </div>
