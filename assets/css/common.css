@@ -409,6 +409,10 @@ h1 {
     line-height: 2rem;
 }
 
+.card_text{
+    height: 18rem;
+}
+
 /* タイトルと内容の間の区切り線 */
 .card_line {
     border-bottom: 2px dashed #58BE15;
@@ -438,6 +442,12 @@ h1 {
     margin-right: 2.1rem;
 }
 
+/* 会場名と会場名内容を包む、flexのためのclass */
+.card_linefeed {
+    display: flex;
+    height:3.6rem ;
+}
+
 /* 項目：会場名の装飾 */
 .card_hallname {
     font-weight: 600;
@@ -447,6 +457,11 @@ h1 {
 /* 会場名の内容の横幅 */
 .card_halltext {
     width: 20.4rem;
+}
+
+/* tagを包むdiv */
+.card_tag_wrap{
+    height: 8rem;
 }
 
 /* タグ（タクソノミー） */
@@ -463,18 +478,6 @@ h1 {
     font-size: 1.2rem;
 }
 
-
-
-/* 会場名と会場名内容を包む、flexのためのclass */
-.card_linefeed {
-    display: flex;
-        /* align-items: center; */
-    height:3.6rem ;
-}
-
-.card_tag_wrap{
-    height: 8rem;
-}
 
 /* card_shapeを包む、countdownと終了の位置設定、hoverのための親div */
 .card_wrap {
@@ -657,14 +660,8 @@ h1 {
 /* 主催団体カード型 */
 
 /* 主催団体カード型を包むaタグ */
-.orgcard_wrap:hover {
-    transition: 0.3s;
-    transform: scale(0.95);
-}
-
 .orgcard_wrap {
     display: block;
-    /* margin: 2.4rem 2.4rem 1.6rem 0.8rem; */
     margin: 2.4rem 1.6rem 0.8rem;
     width: 300px;
     border: solid 4px #FFCC00;
@@ -672,7 +669,18 @@ h1 {
     background-color: #fff;
     transition: 0.3s;
 }
+/* カード型をホバーした時の設定 */
+.orgcard_wrap:hover {
+    transition: 0.3s;
+    transform: scale(0.95);
+}
 
+/* インナー */
+.orgcard_inner {
+    padding: 1.2rem;
+}
+
+/* サムネイル画像 */
 .orgcard_wrap img {
     width: 264px;
     height: 198px;
@@ -681,30 +689,7 @@ h1 {
     margin: 0 auto;
 }
 
-.orgcard_wrap span {
-    font-size: 1.2rem;
-}
-
-.orgcard_line {
-    border-bottom: 2px dashed #FFCC00;
-    margin: 0.4rem 0 0.8rem 0;
-}
-
-.orgcard_inner {
-    padding: 1.2rem;
-}
-
-.orgcard_subtitle {
-    font-weight: 600;
-}
-
-.orgcard_item{
-    /* display: flex;
-    flex-wrap: wrap; */
-    height: 17rem;
-    align-items: center;
-}
-
+/* タイトル */
 .orgcard_text h3{
     font-size: 1.6rem;
     font-weight: 600;
@@ -714,8 +699,30 @@ h1 {
     align-items: center;
 }
 
+.orgcard_text{
+    height: 24rem;
+}
 
-/* 一覧へ飛ぶボタン */
+/* カード型本文の文字の大きさ */
+.orgcard_wrap span {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+/* タイトル下の区切り線 */
+.orgcard_line {
+    border-bottom: 2px dashed #FFCC00;
+    margin: 0.4rem 0 0.8rem 0;
+}
+
+/* サブタイトル */
+.orgcard_subtitle {
+    font-weight: 600;
+}
+
+
+
+/* === 一覧へ飛ぶボタン === */
 .btn_wrap {
     width: 260px;
     padding: 2rem 6.4rem 2rem 3.2rem;
