@@ -159,12 +159,13 @@ $the_query = new WP_Query($args);
                 $start = ($current_page - 1) * $posts_per_page + 1;
 
                 // 表示中の記事の終了番号
-                $end = min($current_page * $posts_per_page, $the_query->found_posts);
+                $end = min($current_page * $posts_per_page, $wp_query->found_posts);
 
                 // 「何件から何件を表示しているか」を表示
                 echo '<div class="post-range">';
                 echo $start . ' - ' . $end . ' 件を表示';
                 echo '</div>';
+                // }
                 ?>
             </span>
 
