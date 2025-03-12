@@ -406,7 +406,7 @@ h1 {
     height: 5.6rem;
     display: flex;
     align-items: center;
-    line-height: 2rem;
+    line-height: 20px;
 }
 
 .card_text {
@@ -422,7 +422,7 @@ h1 {
 /* カード内の文字サイズ */
 .card_shape span {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 16px;
 }
 
 /* インナー */
@@ -607,7 +607,7 @@ h1 {
 /* flex設定 */
 .cardlist_flex {
     display: flex;
-    line-height: 3.2rem;
+    line-height: 32px;
 }
 
 @media screen and (max-width:768px) {
@@ -615,7 +615,7 @@ h1 {
     /* SP版の時flexを解除 */
     .cardlist_flex {
         display: block;
-        line-height: 3.2rem;
+        line-height: 32px;
     }
 }
 
@@ -644,7 +644,7 @@ h1 {
     display: inline-block;
     margin: 1.2rem 0.8rem 0 0;
     font-size: 1.2rem;
-    line-height: 2rem;
+    line-height: 20px;
 }
 
 .cardlist_toptext h3 {
@@ -696,7 +696,7 @@ h1 {
     font-size: 1.6rem;
     font-weight: 600;
     height: 5.6rem;
-    line-height: 2rem;
+    line-height: 20px;
     display: flex;
     align-items: center;
 }
@@ -708,7 +708,7 @@ h1 {
 /* カード型本文の文字の大きさ */
 .orgcard_wrap span {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 16px;
 }
 
 /* タイトル下の区切り線 */
