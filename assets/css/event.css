@@ -254,6 +254,7 @@
         display: block;
         margin: 0 auto;
     }
+
 }
 
 /* イベント基本情報 */
@@ -282,7 +283,7 @@
 }
 
 .event_table th {
-    width: 110px;
+    width: 100px;
     align-items: center;
 }
 
