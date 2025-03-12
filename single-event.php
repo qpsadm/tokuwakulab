@@ -410,11 +410,23 @@
         <section class="event_space_line">
 
             <?php
+            // 今日の日付
+            $today = date('Y-m-d');
+            
             //おすすめイベントを表示する2.26作成中
             $args = [
                 "post_type" => "event", //投稿記事だけを指定
                 "posts_per_page" => 3, //最新記事を３件表示
                 "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
+                'meta_query' => [
+                    //終了していないものを取得
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>',
+                        'type' => 'DATE'
+                    ],
+                ]
 
             ];
             $latest_query = new WP_Query($args);
