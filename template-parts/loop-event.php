@@ -88,9 +88,9 @@
                 <div class="card_line"></div>
 
 
-                <div class="card_linefeed">
-                    <span class="card_subtitle">開催日</span>
-                    <div>
+                <div>
+                    <span class="card_eventday">開催日</span>
+                    <span>
                         <?php $date_str = get_field('date_start');  ?>
                         <?php $formatted_date = str_replace(
                             ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
@@ -99,14 +99,14 @@
                         );
                         echo '<span>' . $formatted_date . '</span>';
                         ?>
-                    </div>
+                    </span>
                 </div>
 
 
 
-                <div class="card_linefeed">
+                <div>
                     <span class="card_subtitle">申込締切</span>
-                    <div>
+                    <span>
                         <?php $date_str = get_field('closing');  ?>
                         <?php $formatted_date = str_replace(
                             ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
@@ -115,91 +115,88 @@
                         );
                         echo '<span>' . $formatted_date . '</span>';
                         ?>
-                    </div>
+                    </span>
                 </div>
 
 
-                <div class="card_linefeed">
+                <div>
                     <span class="card_subtitle">対象学年
                     </span>
-                    <div>
-                        <span>
-                            <?php
-                            $age = get_field('age_text'); // カスタムフィールドの値を取得
-                            if ($age) { // 値が存在するかチェック
-                                if (mb_strlen($age) > 14) {
-                                    echo mb_substr($age, 0, 14) . '...';
-                                } else {
-                                    echo $age;
-                                }
-                            } ?>
-                            <?php //the_field('age_text');
-                            ?>
-                        </span>
-                    </div>
+                    <span>
+                        <?php
+                        $age = get_field('age_text'); // カスタムフィールドの値を取得
+                        if ($age) { // 値が存在するかチェック
+                            if (mb_strlen($age) > 14) {
+                                echo mb_substr($age, 0, 14) . '...';
+                            } else {
+                                echo $age;
+                            }
+                        } ?>
+                        <?php //the_field('age_text');
+                        ?>
+                    </span>
                 </div>
+
 
                 <div class="card_linefeed">
                     <span class="card_hallname">会場名
                     </span>
-                    <div>
-                        <span class="card_halltext">
-                            <?php
-                            $address = get_field('address'); // カスタムフィールドの値を取得
-                            if ($address) { // 値が存在するかチェック
-                                if (mb_strlen($address) > 29) {
-                                    echo mb_substr($address, 0, 29) . '...';
-                                } else {
-                                    echo $address;
-                                }
-                            } ?>
-                            <?php //the_field('address');
-                            ?>
-                        </span>
-                    </div>
+
+                    <span class="card_halltext">
+                        <?php
+                        $address = get_field('address'); // カスタムフィールドの値を取得
+                        if ($address) { // 値が存在するかチェック
+                            if (mb_strlen($address) > 29) {
+                                echo mb_substr($address, 0, 29) . '...';
+                            } else {
+                                echo $address;
+                            }
+                        } ?>
+                        <?php //the_field('address');
+                        ?>
+                    </span>
+
                 </div>
+            </div>
+            <div class="card_tag_wrap">
 
-                <div class="card_tag_wrap">
+                <!-- 開催地域タクソノミーを取得して表示 -->
+                <?php
 
-                    <!-- 開催地域タクソノミーを取得して表示 -->
-                    <?php
-
-                    // area情報を取得
-                    $terms = get_the_terms(get_the_ID(), 'area');
-                    // area情報があるか確認
-                    if (!empty($terms) && !is_wp_error($terms)) {
-                        foreach ($terms as $term) {
-                            echo '<div class="card_tag">';
-                            echo '<p class="event-taxonomy">';
-                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
-                            echo '</p>';
-                            echo '</div>';
-                        }
+                // area情報を取得
+                $terms = get_the_terms(get_the_ID(), 'area');
+                // area情報があるか確認
+                if (!empty($terms) && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        echo '<div class="card_tag">';
+                        echo '<p class="event-taxonomy">';
+                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
+                        echo '</p>';
+                        echo '</div>';
                     }
-                    ?>
+                }
+                ?>
 
 
-                    <!-- 開催時期タクソノミーを取得して表示 -->
-                    <?php
-                    // area情報を取得
-                    $terms = get_the_terms(get_the_ID(), 'vacation');
-                    // area情報があるか確認
-                    // タクソノミーが無ければ非表示
-                    if (!empty($terms) && !is_wp_error($terms)) {
+                <!-- 開催時期タクソノミーを取得して表示 -->
+                <?php
+                // area情報を取得
+                $terms = get_the_terms(get_the_ID(), 'vacation');
+                // area情報があるか確認
+                // タクソノミーが無ければ非表示
+                if (!empty($terms) && !is_wp_error($terms)) {
 
-                        foreach ($terms as $term) {
+                    foreach ($terms as $term) {
 
-                            echo '<div class="card_tag">';
-                            // area情報を表示
-                            echo '<p class="event-taxonomy">';
-                            echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                            echo '</p>';
-                            echo '</div>';
-                        }
+                        echo '<div class="card_tag">';
+                        // area情報を表示
+                        echo '<p class="event-taxonomy">';
+                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
+                        echo '</p>';
+                        echo '</div>';
                     }
-                    ?>
-                </div>
-
+                }
+                ?>
             </div>
         </div>
     </a>
