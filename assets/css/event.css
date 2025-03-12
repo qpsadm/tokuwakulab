@@ -228,6 +228,7 @@
 }
 
 .event_description_text ul {
+    padding-left: 1rem;
     list-style: none;
     /* デフォルトの記号を消す */
     counter-reset: list-counter;
