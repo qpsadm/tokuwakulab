@@ -13,8 +13,8 @@
                     <span><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d(D)'); ?></time></span>
                     <h3>
                         <!-- タイトルの表示を14文字に制限 -->
-                        <?php if (mb_strlen($post->post_title) > 14) {
-                            $title = mb_substr($post->post_title, 0, 14);
+                        <?php if (mb_strlen($post->post_title) > 11) {
+                            $title = mb_substr($post->post_title, 0, 11);
                             echo $title . '...';
                         } else {
                             echo $post->post_title;
@@ -24,7 +24,7 @@
                     <div class="cardlist_line"></div>
 
                     <!-- タクソノミーを取得して表示 -->
-                    <div >
+                    <div>
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'column_type');
                         if (!empty($terms) && !is_wp_error($terms)) {
