@@ -218,7 +218,7 @@
                                 if ($formatted_date_start === $formatted_date_end) {
                                     echo $formatted_date_start;
                                 } else {
-                                    echo $formatted_date_start."～".$formatted_date_end;
+                                    echo $formatted_date_start . "～" . $formatted_date_end;
                                 }
                                 ?>
 
@@ -432,12 +432,28 @@
 
         <section class="event_space_line">
 
+
             <?php
+            // 今日の日付
+            $today = date('Y-m-d');
+
             //おすすめイベントを表示する2.26作成中
             $args = [
                 "post_type" => "event", //投稿記事だけを指定
                 "posts_per_page" => 3, //最新記事を３件表示
                 "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
+                'orderby' => 'meta_value', // 下のフィールドでソート
+                'meta_key' => 'date_end', //フィールドを終了日に設定
+                'order' => 'ASC', // 近い日付順
+                'meta_query' => [
+                    //終了していないものを取得
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>',
+                        'type' => 'DATE'
+                    ],
+                ]
 
             ];
             $latest_query = new WP_Query($args);
