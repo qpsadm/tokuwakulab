@@ -12,15 +12,13 @@
 
         <div class="orgcard_text">
             <h3>
-                <h3>
-                    <!-- タイトルの表示を29文字に制限 -->
-                    <?php if (mb_strlen($post->post_title) > 26) {
-                        $title = mb_substr($post->post_title, 0, 26);
-                        echo $title . '...';
-                    } else {
-                        echo $post->post_title;
-                    } ?>
-                </h3>
+                <!-- タイトルの表示を29文字に制限 -->
+                <?php if (mb_strlen($post->post_title) > 26) {
+                    $title = mb_substr($post->post_title, 0, 26);
+                    echo $title . '...';
+                } else {
+                    echo $post->post_title;
+                } ?>
             </h3>
             <div class="orgcard_line">
             </div>
