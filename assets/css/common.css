@@ -409,6 +409,10 @@ h1 {
     line-height: 2rem;
 }
 
+.card_text{
+    height: 18rem;
+}
+
 /* タイトルと内容の間の区切り線 */
 .card_line {
     border-bottom: 2px dashed #58BE15;
@@ -438,6 +442,12 @@ h1 {
     margin-right: 2.1rem;
 }
 
+/* 会場名と会場名内容を包む、flexのためのclass */
+.card_linefeed {
+    display: flex;
+    height:3.6rem ;
+}
+
 /* 項目：会場名の装飾 */
 .card_hallname {
     font-weight: 600;
@@ -447,6 +457,11 @@ h1 {
 /* 会場名の内容の横幅 */
 .card_halltext {
     width: 20.4rem;
+}
+
+/* tagを包むdiv */
+.card_tag_wrap{
+    height: 8rem;
 }
 
 /* タグ（タクソノミー） */
@@ -463,18 +478,6 @@ h1 {
     font-size: 1.2rem;
 }
 
-
-
-/* 会場名と会場名内容を包む、flexのためのclass */
-.card_linefeed {
-    display: flex;
-        /* align-items: center; */
-    height:3.6rem ;
-}
-
-.card_tag_wrap{
-    height: 8rem;
-}
 
 /* card_shapeを包む、countdownと終了の位置設定、hoverのための親div */
 .card_wrap {
