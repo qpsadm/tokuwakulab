@@ -476,6 +476,8 @@ h1 {
     display: inline-block;
     margin: 0.8rem 0.4rem 0 0;
     font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
 }
 
 
