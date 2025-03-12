@@ -197,7 +197,30 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/date.png" alt="">開催日時
                             </th>
                             <td>
-                                <?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
+                                <?php
+                                // ACF から日付データを取得
+                                $date_str_start = get_field('date_start');
+                                $date_str_end = get_field('date_end');
+
+                                // 曜日を短縮形に変換する関数
+                                function shorten_weekday($date_str)
+                                {
+                                    $weekdays = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
+                                    $short_weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+                                    return str_replace($weekdays, $short_weekdays, $date_str);
+                                }
+
+                                // 変換後の日付
+                                $formatted_date_start = shorten_weekday($date_str_start);
+                                $formatted_date_end = shorten_weekday($date_str_end);
+
+                                // 条件分岐して出力
+                                if ($formatted_date_start === $formatted_date_end) {
+                                    echo $formatted_date_start;
+                                } else {
+                                    echo $formatted_date_start."～".$formatted_date_end;
+                                }
+                                ?>
 
                             </td>
                         </tr>
