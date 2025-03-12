@@ -19,7 +19,7 @@
                 <!-- 絞り込み検索フォーム -->
                 <!-- <h3 class="sub_title">詳細検索<h3> -->
                 <details class="search_accordion_headline">
-                    <summary class="search_item_title">開く
+                    <summary class="search_item_title_headline">開く
                     </summary>
                     <form method="get" action="<?php echo home_url('/'); ?>" class="search_content">
                         <input type="hidden" name="s">
