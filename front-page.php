@@ -221,7 +221,7 @@ get_header();
             <div class="top_instagram_wrap">
                 <div class="top_instagram_bg">
                     <div class="top_instagram_ttl">
-                        <h2>instagram</h2>
+                        <h2>Instagram</h2>
                     </div>
                     <div>
                         <?php echo do_shortcode('[instagram-feed=1]'); ?>
