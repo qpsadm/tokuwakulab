@@ -531,8 +531,8 @@ function get_random_message()
 {
     $args = array(
         'post_type'      => 'short', //  投稿タイプ'short'を対象に
-        'posts_per_page' => 61,       //  一件にする
-        // 'orderby'        => 'rand',  //  ランダムで取得
+        'posts_per_page' => 1,       //  一件にする
+        'orderby'        => 'rand',  //  ランダムで取得
 
     );
     $query = new WP_Query($args);    // サブクエリを作成
