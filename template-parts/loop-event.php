@@ -169,9 +169,7 @@
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
                         echo '<div class="card_tag">';
-                        echo '<p class="event-taxonomy">';
-                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span>';
-                        echo '</p>';
+                        echo '#' . esc_html($term->name);
                         echo '</div>';
                     }
                 }
@@ -190,9 +188,7 @@
 
                         echo '<div class="card_tag">';
                         // area情報を表示
-                        echo '<p class="event-taxonomy">';
-                        echo '<span class="taxonomy-badge">#' . esc_html($term->name) . '</span> ';
-                        echo '</p>';
+                        echo '#' . esc_html($term->name);
                         echo '</div>';
                     }
                 }
