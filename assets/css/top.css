@@ -20,7 +20,7 @@ main {
 }
 
 /* キャッチコピー */
-.catchcopy{
+.catchcopy {
     position: absolute;
     top: 20px;
     /* right: -8px; */
@@ -31,21 +31,24 @@ main {
 
 
 @media screen and (min-width:768px) {
-.catchcopy{
-    position: absolute;
-    top: 120px;
-    right: -8px;
-    width: 560px;
-    height: auto;}
+    .catchcopy {
+        position: absolute;
+        top: 120px;
+        right: -8px;
+        width: 560px;
+        height: auto;
     }
+}
+
 @media screen and (min-width:1280px) {
-.catchcopy{
-    position: absolute;
-    top: 80px;
-    right: -8px;
-    width: 560px;
-    height: auto;}
+    .catchcopy {
+        position: absolute;
+        top: 80px;
+        right: -8px;
+        width: 560px;
+        height: auto;
     }
+}
 
 
 /* スリックの設定 */
@@ -337,7 +340,7 @@ section {
 section {
     opacity: 0;
     transform: translate(0, 30%);
-    transition: 2s;
+    transition: 0.5s;
 }
 
 .is-active-scroll {
