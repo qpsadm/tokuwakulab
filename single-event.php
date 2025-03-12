@@ -441,7 +441,7 @@
 
             <!-- ボタン -->
             <div class="event_btn_wrap">
-                <a class="event_btn" href="<?php echo home_url("column"); ?>">イベント一覧へ</a>
+                <a class="event_btn" href="<?php echo home_url("event"); ?>">イベント一覧へ</a>
             </div>
 
         </section>
