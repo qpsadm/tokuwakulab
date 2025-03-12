@@ -249,6 +249,15 @@
     }
 }
 
+/* 関連リンクボタン */
+.column_link_btn a {
+    color: #505050;
+}
+
+.column_link_btn a:hover {
+    opacity: 0.6;
+}
+
 .column_recomend_list span {
     font-size: 1.6rem;
 }

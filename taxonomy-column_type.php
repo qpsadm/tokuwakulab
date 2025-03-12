@@ -94,7 +94,7 @@ $the_query = new WP_Query($args);
                                 echo '</div>';
                             } else { // 記事が0件の場合
                                 echo '<div class="post-range">';
-                                echo '0件';
+                                echo '検索結果：&nbsp;0&nbsp;件';
                                 echo '</div>';
                             }
                             ?>

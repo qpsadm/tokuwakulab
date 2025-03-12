@@ -19,7 +19,16 @@
 
 /* フォーム全体の設定 */
 .search_accordion {
-    background-color: #f7f7f7;
+    background-color: #FFF;
+    padding: 1.2rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.search_accordion_headline {
+    background-color: #fdfde6;
     padding: 1.2rem;
     cursor: pointer;
     border: 1px solid #ddd;
@@ -28,7 +37,8 @@
 }
 
 /* アコーディオンタイトルの設定 */
-.search_item_title {
+.search_item_title,
+.search_item_title_headline {
     position: relative;
     border-bottom: 2px solid #b6b6b6;
     font-size: 1.6rem;
@@ -38,7 +48,8 @@
 }
 
 /* 閉じているとき「-」 */
-.search_item_title::after {
+.search_item_title::after,
+.search_item_title_headline::after {
     position: absolute;
     content: "+";
     right: 16px;
@@ -48,7 +59,8 @@
 }
 
 /* 開いたとき「+」 */
-.search_accordion[open] .search_item_title::after {
+.search_accordion[open] .search_item_title::after,
+.search_accordion_headline[open] .search_item_title_headline::after {
     position: absolute;
     content: "-";
     transform: rotate(180deg);
@@ -223,5 +235,5 @@ button[type="submit"] {
 
 /*.search_result span {
     /* font-size: 1.6rem; */
-    /* line-height: 1.6;
+/* line-height: 1.6;
 }*/

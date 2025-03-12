@@ -23,12 +23,7 @@
                         <!-- タイトルの日付ボタン -->
                         <div class="column_date">
                             <span>
-                                <time datetime="<?php the_time('Y-m-d'); ?>">
-                                    <?php the_time('Y'); ?>
-                                </time>
-                            </span>
-                            <span>
-                                <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('m/d(D)'); ?></time>
+                                <?php echo get_the_date('Y/m/d(D)'); ?>
                             </span>
                         </div>
                         <!-- 記事のタイトル -->
@@ -62,13 +57,13 @@
                         <div class="column_item">
                             <?php the_content(); ?>
 
-                            <!-- フィールドに関連リンクがあれば飛ぶ -->
+                        </div>
+                        <div class="column_link_btn"><!-- フィールドに関連リンクがあれば飛ぶ -->
                             <?php if (get_field('url')): ?>
-
-                                <p><a href="<?php the_field('url'); ?>" target="_blank">【関連リンク】<?php the_field('url'); ?></a>
+                                <p>
+                                    <a href="<?php the_field('url'); ?>" target="_blank">関連リンクはこちら ></a>
                                 </p>
                             <?php endif; ?>
-
                         </div>
                     </div>
 
