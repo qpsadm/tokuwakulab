@@ -626,6 +626,7 @@ h1 {
 
 .cardlist_toptext {
     font-size: 1.6rem;
+    width: 100%;
 }
 
 .cardlist_data {
@@ -649,10 +650,6 @@ h1 {
 .cardlist_toptext h3 {
     font-size: 1.6rem;
     font-weight: 600;
-}
-
-.cardlist_toptext{
-    width: 100%;
 }
 
 .cardlist_line {
