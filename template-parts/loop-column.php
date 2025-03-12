@@ -1,5 +1,4 @@
-<div class="cardlist_wrap">
-    <a href="<?php the_permalink(); ?>">
+<a class="cardlist_wrap" href="<?php the_permalink(); ?>">
         <div class="cardlist_inner">
             <div class="cardlist_flex">
                 <?php if (has_post_thumbnail()) : ?>
@@ -28,13 +27,11 @@
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'column_type');
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            echo '<div class="cardlist_tag">';
                             foreach ($terms as $term) {
 
                                 //タクソノミー一覧ページに飛ぶリンクを付ける
-                                echo '<a href="' . esc_url(get_term_link($term)) . '" class="taxonomy-badge">#' . esc_html($term->name) . '</a> ';
+                                echo '<div class="cardlist_tag">'. esc_html($term->name). '</div>';
                             }
-                            echo '</div>';
                         }
                         ?>
                     </div>
@@ -42,4 +39,4 @@
             </div>
         </div>
     </a>
-</div>
+</a>
