@@ -63,8 +63,10 @@ $the_query = new WP_Query($args);
                     <span>
                         <?php
 
+
                         // グローバル変数を取得
                         global $wp_query;
+
 
                         // 1ページに表示する記事数
                         $posts_per_page = get_query_var('posts_per_page');
@@ -82,6 +84,7 @@ $the_query = new WP_Query($args);
                         echo '<div class="post-range">';
                         echo $start . ' - ' . $end . ' 件を表示';
                         echo '</div>';
+
                         ?>
                     </span>
                 </div>
