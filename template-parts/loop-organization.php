@@ -14,43 +14,45 @@
             <h3><?php the_title(); ?></h3>
             <div class="orgcard_line">
             </div>
-            <div>
-                <span class="orgcard_subtitle">所在地</span>
+            <div orgcard_item>
                 <div>
-                    <span>
-                        <?php if (mb_strlen(get_field('address')) > 20) {
-                            $address = mb_substr(get_field('address'), 0, 20);
-                            echo $address . '…';
-                        } else {
-                            echo get_field('address');
-                        } ?>
-                    </span>
-                </div>
-            </div>
-            <span class="orgcard_subtitle">電話番号</span>
-            <div>
-                <span>
-                    <?php the_field('tel'); ?>
-                </span>
-            </div>
-            <!-- <?php if (get_field('hour')): ?> -->
-            <div>
-                <span class="orgcard_subtitle">営業時間</span>
-                <div>
-                    <span>
-                        <?php
-                        $age = get_field('hour'); // カスタムフィールドの値を取得
-                        if ($age) { // 値が存在するかチェック
-                            if (mb_strlen($age) > 33) {
-                                echo mb_substr($age, 0, 33) . '...';
+                    <span class="orgcard_subtitle">所在地</span>
+                    <div>
+                        <span>
+                            <?php if (mb_strlen(get_field('address')) > 20) {
+                                $address = mb_substr(get_field('address'), 0, 20);
+                                echo $address . '…';
                             } else {
-                                echo $age;
-                            }
-                        } ?>
+                                echo get_field('address');
+                            } ?>
+                        </span>
+                    </div>
+                </div>
+                <span class="orgcard_subtitle">電話番号</span>
+                <div>
+                    <span>
+                        <?php the_field('tel'); ?>
                     </span>
                 </div>
+                <!-- <?php if (get_field('hour')): ?> -->
+                <div>
+                    <span class="orgcard_subtitle">営業時間</span>
+                    <div>
+                        <span>
+                            <?php
+                            $age = get_field('hour'); // カスタムフィールドの値を取得
+                            if ($age) { // 値が存在するかチェック
+                                if (mb_strlen($age) > 33) {
+                                    echo mb_substr($age, 0, 33) . '...';
+                                } else {
+                                    echo $age;
+                                }
+                            } ?>
+                        </span>
+                    </div>
+                </div>
+                <!-- <?php endif; ?> -->
             </div>
-            <!-- <?php endif; ?> -->
         </div>
     </div>
 </a>
