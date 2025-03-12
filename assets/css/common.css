@@ -355,7 +355,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* 120px以上で自動調整 */
-    gap: 48px;
+    gap: 32px;
     align-items: start;
     /* カードを上揃え */
     justify-items: center;
@@ -1129,7 +1129,7 @@ footer {
 
     /* TB版で写真のサイズを変更 */
     .f_img img {
-        width:360px ;
+        width: 360px;
         height: auto;
     }
 }
@@ -1157,20 +1157,7 @@ footer {
     footer {
         width: calc(100% - 320px);
         height: auto;
-
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
     }
-
-    /* footer ul {
-        display: flex;
-        gap: 2rem;
-        flex-direction: row;
-        justify-content: center;
-        gap: 3rem;
-    } */
 
     .footer_navflex {
         padding: 0 2rem 4.8rem;
