@@ -651,6 +651,10 @@ h1 {
     font-weight: 600;
 }
 
+.cardlist_toptext{
+    width: 100%;
+}
+
 .cardlist_line {
     border-bottom: 2px dashed #FF7800;
     margin: 0.8rem 0;
