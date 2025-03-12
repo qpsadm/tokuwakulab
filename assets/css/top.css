@@ -515,8 +515,12 @@ section {
 
 .tips_chara {
     margin-top: 1rem;
-    width: 20rem;
-    height: 132.53px;
+    width: 100%;
+    text-align: center;
+}
+
+.tips_chara img{
+    width: 200px;
 }
 
 
@@ -592,7 +596,7 @@ section {
 
     .tips_chara img {
         width: 25rem;
-        margin-right: 20rem;
+        /* margin-right: 20rem; */
         height: auto;
     }
 
@@ -671,7 +675,7 @@ section {
 
     .tips_chara img {
         width: 25rem;
-        margin-right: 12rem;
+        /* margin-right: 12rem; */
         height: auto;
     }
 }
