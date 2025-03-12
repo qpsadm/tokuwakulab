@@ -228,6 +228,7 @@
 }
 
 .event_description_text ul {
+    padding-left: 1rem;
     list-style: none;
     /* デフォルトの記号を消す */
     counter-reset: list-counter;
@@ -254,6 +255,7 @@
         display: block;
         margin: 0 auto;
     }
+
 }
 
 /* イベント基本情報 */
@@ -282,7 +284,7 @@
 }
 
 .event_table th {
-    width: 110px;
+    width: 100px;
     align-items: center;
 }
 

@@ -119,7 +119,8 @@
 
 .column_item p,
 .post_item p {
-    margin-top: 2.4rem;
+    margin: 2.4rem 0;
+    line-height: 2.4rem;
 }
 
 /* コラム内画像設定 */

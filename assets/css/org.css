@@ -61,6 +61,42 @@
     margin: 0 auto;
 }
 
+.org_description_text {
+    max-width: 100%;
+    /* 必要に応じて最大幅を指定 */
+    height: auto;
+    word-wrap: break-word;
+    /* 単語が長すぎる場合に折り返す */
+    white-space: normal;
+    /* 自動改行を有効にする */
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #333;
+    background-color: transparent;
+    /* 背景を透過 */
+}
+
+.org_description_text ul {
+    padding-left: 1rem;
+    list-style: none;
+    /* デフォルトの記号を消す */
+    counter-reset: list-counter;
+    /* カウンターをリセット */
+}
+
+.org_description_text ul li {
+    counter-increment: list-counter;
+    /* カウンターを増加 */
+}
+
+.org_description_text ul li::before {
+    content: counter(list-counter) ". ";
+    /* 数字を表示 */
+    color: #FF7B00;
+    font-weight: bold;
+}
+
+
 @media screen and (min-width:1280px) {
     .org_description {
         margin-top: 1.6rem;
