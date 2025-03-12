@@ -359,6 +359,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.6rem 0;
+    align-items: center;
 }
 
 .org_snsicons img {

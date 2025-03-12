@@ -197,7 +197,30 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/date.png" alt="">開催日時
                             </th>
                             <td>
-                                <?php the_field('date_start'); ?>～<?php the_field('date_end'); ?>
+                                <?php
+                                // ACF から日付データを取得
+                                $date_str_start = get_field('date_start');
+                                $date_str_end = get_field('date_end');
+
+                                // 曜日を短縮形に変換する関数
+                                function shorten_weekday($date_str)
+                                {
+                                    $weekdays = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
+                                    $short_weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+                                    return str_replace($weekdays, $short_weekdays, $date_str);
+                                }
+
+                                // 変換後の日付
+                                $formatted_date_start = shorten_weekday($date_str_start);
+                                $formatted_date_end = shorten_weekday($date_str_end);
+
+                                // 条件分岐して出力
+                                if ($formatted_date_start === $formatted_date_end) {
+                                    echo $formatted_date_start;
+                                } else {
+                                    echo $formatted_date_start . "～" . $formatted_date_end;
+                                }
+                                ?>
 
                             </td>
                         </tr>
@@ -409,12 +432,28 @@
 
         <section class="event_space_line">
 
+
             <?php
+            // 今日の日付
+            $today = date('Y-m-d');
+
             //おすすめイベントを表示する2.26作成中
             $args = [
                 "post_type" => "event", //投稿記事だけを指定
                 "posts_per_page" => 3, //最新記事を３件表示
                 "post__not_in" => [get_the_ID()], //現在表示している記事のIDは表示しない
+                'orderby' => 'meta_value', // 下のフィールドでソート
+                'meta_key' => 'date_end', //フィールドを終了日に設定
+                'order' => 'ASC', // 近い日付順
+                'meta_query' => [
+                    //終了していないものを取得
+                    [
+                        'key' => 'date_end',
+                        'value' => $today,
+                        'compare' => '>',
+                        'type' => 'DATE'
+                    ],
+                ]
 
             ];
             $latest_query = new WP_Query($args);

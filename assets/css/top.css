@@ -58,7 +58,8 @@ main {
     position: relative;
     /* max-width: 500px; */
     width: 100%;
-    height: calc(90vh - 60px);
+    /* height: calc(90vh - 60px); */
+    height: 100vh;
 }
 
 .slider_kv img {
@@ -161,7 +162,7 @@ main {
 
 /* セクション間の余白 */
 section {
-    margin-bottom: 14rem;
+    margin-bottom: 10rem;
 }
 
 /* ボタンを中央に配置 */
