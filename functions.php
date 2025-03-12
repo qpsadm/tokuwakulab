@@ -282,7 +282,7 @@ function my_custom_title($title)
         // tagline（キャッチフレーズ）を無くす
         unset($title['tagline']);
         // タイトルの中身を変更する
-        $title['title'] = 'イベントを探す';
+        $title['title'] = 'イベントをさがす';
     }
     // 変更したタイトルを返す
     return $title;
