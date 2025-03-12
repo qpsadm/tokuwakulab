@@ -47,21 +47,9 @@
     margin-bottom: 2rem;
 }
 
-
-/* TB */
-@media screen and (min-width:768px) and (max-width:1279px) {
-    .text_inner {
-        padding: 2rem 4rem 4rem 4rem;
-    }
+.text_inner {
+    padding: 2rem 4rem 4rem 4rem;
 }
-
-/* PC */
-@media screen and (min-width:1280px) {
-    .text_inner {
-        padding: 2rem 4rem 4rem 4rem;
-    }
-}
-
 
 .section_line {
     margin: 4rem 0;
