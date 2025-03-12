@@ -281,6 +281,7 @@
 .org_description_text ol li::before {
     content: counter(list-counter) ". ";
     /* 数字を表示 */
+    color: #FF7B00;
     font-weight: bold;
 }
 
