@@ -222,7 +222,7 @@
                                 if ($formatted_date_start === $formatted_date_end) {
                                     echo $formatted_date_start;
                                 } else {
-                                    echo $formatted_date_start."～".$formatted_date_end;
+                                    echo $formatted_date_start . "～" . $formatted_date_end;
                                 }
                                 ?>
                             </td>
@@ -461,7 +461,7 @@
             if ($latest_query->have_posts()):
             ?>
 
-                <h3 class="sub_title">開催予定のイベント</h3>
+                <h3 class="sub_title">その他おすすめのイベント</h3>
 
                 <div>
                     <ul class="top_event_list">
