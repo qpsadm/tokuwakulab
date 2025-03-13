@@ -293,14 +293,6 @@
     padding-left: 2rem;
 }
 
-.event_table a {
-    text-decoration: underline;
-    /* 下線を引く */
-    text-decoration-color: #FF7B00;
-    /* 下線の色を緑に変更 */
-    text-decoration-style: solid;
-    /* 実線の下線 */
-}
 
 @media screen and (min-width:1280px) {
     .event_table {

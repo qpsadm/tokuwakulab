@@ -12,6 +12,10 @@ html {
     background-repeat: repeat;
 }
 
+_::-webkit-full-page-media, _:future, :root html {
+    line-height: 1.6rem;
+}
+
 h2 {
     font-size: 4.0rem;
 }
@@ -937,7 +941,7 @@ footer {
 }
 
 .footer_navflex {
-    padding: 0px 2rem 4rem 6rem;
+    padding: 4rem 2rem 4rem 6rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
