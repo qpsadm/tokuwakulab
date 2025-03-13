@@ -114,6 +114,10 @@
                             if (!empty($terms) && !is_wp_error($terms)) {
 
                                 foreach ($terms as $term) {
+                                    // イベントジャンルだけ親要素を非表示にし、子要素だけ表示する
+                                    if ($taxonomy === 'event_type' && $term->parent == 0) {
+                                        continue; // 親要素ならスキップ
+                                    }
 
                                     echo '<div class="eve_tag">';
                                     // area情報を表示
@@ -371,7 +375,7 @@
                         <div class="event_pdf">
                             <span>イベントのチラシは
                                 <br class="tb_none">こちら▶</span>
-                            <a target="_blank" href="<?php the_field('flier01'); ?>">ダウンロード</a>
+                            <a class="event_entry_btn" target="_blank" href="<?php the_field('flier01'); ?>">ダウンロード</a>
                         </div>
                     <?php endif; ?>
                 </section>
@@ -384,6 +388,15 @@
                     </div>
                 </section>
 
+                <!-- イベント申し込みボタン -->
+
+                <div class="event_entry_wrap">
+                    <?php if (get_field('links')) : ?>
+                        <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お問い合わせ・<br>お申し込みはこちら</span></a>
+                        <p><span>※イベントページに飛びます。</span></p>
+                    <?php endif; ?>
+                </div>
+
                 <!-- 参加者様からの感想 -->
                 <section class="event_space_line">
                     <!-- <h3 class="sub_title">参加者様からの感想</h3> -->
@@ -395,14 +408,7 @@
 
                 </section>
 
-                <!-- イベント申し込みボタン -->
 
-                <div class="event_entry_wrap">
-                    <?php if (get_field('links')) : ?>
-                        <a class="event_entry_btn" target="_blank" href="<?php the_field('links'); ?>"><span>お問い合わせ・<br>お申し込みはこちら</span></a>
-                        <p><span>※イベントページに飛びます。</span></p>
-                    <?php endif; ?>
-                </div>
             <?php endwhile; ?>
         <?php endif; ?>
 
