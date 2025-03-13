@@ -454,6 +454,7 @@
     height: 225px;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 8rem;
 }
 
 .map iframe {
