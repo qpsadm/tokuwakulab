@@ -76,7 +76,7 @@
 			];
 
 			// コメントフォームを表示
-			comment_form($comment_form_args);
+			comment_form();
 			?>
 
 			<!-- クチコミ投稿についての利用規約リンク -->
@@ -84,10 +84,10 @@
 		</div>
 
 		<!-- 送信ボタンをフォーム外に配置 -->
-		<div class="event_review_submit_btn">
+		<!-- <div class="event_review_submit_btn">
 			<form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post">
 				<input class="event_review_btn" type="submit" value="クチコミを送信">
 			</form>
-		</div>
+		</div> -->
 
 	</section>
