@@ -103,7 +103,7 @@
                         <?php
 
                         // タクソノミーのスラッグを配列で定義
-                        $taxonomies = ['event_type', 'experience', 'vacation'];  // 追加したいタクソノミーをここに書く
+                        $taxonomies = ['event_type', 'experience', 'vacation', 'loc_type', 'frequency'];  // 追加したいタクソノミーをここに書く
 
                         // 各タクソノミーについて処理
                         foreach ($taxonomies as $taxonomy) {
