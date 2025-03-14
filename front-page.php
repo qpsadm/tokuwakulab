@@ -244,6 +244,9 @@ get_header();
                     ?>
                 </span>
             </div>
+            <div class="bubble_container">
+                <div class="bubble_multiple"></div>
+            </div>
             <div class="tips_chara"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/tips_img.png" alt="当サイトのキャラクター画像"></div>
         </div>
     </div>

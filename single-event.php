@@ -233,6 +233,9 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/days.png" alt="">開催詳細
                             </th>
                             <td>
+                                <?php if (get_field('closing')): ?><span>申し込み締切：<?php the_field('closing') ?></span>
+                                    <br>
+                                <?php endif; ?>
                                 <?php if (get_field('days')): ?><span><?php the_field('days') ?></span>
                                 <?php else: ?>
                                     <span>-</span>
@@ -420,15 +423,19 @@
                 </div>
 
                 <!-- 参加者様からの感想 -->
-                <section class="event_space_line">
-                    <!-- <h3 class="sub_title">参加者様からの感想</h3> -->
+                <!-- ↓★一時コメントアウト -->
+                <!-- <section class="event_space_line"> -->
 
-                    <!-- クチコミ投稿フォーム -->
-                    <!-- <h3 class="sub_title">クチコミを投稿する</h3> -->
+                <!-- <h3 class="sub_title">参加者様からの感想</h3> -->
 
-                    <?php comments_template(); ?>
+                <!-- クチコミ投稿フォーム -->
+                <!-- <h3 class="sub_title">クチコミを投稿する</h3> -->
 
-                </section>
+                <!-- ↓★一時コメントアウト -->
+                <?php //comments_template();
+                ?>
+                <!-- ↓★一時コメントアウト -->
+                <!-- </section> -->
 
 
             <?php endwhile; ?>
@@ -489,7 +496,7 @@
 
         <section class="event_space_line">
             <!-- 関連コラム記事 -->
-            <h3 class="sub_title">関連コラム記事</h3>
+            <h3 class="sub_title">おすすめコラム記事</h3>
             <div class="event_column_list">
 
                 <?php
