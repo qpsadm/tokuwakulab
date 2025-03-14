@@ -287,10 +287,10 @@
             </div>
         </section>
 
-        <!-- 関連コラム記事３件タイトルのみ表示 -->
+        <!-- おすすめコラム記事３件タイトルのみ表示 -->
         <section class="column_content_wrap org_section">
 
-            <h3 class="sub_title">関連コラム記事</h3>
+            <h3 class="sub_title">おすすめコラム記事</h3>
             <div class="column_recomend_list">
                 <?php
                 $args = [
