@@ -40,6 +40,7 @@
             <a class="footer_instaicon" href="https://www.instagram.com/tokushima_ww_lab/?igsh=MXRvdnVwbXVnZWZodA%3D%3D&utm_source=qr#"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
         </div>
     </div>
+    <p><a class="sponsor" target="_blank" href="https://www.tokushima-u.ac.jp/ccell/">徳島大学人と地域共創センター</a></p>
     <p class="copyright"><small>copyright© 徳島わくわくラボ All Rights Reserved.</small></p>
     <div class="f_img">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/f_img.png" alt="化石の画像">
