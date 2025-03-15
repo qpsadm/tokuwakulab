@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- もっと見るボタン -->
-                    <a class="btn_wrap" href="<?php echo home_url('/news'); ?>">
+                    <a class="btn_wrap" href="<?php echo home_url('/category/news/'); ?>">
                         お知らせ一覧へ
                     </a>
             <?php endwhile;
