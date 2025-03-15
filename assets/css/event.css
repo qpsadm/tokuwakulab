@@ -206,7 +206,7 @@
 /* イベント説明 */
 .event_description {
     padding: 0 0 3rem 0;
-    max-width: 450px;
+    max-width: 768px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -260,7 +260,8 @@
 
 /* イベント基本情報 */
 .event_table {
-    max-width: 375px;
+    width: 100%;
+    max-width: 678px;
     margin: 0 auto;
     border: 3px solid #58BE15;
     background-color: #fff;
@@ -289,14 +290,9 @@
     align-items: center;
 }
 
-/* .event_table td p {
-    max-width: 260px;
-} */
-
-
 .event_table p {
     vertical-align: middle;
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem; */
     word-wrap: break-word;
 }
 
@@ -314,8 +310,18 @@
     margin-right: 1rem;
 }
 
-.tr_contact td p {
-    max-width: 260px;
+tr.tr_contact td p {
+    width: 100%;
+    max-width: 165px;
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width:480px) {
+    tr.tr_contact td p {
+        max-width: 600px;
+        /* width: 100%; */
+        font-size: 1.3rem;
+    }
 }
 
 /* SNSアイコン */
