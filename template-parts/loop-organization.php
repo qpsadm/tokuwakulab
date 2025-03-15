@@ -24,17 +24,18 @@
             </div>
             <div>
                 <span class="orgcard_subtitle">所在地</span>
-                <div>
-                    <span>
-                        <?php if (mb_strlen(get_field('address')) > 20) {
-                            $address = mb_substr(get_field('address'), 0, 20);
-                            echo $address . '…';
-                        } else {
-                            echo get_field('address');
-                        } ?>
-                    </span>
-                </div>
+                <!-- <div> -->
+                <span>
+                    <?php if (mb_strlen(get_field('address')) > 20) {
+                        $address = mb_substr(get_field('address'), 0, 20);
+                        echo $address . '…';
+                    } else {
+                        echo get_field('address');
+                    } ?>
+                </span>
+                <!-- </div> -->
             </div>
+
             <span class="orgcard_subtitle">電話番号</span>
             <div>
                 <span>
@@ -42,6 +43,7 @@
                 </span>
             </div>
             <!-- <?php if (get_field('hour')): ?> -->
+
             <div>
                 <span class="orgcard_subtitle">営業時間</span>
                 <div>

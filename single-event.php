@@ -306,7 +306,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                        <tr class="tr_contact">
                             <th>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/inquiry.png" alt="">問い合わせ
                             </th>
@@ -317,6 +317,11 @@
                                 <?php endif; ?>
                             </td>
                         </tr>
+
+                        <tr>
+
+                        </tr>
+
                         <tr>
                             <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
 
