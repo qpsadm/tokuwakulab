@@ -1101,6 +1101,23 @@ footer {
     text-align: center;
 }
 
+/* 徳島大学人と共創センター */
+.sponsor {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 24px;
+    text-decoration-line: underline;
+    text-decoration-color: #fff;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.5rem;
+}
+
+.sponsor:hover {
+    opacity: 0.6;
+}
+
 
 /* imgを均等に横並びにする場合  imgを<div>で囲ってclassを付与*/
 .f_img {
