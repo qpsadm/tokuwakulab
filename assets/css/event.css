@@ -284,13 +284,13 @@
 }
 
 .event_table th {
-    width: 100px;
+    width: 110px;
     align-items: center;
 }
 
 .event_table td {
     vertical-align: middle;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
 }
 
 
