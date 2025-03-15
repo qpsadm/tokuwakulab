@@ -318,9 +318,8 @@
                             </td>
                         </tr>
 
-                        <tr>
-
-                        </tr>
+                        <!-- <tr>スマホ版だと表示するものを書くエリア -->
+                        <!-- </tr> -->
 
                         <tr>
                             <?php if (get_field('toilet') || get_field('clothes') || get_field('bento') || get_field('eve_contactor') || get_field('eve_contact') || get_field('tel') || get_field('fax') || get_field('email') || get_field('remarks')): ?>
