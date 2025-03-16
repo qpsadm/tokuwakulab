@@ -2,10 +2,10 @@
 
 // 開発モードの切り替え
 // 開発モードで公開するときは、trueにしてください。
-define('IS_DEV', true);
+define('IS_DEV', false);
 
 // 管理バーを非表示させたいときに、以下のフィルターフックを有効させてください。
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 
 /**
